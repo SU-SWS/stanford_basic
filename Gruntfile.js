@@ -176,7 +176,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-drush');
 
   // My tasks.
-  grunt.registerTask('devmode', "Watch and BrowserSync all in one.", ['browserSync', 'watch']);
+  grunt.registerTask('devmode', "Watch and BrowserSync all in one.", ['drush', 'browserSync', 'watch']);
 
   // This is where we tell Grunt what to do when we type "grunt" into the terminal.
   // Note: if you'd like to run and of the tasks individually you can do so by typing 'grunt mytaskname' alternatively

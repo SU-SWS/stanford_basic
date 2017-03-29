@@ -37,3 +37,11 @@
 //
 //
 //
+
+///
+/// Default Wrapper for Non-Panel / Non-Node pages
+///
+
+.main-container {
+  @include responsive-container($default-container);
+}
