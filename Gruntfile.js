@@ -123,6 +123,7 @@ module.exports = function(grunt) {
           'css/layout/layout.css':                          'scss/layout/layout.scss',
           'css/states/states.css':                          'scss/states/states.scss',
           'css/theme/theme.css':                            'scss/theme/theme.scss',
+          'css/theme/centered-container.css':               'scss/theme/centered-container.scss',
           'css/theme/print.css':                            'scss/theme/print.scss'
         }
       }
