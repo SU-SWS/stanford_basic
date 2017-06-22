@@ -18,12 +18,10 @@
 
   <!-- ______________________ MAIN _______________________ -->
 
-  {% if page.vertical_banner %}
-    <div id="vertical_banner" class="vertical_banner">
-        {{ page.vertical_banner }}
+  {% if page.sidebar %}
+    <div id="sidebar" class="sidebar">
+        {{ page.sidebar }}
     </div>
-  {% else %}
-    <h2>sorry, no vertical banner detected</h2>
   {% endif %}
 
   {{ page.breadcrumb }}
