@@ -10,7 +10,7 @@ libraries:
 regions:
   page_top: 'Page top'
   header: Header
-  vertical_banner: 'Vertical banner'
+  sidebar: Sidebar
   highlighted: Highlighted
   help: Help
   content: Content
