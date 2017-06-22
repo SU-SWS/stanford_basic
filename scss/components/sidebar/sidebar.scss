@@ -1,5 +1,22 @@
+body.with-sidebar {
+  .main-container {
+    margin-left: 170px;
+  }
+}
+
 #sidebar {
   position: absolute;
-  left: 128px;
   background: rgba(238, 238, 238, 0.9);
+  top: 240px;
+  z-index: 10;
+
+  h2 {
+    color: white;
+    background: teal;
+    padding: 7px 30px;
+  }
+
+  ul {
+    padding: 19px 12px;
+  }
 }
