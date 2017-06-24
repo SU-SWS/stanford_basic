@@ -14,3 +14,10 @@
     padding: 19px 12px;
   }
 }
+
+@media (max-width: 860px) {
+  #sidebar__wrapper {
+    position: static;
+    margin: 10px auto;
+  }
+}
