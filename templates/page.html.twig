@@ -19,8 +19,10 @@
   <!-- ______________________ MAIN _______________________ -->
 
   {% if page.sidebar %}
-    <div id="sidebar" class="sidebar">
+    <div id="sidebar__wrapper" class="sidebar__wrapper">
+      <div id="sidebar" class="sidebar">
         {{ page.sidebar }}
+      </div>
     </div>
   {% endif %}
 
