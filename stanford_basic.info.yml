@@ -10,7 +10,6 @@ libraries:
 regions:
   page_top: 'Page top'
   header: Header
-  sidebar: Sidebar
   highlighted: Highlighted
   help: Help
   content: Content
