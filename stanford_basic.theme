@@ -101,7 +101,7 @@ function stanford_basic_preprocess_views_view(&$variables) {
 }
 
 /**
- * Html::cleanCssIdentifier() doesn't remove ":" so we have to clean a little.
+ * Html::cleanCssIdentifier() doesn't remove ":" so we have to clean a little more.
  *
  * @param string $string
  *   String to clean.
@@ -109,6 +109,6 @@ function stanford_basic_preprocess_views_view(&$variables) {
  * @return string
  *   Cleaned string.
  */
-function _stanford_basic_change_characters($string){
-  return preg_replace("/[^a-zA-Z\d\s]/",'-',$string);
+function _stanford_basic_change_characters($string) {
+  return preg_replace("/[^a-zA-Z\d\s]/", '-', $string);
 }
