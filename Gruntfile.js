@@ -94,7 +94,7 @@ module.exports = function(grunt) {
           "node_modules/bourbon-neat/core",
           "node_modules/font-awesome/scss",
           "node_modules/neat-omega",
-          "node_modules/decanter/core",
+          "libraries/decanter",
           "node_modules"
         ],
         sourceMap: true,
@@ -151,12 +151,47 @@ module.exports = function(grunt) {
         }
       }
     },
+    git_subtree_add: {
+      decanter: {
+        options: {
+          source: "https://github.com/SU-SWS/decanter.git",
+          branch: "lib",
+          target: "libraries/decanter"
+        }
+      }
+    },
+    git_subtree_pull: {
+      decanter: {
+        options: {
+          source: "https://github.com/SU-SWS/decanter.git",
+          branch: "lib",
+          target: "libraries/decanter"
+        }
+      }
+    },
+    git_subtree_push: {
+      decanter: {
+        options: {
+          source: "https://github.com/SU-SWS/decanter.git",
+          branch: "lib",
+          target: "libraries/decanter"
+        }
+      }
+    },
     availabletasks: {
       tasks: {
         options: {
           filter: "include",
           tasks: [
-            'browserSync', 'imagemin', 'sass', 'svgmin', 'uglify', 'watch', 'devmode'
+            'browserSync',
+            'imagemin',
+            'sass',
+            'svgmin',
+            'uglify',
+            'watch',
+            'devmode',
+            'git_subtree_pull',
+            'git_subtree_push'
           ]
         }
       }
@@ -164,6 +199,8 @@ module.exports = function(grunt) {
   });
 
   // This is where we tell Grunt we plan to use this plug-in.
+  grunt.loadNpmTasks('grunt-git');
+  grunt.loadNpmTasks('grunt-cmv-git-subtree');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-svgmin');
