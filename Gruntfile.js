@@ -154,7 +154,7 @@ module.exports = function(grunt) {
     git_subtree_add: {
       decanter: {
         options: {
-          source: "https://github.com/SU-SWS/decanter.git",
+          source: "git@github.com:SU-SWS/decanter.git",
           branch: "lib",
           target: "libraries/decanter"
         }
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
     git_subtree_pull: {
       decanter: {
         options: {
-          source: "https://github.com/SU-SWS/decanter.git",
+          source: "git@github.com:SU-SWS/decanter.git",
           branch: "lib",
           target: "libraries/decanter"
         }
@@ -172,7 +172,7 @@ module.exports = function(grunt) {
     git_subtree_push: {
       decanter: {
         options: {
-          source: "https://github.com/SU-SWS/decanter.git",
+          source: "git@github.com:SU-SWS/decanter.git",
           branch: "lib",
           target: "libraries/decanter"
         }
