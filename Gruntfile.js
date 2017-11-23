@@ -190,8 +190,7 @@ module.exports = function(grunt) {
             'uglify',
             'watch',
             'devmode',
-            'git_subtree_pull',
-            'git_subtree_push'
+            'decanter'
           ]
         }
       }
@@ -212,6 +211,7 @@ module.exports = function(grunt) {
 
   // My tasks.
   grunt.registerTask('devmode', "Watch and BrowserSync all in one.", ['drush', 'browserSync', 'watch']);
+  grunt.registerTask('decanter', "Pull the latest from the decanter branch defined in gruntfile.js.", ['git_subtree_pull']);
 
   // This is where we tell Grunt what to do when we type "grunt" into the terminal.
   // Note: if you'd like to run and of the tasks individually you can do so by typing 'grunt mytaskname' alternatively
