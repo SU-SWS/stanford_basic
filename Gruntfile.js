@@ -95,7 +95,7 @@ module.exports = function(grunt) {
           "node_modules/font-awesome/scss",
           "node_modules/neat-omega",
           "libraries/decanter",
-          "node_modules"
+          "libraries"
         ],
         sourceMap: true,
         // This controls the compiled css and can be changed to nested, compact or compressed.
