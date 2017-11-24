@@ -90,11 +90,13 @@ module.exports = function(grunt) {
       options: {
         includePaths: [
           "scss",
-          "node_modules/bourbon/core",
-          "node_modules/bourbon-neat/core",
+          "node_modules/bourbon/app/assets/stylesheets",
+          "node_modules/bourbon-neat/app/assets/stylesheets",
           "node_modules/font-awesome/scss",
-          "node_modules/neat-omega",
-          "libraries/decanter",
+          "node_modules/normalize.css",
+          "node_modules/neat-omega/core",
+          "node_modules",
+          "libraries/decanter/scss",
           "libraries"
         ],
         sourceMap: true,
