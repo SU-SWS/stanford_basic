@@ -41,7 +41,7 @@
       width: auto; }
       .block--lockup__site-logo img {
         width: 180px;
-        max-width: 180px; } }
+        max-width: 100%; } }
 
 .block--lockup__site-name {
   font-size: 3.3rem;

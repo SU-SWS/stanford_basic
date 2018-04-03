@@ -26,5 +26,8 @@
   "description": "=========================== How to Use Grunt with Stanford Basic ===========================",
   "main": "Gruntfile.js",
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
 }
