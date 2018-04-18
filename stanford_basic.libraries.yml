@@ -102,6 +102,13 @@ basic:
       css/theme/print.css: { media: print }
   js:
     js/vendor/modernizr.js: {}
+  dependencies:
+    - classy/base
+    - classy/messages
+    - classy/progress
+    - core/modernizr
+    - core/normalize
+    - core/jquery
 
 ie8:
   version: VERSION
