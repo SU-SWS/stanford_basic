@@ -100,13 +100,12 @@ basic:
     theme:
       css/theme/theme.css: {}
       css/theme/print.css: { media: print }
-  js:
-    js/vendor/modernizr.js: {}
   dependencies:
     - classy/base
     - classy/messages
     - classy/progress
     - core/normalize
+    - core/modernizr
 
 ie8:
   version: VERSION
