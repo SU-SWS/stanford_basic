@@ -104,7 +104,6 @@ basic:
     - classy/base
     - classy/messages
     - classy/progress
-    - core/normalize
     - core/modernizr
 
 ie8:
