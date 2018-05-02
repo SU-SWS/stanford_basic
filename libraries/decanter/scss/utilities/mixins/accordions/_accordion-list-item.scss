@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ACCORDION LIST ITEM
-///
-
+//
+// @accordion-list-item
+//
+// Default styling for list items that appear within an expanded accordion.
+//
+// Style guide: Mixins.Accordions.accordion-list-item
+//
 @mixin accordion-list-item {
   background-color: $color-cool-grey;
   font-family: $font-sans;

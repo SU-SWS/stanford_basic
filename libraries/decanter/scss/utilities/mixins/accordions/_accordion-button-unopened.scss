@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ACCORDION BUTTON UNOPENED
-///
-
+//
+// @accordion-button-unopened
+//
+// Adds the closed icon (plus) to the accordion.
+//
+// Style guide: Mixins.Accordions.accordion-button-unopened
+//
 @mixin accordion-button-unopened {
   background-image: url("#{$image-path}/plus.png");
   background-image: url("#{$image-path}/plus.svg");

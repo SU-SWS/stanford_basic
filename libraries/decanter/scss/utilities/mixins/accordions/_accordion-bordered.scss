@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ACCORDION BORDERED
-///
-
+//
+// @accordion-bordered
+//
+// Adds a border to the accordion.
+//
+// Style guide: Mixins.Accordions.accordion-bordered
+//
 @mixin accordion-bordered {
   .decanter-accordion__content {
     border-bottom: $accordion-border;

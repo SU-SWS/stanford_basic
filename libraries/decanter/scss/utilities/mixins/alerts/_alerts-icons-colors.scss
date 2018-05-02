@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ALERTS ICONS AND COLORS
-///
-
+//
+// @alerts-icons-colors
+//
+// Loops through color option settings for Alets component.
+//
+// Style guide: Mixins.Alerts.alerts-icons-colors
+//
 @mixin alerts-icons-colors {
   @each $name, $bgcolor in $alerts {
     .decanter-alert-#{$name} {
