@@ -105,6 +105,17 @@ basic:
     - classy/messages
     - classy/progress
     - core/modernizr
+    - stanford_basic/fontawesome
+
+fontawesome:
+  version: 4.7.0
+  remote: https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+  license:
+    name: FontAwesome
+    url: http://fontawesome.io/license/
+  css:
+    base:
+      //maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: {}
 
 ie8:
   version: VERSION
