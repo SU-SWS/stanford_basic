@@ -7,7 +7,7 @@ dependencies:
     - stanford_basic
 id: stanford_basic_messages
 theme: stanford_basic
-region: highlighted
+region: help
 weight: 0
 provider: null
 plugin: system_messages_block

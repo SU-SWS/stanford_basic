@@ -11,6 +11,8 @@ libraries:
 regions:
   page_top: 'Page top'
   header: Header
+  search: Search
+  menu: Menu
   highlighted: Highlighted
   help: Help
   content: Content

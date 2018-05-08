@@ -9,7 +9,7 @@ dependencies:
     - stanford_basic
 id: stanford_basic_main_menu
 theme: stanford_basic
-region: header
+region: menu
 weight: 1
 provider: null
 plugin: 'system_menu_block:main'
