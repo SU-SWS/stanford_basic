@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ICON GRID
-///
-
+//
+// @icon-grid
+//
+// Grid of icons (or images) with text.
+//
+// Style guide: Mixins.IconGrid.icon-grid
+//
 @mixin icon-grid {
   .decanter-icon-grid__row {
     .decanter-media-block {

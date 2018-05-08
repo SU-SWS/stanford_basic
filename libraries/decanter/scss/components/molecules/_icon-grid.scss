@@ -1,17 +1,13 @@
 @charset "UTF-8";
 
-///
-/// ICON GRID COMPONENT
-///
-
 //
 // Icon Grid
 //
 // Grid of icons (or images) with text.
 //
-// Markup: ../../templates/components/molecules/icon-grid/icon-grid.html.twig
+// Markup: ../../templates/components/molecules/icon-grid/icon-grid.twig
 //
-// Style guide: Components.Organisims.IconGrid
+// Style guide: Molecules.IconGrid
 //
 .decanter-icon-grid {
   @include icon-grid;

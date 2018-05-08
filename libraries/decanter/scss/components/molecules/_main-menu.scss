@@ -1,17 +1,13 @@
 @charset "UTF-8";
 
-///
-/// MAIN MENU COMPONENT
-///
-
 //
 // Main Menu
 //
 // A main navigation component with drop downs.
 //
-// Markup: ../../../templates/components/molecules/main-menu/main-menu.html.twig
+// Markup: ../../../templates/components/molecules/main-menu/main-menu.twig
 //
-// Styleguide: Components.Molecules.MainMenu
+// Style guide: Molecules.MainMenu
 //
 .decanter-main-menu {
   @include main-menu;

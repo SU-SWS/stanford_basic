@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// ACCORDION NESTED LIST
-///
-
+//
+// @accordion-nested-list
+//
+// Default styling for nested lists within an expanded accordion.
+//
+// Style guide: Mixins.Accordions.accordion-nested-list
+//
 @mixin accordion-nested-list {
   > ul li ul {
     list-style: disc;

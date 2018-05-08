@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-///
-/// SKIPNAV
-///
-
+//
+// @skipnav
+//
+// Skip to navigation helper.
+//
+// Style guide: Mixins.Accessibility.skipnav
+//
 @mixin skipnav {
   background: transparent;
   color: $color-black;

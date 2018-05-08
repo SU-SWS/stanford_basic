@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         includePaths: [
           "node_modules/bourbon/app/assets/stylesheets",
           "node_modules/bourbon-neat/app/assets/stylesheets",
-          "node_modules/font-awesome/scss",
           "node_modules/normalize.css",
           "node_modules/neat-omega/core",
           "node_modules",
@@ -48,7 +47,7 @@ module.exports = function(grunt) {
         tasks: ['uglify']
       },
       twig: {
-        files: ['**/*.html.twig'],
+        files: ['**/*.twig'],
         tasks: ['uglify', 'sass', 'styleguide']
       }
     },
