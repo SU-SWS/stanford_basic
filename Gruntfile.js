@@ -90,7 +90,7 @@ module.exports = function(grunt) {
       options: {
         includePaths: [
           "scss",
-          "node_modules/bourbon/app/assets/stylesheets",
+          "node_modules/bourbon/core",
           "node_modules/bourbon-neat/app/assets/stylesheets",
           "node_modules/font-awesome/scss",
           "node_modules/normalize.css",
