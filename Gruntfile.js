@@ -157,7 +157,7 @@ module.exports = function(grunt) {
       decanter: {
         options: {
           source: "git@github.com:SU-SWS/decanter.git",
-          branch: "lib",
+          branch: "master",
           target: "libraries/decanter"
         }
       }
