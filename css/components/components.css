@@ -142,7 +142,7 @@
   #footer__global-footer #global-footer__brand {
     display: block;
     float: left;
-    line-height: 3rem; }
+    line-height: 4rem; }
     @media only screen and (max-width: 767px) {
       #footer__global-footer #global-footer__brand {
         float: none;
@@ -167,6 +167,9 @@
         font-weight: 400;
         flex-flow: row wrap;
         justify-content: center; } }
+    #footer__global-footer #global-footer__nav li {
+      display: inline-block;
+      margin: 0; }
     @media only screen and (max-width: 575px) {
       #footer__global-footer #global-footer__nav a {
         text-align: left;
@@ -218,7 +221,8 @@
     #footer__global-footer #global-footer__info .vcard {
       font-size: 15px;
       font-weight: 300;
-      margin-top: 0; }
+      margin-top: 0;
+      margin-bottom: 0.5rem; }
 
 [class^="su-brand"], [class*=" su-brand"] {
   /* use !important to prevent issues with browser extensions that change fonts */
