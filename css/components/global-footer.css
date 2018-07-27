@@ -21,43 +21,105 @@
   -moz-osx-font-smoothing: grayscale; }
 
 #footer__global-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   background-color: #8c1515;
   color: #ffffff;
   text-align: center;
-  width: 100%; }
-  @media screen and (min-width: 600px) {
+  width: 100%;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem; }
+  @media only screen and (min-width: 600px) {
     #footer__global-footer {
       text-align: left; } }
   #footer__global-footer a {
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: none; }
+    #footer__global-footer a:hover, #footer__global-footer a:focus {
+      text-decoration: underline; }
   #footer__global-footer .su-brand {
     padding-top: 0.15em; }
   #footer__global-footer #global-footer__brand {
-    display: block; }
-    @media screen and (min-width: 481px) {
+    display: block;
+    float: left;
+    line-height: 4rem; }
+    @media only screen and (max-width: 767px) {
       #footer__global-footer #global-footer__brand {
-        max-height: 70px; } }
+        float: none;
+        text-align: center;
+        margin-bottom: 10px; } }
   #footer__global-footer #global-footer__nav {
     color: #ffffff;
     display: block;
-    font-weight: 300; }
-    #footer__global-footer #global-footer__nav #nav__global-links {
-      font-size: 2rem;
+    font-weight: 300;
+    float: left;
+    width: calc(100% - 165px);
+    margin-left: 45px; }
+    @media only screen and (max-width: 767px) {
+      #footer__global-footer #global-footer__nav {
+        float: none;
+        text-align: center;
+        width: auto;
+        margin-left: 0; } }
+    @media only screen and (max-width: 575px) {
+      #footer__global-footer #global-footer__nav {
+        display: flex;
+        font-weight: 400;
+        flex-flow: row wrap;
+        justify-content: center; } }
+    #footer__global-footer #global-footer__nav li {
+      display: inline-block;
+      margin: 0; }
+    @media only screen and (max-width: 575px) {
+      #footer__global-footer #global-footer__nav a {
+        text-align: left;
+        margin-bottom: 10px; } }
+    #footer__global-footer #global-footer__nav #global-links {
+      font-size: 17px;
       font-weight: 400;
-      margin-bottom: 1rem; }
-      #footer__global-footer #global-footer__nav #nav__global-links a {
-        margin-right: 1.7em; }
-    #footer__global-footer #global-footer__nav #nav__policy-links {
-      font-size: 1.8rem;
-      margin-bottom: 1rem; }
-      #footer__global-footer #global-footer__nav #nav__policy-links a {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      padding: 0; }
+      @media only screen and (max-width: 767px) {
+        #footer__global-footer #global-footer__nav #global-links {
+          margin-bottom: 1.5rem; } }
+      #footer__global-footer #global-footer__nav #global-links a {
+        margin-right: 1.7rem; }
+    #footer__global-footer #global-footer__nav #global-policy-links {
+      font-size: 15px;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      padding: 0; }
+      @media only screen and (max-width: 575px) {
+        #footer__global-footer #global-footer__nav #global-policy-links {
+          font-size: 17px; } }
+      #footer__global-footer #global-footer__nav #global-policy-links a {
         margin-right: 1.5rem; }
+      @media only screen and (max-width: 767px) {
+        #footer__global-footer #global-footer__nav #global-policy-links {
+          margin-bottom: 1.5rem; } }
     #footer__global-footer #global-footer__nav a {
       display: inline-block; }
-  #footer__global-footer #global-footer__copyright .vcard {
-    font-size: 1.8rem;
-    font-weight: 300; }
+      @media only screen and (max-width: 575px) {
+        #footer__global-footer #global-footer__nav a {
+          display: block; } }
+  #footer__global-footer #global-footer__info {
+    float: left;
+    margin-left: 45px;
+    width: calc(100% - 165px); }
+    @media only screen and (max-width: 767px) {
+      #footer__global-footer #global-footer__info {
+        float: none;
+        text-align: center;
+        width: auto;
+        margin-left: 0; } }
+    @media only screen and (max-width: 575px) {
+      #footer__global-footer #global-footer__info {
+        float: left;
+        width: calc(100% - 40px);
+        margin-left: 20px; } }
+    #footer__global-footer #global-footer__info .vcard {
+      font-size: 15px;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 0.5rem; }
 
 /*# sourceMappingURL=global-footer.css.map */
