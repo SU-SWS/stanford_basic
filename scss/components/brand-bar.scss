@@ -4,8 +4,6 @@
 // Stanford Global Brand Bar
 //
 
-// A thin red stripe with the Stanford logo.
-
 // Decanter.
 @import
   'decanter-no-markup';
@@ -15,8 +13,7 @@
   'config/config',
   'utilities/utilities';
 
-// Mixin for easy re-use
-@mixin stanford-brand-bar {
+.brand-bar {
   background: $color-bright-red;
   color: $color-white;
   height: 40px;
@@ -24,13 +21,7 @@
   max-height: 40px;
 
   img {
-    width: 153px;
+    display: inline-block;
+    width: 163px;
   }
-}
-
-// Separation of class from mixin
-.brand-bar {
-  @include stanford-brand-bar;
-
-  order: -100;
 }

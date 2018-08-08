@@ -25,9 +25,9 @@
   color: #ffffff;
   height: 40px;
   line-height: 50px;
-  max-height: 40px;
-  order: -100; }
+  max-height: 40px; }
   .brand-bar img {
-    width: 153px; }
+    display: inline-block;
+    width: 163px; }
 
 /*# sourceMappingURL=brand-bar.css.map */
