@@ -9,6 +9,17 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Component\Utility\Html;
 
 /**
+ * Implements hook_preprocess().
+ */
+function stanford_basic_preprocess(&$vars, $hook) {
+  // Verify ALL id attributes are unique.
+  if (!empty($vars['attributes']['id'])) {
+    $vars['attributes']['id'] = Html::getUniqueId($vars['attributes']['id']);
+  }
+}
+
+
+/**
  * Prepares variables for the html.html.twig template.
  */
 function stanford_basic_preprocess_html(&$variables) {
