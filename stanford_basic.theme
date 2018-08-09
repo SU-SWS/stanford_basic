@@ -12,9 +12,19 @@ use Drupal\Component\Utility\Html;
  * Implements hook_preprocess().
  */
 function stanford_basic_preprocess(&$vars, $hook) {
+  $seenIds = &drupal_static(__FUNCTION__, []);
   // Verify ALL id attributes are unique.
   if (!empty($vars['attributes']['id'])) {
-    $vars['attributes']['id'] = Html::getUniqueId($vars['attributes']['id']);
+
+    // Html::getUniqueId() doesn't catch all the ID's that we pass to it.
+    // Sometimes the IDs within the method are reset. So we track them our self.
+    $id = $vars['attributes']['id'];
+    if (isset($seenIds[$id])) {
+      $vars['attributes']['id'] = $id . '--' . ++$seenIds[$id];
+    }
+    else {
+      $seenIds[$id] = 1;
+    }
   }
 }
 
