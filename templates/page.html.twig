@@ -1,12 +1,12 @@
 <header id="header">
-  <div class="decanter-grid">
+  <div class="grid--container">
     {% if page.header %}
-      <div id="header-region" class="decanter-width-three-fourths">
+      <div id="header-region" class="grid--9-of-12">
         {{ page.header }}
       </div>
     {% endif %}
     {% if page.search %}
-      <div id="searc-region" class="decanter-width-one-fourth decanter-end-row">
+      <div id="search-region" class="grid--3-of-12">
         {{ page.search }}
       </div>
     {% endif %}
@@ -31,7 +31,7 @@
 
 {% if page.footer %}
   <footer id="footer">
-    <div class="decanter-grid">
+    <div class="grid--container">
       {{ page.footer }}
     </div>
   </footer>
