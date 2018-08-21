@@ -52,14 +52,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-@media screen and (min-width: 481px) {
+@media only screen and (min-width: 576px) {
   .block--lockup {
     display: table; } }
 
 .block--lockup__site-logo-wrapper {
   vertical-align: bottom;
   line-height: .8em; }
-  @media screen and (min-width: 481px) {
+  @media only screen and (min-width: 576px) {
     .block--lockup__site-logo-wrapper {
       border-right: 1px solid #2e2d29;
       display: table-cell;
@@ -67,7 +67,7 @@
 
 .block--lockup__site-logo {
   display: none; }
-  @media screen and (min-width: 481px) {
+  @media only screen and (min-width: 576px) {
     .block--lockup__site-logo {
       display: block;
       width: auto; }
@@ -79,7 +79,7 @@
   font-size: 3.3rem;
   line-height: 3.5rem;
   vertical-align: bottom; }
-  @media screen and (min-width: 481px) {
+  @media only screen and (min-width: 576px) {
     .block--lockup__site-name {
       display: table-cell;
       padding-left: 10px; } }
