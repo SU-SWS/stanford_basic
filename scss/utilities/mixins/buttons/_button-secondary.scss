@@ -19,7 +19,6 @@
   color: $color-bright-red;
   cursor: pointer;
   display: inline-block;
-  font-family: $font-sans;
   font-size: $base-font-size;
   font-weight: $font-bold;
   line-height: 1;
@@ -28,7 +27,7 @@
   text-decoration: none;
   width: 100%;
 
-  @include media($small-screen) {
+  @media #{$breakpoint-sm} {
     width: auto;
   }
 
