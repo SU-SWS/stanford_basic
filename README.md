@@ -1,12 +1,12 @@
 # [Stanford Basic](https://github.com/SU-SWS/stanford_basic)
-##### Version: 8.x-1.x
+##### Version: 8.x-3.x
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
 Description
 ---
 
-Stanford Basic is a Stanford Branded Drupal 8 base theme that integrates with the [Decanter Project](https://github.com/SU-SWS/decanter). 
+Stanford Basic is a Stanford Branded Drupal 8 base theme that integrates with the [Decanter Project](https://github.com/SU-SWS/decanter).
 
 Accessibility
 ---
@@ -22,7 +22,7 @@ Install this theme like any other theme. [See Drupal Documentation](https://www.
 Configuration
 ---
 
-Nothing special needed. Install, enable, and set as the default active theme. 
+Nothing special needed. Install, enable, and set as the default active theme.
 
 
 Troubleshooting

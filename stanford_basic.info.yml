@@ -2,7 +2,7 @@ name: Stanford Basic
 type: theme
 description: 'Stanford Basic Branding Theme.'
 package: Core
-version: 8.x-2.0-dev
+version: 8.x-3.0-dev
 core: 8.x
 libraries:
   - stanford_basic/basic
@@ -22,4 +22,3 @@ component-libraries:
   decanter:
     paths:
       - libraries/decanter/templates
-
