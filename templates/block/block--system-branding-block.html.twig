@@ -15,23 +15,38 @@
  */
 #}
 {% block content %}
-  {% if site_logo %}
-    <div class="block--lockup">
+  <div class="block--lockup">
+
+    {% if site_logo or lockup['lockup_4'] %}
       <div class="block--lockup__site-logo-wrapper">
         <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="block--lockup__site-logo">
           <img src="{{ site_logo }}" alt="{{ 'Home'|t }}"/>
+          {{ lockup['lockup_4'] }}
         </a>
       </div>
     {% endif %}
 
-    {% if site_name %}
-      <div class="block--lockup__site-name">
-        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-      </div>
-    {% endif %}
+    <div class="block--lockup__site-name">
+      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+        {% if lockup['lockup_1'] or lockup['lockup_2'] or lockup['lockup_3'] %}
+          {{ lockup['lockup_1'] }}
+          {{ lockup['lockup_2'] }}
+          {{ lockup['lockup_3'] }}
+        {% else %}
+          {{ site_name }}
+        {% endif %}
+      </a>
+    </div>
   </div>
-  {% if site_slogan %}
-    <div class="block--lockup__site-slogan">{{ site_slogan }}</div>
+
+  {% if site_slogan or lockup['lockup_5'] %}
+    <div class="block--lockup__site-slogan">
+      {% if lockup['lockup_5'] %}
+        {{ lockup['lockup_5'] }}
+      {% else %}
+        {{ site_slogan }}
+      {% endif %}
+    </div>
   {% endif %}
 
 {% endblock %}

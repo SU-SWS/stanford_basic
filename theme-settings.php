@@ -16,6 +16,37 @@ $theme_name = \Drupal::theme()->getActiveTheme()->getName();
  * Form override for theme settings.
  */
 function stanford_basic_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state) {
+  $form['lockup_settings'] = [
+    '#type' => 'details',
+    '#title' => t('Lockup Settings'),
+    '#open' => true,
+  ];
+  $form['lockup_settings']['lockup_1'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line 1'),
+    '#default_value' => theme_get_setting('lockup_1'),
+  ];
+  $form['lockup_settings']['lockup_2'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line 2'),
+    '#default_value' => theme_get_setting('lockup_2'),
+  ];
+  $form['lockup_settings']['lockup_3'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line 3'),
+    '#default_value' => theme_get_setting('lockup_3'),
+  ];
+  $form['lockup_settings']['lockup_4'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line 4'),
+    '#default_value' => theme_get_setting('lockup_4'),
+  ];
+  $form['lockup_settings']['lockup_5'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line 5'),
+    '#default_value' => theme_get_setting('lockup_5'),
+  ];
+
   $form['options_settings'] = [
     '#type' => 'fieldset',
     '#title' => t('Theme Specific Settings'),
