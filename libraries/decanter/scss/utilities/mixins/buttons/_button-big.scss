@@ -26,7 +26,7 @@
   text-decoration: none;
   width: 100%;
 
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     width: auto;
   }
 

@@ -14,7 +14,7 @@
   'utilities/utilities';
 
 .block--lockup {
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     display: table;
   }
 }
@@ -23,7 +23,7 @@
   vertical-align: bottom;
   line-height: .8em;
 
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     border-right: 1px solid $color-black;
     display: table-cell;
 
@@ -34,7 +34,7 @@
 .block--lockup__site-logo {
   display: none;
 
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     display: block;
     width: auto;
 
@@ -50,7 +50,7 @@
   line-height: 3.5rem;
   vertical-align: bottom;
 
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     display: table-cell;
 
     @include padding(null null null 10px);

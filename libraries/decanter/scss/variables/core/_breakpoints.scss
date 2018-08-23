@@ -7,295 +7,94 @@
 //
 
 //
-// $screen-xs
+// $small-screen
 //
-// Markup: $screen-xs: 0px !default;
+// Markup: $small-screen:  481px !default;
 //
-// Styleguide: Variables.Core.Breakpoints.screen-xs
+// Styleguide: Variables.Core.Breakpoints.small-screen
 //
-$screen-xs: 0 !default;
+$small-screen: 481px !default;
 
 //
-// $screen-sm
+// $medium-screen
 //
-// Markup: $screen-sm: 576px !default;
+// Markup: $medium-screen: 600px !default;
 //
-// Styleguide: Variables.Core.Breakpoints.screen-sm
+// Styleguide: Variables.Core.Breakpoints.medium-screen
 //
-$screen-sm: 576px !default;
+$medium-screen: 600px !default;
 
 //
-// $screen-md
+// $large-screen
 //
-// Markup: $screen-md: 768px !default;
+// Markup: $large-screen: 1201px !default;
 //
-// Styleguide: Variables.Core.Breakpoints.screen-md
+// Styleguide: Variables.Core.Breakpoints.large-screen
 //
-$screen-md: 768px !default;
+$large-screen: 1201px !default;
 
 //
-// $screen-lg
+// $grid-columns-small
 //
-// Markup: $screen-lg: 992px !default;
+// Grid column count by screen size.
 //
-// Styleguide: Variables.Core.Breakpoints.screen-lg
+// Markup: $grid-columns-small:  1 !default;
 //
-$screen-lg: 1024px !default;
+// Styleguide: Variables.Core.Breakpoints.grid-columns-small
+//
+$grid-columns-small: 1 !default;
 
 //
-// $screen-xl
+// $grid-columns-medium
 //
-// Markup: $screen-xl: 1200px !default;
+// Grid column count by screen size.
 //
-// Styleguide: Variables.Core.Breakpoints.screen-xl
+// Markup: $grid-columns-medium:  6 !default;
 //
-$screen-xl: 1500px !default;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// Styleguide: Variables.Core.Breakpoints.grid-columns-medium
 //
-// $columns-xs
-//
-// Markup: $columns-xs: 6 !default;
-//
-// Styleguide: Variables.Core.Breakpoints.cols-xs
-//
-$columns-xs: 6 !default;
+$grid-columns-medium: 6 !default;
 
 //
-// $columns-sm
+// $grid-columns-large
 //
-// Markup: $columns-sm: 12 !default;
+// Grid column count by screen size.
 //
-// Styleguide: Variables.Core.Breakpoints.cols-sm
+// Markup: $grid-columns-large:  12 !default;
 //
-$columns-sm: 12 !default;
+// Styleguide: Variables.Core.Breakpoints.grid-columns-large
+//
+$grid-columns-large: 12 !default;
 
 //
-// $columns-md
+// $small
 //
-// Markup: $columns-md: 12 !default;
+// @media mixin keyword helper
 //
-// Styleguide: Variables.Core.Breakpoints.cols-md
+// Markup: $small: new-breakpoint(min-width $small-screen $grid-columns-small) !default;
 //
-$columns-md: 12 !default;
+// Styleguide: Variables.Core.Breakpoints.small
+//
+$small: new-breakpoint(min-width $small-screen $grid-columns-small) !default;
 
 //
-// $columns-lg
+// $medium
 //
-// Markup: $columns-lg: 12 !default;
+// @media mixin keyword helper
 //
-// Styleguide: Variables.Core.Breakpoints.cols-lg
+// Markup: $medium: new-breakpoint(min-width $medium-screen $grid-columns-medium) !default;
 //
-$columns-lg: 12 !default;
+// Styleguide: Variables.Core.Breakpoints.medium
+//
+$medium: new-breakpoint(min-width $medium-screen $grid-columns-medium) !default;
 
 //
-// $columns-xl
+// $large
 //
-// Markup: $columns-xl: 12 !default;
+// @media mixin keyword helper
 //
-// Styleguide: Variables.Core.Breakpoints.cols-xl
+// Markup: $large: new-breakpoint(min-width $large-screen $grid-columns-large) !default;
 //
-$columns-xl: 12 !default;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// Styleguide: Variables.Core.Breakpoints.large
 //
-// Gutters
-//
-// Style guide: Variables.Core.Gutters
-//
-
-//
-// $gutter-xs
-//
-// Markup: $gutter-xs: 0px !default;
-//
-// Styleguide: Variables.Core.Gutters.gutter-xs
-//
-$gutter-xs: 20px !default;
-
-//
-// $gutter-sm
-//
-// Markup: $gutter-sm: 576px !default;
-//
-// Styleguide: Variables.Core.Gutters.gutter-sm
-//
-$gutter-sm: 20px !default;
-
-//
-// $gutter-md
-//
-// Markup: $gutter-md: 768px !default;
-//
-// Styleguide: Variables.Core.Gutters.gutter-md
-//
-$gutter-md: 20px !default;
-
-//
-// $gutter-lg
-//
-// Markup: $gutter-lg: 992px !default;
-//
-// Styleguide: Variables.Core.Gutters.gutter-lg
-//
-$gutter-lg: 30px !default;
-
-//
-// $gutter-xl
-//
-// Markup: $gutter-xl: 1200px !default;
-//
-// Styleguide: Variables.Core.Gutters.gutter-xl
-//
-$gutter-xl: 30px !default;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//
-// $breakpoint-xs
-//
-// Mixin for basic mobile-first media query for xs-and-up screen size.
-//
-// Markup: $breakpoint-xs: 'only screen and (min-width: #{$screen-xs})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-xs
-$breakpoint-xs: 'only screen and (min-width: #{$screen-xs})' !default;
-
-//
-// $breakpoint-xs-only
-//
-// Mixin for basic mobile-first media query for xs-only screen size.
-//
-// Markup: $breakpoint-xs-only: 'only screen and (min-width: #{$screen-xs}) and (max-width: #{$screen-sm - 1})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-xs-only
-$breakpoint-xs-only: 'only screen and (min-width: #{$screen-xs}) and (max-width: #{$screen-sm - 1})' !default;
-
-//
-// $breakpoint-sm
-//
-// Mixin for basic mobile-first media query for sm-and-up screen size.
-//
-// Markup: $breakpoint-sm: (media: 'only screen and (min-width: #{$screen-sm})') !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-sm
-$breakpoint-sm: 'only screen and (min-width: #{$screen-sm})' !default;
-
-//
-// $breakpoint-sm-only
-//
-// Mixin for basic mobile-first media query for sm-only screen size.
-//
-// Markup: $breakpoint-sm-only: 'only screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-md - 1})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-sm-only
-$breakpoint-sm-only: 'only screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-md - 1})' !default;
-
-//
-// $breakpoint-md
-//
-// Mixin for basic mobile-first media query for md-and-up screen size.
-//
-// Markup: $breakpoint-md: 'only screen and (min-width: #{$screen-md})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-md
-$breakpoint-md: 'only screen and (min-width: #{$screen-md})' !default;
-
-//
-// $breakpoint-md-only
-//
-// Mixin for basic mobile-first media query for md-only screen size.
-//
-// Markup: $breakpoint-md-only: 'only screen and (min-width: #{$screen-md}) and (max-width: #{$screen-lg - 1})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-md-only
-$breakpoint-md-only: 'only screen and (min-width: #{$screen-md}) and (max-width: #{$screen-lg - 1})' !default;
-
-//
-// $breakpoint-lg
-//
-// Mixin for basic mobile-first media query for lg-and-up screen size.
-//
-// Markup: $breakpoint-lg: 'only screen and (min-width: #{$screen-lg})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-lg
-$breakpoint-lg: 'only screen and (min-width: #{$screen-lg})' !default;
-
-//
-// $breakpoint-lg-only
-//
-// Mixin for basic mobile-first media query for lg-only screen size.
-//
-// Markup: $breakpoint-lg-only: 'only screen and (min-width: #{$screen-lg}) and (max-width: #{$screen-xl - 1})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.breakpoint-lg-only
-$breakpoint-lg-only: 'only screen and (min-width: #{$screen-lg}) and (max-width: #{$screen-xl - 1})' !default;
-
-//
-// $breakpoint-xl
-//
-// Mixin for basic mobile-first media query for xl-and-up screen size.
-//
-// Markup: $breakpoint-xl: 'only screen and (min-width: #{$screen-xl})' !default;
-//
-// Styleguide: Variables.Core.Breakpoints.xl
-$breakpoint-xl: 'only screen and (min-width: #{$screen-xl})' !default;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//
-// $grid-xs
-//
-// Mixin for basic mobile-first media query for xs (and up) screen size.
-//
-// Markup: $grid-xs: (columns: $columns-xs, gutter: $gutter-xs, media: $screen-xs);
-//
-// Styleguide: Variables.Core.Breakpoints.grid-xs
-//
-$grid-xs: (columns: $columns-xs, gutter: $gutter-xs, media: $screen-xs);
-
-//
-// $grid-xs
-//
-// Mixin for basic mobile-first media query for sm (and up) screen size.
-//
-// Markup: $grid-sm: (columns: $columns-sm, gutter: $gutter-sm, media: $screen-sm);
-//
-// Styleguide: Variables.Core.Breakpoints.grid-sm
-//
-$grid-sm: (columns: $columns-sm, gutter: $gutter-sm, media: $screen-sm);
-
-//
-// $grid-md
-//
-// Mixin for basic mobile-first media query for md (and up) screen size.
-//
-// Markup: $grid-md: (columns: $columns-md, gutter: $gutter-md, media: $screen-md);
-//
-// Styleguide: Variables.Core.Breakpoints.grid-md
-//
-$grid-md: (columns: $columns-md, gutter: $gutter-md, media: $screen-md);
-
-//
-// $grid-lg
-//
-// Mixin for basic mobile-first media query for lg (and up) screen size.
-//
-// Markup: $grid-lg: (columns: $columns-lg, gutter: $gutter-lg, media: $screen-lg);
-//
-// Styleguide: Variables.Core.Breakpoints.grid-lg
-//
-$grid-lg: (columns: $columns-lg, gutter: $gutter-lg, media: $screen-lg);
-
-//
-// $grid-xl
-//
-// Mixin for basic mobile-first media query for xl (and up) screen size.
-//
-// Markup: $grid-xl: (columns: $columns-xl, gutter: $gutter-xl, media: $screen-xl);
-//
-// Styleguide: Variables.Core.Breakpoints.grid-xl
-//
-$grid-xl: (columns: $columns-xl, gutter: $gutter-xl, media: $screen-xl);
+$large: new-breakpoint(min-width $large-screen $grid-columns-large) !default;

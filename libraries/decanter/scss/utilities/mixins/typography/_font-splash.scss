@@ -11,11 +11,11 @@
   @include h3;
   @include margin(null null 0);
 
-  @media #{$breakpoint-sm} {
+  @include media($small-screen) {
     @include h1;
   }
 
-  @media #{$breakpoint-md} {
+  @include media($medium-screen) {
     font-size: $splash-font-size;
     font-weight: $font-bold;
   }

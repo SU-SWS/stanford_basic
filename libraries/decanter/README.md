@@ -1,5 +1,5 @@
 # [Decanter](https://github.com/SU-SWS/decanter)
-##### Version: 4.1.0
+##### Version: 3.0.0
 
 Changelog: [CHANGELOG.md](CHANGELOG.md)
 
