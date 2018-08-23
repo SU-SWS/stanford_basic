@@ -2,8 +2,7 @@
   "source": "scss",
   "destination": "styleguide",
   "css": [
-    "css/decanter.css",
-    "css/decanter-kss.css"
+    "css/decanter.css"
   ],
   "js": [
     "js/decanter.min.js"

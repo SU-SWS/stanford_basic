@@ -11,9 +11,8 @@
 //
 // Markup: ../../templates/components/organisms/accordions/accordions.twig
 //
-// Style guide: Organisms.Accordion
+// Style guide: Organisims.Accordion
 //
-
 .decanter-accordion {
   @include accordion-list;
   @include accordion-nested-list;

@@ -20,8 +20,7 @@ module.exports = function(grunt) {
         files: {
           'css/decanter.css': 'scss/decanter.scss',
           'css/decanter-no-markup.css': 'scss/decanter-no-markup.scss',
-          'css/decanter-grid.css': 'scss/decanter-grid.scss',
-          'css/decanter-kss.css': 'scss/decanter-kss.scss'
+          'css/decanter-grid.css': 'scss/decanter-grid.scss'
         }
       }
     },
@@ -52,10 +51,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['sass', 'postcss', 'styleguide'],
-        options: {
-          livereload: true
-        }
+        tasks: ['sass', 'postcss', 'styleguide']
       },
       jsmin: {
         files: 'js/**/*.js',

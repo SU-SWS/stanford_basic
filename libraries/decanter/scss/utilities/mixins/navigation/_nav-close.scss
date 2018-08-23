@@ -16,7 +16,7 @@
   text-align: center;
   width: $hit-area;
 
-  @media #{$breakpoint-navwidth} {
+  @include media($nav-width) {
     display: none;
   }
 
