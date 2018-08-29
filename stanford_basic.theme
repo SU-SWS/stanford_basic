@@ -113,6 +113,25 @@ function stanford_basic_preprocess_block(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_block__BLOCK_ID().
+ */
+function stanford_basic_preprocess_block__system_branding_block(&$variables) {
+  for ($i = 1; $i <= 5; $i++) {
+    $var = "lockup_$i";
+    if ($value = theme_get_setting($var)) {
+      $variables['lockup'][$var] = [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => ['class' => [Html::cleanCssIdentifier($var)]],
+        '#value' => $value,
+      ];
+
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier($var);
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_views_view().
  */
 function stanford_basic_preprocess_views_view(&$variables) {
