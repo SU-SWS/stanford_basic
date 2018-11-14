@@ -99,7 +99,7 @@ module.exports = function(grunt) {
           "libraries/decanter/scss",
           "libraries"
         ],
-        sourceMap: true,
+        sourceMap: false,
         // This controls the compiled css and can be changed to nested, compact or compressed.
         outputStyle: 'nested',
         precision: 10
