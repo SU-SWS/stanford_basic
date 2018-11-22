@@ -9,7 +9,7 @@
 //
 @mixin quote {
   @include padding(1em);
-  @include overflow;
+  overflow: hidden;
 
   .su-quote__img {
     border-radius: 150px;
@@ -29,7 +29,7 @@
     }
 
     .su-quote__bio {
-      margin: 0;
+      @include margin(0);
     }
 
     .su-quote__quote {
