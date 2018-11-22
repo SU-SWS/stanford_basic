@@ -37,7 +37,7 @@
       @include grid-columns(1fr 11fr);
       align-items: center;
 
-      @include grid-media-only("xs") {
+      @media #{$breakpoint-xs} {
         @include grid-columns(1fr);
         @include grid-rows(auto auto);
       }
@@ -47,7 +47,6 @@
       @include modular-typography(2);
       color: $color-white;
       font-weight: $font-x-bold;
-      text-align: center;
     }
   }
 
@@ -57,7 +56,7 @@
     @include padding(0);
     text-align: center;
 
-    @include grid-media("sm") {
+    @media #{$breakpoint-sm} {
       text-align: right;
     }
 
@@ -172,9 +171,15 @@
 
     background: $color-light-sandstone;
 
-    h2 {
-      @media #{$breakpoint-sm} {
-        grid-column-start: 2;
+    h2:first-child {
+      @include grid-media("xs") {
+        @include grid-item-spans(1, span 1);
+        text-align: center;
+      }
+
+      @include grid-media("sm") {
+        @include grid-item-spans(2, span 2);
+        text-align: center;
       }
     }
 
@@ -217,7 +222,11 @@
 
     ul {
       @include display-grid;
-      @include grid-media("lg", 1fr 1fr 1fr, 200px);
+      @include grid-media("lg") {
+        @include grid-columns(1fr 1fr 1fr);
+        padding-left: 200px;
+        padding-right: 200px;
+      };
     }
 
     li {
