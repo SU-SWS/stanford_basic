@@ -5,6 +5,5 @@
   "homepage": "https://github.com/SU-SWS/stanford_basic",
   "authors": [],
   "license": "GPL-2.0+",
-  "minimum-stability": "dev",
-  "require": {}
+  "minimum-stability": "dev"
 }

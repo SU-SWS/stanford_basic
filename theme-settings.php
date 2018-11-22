@@ -53,31 +53,4 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
       'visible' => [':input[name="browser_sync[enabled]"]' => ['checked' => TRUE]],
     ],
   ];
-
-  // IE specific settings.
-  $form['options_settings']['stanford_basic_ie'] = [
-    '#type' => 'fieldset',
-    '#title' => t('Internet Explorer Stylesheets'),
-  ];
-  $form['options_settings']['stanford_basic_ie']['ie_enabled'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Enable Internet Explorer stylesheets in theme'),
-    '#default_value' => theme_get_setting('ie_enabled'),
-    '#description' => t('If you check this box you can choose which IE stylesheets in theme get rendered on display.'),
-  ];
-  $form['options_settings']['stanford_basic_ie']['ie_enabled_css'] = [
-    '#type' => 'fieldset',
-    '#title' => t('Which IE versions you want to enable ".lt-ie" CSS classes'),
-    '#states' => [
-      'visible' => [':input[name="ie_enabled"]' => ['checked' => TRUE]],
-    ],
-  ];
-  $form['options_settings']['stanford_basic_ie']['ie_enabled_css']['ie_enabled_versions'] = [
-    '#type' => 'checkboxes',
-    '#options' => [
-      'ie8' => t('Internet Explorer 8'),
-      'ie9' => t('Internet Explorer 9'),
-    ],
-    '#default_value' => array_keys(array_filter(theme_get_setting('ie_enabled_versions') ?: [])) ?: [],
-  ];
 }

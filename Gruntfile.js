@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       // This is where we set up all the tasks we'd like grunt to watch for changes.
       scripts: {
         files: ['js/source/**/*.js'],
-        tasks: ['uglify', 'drush:ccall'],
+        tasks: ['uglify'],
         options: {
           spawn: false,
         },
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       },
       twig: {
         files: ['templates/**/*.html.twig'],
-        tasks: ['uglify', 'svgmin', 'imagemin', 'sass', 'drush:ccall']
+        tasks: ['uglify', 'svgmin', 'imagemin', 'sass']
       }
     },
     uglify: {
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
           "node_modules/normalize.css",
           "node_modules/neat-omega/core",
           "node_modules",
-          "libraries/decanter/scss",
+          "libraries/decanter/core/scss",
           "libraries"
         ],
         sourceMap: true,
@@ -106,30 +106,13 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          // Component Wrap Up.
-          'css/components/components.css':                  'scss/components/components.scss',
-          // Components are compiled individually so they may be included
-          // conditionally using logic built in to the theme template or module.
-          'css/components/brand-bar.css':                   'scss/components/brand-bar.scss',
-          'css/components/brand-lockup.css':                'scss/components/brand-lockup.scss',
-          'css/components/breadcrumb.css':                  'scss/components/breadcrumb.scss',
-          'css/components/global-footer.css':               'scss/components/global-footer.scss',
-          'css/components/main-menu.css':                   'scss/components/main-menu.scss',
-          'css/components/navigation.css':                  'scss/components/navigation.scss',
-          'css/components/pager.css':                       'scss/components/pager.scss',
-          'css/components/site-name.css':                   'scss/components/site-name.scss',
-          // Theme compiled styles.
-          'css/base/base.css':                              'scss/base/base.scss',
-          'css/layout/layout.css':                          'scss/layout/layout.scss',
-          'css/states/states.css':                          'scss/states/states.scss',
-          'css/theme/theme.css':                            'scss/theme/theme.scss',
-          'css/theme/print.css':                            'scss/theme/print.scss'
+          'css/base/base.css':              'scss/base/base.scss',
+          'css/components/components.css':  'scss/components/components.scss',
+          'css/layout/layout.css':          'scss/layout/layout.scss',
+          'css/states/states.css':          'scss/states/states.scss',
+          'css/theme/theme.css':            'scss/theme/theme.scss',
+          'css/theme/print.css':            'scss/theme/print.scss'
         }
-      }
-    },
-    drush: {
-      ccall: {
-        args: ['cache-rebuild', 'all']
       }
     },
     browserSync: {
@@ -209,10 +192,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-available-tasks');
-  grunt.loadNpmTasks('grunt-drush');
 
   // My tasks.
-  grunt.registerTask('devmode', "Watch and BrowserSync all in one.", ['drush', 'browserSync', 'watch']);
+  grunt.registerTask('devmode', "Watch and BrowserSync all in one.", ['browserSync', 'watch']);
   grunt.registerTask('decanter', "Pull the latest from the decanter branch defined in gruntfile.js.", ['git_subtree_pull']);
 
   // This is where we tell Grunt what to do when we type "grunt" into the terminal.

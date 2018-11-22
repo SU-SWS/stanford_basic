@@ -90,6 +90,7 @@ basic:
   version: VERSION
   css:
     base:
+      libraries/decanter/core/css/decanter.css: {}
       css/base/base.css: {}
     layout:
       css/layout/layout.css: {}
@@ -116,9 +117,3 @@ fontawesome:
   css:
     base:
       //use.fontawesome.com/releases/v5.0.11/css/all.css: {}
-
-ie8:
-  version: VERSION
-  header: true
-  js:
-    js/vendor/selectivizr-min.js: { browsers: { IE: 'lte IE 8', '!IE': false }, minified: true, preprocess: false }
