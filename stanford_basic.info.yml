@@ -21,4 +21,10 @@ regions:
 component-libraries:
   decanter:
     paths:
-      - libraries/decanter/templates
+      - libraries/decanter/core/templates
+  basic:
+    paths:
+      - templates
+
+dependencies:
+  - ui_patterns

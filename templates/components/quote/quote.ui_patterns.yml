@@ -1,0 +1,30 @@
+quote:
+  label: Quote
+  description: "A quote element."
+  fields:
+    text:
+      type: text
+      label: "Quote Text"
+      description: "The contents of the quote."
+      preview: "This is the actual quote. Lorem ipsur adipisicing elit, sed do eiusmod tempor incididunt ut labore et..."
+    bio:
+      type: text
+      label: "Author's Bio"
+      description: ""
+      preview: "Jane Doe's title<br/>Jane Doe's company"
+    name:
+      type: text
+      label: "Author's Name"
+      description: "The author of the quote"
+      preview: "Jane Doe"
+    src:
+      type: text
+      label: "Image Source"
+      description: "The uri path to the image"
+      preview: "https://picsum.photos/900/1600/?random"
+    alt:
+      type: text
+      label: "Image alt text"
+      description: "The alt text html property"
+      preview: "This is the image alt text field"
+  use: "@decanter/components/quote/quote.twig"

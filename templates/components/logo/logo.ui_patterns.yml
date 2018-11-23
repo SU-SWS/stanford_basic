@@ -1,0 +1,15 @@
+logo:
+  label: Logo
+  description: "For displaying the Stanford University logo using custom font and glyphs. Can be used with the generic logo twig template."
+  fields:
+    href:
+      type: text
+      label: "Logo Link"
+      description: "The URL that the logo links to."
+      preview: "https://stanford.edu/"
+    logo_text:
+      type: text
+      label: "Logo Text"
+      description: "The text for the ligature logo - either Stanford<br>University or Stanford."
+      preview: "Stanford</br>University"
+  use: "@decanter/components/logo/logo.twig"

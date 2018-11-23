@@ -1,0 +1,40 @@
+button:
+  label: Button
+  description: "Button element"
+  variants:
+    default:
+      label: Default
+      description: "Default"
+    secondary:
+      label: Secondary
+      description: "Secondary Button"
+      modifier_class: su-button--secondary
+    big:
+      label: "Big Button"
+      description: "Its a big button"
+      modifier_class: su-button--big
+    nostyle:
+      label: Unstyled
+      description: "No styles applied."
+      modifier_class: su-button--unstyled
+  fields:
+    button_label:
+      type: text
+      label: Label
+      description: "The text to display as the button"
+      preview: "Submit me."
+    button_value:
+      type: text
+      label: "Submit Value"
+      preview: "submit"
+    button_name:
+      type: text
+      label: "Button Name"
+      description: "The button's name property"
+      preview: "submit."
+    button_type:
+      type: text
+      label: "Button Type"
+      description: "The button type. Eg: submit | button | reset."
+      preview: "submit."
+  use: "@decanter/components/button/button.twig"

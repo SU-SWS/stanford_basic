@@ -1,0 +1,25 @@
+lockup:
+  label: lockup
+  description: "A lockup with the Stanford wordmark logo and department/unit name. It is used in the header of a website and links to the homepage of the department/unit. When building a department lockup, besides the Stanford wordmark, the most obvious element should be the most granular relevant department."
+  fields:
+    link:
+      type: text
+      label: "Lockup Link"
+      description: "The URL that the lockup links to."
+      preview: "https://stanford.edu/"
+    line1:
+      type: text
+      label: "Line 1"
+      description: "Line 1 of the unit/site name text (to the right of the wordmark)."
+      preview: "Required First Line"
+    line2:
+      type: text
+      label: "Line 2"
+      description: "Line 2 of the unit/site name text (to the right of the wordmark)."
+      preview: "Optional Second Line"
+    line5:
+      type: text
+      label: "Line 5"
+      description: "Line 1 of the unit/site name text (to the right of the wordmark)."
+      preview: "Line 5 of the unit/site name text (at the bottom part of the lockup)"
+  use: "@decanter/components/lockup/lockup.twig"

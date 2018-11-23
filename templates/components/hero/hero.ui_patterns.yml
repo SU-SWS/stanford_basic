@@ -1,0 +1,63 @@
+hero:
+  label: Hero
+  description: "A big graphic element for use as a focal point or a large video."
+  variants:
+    default:
+      label: Default
+      description: "Default"
+    youtube:
+      label: "Youtube Video"
+      description: "A youtube video in the background."
+      modifier_class: su-hero--youtube
+  fields:
+    hero_image:
+      type: text
+      label: "Image"
+      description: "A full HTML entity for an image. Can be img or picture."
+      preview: "<img src='https://picsum.photos/1600/900/?random' alt='Example Hero Image' />"
+    hero_media:
+      type: text
+      label: "Media"
+      description: "iframe or HTML5 video players"
+      preview: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_Nq4Z5i7lcs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+    hero_super_headline:
+      type: text
+      label: "Super Headline"
+      description: "Text heading"
+      preview: "This is a super headline"
+    hero_headline:
+      type: text
+      label: "Headline"
+      description: "The text headline"
+      preview: "This is the headline"
+    hero_body:
+      type: text
+      label: "Content"
+      description: "An open variable for anything. Generally this would be for WYSIWYG editor contents."
+      preview: "<p>Sample text goes here and this card should be able to handle a few lines. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    hero_cta_link:
+      type: text
+      label: "CTA Link"
+      description: "The href value for the cta field link"
+      preview: "https://stanford.edu"
+    hero_cta_attributes:
+      type: text
+      label: "CTA element attributes"
+      description: "Any html attributes on the cta link that need to be added. For example: _target."
+      preview: " target=\"_blank\""
+    hero_cta_label:
+      type: text
+      label: "CTA Label"
+      description: "The clickable text for the CTA link"
+      preview: "CTA Link Label"
+    hero_button_link:
+      type: text
+      label: "Button Link"
+      description: "The href property of the button element"
+      preview: "https://stanford.edu"
+    hero_button_label:
+      type: text
+      label: "Button Label"
+      description: "The text label of the button component."
+      preview: "Button Label"
+  use: "@decanter/components/hero/hero.twig"

@@ -1,0 +1,20 @@
+brandbar:
+  label: Brand Bar
+  description: "Stanford brand bar with the wordmark logo that links to the Stanford homepage. The brand bar sits at the very top of a website."
+  variants:
+    default:
+      label: Default
+      description: "Default"
+    bright:
+      label: Bright
+      description: "White wordmark on bright red background"
+      modifier_class: su-brand-bar--bright
+    dark:
+      label: Dark
+      description: "White wordmark on dark grey background"
+      modifier_class: su-brand-bar--dark
+    white:
+      label: White
+      description: "Cardinal red wordmark on white background"
+      modifier_class: su-brand-bar--white
+  use: "@decanter/components/brand-bar/brand-bar.twig"

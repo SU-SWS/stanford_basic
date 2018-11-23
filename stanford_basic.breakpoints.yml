@@ -25,13 +25,20 @@ stanford_basic.md:
     - 2x
 stanford_basic.lg:
   label: LG
-  mediaQuery: 'screen and (min-width: 1024px)'
+  mediaQuery: 'screen and (min-width: 992px)'
   weight: 0
   multipliers:
     - 1x
     - 2x
 stanford_basic.xl:
   label: XL
+  mediaQuery: 'screen and (min-width: 1200px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+stanford_basic.2xl:
+  label: 2XL
   mediaQuery: 'screen and (min-width: 1500px)'
   weight: 0
   multipliers:

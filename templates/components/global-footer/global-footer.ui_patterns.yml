@@ -1,0 +1,4 @@
+globalfooter:
+  label: "Global Footer"
+  description: "Global footer element as specified by the Identity Guidelines."
+  use: "@decanter/components/global-footer/global-footer.twig"

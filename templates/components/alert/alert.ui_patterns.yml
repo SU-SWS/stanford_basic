@@ -1,0 +1,35 @@
+alert:
+  label: Alert
+  description: "Alert message."
+  variants:
+    default:
+      label: Default
+      description: "Default alert"
+    error:
+      label: Error
+      description: "Error alert"
+      modifier_class: su-alert--error
+    success:
+      label: Success
+      description: "Succes alert"
+      modifier_class: su-alert--success
+    warning:
+      label: Warning
+      description: "Warning alert"
+      modifier_class: su-alert--warning
+    info:
+      label: Info
+      description: "Info alert"
+      modifier_class: su-alert--info
+  fields:
+    alert_header:
+      type: text
+      label: Header
+      description: "Larger alert synopsis text."
+      preview: "This is a message."
+    alert_text:
+      type: text
+      label: Content
+      description: "The body of the alert message."
+      preview: "This message was brought to you by the good people at Stanford Web Services."
+  use: "@decanter/components/alert/alert.twig"

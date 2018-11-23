@@ -1,38 +1,21 @@
-<header id="header">
-  <div class="grid--container">
-    {% if page.header %}
-      <div id="header-region" class="grid--9-of-12">
-        {{ page.header }}
-      </div>
-    {% endif %}
-    {% if page.search %}
-      <div id="search-region" class="grid--3-of-12">
-        {{ page.search }}
-      </div>
-    {% endif %}
-  </div>
-
-  {% if page.menu %}
-    <div id="menu-region">
-      {{ page.menu }}
-    </div>
-  {% endif %}
-</header>
-
-{% if page.help %}
-  <div id="help-region">
-    {{ page.help }}
-  </div>
+{% if page.header %}
+  {{ page.header }}
 {% endif %}
 
-<div id="main-content" class="main-container">
-  {{ page.content }}
-</div>
+{% if page.search %}
+  {{ page.search }}
+{% endif %}
+
+{% if page.menu %}
+  {{ page.menu }}
+{% endif %}
+
+{% if page.help %}
+  {{ page.help }}
+{% endif %}
+
+{{ page.content }}
 
 {% if page.footer %}
-  <footer id="footer">
-    <div class="grid--container">
-      {{ page.footer }}
-    </div>
-  </footer>
+  {{ page.footer }}
 {% endif %}

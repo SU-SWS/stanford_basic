@@ -7,6 +7,7 @@
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Component\Utility\Html;
+use Drupal\ui_patterns\UiPatterns;
 
 /**
  * Prepares variables for the html.html.twig template.
@@ -123,4 +124,43 @@ function stanford_basic_preprocess_image(&$vars) {
   if (!isset($vars['attributes']['alt'])) {
     $vars['attributes']['role'] = 'presentation';
   }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function stanford_basic_preprocess(&$variables, $hook) {
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists('ui_patterns')) {
+    return;
+  }
+
+  foreach (UiPatterns::getPatternDefinitions() as $pattern_id => $pattern) {
+    if (strpos($hook, $pattern_id) !== FALSE) {
+      $ids = &drupal_static(__FUNCTION__, []);
+      if (!isset($ids[$pattern_id])) {
+        $ids[$pattern_id] = 0;
+      }
+
+      if (!isset($variables['attributes']['id'])) {
+        $variables['attributes']['id'] = Html::getUniqueId($pattern_id);
+      }
+
+      $definition = $pattern->toArray();
+      if (isset($variables['variant']) && isset($definition['variants'][$variables['variant']]['modifier_class'])) {
+        $variables['modifier_class'] = $definition['variants'][$variables['variant']]['modifier_class'];
+      }
+
+      break;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_patterns_overview_page().
+ */
+function stanford_basic_preprocess_patterns_overview_page(&$variables) {
+  uasort($variables['patterns'], function ($pattern_a, $pattern_b) {
+    return strcmp($pattern_a['label'], $pattern_b['label']);
+  });
 }

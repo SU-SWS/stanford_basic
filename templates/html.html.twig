@@ -48,11 +48,9 @@
         {{ 'Skip to main content'|t }}
       </a>
     </div>
-    {% include "@stanford_basic/components/brand-bar.html.twig" %}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    {% include "@stanford_basic/components/global-footer.html.twig" %}
     <js-bottom-placeholder token="{{ placeholder_token }}">
     {% if browser_sync.enabled %}
       <script id="__bs_script__">

@@ -1,0 +1,51 @@
+cta:
+  label: CTA
+  description: "Call to action component with clickable image and button."
+  variants:
+    default:
+      label: Default
+      description: "Default"
+    bottom:
+      label: "Button under image link"
+      description: "Place the button below the image."
+      modifier_class: su-cta--button-bottom
+    icon:
+      label: "Icon"
+      description: "Icon centered on image link with button underneath."
+      modifier_class: su-cta--button-bottom-icon
+    center:
+      label: "Centered"
+      description: "Button centered on image link"
+      modifier_class: su-cta--button-center
+  fields:
+    image_src:
+      type: text
+      label: "Image Source"
+      description: "The uri path to the image."
+      preview: "https://picsum.photos/200/300/?random"
+    image_alt:
+      type: text
+      label: "The image's alt text"
+      description: "The alt text html property"
+      preview: "This is the alt text field"
+    button_text:
+      type: text
+      label: "Button Label"
+      description: "The text to use for the button"
+      preview: "Button Label"
+    link:
+      type: text
+      label: "Link URL"
+      description: "A plain text string of just the URL"
+      preview: "https://stanford.edu"
+    icon_src:
+      type: text
+      label: "Icon Source"
+      description: "The uri path to the icon image"
+      preview: "https://decanter.stanford.edu/img/info.svg"
+    icon_alt:
+      type: text
+      label: "Icon alt text"
+      description: "The alt text html property"
+      preview: "This is the icon alt text field"
+  use: "@decanter/components/cta/cta.twig"

@@ -1,0 +1,35 @@
+link:
+  label: Link
+  description: "Link element"
+  variants:
+    default:
+      label: Default
+      description: "Default"
+    more:
+      label: More
+      description: "More info link"
+      modifier_class: su-link--more
+    external:
+      label: "External"
+      description: "Link to external site"
+      modifier_class: su-link--external
+    button:
+      label: Button
+      description: "Button style link"
+      modifier_class: su-link--button
+    action:
+      label: "Action"
+      description: "Call to action link"
+      modifier_class: su-link--action
+  fields:
+    link_content:
+      type: text
+      label: "Link Contents"
+      description: "The content that the link wraps."
+      preview: "I am some link text"
+    link_href:
+      type: text
+      label: "Link URL"
+      description: "The plain text uri for the anchor tag"
+      preview: "https://stanford.edu/"
+  use: "@decanter/components/link/link.twig"
