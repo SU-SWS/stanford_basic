@@ -14,7 +14,7 @@ card:
       type: text
       label: "Image"
       description: "The cards image."
-      preview: "<img src='https://picsum.photos/200/300/?random' alt='Example Image' />"
+      preview: "<img src='https://picsum.photos/900/900/?random' alt='Example Image' />"
     card_super_headline:
       type: text
       label: "Super Headline"

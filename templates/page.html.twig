@@ -1,18 +1,20 @@
-{% if page.header %}
-  {{ page.header }}
-{% endif %}
-
-{% if page.search %}
-  {{ page.search }}
-{% endif %}
-
-{% if page.menu %}
-  {{ page.menu }}
-{% endif %}
-
 {% if page.help %}
   {{ page.help }}
 {% endif %}
+
+<header>
+  {% if page.header %}
+    {{ page.header }}
+  {% endif %}
+
+  {% if page.search %}
+    {{ page.search }}
+  {% endif %}
+
+  {% if page.menu %}
+    {{ page.menu }}
+  {% endif %}
+</header>
 
 {{ page.content }}
 

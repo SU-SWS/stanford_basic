@@ -28,3 +28,4 @@ component-libraries:
 
 dependencies:
   - ui_patterns
+  - layout_discovery

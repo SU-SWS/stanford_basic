@@ -43,11 +43,10 @@
     {% set classes = classes|merge(['role--' ~ role|clean_class]) %}
   {% endfor %}
   <body{{ attributes.addClass(classes) }}>
-    <div id="skip">
-      <a href="#main-content" class="visually-hidden focusable skip-link">
+      <a href="#main-content" class="visually-hidden focusable su-skipnav">
         {{ 'Skip to main content'|t }}
       </a>
-    </div>
+    {{ pattern("brandbar") }}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
@@ -57,5 +56,6 @@
       document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
       </script>
     {% endif %}
+    {{ pattern("globalfooter") }}
   </body>
 </html>

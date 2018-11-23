@@ -22,7 +22,7 @@ cta:
       type: text
       label: "Image Source"
       description: "The uri path to the image."
-      preview: "https://picsum.photos/200/300/?random"
+      preview: "https://picsum.photos/500/500/?random"
     image_alt:
       type: text
       label: "The image's alt text"

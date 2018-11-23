@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+//
+// Styles for page.html.twig layout.
+//
+//
+
+// Center the masthead.
+.dialog-off-canvas-main-canvas > header {
+  @include centered-column;
+}

@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ *
+ *
+ */
+#}
+{%
+  set classes = 'su-lockup'
+%}
+
+{#
+  The variant classes change when there is more than one line to render.
+  Add that logic here.
+#}
+{% if content.site_slogan|render|striptags is not empty %}
+{% set classes = classes + " su-lockup--two-lines" %}
+{% endif %}
+
+{#
+  RENDER
+#}
+{{ pattern(
+  'lockup',
+  {
+    'attributes': {
+      'class': classes,
+    },
+    'link': url('<front>'),
+    'line1': content.site_name|render|striptags,
+    'line2': content.site_slogan|render|striptags,
+  })
+}}

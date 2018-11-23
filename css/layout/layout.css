@@ -1,23 +1,22 @@
-[class^="su-brand"], [class*=" su-brand"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "Stanford", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  transform: translateZ(0);
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+.dialog-off-canvas-main-canvas > header {
+  margin: 0 auto; }
+  @media only screen and (min-width: 0) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: -32px; } }
+  @media only screen and (min-width: 576px) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: 544px; } }
+  @media only screen and (min-width: 768px) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: 732px; } }
+  @media only screen and (min-width: 992px) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: 956px; } }
+  @media only screen and (min-width: 1200px) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: 1164px; } }
+  @media only screen and (min-width: 1500px) {
+    .dialog-off-canvas-main-canvas > header {
+      max-width: 1462px; } }
 
 /*# sourceMappingURL=layout.css.map */
