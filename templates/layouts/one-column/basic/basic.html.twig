@@ -1,2 +1,9 @@
 {% set attributes = attributes.addClass('layout layout-basic') %}
-{% extends "@decanter/layout/one-column/basic/basic.twig" %}
+{%
+  include "@decanter/layout/one-column/basic/basic.twig" with
+  {
+    'content': content.first,
+    'header': content.header,
+    'footer': content.footer
+  }
+%}

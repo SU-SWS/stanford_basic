@@ -577,5 +577,9 @@ layout_basic:
   default_region: first
   template: basic
   regions:
-    content:
+    header:
+      label: Header
+    first:
       label: Content
+    footer:
+      label: Footer

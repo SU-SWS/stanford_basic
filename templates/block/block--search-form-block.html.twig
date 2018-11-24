@@ -1,0 +1,14 @@
+{% set attributes = attributes.addClass('su-site-search') %}
+{% set action = base_path ~ "/node/search" %}
+{% set icon = base_path ~ "/" ~ directory ~ "/libraries/decanter/core/img/icon-search.svg" %}
+
+{% include "@decanter/components/site-search/site-search.twig" with
+  {
+    "action": action,
+    "method": "get",
+    "search_label": "Search this site",
+    "placeholder": "Search this site",
+    "search_input_name": "search-field",
+    "search_icon_src": icon,
+  }
+%}
