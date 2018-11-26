@@ -86,6 +86,31 @@ function stanford_basic_preprocess_field(&$variables, $hook) {
 }
 
 /**
+ * Prepares non node/panel pages to be in a single column.
+ */
+function stanford_basic_preprocess_page(&$vars) {
+
+  // Only center the container if the page is not a node and not a panel.
+  $pbag = \Drupal::routeMatch()->getParameters();
+  $pkeys = $pbag->keys();
+  $allowed = ['node', 'page_manager_page'];
+
+  foreach ($allowed as $key) {
+    if (in_array($key, $pkeys)) {
+      return;
+    }
+  }
+
+  foreach ($vars['page']['content'] as $key => $block) {
+    if (strpos($key, "#") === 0) {
+      continue;
+    }
+    $vars['page']['content'][$key]['#attributes']['class'][] = 'centered-column';
+  }
+
+}
+
+/**
  * Implements hook_preprocess_block().
  */
 function stanford_basic_preprocess_block(&$variables) {

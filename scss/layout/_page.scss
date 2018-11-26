@@ -8,3 +8,7 @@
 .dialog-off-canvas-main-canvas > header {
   @include centered-column;
 }
+
+.centered-column {
+  @include centered-column;
+}
