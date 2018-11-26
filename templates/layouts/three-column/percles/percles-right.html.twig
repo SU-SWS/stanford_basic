@@ -1,1 +1,11 @@
-{% extends "@decanter/layout/three-column/percles/percles.twig" %}
+{% set attributes = attributes.addClass('layout layout-percles--right') %}
+{%
+  include "@decanter/layout/three-column/percles/percles.twig" with
+  {
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+    'fourth': content.fourth,
+    'fifth': content.fifth,
+  }
+%}

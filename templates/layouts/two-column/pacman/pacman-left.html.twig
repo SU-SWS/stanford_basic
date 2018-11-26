@@ -1,1 +1,10 @@
-{% extends "@decanter/layout/two-column/pacman/pacman.twig" %}
+{% set attributes = attributes.addClass('layout layout-pacman layout-pacman--left') %}
+{%
+  include "@decanter/layout/two-column/pacman/pacman.twig" with
+  {
+    'header': content.header,
+    'sidebar': content.first,
+    'content': content.second,
+    'footer': content.footer,
+  }
+%}

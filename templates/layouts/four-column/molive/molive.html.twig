@@ -1,1 +1,11 @@
-{% extends "@decanter/layout/four-column/molive/molive.twig" %}
+{%
+  include "@decanter/layout/four-column/molive/molive.twig" with
+  {
+    'header': content.header,
+    'footer': content.footer,
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+    'fourth': content.fourth,
+  }
+%}

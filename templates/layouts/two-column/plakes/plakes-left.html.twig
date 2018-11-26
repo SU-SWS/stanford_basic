@@ -1,1 +1,9 @@
-{% extends "@decanter/layout/two-column/plakes/plakes.twig" %}
+{% set attributes = attributes.addClass('layout layout-plakes layout-plakes--left') %}
+{%
+  include "@decanter/layout/two-column/plakes/plakes.twig" with
+  {
+    'header': content.header,
+    'sidebar': content.first,
+    'content': content.second
+  }
+%}

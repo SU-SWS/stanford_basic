@@ -1,1 +1,8 @@
-{% extends "@decanter/layout/two-column/trunks/trunks.twig" %}
+{% set attributes = attributes.addClass('layout layout-trunks layout-trunks--left') %}
+{%
+  include "@decanter/layout/two-column/trunks/trunks.twig" with
+  {
+    'first': content.first,
+    'second': content.second,
+  }
+%}

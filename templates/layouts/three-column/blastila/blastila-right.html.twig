@@ -1,1 +1,11 @@
-{% extends "@decanter/layout/three-column/blastila/blastila.twig" %}
+{% set attributes = attributes.addClass('layout layout-blastila layout-blastila--right') %}
+{%
+  include "@decanter/layout/three-column/blastila/blastila.twig" with
+  {
+    'header': content.header,
+    'sidebar': content.second,
+    'first': content.third,
+    'second': content.fourth,
+    'third': content.fifth,
+  }
+%}

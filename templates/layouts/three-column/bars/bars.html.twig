@@ -1,1 +1,9 @@
-{% extends "@decanter/layout/three-column/bars/bars.twig" %}
+{% set attributes = attributes.addClass('layout layout-bars') %}
+{%
+  include "@decanter/layout/three-column/bars/bars.twig" with
+  {
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+  }
+%}

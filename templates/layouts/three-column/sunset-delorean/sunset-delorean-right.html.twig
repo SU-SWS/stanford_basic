@@ -1,1 +1,10 @@
-{% extends "@decanter/layout/three-column/sunset-delorean/sunset-delorean.twig" %}
+{% set attributes = attributes.addClass('layout layout-sunset-delorean layout-sunset-delorean--right') %}
+{%
+  include "@decanter/layout/three-column/sunset-delorean/sunset-delorean.twig" with
+  {
+    'header': content.header,
+    'first': content.first,
+    'second': content.second,
+    'sidebar': content.third,
+  }
+%}

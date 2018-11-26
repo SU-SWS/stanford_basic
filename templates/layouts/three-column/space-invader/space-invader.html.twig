@@ -1,1 +1,10 @@
-{% extends "@decanter/layout/three-column/space-invader/space-invader.twig" %}
+{% set attributes = attributes.addClass('layout layout-space-invader') %}
+{%
+  include "@decanter/layout/three-column/space-invader/space-invader.twig" with
+  {
+    'header': content.header,
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+  }
+%}

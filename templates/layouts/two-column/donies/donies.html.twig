@@ -1,1 +1,10 @@
-{% extends "@decanter/layout/two-column/donies/donies.twig" %}
+{% set attributes = attributes.addClass('layout layout-donies') %}
+{%
+  include "@decanter/layout/two-column/donies/donies.twig" with
+  {
+    'header': content.header,
+    'footer': content.footer,
+    'first': content.first,
+    'second': content.second,
+  }
+%}

@@ -1,1 +1,13 @@
-{% extends "@decanter/layout/two-column/frogger/frogger.twig" %}
+{% set attributes = attributes.addClass('layout layout-frogger') %}
+{%
+  include "@decanter/layout/two-column/frogger/frogger.twig" with
+  {
+    'header': content.header,
+    'footer': content.footer,
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+    'fourth': content.fourth,
+    'middle': content.middle,
+  }
+%}

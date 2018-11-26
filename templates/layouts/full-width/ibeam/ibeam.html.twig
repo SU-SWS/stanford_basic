@@ -1,1 +1,10 @@
-{% extends "@decanter/layout/full-width/ibeam/ibeam.twig" %}
+{% set attributes = attributes.addClass('layout layout-ibeam') %}
+{%
+  include "@decanter/layout/full-width/ibeam/ibeam.twig" with
+  {
+    'full_width': content.hero,
+    'full_width2': content.full,
+    'content': content.first,
+    'content2': content.second,
+  }
+%}

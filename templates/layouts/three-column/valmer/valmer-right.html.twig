@@ -1,1 +1,11 @@
-{% extends "@decanter/layout/three-column/valmer/valmer.twig" %}
+{% set attributes = attributes.addClass('layout layout-valmer layout-valmer--right') %}
+{%
+  include "@decanter/layout/three-column/valmer/valmer.twig" with
+  {
+    'header': content.header,
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+    'footer': content.footer,
+  }
+%}

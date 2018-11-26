@@ -1,1 +1,11 @@
-{% extends "@decanter/layout/three-column/cuttoner/cuttoner.twig" %}
+{% set attributes = attributes.addClass('layout layout-cuttoner layout-cuttoner--left') %}
+{%
+  include "@decanter/layout/three-column/cuttoner/cuttoner.twig" with
+  {
+    'header': content.header,
+    'footer': content.footer,
+    'first': content.first,
+    'second': content.second,
+    'sidebar': content.third,
+  }
+%}
