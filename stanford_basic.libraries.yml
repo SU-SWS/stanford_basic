@@ -86,12 +86,19 @@
 #       css/pattern-library/theme/theme.css: {}
 #       css/pattern-library/theme/print.css: { media: print }
 
+decantercore:
+  version: VERSION
+  css:
+    base:
+      libraries/decanter/core/css/decanter.css: { weight: 50 }
+  dependencies:
+    - stanford_basic/fontawesome
+
 basic:
   version: VERSION
   css:
     base:
-      libraries/decanter/core/css/decanter.css: {}
-      css/base/base.css: {}
+      css/base/base.css: { weight: 100 }
     layout:
       css/layout/layout.css: {}
     component:
@@ -102,11 +109,12 @@ basic:
       css/theme/theme.css: {}
       css/theme/print.css: { media: print }
   dependencies:
+    - stanford_basic/fontawesome
+    - stanford_basic/decantercore
     - classy/base
     - classy/messages
     - classy/progress
     - core/modernizr
-    - stanford_basic/fontawesome
 
 fontawesome:
   version: 5.0.11
