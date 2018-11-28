@@ -106,12 +106,12 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'css/base/base.css':              'scss/base/base.scss',
-          'css/components/components.css':  'scss/components/components.scss',
-          'css/layout/layout.css':          'scss/layout/layout.scss',
-          'css/states/states.css':          'scss/states/states.scss',
-          'css/theme/theme.css':            'scss/theme/theme.scss',
-          'css/theme/print.css':            'scss/theme/print.scss'
+          'css/base/base.css':              'scss/base/index.scss',
+          'css/components/components.css':  'scss/components/index.scss',
+          'css/layout/layout.css':          'scss/layout/index.scss',
+          'css/states/states.css':          'scss/states/index.scss',
+          'css/theme/theme.css':            'scss/theme/index.scss',
+          'css/print/print.css':            'scss/print/index.scss'
         }
       }
     },

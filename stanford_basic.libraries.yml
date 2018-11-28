@@ -110,7 +110,6 @@ basic:
       css/theme/print.css: { media: print }
   dependencies:
     - stanford_basic/fontawesome
-    - stanford_basic/decantercore
     - classy/base
     - classy/messages
     - classy/progress
