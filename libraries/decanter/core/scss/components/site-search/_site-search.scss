@@ -28,10 +28,6 @@
     color: $color-black;
     opacity: 1; // For Firefox
   }
-
-  @include grid-media('lg') {
-    max-width: 20em;
-  }
 }
 
 .su-site-search__sr-label {

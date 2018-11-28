@@ -171,4 +171,15 @@
     grid-column: 1 / span 3;
     -ms-grid-column-span: 3; } }
 
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column; }
+  body > .global-footer {
+    margin-top: auto; }
+
 /*# sourceMappingURL=layout.css.map */

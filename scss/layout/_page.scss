@@ -24,7 +24,6 @@ $page-header-grid: (
   @include grid-media('md') {
     @include grid-item-spans(1, span 2);
   }
-  @include grid-justify-self(end);
 }
 
 .su-site-search {
