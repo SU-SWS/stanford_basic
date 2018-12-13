@@ -273,21 +273,6 @@ layout_space-invader:
     third:
       label: Third Column
 
-layout_strigges:
-  label: Strigges
-  category: 'Columns: 3'
-  path: templates/layouts/three-column/strigges
-  icon: strigges.png
-  default_region: first
-  template: strigges
-  regions:
-    first:
-      label: First Column
-    second:
-      label: Second Column
-    third:
-      label: Third Column
-
 layout_sunset-delorean-left:
   label: Sunset Delorean Left
   category: 'Columns: 3'
