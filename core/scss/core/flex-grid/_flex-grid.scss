@@ -11,22 +11,36 @@
 .flex-container {
   @include flex-container;
 
-  // Removes the outter gutters from the container.
-  &--no-outter-gutter {
-    @include flex-container;
-    @include padding(0);
+  &--collapse {
+    @include margin(0 null);
 
+    @include grid-media('sm') {
+      @include margin(0 null);
+    }
     @include grid-media('md') {
-      @include padding(0);
+      @include margin(0 null);
+    }
+    @include grid-media('lg') {
+      @include margin(0 null);
+    }
+    @include grid-media('xl') {
+      @include margin(0 null);
+    }
+    @include grid-media('2xl') {
+      @include margin(0 null);
     }
   }
-}
 
-// Removes the padding from an item.
-[class^="flex-"] {
-  &.flex-no-padding {
-    @include padding(0);
+  &--row-gap {
+    > * {
+      @include modular-margin-vertical(0.5);
+    }
+
+    :first-child[class="flex-12-of-12"] {
+      @include margin(0 null null null);
+    }
   }
+
 }
 
 // Properties for all columns at all breakpoints.
@@ -34,7 +48,6 @@
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding: 1rem;
 }
 
 // Sizes item according to its width/height properties and/or size of content.
@@ -51,8 +64,6 @@
 
   // The breakpoint short code. eg: xs, sm, lg
   $_insert: breakpoint-insert($_breakpoint, $grid-screens);
-  // The gutter size at this breakpoint.
-  $_gutter: map-get($grid-gutters, $_breakpoint);
 
   // For all breakpoints and columns create a default state.
   @for $n from 1 through $grid-columns {
@@ -94,11 +105,14 @@
   @each $_code, $_screen in $grid-screens {
     // The breakpoint short code. eg: xs, sm, lg with a dash
     $_insert: breakpoint-insert($_code, $grid-screens);
+    // The gutter size at this breakpoint.
+    $_gutter: map-get($grid-gutters, $_code);
+
     // The flex-breakpoint-column class.
     .flex#{$_insert}-#{$n}-of-#{$grid-columns} {
       // Generate the media queries and column size.
       @include grid-media-only($_code) {
-        @include flex-column($n of $grid-columns);
+        @include flex-column($n of $grid-columns, $_gutter);
       }
     }
   }
