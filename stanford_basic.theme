@@ -18,7 +18,7 @@ function stanford_basic_preprocess(&$vars, $hook) {
 
     // Html::getUniqueId() doesn't catch all the ID's that we pass to it.
     // Sometimes the IDs within the method are reset. So we track them our self.
-    $id = $vars['attributes']['id'];
+    $id = (string) $vars['attributes']['id'];
     if (isset($seenIds[$id])) {
       $vars['attributes']['id'] = $id . '--' . ++$seenIds[$id];
     }
