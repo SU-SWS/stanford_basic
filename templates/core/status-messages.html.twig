@@ -37,31 +37,17 @@
     <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
   {% endif %}
 
-  {% if messages|length > 1 %}
-      {% for message in messages %}
-        {{
-          pattern('alert',
-            {
-              'attributes': {
-                'class': classes,
-                'role': 'alert',
-              },
-              'alert_heading': message,
-            }
-          )
-        }}
-      {% endfor %}
-  {% else %}
-  {{
-    pattern('alert',
-      {
-        'attributes': {
-          'class': classes,
-          'role': 'alert',
-        },
-        'alert_heading': message|first,
-      }
-    )
-  }}
-  {% endif %}
+  {% for message in messages %}
+    {{
+      pattern('alert',
+        {
+          'attributes': {
+            'class': classes,
+            'role': 'alert',
+          },
+          'alert_text': message,
+        }
+      )
+    }}
+  {% endfor %}
 {% endfor %}
