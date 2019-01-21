@@ -1,3 +1,0 @@
-/**
- * Empty until further notice.
- */
