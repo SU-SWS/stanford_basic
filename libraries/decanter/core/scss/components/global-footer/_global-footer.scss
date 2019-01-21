@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+//
+// Global Footer
+//
+// Global footer element as specified by the Identity Guidelines.
+//
+// Markup: ../../templates/components/global-footer/global-footer.twig
+//
+// Style guide: Components.Global Footer
+//
+
+// Global styles for the global footer.
+.global-footer {
+  @include padding(2.5rem 10px);
+  background-color: $color-cardinal-red;
+  color: $color-white;
+
+  a {
+    color: rgba($color-white, .9);
+    text-decoration: none;
+
+    &:hover {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
+
+  // Grid settings for footer container.
+  .global-footer__container {
+    @include centered-column;
+    @include grid-media('md') {
+      display: flex;
+    }
+  }
+
+  .global-footer__brand {
+    @include margin(0 0 1.25rem);
+    @include padding(5px null null);
+    text-align: center;
+
+    // Logo should have no margin at higher breakpoints.
+    @include grid-media('md') {
+      @include margin(null null 0);
+      text-align: left;
+    }
+
+    // The Logo.
+    a {
+      @include logo;
+      @include grid-media-only('xs') {
+        font-size: 3.2rem;
+      }
+
+      font-size: 3.4rem;
+    }
+
+  }
+
+  .global-footer__content {
+    @include grid-media('xl') {
+      padding-left: 52px;
+    }
+
+    @include grid-media('md') {
+      padding-left: 45px;
+    }
+
+    @include grid-media-only('sm') {
+      text-align: center;
+    }
+
+    flex-grow: 1;
+  }
+
+  // Grid settings for footer nav region; passing 0 for no outer gutters.
+  nav {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+
+    @include grid-media('sm') {
+      display: block;
+      justify-content: left;
+      @include margin(null null .75rem);
+    }
+
+    @include grid-media('md') {
+      @include margin(0);
+    }
+  }
+
+  .global-footer__menu {
+    @include margin(0 0 1.5rem);
+    @include padding(0);
+    list-style-type: none;
+
+    @include grid-media-max('sm') {
+      @include padding(null 20px);
+    }
+
+    @include grid-media('sm') {
+      @include margin(0 0 0.5rem);
+    }
+
+    @include grid-media('md') {
+      @include margin(null null 0);
+    }
+
+    li {
+      @include margin(0);
+      @include padding(0);
+      @include padding(.25em 0);
+      display: block;
+
+      @include grid-media-only('sm') {
+        @include margin(null 1rem null null);
+        display: inline-block;
+        font-size: 0.9em;
+      }
+
+      @include grid-media('md') {
+        @include margin(null 1rem null null);
+        @include padding(0 0 1em);
+        text-align: left;
+        display: inline-block;
+        line-height: 0;
+      }
+
+      @include grid-media('lg') {
+        @include margin(null 2rem null null);
+      }
+
+      &:last-child {
+        @include margin(null 0);
+      }
+    }
+  }
+
+  .global-footer__menu--global {
+    font-size: 1.75rem;
+    font-weight: normal;
+
+    @include grid-media('md') {
+      font-size: 1.85rem;
+    }
+
+  }
+
+  .global-footer__menu--policy {
+    font-size: 1.6rem;
+
+    @include grid-media('sm') {
+      font-weight: 300;
+    }
+
+  }
+
+  .global-footer__copyright {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+
+    span {
+      white-space: nowrap;
+    }
+
+    @include grid-media('md') {
+      text-align: left;
+    }
+
+  }
+}
