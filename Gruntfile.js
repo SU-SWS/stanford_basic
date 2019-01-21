@@ -140,7 +140,7 @@ module.exports = function(grunt) {
       decanter: {
         options: {
           source: "git@github.com:SU-SWS/decanter.git",
-          branch: "grids",
+          branch: "master",
           target: "libraries/decanter"
         }
       }
@@ -149,7 +149,7 @@ module.exports = function(grunt) {
       decanter: {
         options: {
           source: "git@github.com:SU-SWS/decanter.git",
-          branch: "grids",
+          branch: "master",
           target: "libraries/decanter"
         }
       }
@@ -158,7 +158,7 @@ module.exports = function(grunt) {
       decanter: {
         options: {
           source: "git@github.com:SU-SWS/decanter.git",
-          branch: "grids",
+          branch: "master",
           target: "libraries/decanter"
         }
       }
