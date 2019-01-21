@@ -28,13 +28,13 @@ layout_ibeam:
   default_region: first
   template: ibeam
   regions:
-    hero:
+    full_width:
       label: Full Width Top
-    first:
+    content:
       label: First Column
-    full:
+    full_width2:
       label: Full Width bottom
-    second:
+    content2:
       label: Second Column
 
 # FOUR COLUMN
@@ -129,13 +129,13 @@ layout_blastila-right:
   regions:
     header:
       label: Header
-    second:
+    sidebar:
       label: Second Column
-    third:
+    first:
       label: Third Column
-    fourth:
+    second:
       label: fourth Column
-    fifth:
+    third:
       label: Fifth Column
 
 layout_chess:
@@ -177,7 +177,7 @@ layout_cuttoner-left:
       label: First Column
     second:
       label: Second Column
-    third:
+    sidebar:
       label: Third Column
     footer:
       label: Footer
@@ -287,7 +287,7 @@ layout_sunset-delorean-left:
       label: First Column
     second:
       label: Second Column
-    third:
+    sidebar:
       label: Third Column
 
 layout_sunset-delorean-right:
@@ -434,9 +434,9 @@ layout_pacman-left:
   regions:
     header:
       label: Header
-    first:
+    sidebar:
       label: First Column
-    second:
+    content:
       label: Second Column
     footer:
       label: Footer
@@ -468,9 +468,9 @@ layout_plakes-left:
   regions:
     header:
       label: Header
-    first:
+    sidebar:
       label: First Column
-    second:
+    content:
       label: Second Column
 
 layout_plakes-right:
@@ -564,7 +564,7 @@ layout_basic:
   regions:
     header:
       label: Header
-    first:
+    content:
       label: Content
     footer:
       label: Footer
