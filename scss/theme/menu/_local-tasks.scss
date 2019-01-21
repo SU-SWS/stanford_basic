@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+.block--local-tasks {
+
+  nav {
+    border-bottom: solid 2px $color-cardinal-red;
+  }
+
+  ul, li {
+    @include margin(0);
+  }
+
+  a.is-active {
+    color: $color-white;
+    background-color: $color-stone;
+  }
+
+}

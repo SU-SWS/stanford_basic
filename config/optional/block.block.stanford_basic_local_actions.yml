@@ -3,10 +3,12 @@ status: true
 dependencies:
   theme:
     - stanford_basic
+_core:
+  default_config_hash: 50GsUiJMxlrdp_1drNJNV5wL_G5HNBtIaTK56K5YmUA
 id: stanford_basic_local_actions
 theme: stanford_basic
-region: content
-weight: -20
+region: help
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:

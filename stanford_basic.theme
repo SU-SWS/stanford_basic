@@ -182,7 +182,6 @@ function stanford_basic_preprocess_page(&$vars) {
   }
 
   foreach ($vars['page']['content'] as $key => &$block) {
-
     // Skip any non block config.
     if (strpos($key, "#") === 0) {
       continue;

@@ -1,12 +1,14 @@
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - stanford_basic
+_core:
+  default_config_hash: ze1YY1cYVpfOOeXxRTapOwBDP1z1d2M8AGLW70Vtzq0
 id: stanford_basic_page_title
 theme: stanford_basic
 region: content
-weight: -50
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

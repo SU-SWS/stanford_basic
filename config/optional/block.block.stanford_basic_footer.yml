@@ -7,6 +7,8 @@ dependencies:
     - system
   theme:
     - stanford_basic
+_core:
+  default_config_hash: h1-Rq89z3Z_CowBfNaVQrZz913ZljYaEb4HKkpMA-jE
 id: stanford_basic_footer
 theme: stanford_basic
 region: footer

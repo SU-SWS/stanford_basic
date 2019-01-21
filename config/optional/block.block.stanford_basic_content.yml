@@ -5,10 +5,12 @@ dependencies:
     - system
   theme:
     - stanford_basic
+_core:
+  default_config_hash: m7dG2ekajv-DPjn2EX937xhF2alv_cM_LziKKYcY3F8
 id: stanford_basic_content
 theme: stanford_basic
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: system_main_block
 settings:

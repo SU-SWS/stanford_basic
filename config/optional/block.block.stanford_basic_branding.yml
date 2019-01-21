@@ -5,10 +5,12 @@ dependencies:
     - system
   theme:
     - stanford_basic
+_core:
+  default_config_hash: ekY8V2Bx5M_hG2S83DIbMSAuRsdIcZqAWhr1Ypp27YA
 id: stanford_basic_branding
 theme: stanford_basic
 region: header
-weight: 0
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:

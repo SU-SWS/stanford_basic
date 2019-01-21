@@ -5,10 +5,12 @@ dependencies:
     - system
   theme:
     - stanford_basic
+_core:
+  default_config_hash: L8SwN4cl6P0j9hYYd7JaHkA7IeF6oC9BCRfI66E7Bz0
 id: stanford_basic_messages
 theme: stanford_basic
 region: help
-weight: 0
+weight: -1
 provider: null
 plugin: system_messages_block
 settings:
