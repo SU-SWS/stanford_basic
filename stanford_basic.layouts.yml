@@ -110,13 +110,13 @@ layout_blastila-left:
   regions:
     header:
       label: Header
-    second:
+    sidebar:
       label: Second Column
-    third:
+    first:
       label: Third Column
-    fourth:
+    second:
       label: fourth Column
-    fifth:
+    third:
       label: Fifth Column
 
 layout_blastila-right:
@@ -196,7 +196,7 @@ layout_cuttoner-right:
       label: First Column
     second:
       label: Second Column
-    third:
+    sidebar:
       label: Third Column
     footer:
       label: Footer
@@ -304,7 +304,7 @@ layout_sunset-delorean-right:
       label: First Column
     second:
       label: Second Column
-    third:
+    sidebar:
       label: Third Column
 
 layout_thions-bottom:
@@ -451,9 +451,9 @@ layout_pacman-right:
   regions:
     header:
       label: Header
-    first:
+    sidebar:
       label: First Column
-    second:
+    content:
       label: Second Column
     footer:
       label: Footer
@@ -483,9 +483,9 @@ layout_plakes-right:
   regions:
     header:
       label: Header
-    first:
+    sidebar:
       label: First Column
-    second:
+    content:
       label: Second Column
 
 layout_toucan:
