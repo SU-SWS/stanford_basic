@@ -115,7 +115,7 @@ fontawesome:
     url: http://fontawesome.io/license/
   css:
     base:
-      //use.fontawesome.com/releases/v5.0.11/css/all.css: {}
+      //use.fontawesome.com/releases/v5.7.1/css/all.css: {}
 
 ie8:
   version: VERSION
