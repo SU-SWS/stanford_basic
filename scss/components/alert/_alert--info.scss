@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+// Info alert.
+.su-alert--info {
+  a {
+    color: $color-white;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $color-sun;
+  }
+ }

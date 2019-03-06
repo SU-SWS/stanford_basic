@@ -1,2 +1,8 @@
+.su-alert--info a {
+  color: #ffffff;
+  text-decoration: underline; }
+
+.su-alert--info a:hover {
+  color: #eaab00; }
 
 /*# sourceMappingURL=components.css.map */
