@@ -127,7 +127,6 @@ $h5-font-size: 1.8rem !default;
 //
 $h6-font-size: 1.6rem !default;
 
-
 //
 // $base-line-height
 //
@@ -160,7 +159,6 @@ $heading-line-height: 1.2 !default;
 // Style guide: Variables.Core.Typography.lead-line-height
 //
 $lead-line-height: 1.5 !default;
-
 
 //
 // $font-sans
@@ -205,6 +203,17 @@ $font-slab: 'Roboto Slab', $font-stack-georgia !default;
 // Style guide: Variables.Core.Typography.font-script
 //
 $font-handwriting: 'Kalam', $font-stack-helvetica !default;
+
+//
+// $font-sanskrit
+//
+// font-sanskrit Font family.
+//
+// Markup: $font-sanskrit: 'Noto Sans', $font-stack-helvetica !default;
+//
+// Style guide: Variables.Core.Typography.font-sanskrit
+//
+$font-sanskrit: 'Noto Sans', $font-stack-helvetica !default;
 
 //
 // $font-x-light
