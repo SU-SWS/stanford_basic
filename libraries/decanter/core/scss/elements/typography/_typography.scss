@@ -22,8 +22,8 @@ html {
 }
 
 body {
+  @include modular-typography-base;
   color: $color-black;
-  font-size: $base-font-size;
 }
 
 p {
@@ -88,6 +88,10 @@ dfn {
 
 .su-handwriting {
   @include handwriting;
+}
+
+.su-sanskrit {
+  @include sanskrit;
 }
 
 .su-font-lead {

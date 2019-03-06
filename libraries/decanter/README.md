@@ -3,10 +3,12 @@
 
 Changelog: [CHANGELOG.md](CHANGELOG.md)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5ad9555da4ffa2086204/maintainability)](https://codeclimate.com/github/SU-SWS/decanter/maintainability)
+
 Demo
 ---
 
-To see a live demo of Decanter please [view the styleguide.](https://su-sws.github.io/decanter/styleguide)
+To see a live demo of Decanter please [view the styleguide.](https://decanter.stanford.edu)
 
 Description
 ---
