@@ -108,6 +108,8 @@ basic:
     theme:
       css/theme/theme.css: {}
       css/theme/print.css: { media: print }
+  js:
+    libraries/decanter/core/js/decanter.js: {}
   dependencies:
     - stanford_basic/fontawesome
     - classy/base
