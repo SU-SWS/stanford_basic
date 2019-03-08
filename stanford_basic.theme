@@ -8,6 +8,7 @@
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Component\Utility\Html;
 use Drupal\ui_patterns\UiPatterns;
+use Drupal\Core\Url;
 
 /**
  * Prepares variables for the html.html.twig template.
