@@ -16,15 +16,15 @@
 {% set toggle_text = "Menu"|t %}
 {% set attributes = attributes.addClass('su-main-nav') %}
 {% set attributes = attributes.addClass('no-js') %}
+{% set attributes = attributes.setAttribute('aria-label', 'main menu') %}
+{% set attributes = attributes.setAttribute('aria-expanded', 'false') %}
 {% import "@stanford_basic/menus/macros/main-nav-menu.twig" as menus %}
 
 <nav{{ attributes }}>
   <button class="su-main-nav__toggle {{- toggle_modifier_class }}" aria-expanded="false">{{ toggle_text|default('Menu') }}</button>
-  <ul class="su-main-nav__menu-lv1">
-    {% spaceless %}
-    {{ menus.main_nav_menu(items, 1) }}
-    {% endspaceless %}
-  </ul>
+  {% spaceless %}
+  {{ menus.main_nav_menu(items, 1) }}
+  {% endspaceless %}
   {% if "su-main-nav--mobile-search" in modifier_class %}
     {% include "@decanter/components/site-search/site-search.twig" with
       {
