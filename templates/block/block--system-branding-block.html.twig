@@ -14,7 +14,7 @@
   Add that logic here.
 #}
 {% if content.site_slogan|render|striptags is not empty %}
-{% set classes = classes + " su-lockup--two-lines" %}
+  {% set classes = classes ~ " su-lockup--two-lines" %}
 {% endif %}
 
 {#
