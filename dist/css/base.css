@@ -1824,8 +1824,8 @@ select {
   -webkit-appearance: none;
   appearance: none;
   background-color: #ffffff;
-  background: url("/themes/custom/stanford_basic/dist/assets/img//arrow-down.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//arrow-down.svg");
+  background: url("/node_modules/decanter/core/src/img/arrow-down.png");
+  background-image: url("/node_modules/decanter/core/src/img/arrow-down.svg");
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
   background-size: 1.3rem; }
@@ -1905,8 +1905,8 @@ fieldset {
 
 [type=checkbox]:checked + label::before,
 [type=checkbox]:checked:disabled + label::before {
-  background: url("/themes/custom/stanford_basic/dist/assets/img//check.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//check.svg");
+  background: url("/node_modules/decanter/core/src/img/check.png");
+  background-image: url("/node_modules/decanter/core/src/img/check.svg");
   background-position: 50%;
   background-repeat: no-repeat; }
 
@@ -6628,8 +6628,8 @@ dfn {
 
 .su-alert--error {
   background-color: #b1040e;
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-error.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-error.svg");
+  background-image: url("/node_modules/decanter/core/src/img/alert-error.png");
+  background-image: url("/node_modules/decanter/core/src/img/alert-error.svg");
   color: #ffffff; }
   .su-alert--error a {
     color: #ffffff; }
@@ -6638,8 +6638,8 @@ dfn {
 
 .su-alert--info {
   background-color: #00548f;
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-info.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-info.svg");
+  background-image: url("/node_modules/decanter/core/src/img/alert-info.png");
+  background-image: url("/node_modules/decanter/core/src/img/alert-info.svg");
   color: #ffffff; }
   .su-alert--info a {
     color: #ffffff; }
@@ -6648,8 +6648,8 @@ dfn {
 
 .su-alert--success {
   background-color: #175e54;
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-success.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-success.svg");
+  background-image: url("/node_modules/decanter/core/src/img/alert-success.png");
+  background-image: url("/node_modules/decanter/core/src/img/alert-success.svg");
   color: #ffffff; }
   .su-alert--success a {
     color: #ffffff; }
@@ -6658,8 +6658,8 @@ dfn {
 
 .su-alert--warning {
   background-color: #eaab00;
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-warning.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//alert-warning.svg"); }
+  background-image: url("/node_modules/decanter/core/src/img/alert-warning.png");
+  background-image: url("/node_modules/decanter/core/src/img/alert-warning.svg"); }
   .su-alert--warning a {
     color: #8c1515; }
     .su-alert--warning a:hover {
@@ -7215,8 +7215,8 @@ a {
 .su-link--external::after {
   margin-bottom: -1px;
   margin-left: 4px;
-  background: url("/themes/custom/stanford_basic/dist/assets/img//external-link.png") no-repeat 0 0;
-  background: url("/themes/custom/stanford_basic/dist/assets/img//external-link.svg") no-repeat 0 0;
+  background: url("/node_modules/decanter/core/src/img/external-link.png") no-repeat 0 0;
+  background: url("/node_modules/decanter/core/src/img/external-link.svg") no-repeat 0 0;
   background-size: 100%;
   content: '';
   display: inline-block;
@@ -7224,8 +7224,8 @@ a {
   width: .65em; }
 
 .su-link--external:hover::after {
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//external-link-hover.png");
-  background-image: url("/themes/custom/stanford_basic/dist/assets/img//external-link-hover.svg"); }
+  background-image: url("/node_modules/decanter/core/src/img/external-link-hover.png");
+  background-image: url("/node_modules/decanter/core/src/img/external-link-hover.svg"); }
 
 .su-link--more::after {
   color: #b1040e;
@@ -8173,7 +8173,7 @@ a {
       .su-main-nav li.su-main-nav__item--current > a:hover::before, .su-main-nav li.su-main-nav__item--current > a:focus::before {
         left: 6px; }
     .su-main-nav li.su-main-nav__item--parent > a::after {
-      background: url("/themes/custom/stanford_basic/dist/assets/img//plus-white.svg") no-repeat 0 0;
+      background: url("/node_modules/decanter/core/src/img/plus-white.svg") no-repeat 0 0;
       background-size: 100%;
       content: "";
       display: inline-block;
@@ -8186,7 +8186,7 @@ a {
         .su-main-nav li.su-main-nav__item--parent > a::after {
           margin-bottom: 1px;
           margin-left: 6px;
-          background: url("/themes/custom/stanford_basic/dist/assets/img//caret-down-black.svg") no-repeat 0 0;
+          background: url("/node_modules/decanter/core/src/img/caret-down-black.svg") no-repeat 0 0;
           background-size: 100%;
           position: relative;
           right: 0;
@@ -8198,11 +8198,11 @@ a {
           transition: transform .3s ease-out;
           transition: transform .3s ease-out, -webkit-transform .3s ease-out; } }
     .su-main-nav li.su-main-nav__item--parent.su-main-nav__item--expanded > a::after {
-      background: url("/themes/custom/stanford_basic/dist/assets/img//minus-white.svg") no-repeat 0 0;
+      background: url("/node_modules/decanter/core/src/img/minus-white.svg") no-repeat 0 0;
       background-size: 100%; }
       @media only screen and (min-width: 992px) {
         .su-main-nav li.su-main-nav__item--parent.su-main-nav__item--expanded > a::after {
-          background: url("/themes/custom/stanford_basic/dist/assets/img//caret-down-black.svg") no-repeat 0 0;
+          background: url("/node_modules/decanter/core/src/img/caret-down-black.svg") no-repeat 0 0;
           background-size: 100%;
           -webkit-transform: rotate(180deg);
                   transform: rotate(180deg); } }
@@ -8363,7 +8363,7 @@ a {
       display: inline-block;
       width: 30px;
       height: 26px;
-      background: url("/themes/custom/stanford_basic/dist/assets/img//hamburger-black.svg") no-repeat 3px 0;
+      background: url("/node_modules/decanter/core/src/img/hamburger-black.svg") no-repeat 3px 0;
       content: ""; }
     .su-main-nav__toggle[aria-expanded="true"]::before {
       visibility: visible;
@@ -8372,7 +8372,7 @@ a {
       background-color: #2e2d29; }
     .su-main-nav__toggle[aria-expanded="true"]::after {
       width: 22px;
-      background: url("/themes/custom/stanford_basic/dist/assets/img//close-black.svg") no-repeat 3px 0;
+      background: url("/node_modules/decanter/core/src/img/close-black.svg") no-repeat 3px 0;
       background-size: 16px 16px; }
     .su-main-nav__toggle[aria-expanded="true"]:hover::before {
       background-color: #820000; }
@@ -8481,11 +8481,11 @@ a {
     .su-main-nav.su-main-nav--dark .su-main-nav__toggle:active::before {
       background-color: #ec0513; }
     .su-main-nav.su-main-nav--dark .su-main-nav__toggle::after {
-      background: url("/themes/custom/stanford_basic/dist/assets/img//hamburger-white.svg") no-repeat 3px 0; }
+      background: url("/node_modules/decanter/core/src/img/hamburger-white.svg") no-repeat 3px 0; }
     .su-main-nav.su-main-nav--dark .su-main-nav__toggle[aria-expanded="true"]::before {
       background-color: #ffffff; }
     .su-main-nav.su-main-nav--dark .su-main-nav__toggle[aria-expanded="true"]::after {
-      background: url("/themes/custom/stanford_basic/dist/assets/img//close-white.svg") no-repeat 3px 0;
+      background: url("/node_modules/decanter/core/src/img/close-white.svg") no-repeat 3px 0;
       background-size: 16px 16px; }
     .su-main-nav.su-main-nav--dark .su-main-nav__toggle[aria-expanded="true"]:hover::before {
       background-color: #ec0513; } }
@@ -8510,7 +8510,7 @@ a {
         .su-main-nav.su-main-nav--dark > ul > li > a[aria-expanded="true"]:hover::before {
           background-color: #ec0513; }
   .su-main-nav.su-main-nav--dark > ul > li.su-main-nav__item--parent > a::after {
-    background: url("/themes/custom/stanford_basic/dist/assets/img//caret-down-white.svg") no-repeat 0 0;
+    background: url("/node_modules/decanter/core/src/img/caret-down-white.svg") no-repeat 0 0;
     background-size: 100%; }
   .su-main-nav.su-main-nav--dark > ul > li.su-main-nav__item--current > a {
     color: #ffffff; }
@@ -8558,10 +8558,10 @@ a {
 
 @media (max-width: 991px) {
   .su-main-nav.su-main-nav--light li.su-main-nav__item--parent > a::after {
-    background: url("/themes/custom/stanford_basic/dist/assets/img//plus-black.svg") no-repeat 0 0;
+    background: url("/node_modules/decanter/core/src/img/plus-black.svg") no-repeat 0 0;
     background-size: 100%; }
   .su-main-nav.su-main-nav--light li.su-main-nav__item--parent.su-main-nav__item--expanded > a ::after {
-    background: url("/themes/custom/stanford_basic/dist/assets/img//minus-black.svg") no-repeat 0 0;
+    background: url("/node_modules/decanter/core/src/img/minus-black.svg") no-repeat 0 0;
     background-size: 100%; }
   .su-main-nav.su-main-nav--light li.su-main-nav__item--parent.su-main-nav__item--expanded > a:focus::before {
     background-color: transparent; }
@@ -8710,7 +8710,7 @@ a {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
-  background: url("/themes/custom/stanford_basic/dist/assets/img//icon-search.svg") no-repeat 0 0;
+  background: url("/node_modules/decanter/core/src/img/icon-search.svg") no-repeat 0 0;
   opacity: .6;
   position: absolute;
   top: 1.1rem;

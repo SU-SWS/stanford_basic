@@ -91,6 +91,29 @@ var webpackConfig = {
             }
           }
         ]
+      },
+      // Apply plugins to image assets.
+      {
+        test: /\.(png|svg|jpg|gif)$/i,
+        use: [
+          // A loader for webpack which transforms files into base64 URIs.
+          // https://github.com/webpack-contrib/url-loader
+          {
+            loader: 'url-loader',
+            options: {
+              // Maximum size of a file in bytes. 8.192 Kilobtyes.
+              limit: 8192,
+              fallback: {
+                loader: "file-loader",
+                options: {
+                  name: "[name].[ext]",
+                  publicPath: "/themes/custom/stanford_basic/dist/assets",
+                  outputPath: "../assets"
+                }
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -120,9 +143,9 @@ var webpackConfig = {
     // run asynchronously, and the kss build finishes before this build generates
     // the assets that need to be copied.
     // https://www.npmjs.com/package/filemanager-webpack-plugin
-    new FileManagerPlugin( {
+    new FileManagerPlugin({
       onStart: {
-        delete: [ distDir + "/templates/decanter/**/*" ]
+        delete: [distDir + "/templates/decanter/**/*"]
       },
       onEnd: {
         copy: [
@@ -146,7 +169,7 @@ var webpackConfig = {
           distJS + '/theme.js.map'
         ]
       },
-    } ),
+    }),
   ]
 };
 
