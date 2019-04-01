@@ -4,7 +4,7 @@
  */
 
 // Vendor Code.
-import "vendor/selectivizr-min.js";
+import "./vendor/selectivizr-min.js";
 
 // Theme code.
-import "drupal.behaviors.js";
+import "./drupal.behaviors.js";
