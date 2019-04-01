@@ -25,7 +25,7 @@ features:
 component-libraries:
   decanter:
     paths:
-      - dist/decanter/templates
+      - dist/templates/decanter
   basic:
     paths:
       - templates

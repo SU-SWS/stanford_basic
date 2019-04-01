@@ -34,12 +34,12 @@ var webpackConfig = {
   // What build?
   entry: {
     "scripts": path.resolve(__dirname, srcJS + "/scripts.js"),
-    "base": path.resolve(__dirname, srcSass + "base/index.scss"),
-    "components": path.resolve(__dirname, srcSass + "components/index.scss"),
-    "layout": path.resolve(__dirname, srcSass + "layout/index.scss"),
-    "print": path.resolve(__dirname, srcSass + "print/index.scss"),
-    "state": path.resolve(__dirname, srcSass + "state/index.scss"),
-    "theme": path.resolve(__dirname, srcSass + "theme/index.scss"),
+    "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
+    "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
+    "layout": path.resolve(__dirname, srcSass + "/layout/index.scss"),
+    "print": path.resolve(__dirname, srcSass + "/print/index.scss"),
+    "state": path.resolve(__dirname, srcSass + "/state/index.scss"),
+    "theme": path.resolve(__dirname, srcSass + "/theme/index.scss"),
   },
   // Where put build?
   output: {
@@ -49,16 +49,104 @@ var webpackConfig = {
   // Additional module rules.
   module: {
     rules: [
-
+      // Apply Plugins to SCSS/SASS files.
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          // Extract loader.
+          MiniCssExtractPlugin.loader,
+          // CSS Loader. Generate sourceMaps.
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              url: true
+            }
+          },
+          // Post CSS. Run autoprefixer plugin.
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [
+                autoprefixer( {
+                  browsers: ['last 2 versions', 'ie 11']
+                } )
+              ]
+            }
+          },
+          // SASS Loader. Add compile paths to include bourbon.
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(__dirname, npmPackage, "bourbon/core"),
+                path.resolve(__dirname, srcSass),
+                path.resolve(__dirname, npmPackage + "/decanter/core/src/scss")
+              ],
+              sourceMap: true,
+              lineNumbers: true,
+              outputStyle: 'nested',
+              precision: 10
+            }
+          }
+        ]
+      }
     ]
   },
   // Build optimizations.
   optimization: {
-
+    // Uglify the Javascript & and CSS.
+    minimizer: [
+      new UglifyJsPlugin( {
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      } ),
+      new OptimizeCSSAssetsPlugin( {} )
+    ]
   },
   // Plugin configuration.
   plugins: [
-
+    // Output css files.
+    new MiniCssExtractPlugin({
+      filename:  "../css/[name].css"
+    }),
+    // A webpack plugin to manage files before or after the build.
+    // Used here to:
+    // - clean all generated files (js AND css) prior to building
+    // - copy generated files to the styleguide after building
+    // Copying to the styleguide must happen in this build because the 2 configs
+    // run asynchronously, and the kss build finishes before this build generates
+    // the assets that need to be copied.
+    // https://www.npmjs.com/package/filemanager-webpack-plugin
+    new FileManagerPlugin( {
+      onStart: {
+        delete: [ distDir + "/templates/decanter/**/*" ]
+      },
+      onEnd: {
+        copy: [
+          {
+            source: npmPackage + "/decanter/core/src/templates/**/*.twig",
+            destination: distDir + "/templates/decanter/"
+          }
+        ],
+        delete: [
+          distJS + '/base.js',
+          distJS + '/base.js.map',
+          distJS + '/components.js',
+          distJS + '/components.js.map',
+          distJS + '/layout.js',
+          distJS + '/layout.js.map',
+          distJS + '/print.js',
+          distJS + '/print.js.map',
+          distJS + '/state.js',
+          distJS + '/state.js.map',
+          distJS + '/theme.js',
+          distJS + '/theme.js.map'
+        ]
+      },
+    } ),
   ]
 };
 

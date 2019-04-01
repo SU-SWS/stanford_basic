@@ -90,16 +90,16 @@ basic:
   version: VERSION
   css:
     base:
-      dist/css/base/base.css: { weight: 100 }
+      dist/css/base.css: { weight: 100 }
     layout:
-      dist/css/layout/layout.css: {}
+      dist/css/layout.css: {}
     component:
-      dist/css/components/components.css: {}
+      dist/css/components.css: {}
     state:
-      dist/css/states/states.css: {}
+      dist/css/states.css: {}
     theme:
-      dist/css/theme/theme.css: {}
-      dist/css/theme/print.css: { media: print }
+      dist/css/theme.css: {}
+      dist/css/print.css: { media: print }
   js:
     dist/js/scripts.js: {}
   dependencies:
