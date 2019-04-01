@@ -1,0 +1,11 @@
+.block--local-tasks nav {
+  border-bottom: solid 2px #8c1515; }
+
+.block--local-tasks ul, .block--local-tasks li {
+  margin: 0; }
+
+.block--local-tasks a.is-active {
+  color: #ffffff;
+  background-color: #544948; }
+
+/*# sourceMappingURL=theme.css.map */

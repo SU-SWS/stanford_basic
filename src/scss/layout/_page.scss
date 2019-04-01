@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+//
+// Styles for page.html.twig layout.
+//
+//
+
+$page-header-grid: (
+  $breakpoint-xs: 1fr,
+  $breakpoint-md: 1fr 1fr 1fr,
+  $breakpoint-lg: 1fr 1fr 1fr,
+  $breakpoint-xl: 1fr 1fr 1fr,
+  $breakpoint-2xl: 1fr 1fr 1fr,
+);
+
+// Slam the footer to the bottom of the page.
+body {
+  @include sticky-footer("> .su-global-footer");
+}
+
+// Center the masthead.
+.dialog-off-canvas-main-canvas > header {
+  @include centered-column;
+  @include responsive-grid-columns($page-header-grid);
+}
+
+// Give the masthead some vertical spacing.
+.su-lockup {
+  @include grid-media('md') {
+    @include grid-item-spans(1, span 2);
+  }
+}
+
+.su-site-search {
+  @include grid-media('md') {
+    @include grid-item-spans(3, span 1);
+  }
+}
+
+.menu--main {
+  @include grid-media('md') {
+    @include grid-item-spans(1, span 3);
+  }
+}

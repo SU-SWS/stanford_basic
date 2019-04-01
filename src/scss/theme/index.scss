@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+//
+//  5. Theme
+//
+
+// Purely visual styling (“look-and-feel”) for a component.
+//
+// Purely visual styling, such as border, box-shadow, colors and backgrounds,
+// font properties, etc. Ideally, these should be separated enough from a
+// component’s structure to be “swappable”, and omitting these entirely should
+// not break the component’s functionality or basic usability.
+
+// Config and supporting scss.
+@import
+  'config/index',
+  'utilities/index',
+  'decanter-no-markup';
+
+@import "menu/index";
