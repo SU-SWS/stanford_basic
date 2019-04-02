@@ -14,7 +14,7 @@
     "build": "webpack --mode=development",
     "publish": "webpack --mode=production",
     "watch": "webpack --mode=development --watch",
-    "eslint": "eslint -c .eslintrc 'src/'",
+    "eslint": "eslint -c .eslintrc 'src/js'",
     "sasslint": "sass-lint -c .sass-lint.yml '**/*.scss' -v -q -i 'vendor/**/*.scss, node_modules/**/*.scss'"
   },
   "devDependencies": {
