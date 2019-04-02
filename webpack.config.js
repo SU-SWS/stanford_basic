@@ -30,7 +30,7 @@ var webpackConfig = {
   // What am i?
   name: 'stanford_basic',
   // Allows for map files.
-  'devtool': 'source-map',
+  devtool: 'source-map',
   // What build?
   entry: {
     "scripts": path.resolve(__dirname, srcJS + "/scripts.js"),
@@ -45,6 +45,11 @@ var webpackConfig = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, distJS)
+  },
+  resolve: {
+    alias: {
+      'decanter': path.resolve(npmPackage + 'decanter/core/src/img')
+    }
   },
   // Additional module rules.
   module: {
@@ -75,6 +80,10 @@ var webpackConfig = {
               ]
             }
           },
+          // URL Resolver
+          {
+            loader: 'resolve-url-loader'
+          },
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
@@ -94,7 +103,7 @@ var webpackConfig = {
       },
       // Apply plugins to image assets.
       {
-        test: /\.(png|svg|jpg|gif)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
@@ -107,13 +116,26 @@ var webpackConfig = {
                 loader: "file-loader",
                 options: {
                   name: "[name].[ext]",
-                  publicPath: "/themes/custom/stanford_basic/dist/assets",
+                  publicPath: "../assets",
                   outputPath: "../assets"
                 }
               }
             }
           }
         ]
+      },
+      {
+        test: /\.svg/,
+        use: {
+        loader: 'resolve-url-loader',
+        loader: 'svg-url-loader',
+        loader: 'file-loader',
+          options: {
+            name: "[name].[ext]",
+            publicPath: "../assets",
+            outputPath: "../assets"
+          },
+        },
       }
     ]
   },
@@ -121,12 +143,14 @@ var webpackConfig = {
   optimization: {
     // Uglify the Javascript & and CSS.
     minimizer: [
-      new UglifyJsPlugin( {
+      // Shrink JS.
+      new UglifyJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: true
-      } ),
-      new OptimizeCSSAssetsPlugin( {} )
+      }),
+      // Shrink CSS.
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
   // Plugin configuration.
@@ -169,6 +193,14 @@ var webpackConfig = {
           distJS + '/theme.js.map'
         ]
       },
+    }),
+    // Add a plugin to watch other files other than that required by webpack.
+    // https://www.npmjs.com/package/filewatcher-webpack-plugin
+    new ExtraWatchWebpackPlugin( {
+      files: [
+        srcDir + '/**/*.twig',
+        srcDir + '/**/*.json'
+      ]
     }),
   ]
 };

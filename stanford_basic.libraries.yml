@@ -96,7 +96,7 @@ basic:
     component:
       dist/css/components.css: {}
     state:
-      dist/css/states.css: {}
+      dist/css/state.css: {}
     theme:
       dist/css/theme.css: {}
       dist/css/print.css: { media: print }

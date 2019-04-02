@@ -1,7 +1,4 @@
 @charset 'UTF-8';
 
 // Path to Decanter Assets.
-$image-path: "/node_modules/decanter/core/src/img";
-
-// Stanford Basic Asset Paths.
-$basic-assets: "/themes/custom/stanford_basic/dist/assets"
+$image-path: "~decanter";
