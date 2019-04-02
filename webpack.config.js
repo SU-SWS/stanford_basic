@@ -54,6 +54,13 @@ var webpackConfig = {
   // Additional module rules.
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
+      },
       // Apply Plugins to SCSS/SASS files.
       {
         test: /\.s[ac]ss$/,
