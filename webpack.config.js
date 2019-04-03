@@ -58,7 +58,7 @@ var webpackConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['@babel/preset-env']
         }
       },
       // Apply Plugins to SCSS/SASS files.
