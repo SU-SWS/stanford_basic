@@ -180,7 +180,9 @@ var webpackConfig = {
           distJS + '/state.js',
           distJS + '/state.js.map',
           distJS + '/theme.js',
-          distJS + '/theme.js.map'
+          distJS + '/theme.js.map',
+          distSass + '/scripts.css',
+          distSass + '/scripts.css.map'
         ]
       },
     }),
