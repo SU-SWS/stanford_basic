@@ -87,10 +87,6 @@ var webpackConfig = {
               ]
             }
           },
-          // URL Resolver
-          {
-            loader: 'resolve-url-loader'
-          },
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
@@ -110,7 +106,7 @@ var webpackConfig = {
       },
       // Apply plugins to image assets.
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|svg|jpg|gif)$/i,
         use: [
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
@@ -130,19 +126,6 @@ var webpackConfig = {
             }
           }
         ]
-      },
-      {
-        test: /\.svg/,
-        use: {
-        loader: 'resolve-url-loader',
-        loader: 'svg-url-loader',
-        loader: 'file-loader',
-          options: {
-            name: "[name].[ext]",
-            publicPath: "../assets",
-            outputPath: "../assets"
-          },
-        },
       }
     ]
   },
