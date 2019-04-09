@@ -6,11 +6,8 @@
 // Decanter.
 import 'Decanter';
 
-// Vendor Code.
-import "./vendor/selectivizr-min.js";
-
 // Theme code.
-import "./drupal.behaviors.js";
+import "./stanford_basic.behavior.js";
 
 // Theme styles for webpack.
 import "../scss/base/index.scss";

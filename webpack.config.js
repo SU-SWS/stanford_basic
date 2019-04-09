@@ -35,22 +35,13 @@ const distAssets = path.resolve(__dirname, process.env.npm_package_config_distAs
 // Functions ///////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function recursiveIssuer(m) {
-
-  // Fun chunking.
-  if (m._chunks) {
-    for (let item of m._chunks) {
-      if (item.name) {
-        return item.name;
-      }
-    }
+// Loops through the module variable that is nested looking for a name.
+function recursiveIssuer(module) {
+  if (module.issuer) {
+    return recursiveIssuer(module.issuer);
   }
-
-  if (m.issuer) {
-    return recursiveIssuer(m.issuer);
-  }
-  else if (m.name) {
-    return m.name;
+  else if (module.name) {
+    return module.name;
   }
   else {
     return false;
@@ -92,6 +83,17 @@ var webpackConfig = {
   // Additional module rules.
   module: {
     rules: [
+      // Drupal behaviors need special handling with webpack.
+      // https://www.npmjs.com/package/drupal-behaviors-loader
+      {
+        test: /\.behavior.js$/,
+        exclude: /node_modules/,
+        options: {
+          enableHmr: true
+        },
+        loader: 'drupal-behaviors-loader'
+      },
+      // Good ol' Babel.
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -164,7 +166,7 @@ var webpackConfig = {
             }
           }
         ]
-      }
+      },
     ]
   },
   // Build optimizations.
@@ -180,15 +182,12 @@ var webpackConfig = {
       // Shrink CSS.
       new OptimizeCSSAssetsPlugin({})
     ],
-    // Chunk out the script css in to a file called base.
     splitChunks: {
-      chunks: "all",
       cacheGroups: {
         vendors: {
-          name: 'base',
-          test: (m,c,entry = 'scripts') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
+          test: /[\\/]node_modules[\\/](Decanter)[\\/]/,
+          name: 'decanter',
           chunks: 'initial',
-          enforce: true
         },
       }
     }
