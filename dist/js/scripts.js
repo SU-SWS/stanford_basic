@@ -1,65 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	function webpackJsonpCallback(data) {
-/******/ 		var chunkIds = data[0];
-/******/ 		var moreModules = data[1];
-/******/ 		var executeModules = data[2];
-/******/
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [];
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
-/******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
-/******/
-/******/ 		while(resolves.length) {
-/******/ 			resolves.shift()();
-/******/ 		}
-/******/
-/******/ 		// add entry modules from loaded chunk to deferred list
-/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
-/******/
-/******/ 		// run deferred modules when all chunks ready
-/******/ 		return checkDeferredModules();
-/******/ 	};
-/******/ 	function checkDeferredModules() {
-/******/ 		var result;
-/******/ 		for(var i = 0; i < deferredModules.length; i++) {
-/******/ 			var deferredModule = deferredModules[i];
-/******/ 			var fulfilled = true;
-/******/ 			for(var j = 1; j < deferredModule.length; j++) {
-/******/ 				var depId = deferredModule[j];
-/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 			}
-/******/ 			if(fulfilled) {
-/******/ 				deferredModules.splice(i--, 1);
-/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 			}
-/******/ 		}
-/******/ 		return result;
-/******/ 	}
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// object to store loaded and loading chunks
-/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 	// Promise = chunk loading, 0 = chunk loaded
-/******/ 	var installedChunks = {
-/******/ 		"scripts": 0
-/******/ 	};
-/******/
-/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -138,18 +79,9 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
-/******/ 	jsonpArray.push = webpackJsonpCallback;
-/******/ 	jsonpArray = jsonpArray.slice();
-/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
-/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
-/******/
-/******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/js/scripts.js","decanter"]);
-/******/ 	// run deferred modules when ready
-/******/ 	return checkDeferredModules();
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/scripts.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -163,19 +95,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var Decanter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Decanter */ "./node_modules/Decanter/index.js");
-/* harmony import */ var _stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stanford_basic.behavior.js */ "./src/js/stanford_basic.behavior.js");
-/* harmony import */ var _scss_base_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base/index.scss */ "./src/scss/base/index.scss");
-/* harmony import */ var _scss_base_index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_index_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stanford_basic.behavior.js */ "./src/js/stanford_basic.behavior.js");
+/* harmony import */ var _stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * @file
  * A Webpack entry file for the theme.
  */
-// Decanter.
- // Theme code.
-
- // Theme styles for webpack.
-
+// Theme code.
 
 
 /***/ }),
@@ -184,12 +110,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./src/js/stanford_basic.behavior.js ***!
   \*******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var Decanter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Decanter */ "./node_modules/Decanter/index.js");
 /**
  * Behavior Example that works with Webpack.
  *
@@ -198,11 +121,10 @@ __webpack_require__.r(__webpack_exports__);
  * Webpack wraps everything in enclosures and hides the global variables from
  * scripts so special handling is needed.
  */
-
 window.Drupal.behaviors.stanford_basic = {
   // Attach Drupal Behavior.
   attach: function attach(context, settings) {
-    console.log(Decanter__WEBPACK_IMPORTED_MODULE_0__);
+    console.log("Attached.");
   },
   // Detach Example.
   detach: function detach() {
@@ -210,17 +132,6 @@ window.Drupal.behaviors.stanford_basic = {
   }
 };
   if (false) {}
-
-/***/ }),
-
-/***/ "./src/scss/base/index.scss":
-/*!**********************************!*\
-  !*** ./src/scss/base/index.scss ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

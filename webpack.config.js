@@ -16,6 +16,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 // /////////////////////////////////////////////////////////////////////////////
 // Paths ///////////////////////////////////////////////////////////////////////
@@ -35,18 +36,6 @@ const distAssets = path.resolve(__dirname, process.env.npm_package_config_distAs
 // Functions ///////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-// Loops through the module variable that is nested looking for a name.
-function recursiveIssuer(module) {
-  if (module.issuer) {
-    return recursiveIssuer(module.issuer);
-  }
-  else if (module.name) {
-    return module.name;
-  }
-  else {
-    return false;
-  }
-}
 
 // /////////////////////////////////////////////////////////////////////////////
 // Config //////////////////////////////////////////////////////////////////////
@@ -60,9 +49,9 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
+    "decanter": ['Decanter'],
     "scripts": path.resolve(__dirname, srcJS + "/scripts.js"),
-    // Base include in the above script and chunked out.
-    // "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
+    "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
     "layout": path.resolve(__dirname, srcSass + "/layout/index.scss"),
     "print": path.resolve(__dirname, srcSass + "/print/index.scss"),
@@ -182,18 +171,11 @@ var webpackConfig = {
       // Shrink CSS.
       new OptimizeCSSAssetsPlugin({})
     ],
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/](Decanter)[\\/]/,
-          name: 'decanter',
-          chunks: 'initial',
-        },
-      }
-    }
   },
   // Plugin configuration.
   plugins: [
+    // Remove JS files from render.
+    new FixStyleOnlyEntriesPlugin(),
     // Output css files.
     new MiniCssExtractPlugin({
       filename:  "../css/[name].css"
@@ -218,18 +200,8 @@ var webpackConfig = {
           }
         ],
         delete: [
-          distJS + '/base.js',
-          distJS + '/base.js.map',
-          distJS + '/components.js',
-          distJS + '/components.js.map',
-          distJS + '/layout.js',
-          distJS + '/layout.js.map',
-          distJS + '/print.js',
-          distJS + '/print.js.map',
-          distJS + '/state.js',
-          distJS + '/state.js.map',
-          distJS + '/theme.js',
-          distJS + '/theme.js.map'
+          distSass + '/decanter.css',
+          distSass + '/decanter.map',
         ]
       },
     }),

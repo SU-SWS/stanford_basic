@@ -90,7 +90,6 @@ basic:
   version: VERSION
   css:
     base:
-      dist/css/decanter.css: { weight: 150 }
       dist/css/base.css: { weight: 100 }
     layout:
       dist/css/layout.css: {}

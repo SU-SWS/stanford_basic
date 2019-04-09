@@ -7,17 +7,15 @@
  * scripts so special handling is needed.
  */
 
-import * as Decanter from 'Decanter';
+export default {
 
- export default {
+  // Attach Drupal Behavior.
+  attach (context, settings) {
+    console.log("Attached.");
+  },
 
-   // Attach Drupal Behavior.
-   attach (context, settings) {
-     console.log(Decanter);
-   },
-
-   // Detach Example.
-   detach () {
-     console.log("Detached.");
-   }
- }
+  // Detach Example.
+  detach () {
+    console.log("Detached.");
+  }
+}
