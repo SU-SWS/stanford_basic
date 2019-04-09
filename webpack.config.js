@@ -3,7 +3,10 @@
  * @type {[type]}
  */
 
- // Requires / Dependencies
+// /////////////////////////////////////////////////////////////////////////////
+// Requires / Dependencies /////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
+
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
@@ -14,7 +17,10 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 
-// Paths
+// /////////////////////////////////////////////////////////////////////////////
+// Paths ///////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
+
 const npmPackage = 'node_modules/';
 const srcDir = path.resolve(__dirname, "src");
 const distDir = path.resolve(__dirname, "dist");
@@ -25,6 +31,36 @@ const distJS = path.resolve(__dirname, process.env.npm_package_config_distJS);
 const srcAssets = path.resolve(__dirname, process.env.npm_package_config_srcAssets);
 const distAssets = path.resolve(__dirname, process.env.npm_package_config_distAssets);
 
+// /////////////////////////////////////////////////////////////////////////////
+// Functions ///////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
+
+function recursiveIssuer(m) {
+
+  // Fun chunking.
+  if (m._chunks) {
+    for (let item of m._chunks) {
+      if (item.name) {
+        return item.name;
+      }
+    }
+  }
+
+  if (m.issuer) {
+    return recursiveIssuer(m.issuer);
+  }
+  else if (m.name) {
+    return m.name;
+  }
+  else {
+    return false;
+  }
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+// Config //////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
+
 // Start configuring webpack.
 var webpackConfig = {
   // What am i?
@@ -34,7 +70,8 @@ var webpackConfig = {
   // What build?
   entry: {
     "scripts": path.resolve(__dirname, srcJS + "/scripts.js"),
-    "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
+    // Base include in the above script and chunked out.
+    // "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
     "layout": path.resolve(__dirname, srcSass + "/layout/index.scss"),
     "print": path.resolve(__dirname, srcSass + "/print/index.scss"),
@@ -46,6 +83,7 @@ var webpackConfig = {
     filename: "[name].js",
     path: path.resolve(__dirname, distJS)
   },
+  // Relative output paths for css assets.
   resolve: {
     alias: {
       'decanter': path.resolve(npmPackage + 'decanter/core/src/img')
@@ -141,7 +179,19 @@ var webpackConfig = {
       }),
       // Shrink CSS.
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+    // Chunk out the script css in to a file called base.
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          name: 'base',
+          test: (m,c,entry = 'scripts') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
+          chunks: 'initial',
+          enforce: true
+        },
+      }
+    }
   },
   // Plugin configuration.
   plugins: [
@@ -180,9 +230,7 @@ var webpackConfig = {
           distJS + '/state.js',
           distJS + '/state.js.map',
           distJS + '/theme.js',
-          distJS + '/theme.js.map',
-          distSass + '/scripts.css',
-          distSass + '/scripts.css.map'
+          distJS + '/theme.js.map'
         ]
       },
     }),

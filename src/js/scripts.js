@@ -4,10 +4,13 @@
  */
 
 // Decanter.
-import '../../node_modules/decanter/core/src/js/decanter.js';
+import 'Decanter';
 
 // Vendor Code.
 import "./vendor/selectivizr-min.js";
 
 // Theme code.
 import "./drupal.behaviors.js";
+
+// Theme styles for webpack.
+import "../scss/base/index.scss";
