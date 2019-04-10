@@ -86,31 +86,25 @@
 #       css/pattern-library/theme/theme.css: {}
 #       css/pattern-library/theme/print.css: { media: print }
 
-decantercore:
-  version: VERSION
-  css:
-    base:
-      libraries/decanter/core/css/decanter.css: { weight: 50 }
-  dependencies:
-    - stanford_basic/fontawesome
-
 basic:
   version: VERSION
   css:
     base:
-      css/base/base.css: { weight: 100 }
+      dist/css/base.css: { weight: 100 }
     layout:
-      css/layout/layout.css: {}
+      dist/css/layout.css: {}
     component:
-      css/components/components.css: {}
+      dist/css/components.css: {}
     state:
-      css/states/states.css: {}
+      dist/css/state.css: {}
     theme:
-      css/theme/theme.css: {}
-      css/theme/print.css: { media: print }
+      dist/css/theme.css: {}
+      dist/css/print.css: { media: print }
   js:
-    libraries/decanter/core/js/decanter.js: {}
+    dist/js/base.js: { minified: true, preprocess: false, scope: footer }
+    dist/js/behaviors.js: { minified: true, preprocess: false, scope: footer }
   dependencies:
+    - core/drupal
     - stanford_basic/fontawesome
     - classy/base
     - classy/messages
