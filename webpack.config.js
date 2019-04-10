@@ -147,7 +147,7 @@ var webpackConfig = {
       },
       // Apply plugins to image assets.
       {
-        test: /\.(png|svg|jpg|gif)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
@@ -160,8 +160,31 @@ var webpackConfig = {
                 loader: "file-loader",
                 options: {
                   name: "[name].[ext]",
-                  publicPath: "../assets",
-                  outputPath: "../assets"
+                  publicPath: "../assets/img",
+                  outputPath: "../assets/img"
+                }
+              }
+            }
+          }
+        ]
+      },
+      // Apply plugins to svg assets.
+      {
+        test: /\.(svg)$/i,
+        use: [
+          // A loader for webpack which transforms files into base64 URIs.
+          // https://github.com/webpack-contrib/url-loader
+          {
+            loader: 'url-loader',
+            options: {
+              // Maximum size of a file in bytes. 8.192 Kilobtyes.
+              limit: 8192,
+              fallback: {
+                loader: "file-loader",
+                options: {
+                  name: "[name].[ext]",
+                  publicPath: "../assets/svg",
+                  outputPath: "../assets/svg"
                 }
               }
             }
@@ -209,12 +232,12 @@ var webpackConfig = {
           {
             source: npmPackage + "/decanter/core/src/templates/**/*.twig",
             destination: distDir + "/templates/decanter/"
+          },
+          {
+            source: srcDir + "/assets/**/*",
+            destination: distDir + "/assets/"
           }
         ],
-        delete: [
-          distSass + '/decanter.css',
-          distSass + '/decanter.map',
-        ]
       },
     }),
     // Add a plugin to watch other files other than that required by webpack.
