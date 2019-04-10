@@ -225,7 +225,7 @@ var webpackConfig = {
     // https://www.npmjs.com/package/filemanager-webpack-plugin
     new FileManagerPlugin({
       onStart: {
-        delete: [distDir + "/templates/decanter/**/*"]
+        delete: [distDir]
       },
       onEnd: {
         copy: [
