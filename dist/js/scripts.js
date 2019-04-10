@@ -111,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./src/js/stanford_basic.behavior.js ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 /**
  * Behavior Example that works with Webpack.
@@ -131,7 +131,6 @@ window.Drupal.behaviors.stanford_basic = {
     console.log("Detached.");
   }
 };
-  if (false) {}
 
 /***/ })
 

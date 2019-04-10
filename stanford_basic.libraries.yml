@@ -101,9 +101,10 @@ basic:
       dist/css/theme.css: {}
       dist/css/print.css: { media: print }
   js:
-    dist/js/decanter.js: {}
-    dist/js/scripts.js: {}
+    dist/js/decanter.js: { minified: true, preprocess: false, scope: footer }
+    dist/js/scripts.js: { minified: true, preprocess: false, scope: footer }
   dependencies:
+    - core/drupal
     - stanford_basic/fontawesome
     - classy/base
     - classy/messages

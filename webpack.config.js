@@ -78,7 +78,7 @@ var webpackConfig = {
         test: /\.behavior.js$/,
         exclude: /node_modules/,
         options: {
-          enableHmr: true
+          enableHmr: false
         },
         loader: 'drupal-behaviors-loader'
       },
