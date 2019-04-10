@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/base.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1094,34 +1094,39 @@ var isDownArrow = function isDownArrow(theKey) {
 
 /***/ }),
 
-/***/ "./node_modules/Decanter/index.js":
-/*!****************************************!*\
-  !*** ./node_modules/Decanter/index.js ***!
-  \****************************************/
+/***/ "./src/js/base.js":
+/*!************************!*\
+  !*** ./src/js/base.js ***!
+  \************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core_src_js_decanter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/src/js/decanter.js */ "./node_modules/Decanter/core/src/js/decanter.js");
+/* harmony import */ var _scss_base_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/base/index.scss */ "./src/scss/base/index.scss");
+/* harmony import */ var _scss_base_index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_base_index_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var Decanter_core_src_js_decanter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Decanter/core/src/js/decanter.js */ "./node_modules/Decanter/core/src/js/decanter.js");
 /**
- * Node Module Index File.
+ * @file
+ * A Webpack entry file for the theme.
  */
+// My config overrides.
+ // Include decanter.
+
 
 
 /***/ }),
 
-/***/ 0:
-/*!**********************!*\
-  !*** multi Decanter ***!
-  \**********************/
+/***/ "./src/scss/base/index.scss":
+/*!**********************************!*\
+  !*** ./src/scss/base/index.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! Decanter */"./node_modules/Decanter/index.js");
-
+// extracted by mini-css-extract-plugin
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=decanter.js.map
+//# sourceMappingURL=base.js.map

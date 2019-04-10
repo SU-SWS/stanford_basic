@@ -36,6 +36,19 @@ const distAssets = path.resolve(__dirname, process.env.npm_package_config_distAs
 // Functions ///////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
+// For MiniCssExtractPlugin
+// Loops through the module variable that is nested looking for a name.
+function recursiveIssuer(module) {
+  if (module.issuer) {
+    return recursiveIssuer(module.issuer);
+  }
+  else if (module.name) {
+    return module.name;
+  }
+  else {
+    return false;
+  }
+}
 
 // /////////////////////////////////////////////////////////////////////////////
 // Config //////////////////////////////////////////////////////////////////////
@@ -49,9 +62,8 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
-    "decanter": ['Decanter'],
-    "scripts": path.resolve(__dirname, srcJS + "/scripts.js"),
-    "base": path.resolve(__dirname, srcSass + "/base/index.scss"),
+    "base": path.resolve(__dirname, srcJS + "/base.js"),
+    "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
     "layout": path.resolve(__dirname, srcSass + "/layout/index.scss"),
     "print": path.resolve(__dirname, srcSass + "/print/index.scss"),

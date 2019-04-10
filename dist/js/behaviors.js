@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/scripts.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/behaviors.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/scripts.js":
-/*!***************************!*\
-  !*** ./src/js/scripts.js ***!
-  \***************************/
+/***/ "./src/js/behaviors.js":
+/*!*****************************!*\
+  !*** ./src/js/behaviors.js ***!
+  \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -97,10 +97,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stanford_basic.behavior.js */ "./src/js/stanford_basic.behavior.js");
 /* harmony import */ var _stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stanford_basic_behavior_js__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * @file
- * A Webpack entry file for the theme.
- */
 // Theme code.
 
 
@@ -135,4 +131,4 @@ window.Drupal.behaviors.stanford_basic = {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=scripts.js.map
+//# sourceMappingURL=behaviors.js.map
