@@ -101,19 +101,19 @@ basic:
       dist/css/theme.css: {}
       dist/css/print.css: { media: print }
   js:
-    dist/js/base.js: { minified: true, preprocess: false, scope: footer }
-    dist/js/behaviors.js: { minified: true, preprocess: false, scope: footer }
+    dist/js/base.js: { scope: footer }
+    dist/js/behaviors.js: { scope: footer }
   dependencies:
-    - core/drupal
-    - stanford_basic/fontawesome
     - classy/base
     - classy/messages
     - classy/progress
+    - core/drupal
     - core/modernizr
+    - stanford_basic/fontawesome
 
 fontawesome:
-  version: 5.0.11
-  remote: https://use.fontawesome.com/releases/v5.0.11/css/all.css
+  version: 5.7.1
+  remote: https://use.fontawesome.com/releases/v5.7.1/css/all.css
   license:
     name: FontAwesome
     url: http://fontawesome.io/license/
