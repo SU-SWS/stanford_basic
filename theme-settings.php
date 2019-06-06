@@ -61,6 +61,7 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
       'q' => t('Option Q'),
       'r' => t('Option R'),
       's' => t('Option S'),
+      't' => t('Option T'),
     ],
     '#default_value' => theme_get_setting('lockup.option'),
     '#description' => t("Layout options."),
