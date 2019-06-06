@@ -192,5 +192,13 @@ function stanford_basic_preprocess_page(&$vars) {
       $block['#attributes']['class'][] = 'centered-container';
     }
   }
+}
 
+/**
+ * [stanford_basic_preprocess_block__system_branding_block description]
+ * @param  [type] $vars [description]
+ * @return [type]       [description]
+ */
+function stanford_basic_preprocess_block__system_branding_block(&$vars) {
+  $vars['lockup'] = theme_get_setting('lockup');
 }

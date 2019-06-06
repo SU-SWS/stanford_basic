@@ -18,3 +18,22 @@ stanford_basic.settings:
     clear_registry:
       type: boolean
       label: 'Enable clear Registry'
+    lockup:
+      options:
+        type: string
+        label: 'Lockup Options'
+      line1:
+        type: text
+        label: 'Line 1'
+      line2:
+        type: text
+        label: 'Line 2'
+      line3:
+        type: text
+        label: 'Line 3'
+      line4:
+        type: text
+        label: 'Line 4'
+      line5:
+        type: text
+        label: 'Line 5'
