@@ -102,6 +102,29 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
     '#description' => t("Last line full width option."),
   ];
 
+  // $form['options_settings']['lockup_preview'] = [
+  //   '#type' => 'fieldset',
+  //   '#title' => t('Lockup Preview'),
+  //   '#collapsible' => TRUE,
+  // ];
+  //
+  // $elements['lockup'] = [
+  //   '#type' => 'pattern',
+  //   '#id' => 'lockup',
+  //   '#variant' => theme_get_setting('lockup.option'),
+  //   '#fields' => [
+  //     'line1' => theme_get_setting('lockup.line1'),
+  //     'line2' => theme_get_setting('lockup.line2'),
+  //     'line3' => theme_get_setting('lockup.line3'),
+  //     'line4' => theme_get_setting('lockup.line4'),
+  //     'line5' => theme_get_setting('lockup.line5'),
+  //   ]
+  // ];
+  //
+  // $form['options_settings']['lockup_preview']['lockup'] = [
+  //   '#markup' => \Drupal::service('renderer')->render($elements)
+  // ];
+
   // BrowserSync support.
   $form['options_settings']['stanford_basic_browser_sync'] = [
     '#type' => 'fieldset',
