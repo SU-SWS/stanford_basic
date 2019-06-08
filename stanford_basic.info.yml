@@ -4,8 +4,6 @@ description: 'Stanford Basic Branding Theme.'
 package: Stanford
 version: 8.x-4.0-dev
 core: 8.x
-libraries:
-  - stanford_basic/basic
 
 regions:
   page_top: 'Page top'
@@ -22,12 +20,15 @@ features:
   - logo
 
 component-libraries:
-  decanter:
-    paths:
-      - dist/templates/decanter
   basic:
     paths:
       - templates
+
+libraries:
+  - stanford_basic/basic
+
+libraries-override:
+  jumpstart_ui/base: fase
 
 # Not working yet.
 # Waiting on: https://www.drupal.org/project/drupal/issues/474684
