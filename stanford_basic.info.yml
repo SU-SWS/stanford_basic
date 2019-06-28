@@ -28,7 +28,7 @@ libraries:
   - stanford_basic/basic
 
 libraries-override:
-  jumpstart_ui/base: fase
+  jumpstart_ui/base: false
 
 # Not working yet.
 # Waiting on: https://www.drupal.org/project/drupal/issues/474684
