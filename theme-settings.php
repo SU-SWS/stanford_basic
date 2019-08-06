@@ -25,6 +25,23 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
     '#title' => t('Theme Specific Settings'),
   ];
 
+  $form['options_settings']['stanford_basic_brand_bar'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Brand Bar Settings'),
+  ];
+
+  $form['options_settings']['stanford_basic_brand_bar']['brand_bar_variant'] = [
+    '#type' => 'select',
+    '#title' => t('Brand Bar Variant'),
+    '#options' => [
+      'default' => '- Default -',
+      'bright' => t('Bright'),
+      'dark' => t('Dark'),
+      'white' => t('White'),
+    ],
+    '#default_value' => theme_get_setting('brand_bar_variant'),
+  ];
+
   $img = '<img src="' . base_path() . drupal_get_path('theme', 'stanford_basic') . '/dist/assets/img/lockup-example.png" />';
   $rendered_image = render($img);
   $image_markup = Markup::create($rendered_image);
