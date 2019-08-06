@@ -175,9 +175,13 @@ function stanford_basic_preprocess_page(&$vars) {
   // Only center the container if the page is not a node and not a panel.
   $pbag = \Drupal::routeMatch()->getParameters();
   $pkeys = $pbag->keys();
-  $allowed = ['node', 'page_manager_page'];
+  $blacklist = [
+    'node', // Node Types.
+    'page_manager_page', // Panels.
+    'view_mode_name', // Layout builder pages.
+  ];
 
-  foreach ($allowed as $key) {
+  foreach ($blacklist as $key) {
     if (in_array($key, $pkeys)) {
       return;
     }
