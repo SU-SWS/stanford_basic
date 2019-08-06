@@ -40,7 +40,7 @@
   ]
 %}
 {% set heading_id = (configuration.id ~ '-menu')|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+<div {{ attributes.addClass(classes) }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
@@ -53,4 +53,4 @@
   {% block content %}
     {{ content }}
   {% endblock %}
-</nav>
+</div>
