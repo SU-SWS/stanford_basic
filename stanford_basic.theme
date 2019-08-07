@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\layout_builder\Plugin\SectionStorage\DefaultsSectionStorage;
 use Drupal\Component\Utility\Html;
 use Drupal\ui_patterns\UiPatterns;
 use Drupal\Core\Url;
@@ -178,13 +179,20 @@ function stanford_basic_preprocess_page(&$vars) {
   $blacklist = [
     'node', // Node Types.
     'page_manager_page', // Panels.
-    'view_mode_name', // Layout builder pages.
   ];
 
   foreach ($blacklist as $key) {
     if (in_array($key, $pkeys)) {
       return;
     }
+  }
+
+  // Layout builder pages.
+  if (
+    in_array('section_storage', $pkeys) &&
+    $pbag->get('section_storage') instanceof DefaultsSectionStorage
+  ) {
+    return false;
   }
 
   foreach ($vars['page']['content'] as $key => &$block) {
