@@ -187,12 +187,12 @@ function stanford_basic_preprocess_page(&$vars) {
     }
   }
 
-  // Layout builder pages.
+  // Do not center when using the layout builder ui.
   if (
     in_array('section_storage', $pkeys) &&
     $pbag->get('section_storage') instanceof DefaultsSectionStorage
   ) {
-    return false;
+    return;
   }
 
   foreach ($vars['page']['content'] as $key => &$block) {
