@@ -24,8 +24,8 @@ body {
 
 .dialog-off-canvas-main-canvas > header {
   margin: 0 auto;
-  display: grid;
-  display: -ms-grid; }
+  display: -ms-grid;
+  display: grid; }
   @media only screen and (min-width: 0) {
     .dialog-off-canvas-main-canvas > header {
       max-width: calc(100% - 40px);
