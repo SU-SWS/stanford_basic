@@ -7,3 +7,13 @@ features:
   favicon: true
 favicon:
   use_default: true
+logo:
+  use_default: true
+brand_bar_variant: default
+lockup:
+  option: a
+  line1: Jumpstart
+  line2: ''
+  line3: ''
+  line4: ''
+  line5: 'Welcome to your new website'

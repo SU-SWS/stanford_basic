@@ -22,7 +22,7 @@ Install this theme like any other theme. [See Drupal Documentation](https://www.
 Configuration
 ---
 
-Nothing special needed. Install, enable, and set as the default active theme.
+Nothing special needed. Install, enable, and set as the default active theme. Once you have the theme enabled, be sure to check out the appearance settings for additional configuration items.
 
 
 Troubleshooting

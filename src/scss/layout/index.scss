@@ -18,10 +18,13 @@
 //  more information on naming conventions.
 //
 
-// Decanter
+// My theme config.
 @import
   'config/index',
-  'utilities/index',
+  'utilities/index';
+
+// Decanter
+@import
   'decanter-no-markup';
 
 // Roll ups.

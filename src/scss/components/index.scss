@@ -17,10 +17,13 @@
 // .component-name--variant
 // .component-name__sub-object
 
-// Decanter
+// My Theme settings.
 @import
   'config/index',
-  'utilities/index',
+  'utilities/index';
+
+// Decanter
+@import
   'decanter-no-markup';
 
 // Stanford Basic components

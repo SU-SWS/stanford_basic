@@ -11,10 +11,13 @@
 // component’s structure to be “swappable”, and omitting these entirely should
 // not break the component’s functionality or basic usability.
 
-// Config and supporting scss.
+// My theme config.
 @import
   'config/index',
-  'utilities/index',
+  'utilities/index';
+
+// Decanter
+@import
   'decanter-no-markup';
 
 @import "menu/index";
