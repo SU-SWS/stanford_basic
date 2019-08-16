@@ -17,7 +17,11 @@
   {% set classes = classes ~ " su-lockup--option-" ~ lockup.option %}
 {% endif %}
 
-{% set line1 = content.site_name|render|striptags %}
+{# Do not default the line 1 on variant O, S, or T #}
+{% if lockup.option != "o" and lockup.option != "s" and lockup.option != "t" %}
+  {% set line1 = content.site_name|render|striptags %}
+{% endif %}
+
 {% if lockup.line1 is not empty %}
  {% set line1 = lockup.line1|render|striptags %}
 {% endif %}

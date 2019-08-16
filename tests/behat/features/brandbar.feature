@@ -6,5 +6,5 @@ Feature: Brandbar
   @api
   Scenario: Ensure brandbar exists on the front end
     Given I am logged in as a user with the "Administrator" role
-    Given I am on the home page
-    Then I should see 1 ".su-brandbar" element
+    Given I am on the homepage
+    Then I should see 1 ".su-brand-bar" element

@@ -5,5 +5,5 @@ Feature: Brandbar
 
   @api
   Scenario: Ensure global footer exists on the front end
-    Given I am on the home page
-    Then I should see 1 ".su-globalfooter" element
+    Given I am on the homepage
+    Then I should see 1 ".su-global-footer" element
