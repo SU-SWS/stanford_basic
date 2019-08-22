@@ -3,10 +3,10 @@
 
 {% include "@decanter/components/site-search/site-search.twig" with
   {
-    "action": action,
+    "action": content['#action'],
     "method": "get",
     "search_label": "Search this site"|t,
     "placeholder": "Search this site"|t,
-    "search_input_name": "search-field",
+    "search_input_name": "keys",
   }
 %}
