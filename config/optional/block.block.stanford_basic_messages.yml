@@ -5,17 +5,15 @@ dependencies:
     - system
   theme:
     - stanford_basic
-_core:
-  default_config_hash: L8SwN4cl6P0j9hYYd7JaHkA7IeF6oC9BCRfI66E7Bz0
 id: stanford_basic_messages
 theme: stanford_basic
 region: help
-weight: -1
+weight: -2
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: Messages
   provider: system
   label_display: '0'
 visibility: {  }
