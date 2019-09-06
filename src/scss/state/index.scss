@@ -27,3 +27,8 @@
 
 @import
   'visually-hidden';
+
+// Temporary location for this override of decanter.
+.su-main-nav {
+  z-index: 5;
+}
