@@ -5,6 +5,8 @@ dependencies:
     - search
   theme:
     - stanford_basic
+_core:
+  default_config_hash: vhPsMWd6yz_azjomNpjIHdEceN_vufyctZrYrZ4bSQw
 id: stanford_basic_search
 theme: stanford_basic
 region: search

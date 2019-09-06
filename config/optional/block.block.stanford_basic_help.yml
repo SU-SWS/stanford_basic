@@ -5,8 +5,6 @@ dependencies:
     - help
   theme:
     - stanford_basic
-_core:
-  default_config_hash: m1F9bkEinu_UiiPObyO-5XaD_VvhTHo5hbDZv7YYQLM
 id: stanford_basic_help
 theme: stanford_basic
 region: help
