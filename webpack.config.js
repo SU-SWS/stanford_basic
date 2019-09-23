@@ -55,6 +55,7 @@ var webpackConfig = {
     "print": path.resolve(__dirname, srcSass + "/print/index.scss"),
     "state": path.resolve(__dirname, srcSass + "/state/index.scss"),
     "theme": path.resolve(__dirname, srcSass + "/theme/index.scss"),
+    "ckeditor": path.resolve(__dirname, srcSass + "/ckeditor.scss"),
   },
   // Where put build?
   output: {
@@ -108,9 +109,7 @@ var webpackConfig = {
             options: {
               sourceMap: true,
               plugins: () => [
-                autoprefixer( {
-                  browsers: ['last 2 versions', 'ie 11']
-                } )
+                autoprefixer( {} )
               ]
             }
           },

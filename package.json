@@ -18,34 +18,34 @@
     "lint:sass": "sass-lint -c .sass-lint.yml '**/*.scss' -v -q -i 'vendor/**/*.scss, node_modules/**/*.scss'"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.55",
-    "@babel/preset-env": "^7.0.0-beta.55",
-    "acorn": "^6.1.1",
-    "autoprefixer": "^9.4.10",
-    "babel-loader": "^8.0.5",
-    "bourbon": "^5.0.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "acorn": "^6.3.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "bourbon": "^5.1.0",
     "css-loader": "^2.1.1",
-    "decanter": "su-sws/decanter#v6",
+    "decanter": "github:su-sws/decanter#v6",
     "eslint": "^5.15.3",
     "extra-watch-webpack-plugin": "^1.0.3",
     "file-loader": "^3.0.1",
     "filemanager-webpack-plugin": "^2.0.5",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "resolve-url-loader": "^3.0.1",
-    "sass-lint": "^1.12.1",
-    "sass-loader": "^7.1.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^1.1.2",
-    "webpack": "^4.29.6",
+    "webpack": "^4.40.2",
     "webpack-assets-manifest": "^3.1.1",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-fix-style-only-entries": "^0.2.1",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1",
+    "webpack-fix-style-only-entries": "^0.2.2",
+    "webpack-manifest-plugin": "^2.1.0"
   },
   "description": "=========================== How to Use Grunt with Stanford Basic ===========================",
   "main": "Gruntfile.js",
@@ -59,6 +59,10 @@
   ],
   "dependencies": {
     "drupal-behaviors-loader": "^1.0.1",
-    "npm": "^5.8.0"
-  }
+    "npm": "^5.10.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ]
 }

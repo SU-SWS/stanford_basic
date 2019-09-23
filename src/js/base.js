@@ -7,4 +7,4 @@
 import "../scss/base/index.scss";
 
 // Include decanter.
-import "Decanter/core/src/js/decanter.js";
+import "../../node_modules/decanter/core/src/js/decanter.js";
