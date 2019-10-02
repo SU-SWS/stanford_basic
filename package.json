@@ -11,7 +11,7 @@
     "distAssets": "dist/assets"
   },
   "scripts": {
-    "build": "webpack --mode=development",
+    "build": "webpack --mode=development --display-error-details",
     "publish": "webpack --mode=production",
     "watch": "webpack --mode=development --watch",
     "lint:js": "eslint -c .eslintrc 'src/js'",
