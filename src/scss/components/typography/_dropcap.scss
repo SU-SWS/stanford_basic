@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+// Dropcap styles.
+.su-drop-cap {
+  &:first-letter {
+    float: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 67px;
+    line-height: 119.41%;
+    padding: 4px 8px 0 3px;
+  }
+}
