@@ -27,6 +27,9 @@ component-libraries:
 libraries:
   - stanford_basic/basic
 
+ckeditor_stylesheets:
+  - dist/css/ckeditor.css
+
 libraries-override:
   jumpstart_ui/base: false
 
