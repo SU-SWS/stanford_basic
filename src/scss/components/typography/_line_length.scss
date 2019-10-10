@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+// Styles for controlling the number of characters in a line that can be displayed.
+
+// Set a maximum line length.
+// This sets a maximum width based the size of the letter "O".
+
+p {
+    overflow: hidden;
+    max-width: 68ch;
+}
