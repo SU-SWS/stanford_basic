@@ -3,7 +3,7 @@
 .block--local-tasks {
 
   nav {
-    border-bottom: solid 2px $color-cardinal-red;
+    border-bottom: solid 2px $su-color-cardinal-red;
   }
 
   ul, li {
@@ -11,8 +11,8 @@
   }
 
   a.is-active {
-    color: $color-white;
-    background-color: $color-stone;
+    color: $su-color-white;
+    background-color: $su-color-stone;
   }
 
 }
