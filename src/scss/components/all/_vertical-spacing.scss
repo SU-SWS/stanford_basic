@@ -1,0 +1,7 @@
+@charset 'UTF-8';
+
+.content {
+  .paragraph-item {
+    @include modular-spacing('margin-bottom', 7);
+  }
+}
