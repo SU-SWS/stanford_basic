@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+//
+// @type-a
+//
+// Type A font style.
+//
+// Style guide: Mixins.Typography.type-a
+//
+@mixin type-a {
+  @include modular-typography(5);
+  letter-spacing: -0.016em;
+
+  @include grid-media-max('sm') {
+    font-size: modular-scale(5) * $su-displays-mobile-factor;
+  }
+}
