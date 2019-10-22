@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 //
 // 1. Base
@@ -12,13 +12,7 @@
 // of the ul element may be completely unstyled, removing list markers and
 // indents and relying on a component class for other applications.
 
-// My theme config.
 @import
-  'config/index',
-  'utilities/index';
+  'config/index';
 
-// Decanter
-@import
-  'decanter-no-markup';
 
-// Roll ups.
