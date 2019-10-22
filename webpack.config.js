@@ -118,8 +118,8 @@ var webpackConfig = {
             loader: 'sass-loader',
             options: {
               includePaths: [
-                path.resolve(__dirname, npmPackage, "bourbon/core"),
                 path.resolve(__dirname, srcSass),
+                path.resolve(__dirname, npmPackage, "bourbon/core"),
                 path.resolve(__dirname, npmPackage + "/decanter/core/src/scss")
               ],
               sourceMap: true,
