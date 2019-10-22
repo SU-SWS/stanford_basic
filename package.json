@@ -42,7 +42,7 @@
     "webpack": "^4.41",
     "webpack-assets-manifest": "^3.1",
     "webpack-cli": "^3.3",
-    "webpack-dev-server": "^3.8",
+    "webpack-dev-server": "^3.9.0",
     "webpack-fix-style-only-entries": "^0.2",
     "webpack-manifest-plugin": "^2.2"
   },
@@ -58,6 +58,6 @@
   ],
   "dependencies": {
     "drupal-behaviors-loader": "^1.0",
-    "npm": "^5.10"
+    "npm": "^6.12.0"
   }
 }
