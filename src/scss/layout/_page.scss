@@ -18,9 +18,11 @@ body {
 }
 
 // Center the masthead.
-.dialog-off-canvas-main-canvas > header {
-  @include centered-column;
-  @include responsive-grid-columns($page-header-grid);
+.su-global-header {
+  > div {
+    @include centered-column;
+    @include responsive-grid-columns($page-header-grid);
+  }
 }
 
 // Give the masthead some vertical spacing.

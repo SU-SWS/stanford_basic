@@ -29,6 +29,9 @@
 // Stanford Basic components
 @import
   'all/index', // All comes first so others can override.
+  'global-header/index',
+  'main-nav/index',
+  'stanford-page/index',
   'alert/index',
   'typography/index',
   'quote/index';

@@ -48,7 +48,7 @@ This project uses webpack to assemble the assets for this theme. To compile sass
 
 Run:
 ```
-npm run build
+npm run publish
 ```
 
 This script will compile all assets from `/src` into `/dist`.

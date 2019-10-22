@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+//
+// Custom Styles For Stanford Page Content Type.
+//
+.node-stanford-page-title {
+  @include modular-spacing('margin-top', 6);
+}
