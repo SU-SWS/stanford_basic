@@ -12,7 +12,9 @@
 // of the ul element may be completely unstyled, removing list markers and
 // indents and relying on a component class for other applications.
 
-@import
-  'config/index';
+// First import our config and gain access to the SASS libraries such as
+// bourbon and decanter.
+@import 'config/index';
 
-
+// Roll up partial imports.
+@import 'typography';
