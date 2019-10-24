@@ -17,14 +17,13 @@
 // .component-name--variant
 // .component-name__sub-object
 
-// My Theme settings.
+// First import decanter as no markup.
+@import 'decanter-no-markup';
+
+// Then we override the variables, mixins, and functions.
 @import
   'config/index',
   'utilities/index';
-
-// Decanter
-@import
-  'decanter-no-markup';
 
 // Stanford Basic components
 @import
