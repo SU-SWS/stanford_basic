@@ -14,14 +14,13 @@
 // be used for styling purposes. See the section ‘Formatting Class Names’ for
 // more information on naming conventions.
 
-// My theme configuration.
+// First import decanter as no markup.
+@import 'decanter-no-markup';
+
+// Then we override the variables, mixins, and functions.
 @import
   'config/index',
   'utilities/index';
-
-// Decanter
-@import
-  'decanter-no-markup';
 
 // Roll up.
 

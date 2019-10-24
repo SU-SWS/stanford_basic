@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+//
+// Type A font style.
+//
+// Overrides A Decanter mixin.
+// See: node_modules/decanter/core/src/scss/utilities/mixins/typography/_type-a.scss
+//
+@mixin type-a {
+  @include modular-typography(5);
+  letter-spacing: -0.016em;
+
+  @include grid-media-max('sm') {
+    font-size: modular-scale(5) * $su-displays-mobile-factor;
+  }
+}

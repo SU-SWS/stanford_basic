@@ -11,13 +11,12 @@
 // component’s structure to be “swappable”, and omitting these entirely should
 // not break the component’s functionality or basic usability.
 
-// My theme config.
+// First import decanter as no markup.
+@import 'decanter-no-markup';
+
+// Then we override the variables, mixins, and functions.
 @import
   'config/index',
   'utilities/index';
-
-// Decanter
-@import
-  'decanter-no-markup';
 
 @import "menu/index";

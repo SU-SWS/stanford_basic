@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 //
 // 1. Base
@@ -11,6 +11,19 @@
 // simplest possible appearance of each element. For example, the simplest usage
 // of the ul element may be completely unstyled, removing list markers and
 // indents and relying on a component class for other applications.
+@import '../config/index';
 
-@import
-'config/index';
+// First import decanter as no markup.
+@import 'decanter-no-markup';
+
+// Then we override the variables, mixins, and functions.
+@import '../utilities/index';
+
+// Then we import All of Decanter.
+@import "~decanter-src/scss/core/index";
+@import "~decanter-src/scss/elements/index";
+@import "~decanter-src/scss/layout/index";
+@import "~decanter-src/scss/components/index";
+
+// Roll up partial imports.
+@import 'typography';

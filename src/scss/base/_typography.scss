@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+/**
+ * This file overrides and extends base typography styles found in Decanter.
+ * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
+ */
+
+// Big bold beautiful text.
+.su-callout-text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  width: 80%;
+  margin: 0 auto 1em;
+  display: block;
+}
+
+// Dropcap styles.
+.su-drop-cap {
+  &:first-letter {
+    float: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 67px;
+    line-height: 119.41%;
+    padding: 4px 8px 0 3px;
+  }
+}
+
+// A shadowy type.
+.su-related-text {
+  @include box-shadow('paper');
+  border: 1px solid #E3E3E3;
+  padding: 25px;
+}
+
+// Override of Decanter's styles.
+// See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
+.su-quote-text {
+  @include type-b;
+}
