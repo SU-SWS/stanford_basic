@@ -14,7 +14,10 @@
 
 // First import our config and gain access to the SASS libraries such as
 // bourbon and decanter.
-@import 'config/index';
+@import
+  'config/index',
+  'utilities/index',
+  'decanter-no-markup';
 
 // Roll up partial imports.
 @import 'typography';

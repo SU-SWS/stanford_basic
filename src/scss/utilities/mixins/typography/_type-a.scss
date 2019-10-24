@@ -1,11 +1,10 @@
 @charset 'UTF-8';
 
 //
-// @type-a
-//
 // Type A font style.
 //
-// Style guide: Mixins.Typography.type-a
+// Overrides A Decanter mixin.
+// See: node_modules/decanter/core/src/scss/utilities/mixins/typography/_type-a.scss
 //
 @mixin type-a {
   @include modular-typography(5);
