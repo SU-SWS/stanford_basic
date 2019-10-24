@@ -2,18 +2,20 @@
   {{ page.help }}
 {% endif %}
 
-<header>
-  {% if page.header %}
-    {{ page.header }}
-  {% endif %}
+<header class="su-global-header">
+  <div>
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
 
-  {% if page.search %}
-    {{ page.search }}
-  {% endif %}
+    {% if page.search %}
+      {{ page.search }}
+    {% endif %}
 
-  {% if page.menu %}
-    {{ page.menu }}
-  {% endif %}
+    {% if page.menu %}
+      {{ page.menu }}
+    {% endif %}
+  </div>
 </header>
 
 {{ page.content }}

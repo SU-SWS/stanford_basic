@@ -5,30 +5,17 @@
 // Set a maximum line length.
 // This sets a maximum width based the size of the letter "O".
 
-h2 {
-  max-width: 34ch;
-}
-
-h3 {
-  max-width: 41ch;
-}
-
-h4 {
-  max-width: 68ch;
-}
-
-h5 {
+li, p {
   max-width: 70ch;
 }
 
-h6 {
-  max-width: 80ch;
+p.text-align-right {
+  text-align: right;
+  margin-left: auto;
 }
 
-p {
-  max-width: 68ch;
-}
-
-li {
-  max-width: 70ch;
+p.text-align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
