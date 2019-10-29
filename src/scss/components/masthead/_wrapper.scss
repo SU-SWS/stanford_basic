@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// Decanter overrides.
+// ----------------------------------------------------------------------
+.su-masthead {
+
+  // Main navigation overrides.
+  .su-main-nav {
+
+    @include grid-media-only('xs') {
+      width: auto;
+    }
+
+    @include grid-media-only('sm') {
+      width: auto;
+    }
+
+    // Align the toggle to the right.
+    .su-main-nav__toggle {
+      @include margin(null 0 null auto);
+    }
+  }
+
+  // Drupal override helper.
+  .menu--main {
+    @include grid-media-max('sm') {
+      width: 100%;
+    }
+  }
+}
+
+// Center everything.
+// ----------------------------------------------------------------------
+.su-masthead__wrapper {
+  @include flex-container;
+  @include centered-column;
+  @include modular-spacing('padding', 1 null null);
+}

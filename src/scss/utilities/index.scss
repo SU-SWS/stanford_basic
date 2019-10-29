@@ -1,10 +1,10 @@
 @charset 'UTF-8';
 
-// Decanter and my config.
-@import
-  'config/index',
-  'decanter-no-markup';
+// First import decanter as no markup.
+@import 'decanter-no-markup';
 
+// Then we override the variables, mixins, and functions.
 @import
+  '../config/index',
   'functions/index',
   'mixins/index';
