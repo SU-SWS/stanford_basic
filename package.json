@@ -24,7 +24,7 @@
     "babel-loader": "^8.0",
     "bourbon": "^5.1",
     "css-loader": "^2.1",
-    "decanter": "github:su-sws/decanter#v6",
+    "decanter": "^6.0.0-alpha.1",
     "eslint": "^5.15",
     "extra-watch-webpack-plugin": "^1.0",
     "file-loader": "^3.0",
