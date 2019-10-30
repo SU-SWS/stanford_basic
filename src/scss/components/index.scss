@@ -28,7 +28,8 @@
 // Stanford Basic components
 @import
   'all/index', // All comes first so others can override.
+  'alert/index',
   'main-nav/index',
   'masthead/index',
   'stanford-page/index',
-  'alert/index';
+  'wysiwyg/index';
