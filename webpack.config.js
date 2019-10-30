@@ -66,7 +66,8 @@ var webpackConfig = {
   resolve: {
     alias: {
       'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
-      'decanter-src': path.resolve(npmPackage + 'decanter/core/src')
+      'decanter-src': path.resolve(npmPackage + 'decanter/core/src'),
+      '@fortawesome': path.resolve(npmPackage + '@fortawesome'),
     }
   },
   // Additional module rules.
@@ -121,7 +122,8 @@ var webpackConfig = {
               includePaths: [
                 path.resolve(__dirname, srcSass),
                 path.resolve(__dirname, npmPackage, "bourbon/core"),
-                path.resolve(__dirname, npmPackage + "/decanter/core/src/scss")
+                path.resolve(__dirname, npmPackage + "/decanter/core/src/scss"),
+                path.resolve(__dirname, npmPackage)
               ],
               sourceMap: true,
               lineNumbers: true,
@@ -130,6 +132,16 @@ var webpackConfig = {
             }
           }
         ]
+      },
+      // Apply plugin to font assets.
+      {
+        test: /\.(woff2?|ttf|otf|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: "[name].[ext]",
+          publicPath: "../assets/fonts",
+          outputPath: "../assets/fonts"
+        }
       },
       // Apply plugins to image assets.
       {
