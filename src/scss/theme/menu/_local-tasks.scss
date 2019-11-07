@@ -1,6 +1,11 @@
 @charset 'UTF-8';
 
+// view/edit/delete/manage tabs.
 .block--local-tasks {
+  @include margin(0 0 10px 0);
+  background-color: $su-color-stone;
+  border: solid 2px $su-color-cardinal-red;
+  border-right-width: 0;
 
   nav {
     border-bottom: solid 2px $su-color-cardinal-red;
@@ -10,9 +15,14 @@
     @include margin(0);
   }
 
+  a {
+    @include padding(7px null);
+    color: $su-color-white;
+  }
+
+  a:hover,
   a.is-active {
     color: $su-color-white;
     background-color: $su-color-stone;
   }
-
 }

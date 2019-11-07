@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+.su-multi-menu--accordion-dark {
+  background: $su-color-black;
+
+  // Make bright.
+  .su-multi-menu__nav-toggle {
+    color: $su-color-white;
+
+    @include grid-media-max('md') {
+      &::after {
+        background: url("#{$su-image-path}/hamburger-white.svg") no-repeat 3px 0;
+      }
+
+      &[aria-expanded="true"] {
+        &::after {
+          background: url("#{$su-image-path}/close-white.svg") no-repeat 3px 0;
+        }
+      }
+    }
+  }
+
+  // Nested links (li > a)
+  .su-multi-menu__link {
+    color: $su-color-white;
+  }
+
+  // Expanded items.
+  .su-multi-menu__item--expanded {
+    > .su-multi-menu__link {
+      &::after {
+        background: url("#{$su-image-path}/minus-white.svg") no-repeat 0 0;
+        background-size: 100%;
+      }
+    }
+  }
+
+  // Menu Level 1 (top)
+  // ---------------------------------------------------------------------------
+  .su-multi-menu__menu-lv1 {
+    // Top level items.
+    > .su-multi-menu__item {
+
+      // Top level links.
+      > .su-multi-menu__link {
+        color: $su-color-white;
+      }
+    }
+
+    // Top Level Parent Items.
+    > .su-multi-menu__item--parent {
+      > .su-multi-menu__link {
+        &::after {
+          // Desktop Styles.
+          @include grid-media('lg') {
+            background: url("#{$su-image-path}/plus-white.svg") no-repeat 0 0;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+
+    // Expanded items.
+    .su-multi-menu__item--expanded {
+      > .su-multi-menu__link {
+        &::after {
+          background: url("#{$su-image-path}/minus-white.svg") no-repeat 0 0;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+
+  // First Level Desktop Only.
+  .su-multi-menu__menu-lv1 {
+    @include grid-media('lg') {
+      > .su-multi-menu__item {
+
+        // Items in the active trail should be highlighted.
+        &.su-multi-menu__item--active-trail {
+          > .su-multi-menu__link {
+            &::before {
+              background-color: color(border--active, $su-multi-menu-colors);
+            }
+          }
+        }
+
+        &.su-multi-menu__item--expanded {
+          > .su-multi-menu__link {
+            &::before {
+              background-color: color(border--expanded, $su-multi-menu-colors);
+            }
+
+            &:hover {
+              &::before {
+                background-color: color(border--expanded-hover, $su-multi-menu-colors);
+              }
+            }
+          }
+        }
+
+        // Links in the active trail should have hovers.
+        > .su-multi-menu__link {
+          &:hover,
+          &:focus {
+            &::before {
+              background-color: color(border--hover, $su-multi-menu-colors);
+            }
+          }
+        }
+      }
+    }
+  }
+}
