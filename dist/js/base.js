@@ -4161,7 +4161,7 @@ function () {
     key: "createToggleButton",
     value: function createToggleButton() {
       var element = document.createElement('button');
-      var label = document.createTextNode(this.options.toggleText); // Give this instance a unique ID.
+      var label = document.createTextNode(this.options.subNavToggleText); // Give this instance a unique ID.
 
       var id = 'toggle-' + Math.random().toString(36).substr(2, 9);
       element.setAttribute('class', this.options.toggleClass);

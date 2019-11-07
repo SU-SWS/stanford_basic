@@ -1,46 +1,33 @@
 {#
-+/**
-+ * @file
-+ * Main Navigation Component
-+ *
-+ * A navigation menu for the website.
-+ *
-+ * Available variables:
-+ * - attributes: For additional HTML attributes not already provided.
-+ * - modifier_class: Additional css classes to change look and behaviour of the component.
-+ * - toggle_modifier_class: Additional css classes to change look and behaviour of the toggle.
-+ * - aria_label: Aria label for the <nav> element. Default is "main menu". If there are multiple instances of the component on the same page, use a different aria_label for each instance.
-+ *
-+ */
-+#}
+/**
+ * @file
+ * Main Navigation Component
+ *
+ * A navigation menu for the website.
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - modifier_class: Additional css classes to change look and behaviour of the component.
+ * - toggle_modifier_class: Additional css classes to change look and behaviour of the toggle.
+ * - aria_label: Aria label for the <nav> element. Default is "main menu". If there are multiple instances of the component on the same page, use a different aria_label for each instance.
+ *
+ */
+#}
 {% set toggle_text = "Menu"|t %}
-{% set attributes = attributes.addClass('su-main-nav') %}
-{% set attributes = attributes.addClass('no-js') %}
+{% set attributes = attributes.addClass(['su-multi-menu', 'su-multi-menu--buttons', 'no-js']) %}
 {% set attributes = attributes.setAttribute('aria-label', 'main menu') %}
-{% set attributes = attributes.setAttribute('aria-expanded', 'false') %}
-{% import "@stanford_basic/menus/macros/main-nav-menu.twig" as menus %}
-
+{# Macros #}
+{%- import "@stanford_basic/menus/macros/nav-menu.twig" as menus -%}
 <nav{{ attributes }}>
-  <button class="su-main-nav__toggle {{- toggle_modifier_class }}" aria-expanded="false">{{ toggle_text|default('Menu') }}</button>
+  {% block multimenubutton %}
+  <button class="su-multi-menu__nav-toggle {{ toggle_modifier_class }}" aria-expanded="false">{{ toggle_text|default('Menu') }}</button>
+  {% endblock %}
   {% spaceless %}
-  {{ menus.main_nav_menu(items, 1) }}
-  {% endspaceless %}
-  {% if "su-main-nav--mobile-search" in modifier_class %}
-    {% include "@decanter/components/site-search/site-search.twig" with
-      {
-        "action": mobile_search.action,
-        "method": mobile_search.method,
-        "search_label": mobile_search.search_label,
-        "placeholder": mobile_search.placeholder,
-        "search_input_name": mobile_search.search_input_name,
-        "search_icon_src": mobile_search.search_icon_src
-      }
-      only
-    %}
+  {% if items is iterable %}
+    {{ menus.nav_menu(items, 1, 'su-multi-menu') }}
+  {% else %}
+    {# If custom markup is provided, emit it as is #}
+    {{ items }}
   {% endif %}
+  {% endspaceless %}
 </nav>
-<script>
-  // Do this immediately to minimize FOUC.
-  NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEach;
-  document.querySelectorAll('nav.su-main-nav').forEach(nav => { nav.classList.remove('no-js'); } );
-</script>

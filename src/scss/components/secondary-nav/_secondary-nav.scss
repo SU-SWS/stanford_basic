@@ -1,17 +1,8 @@
 //
 // Secondary Navigation
 //
-// The secondary site navigation that is...
-//
-// .su-secondary-nav--accordion         - An accordion button light theme option.
-// .su-secondary-nav--accordion-dark    - An accordion button dark theme option.
-// .su-secondary-nav--buttons           - Button toggles instead of accordion links.
-// .su-secondary-nav--buttons-dark      - Button toggles instead of accordion link, light edition.
-//
-// Markup: ../templates/components/secondary-nav/secondary-nav.twig
-//
-// Style guide: Components.Secondary Navigation
-//
+// The following is a copy out of Decanter until the Nav gets finalized and we
+// can work it back in. Drupal exceptions at the bottom of the file.
 
 // Default styles for secondary nav core elements.
 .su-secondary-nav {
@@ -78,9 +69,15 @@
 
 // First level items
 // ---------------------------------------------------------------------------
-// .su-secondary-nav__menu-lv1 {
-// // Nothing to see here.
-// }
+.su-secondary-nav__menu-lv1 {
+  > .su-secondary-nav__item {
+    &:first-child {
+      > .su-secondary-nav__link {
+        border-top: 0;
+      }
+    }
+  }
+}
 
 // Secondary Level Items
 // ---------------------------------------------------------------------------
@@ -143,5 +140,14 @@
         background-color: color(border--active, $su-secondary-nav-colors);
       }
     }
+  }
+}
+
+// NON-DECANTER STYLES.
+// ---------------------------------------------------------------------------
+.su-secondary-nav {
+  > .su-secondary-nav__menu {
+    @include margin(null null null 0);
+    @include padding(null null null 0);
   }
 }

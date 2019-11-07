@@ -106,7 +106,7 @@ export default class SecondarySubNavButtons {
    */
   createToggleButton() {
     let element = document.createElement('button');
-    let label = document.createTextNode(this.options.toggleText);
+    let label = document.createTextNode(this.options.subNavToggleText);
 
     // Give this instance a unique ID.
     let id = 'toggle-' + Math.random().toString(36).substr(2, 9);
