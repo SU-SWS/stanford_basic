@@ -221,9 +221,11 @@ function stanford_basic_preprocess_block__system_branding_block(&$vars) {
  */
 function stanford_basic_preprocess_menu(&$variables, $hook) {
   $current_path = \Drupal::request()->getRequestUri();
+
   if ($variables['menu_name'] !== "main") {
     return;
   }
+
   foreach($variables['items'] as &$item) {
     _stanford_basic_menu_process_submenu($item, $current_path);
   }
@@ -238,7 +240,8 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
     if ($item['in_active_trail']) {
-      if ($item['url']->toString() == $current_path) {
+      $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
+      if ($item_path == $current_path) {
         $item['is_active'] = TRUE;
       }
       elseif (count($item['below'])) {
