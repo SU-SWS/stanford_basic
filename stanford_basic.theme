@@ -227,7 +227,9 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
   }
 
   foreach($variables['items'] as &$item) {
-    _stanford_basic_menu_process_submenu($item, $current_path);
+    $menu_item = [$item];
+    _stanford_basic_menu_process_submenu($menu_item, $current_path);
+    $item = $menu_item[0];
   }
 }
 
@@ -239,8 +241,10 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
+
     if ($item['in_active_trail']) {
       $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
+
       if ($item_path == $current_path) {
         $item['is_active'] = TRUE;
       }
