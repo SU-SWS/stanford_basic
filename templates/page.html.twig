@@ -17,9 +17,12 @@
     {% endif %}
   </div>
 </header>
-
-{{ page.content }}
+<div id="main-content">
+  {{ page.content }}
+</div>
 
 {% if page.footer %}
-  {{ page.footer }}
+  <div id="footer">
+    {{ page.footer }}
+  </div>
 {% endif %}
