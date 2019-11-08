@@ -1,23 +1,15 @@
 <?php
 
-/**
- * @file
- * Provides an additional config form for theme settings.
- */
-
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Core\Render\Markup;
-
 
 // Set theme name to use in the key values.
 $theme_name = \Drupal::theme()->getActiveTheme()->getName();
 
 /**
  * Implements hook_form_system_theme_settings_alter().
- *
- * Form override for theme settings.
  */
 function stanford_basic_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state) {
   $form['options_settings'] = [
@@ -50,7 +42,7 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
   $form['options_settings']['stanford_basic_lockup'] = [
     '#type' => 'fieldset',
     '#title' => t('Lockup Settings'),
-    '#field_prefix' => "<p>$image_markup</p><p>More examples can be found at: $decanter</p>"
+    '#field_prefix' => "<p>$image_markup</p><p>More examples can be found at: $decanter</p>",
   ];
 
   $form['options_settings']['stanford_basic_lockup']['lockup']['#tree'] = TRUE;
@@ -118,29 +110,6 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
     '#default_value' => theme_get_setting('lockup.line5'),
     '#description' => t("Last line full width option."),
   ];
-
-  // $form['options_settings']['lockup_preview'] = [
-  //   '#type' => 'fieldset',
-  //   '#title' => t('Lockup Preview'),
-  //   '#collapsible' => TRUE,
-  // ];
-  //
-  // $elements['lockup'] = [
-  //   '#type' => 'pattern',
-  //   '#id' => 'lockup',
-  //   '#variant' => theme_get_setting('lockup.option'),
-  //   '#fields' => [
-  //     'line1' => theme_get_setting('lockup.line1'),
-  //     'line2' => theme_get_setting('lockup.line2'),
-  //     'line3' => theme_get_setting('lockup.line3'),
-  //     'line4' => theme_get_setting('lockup.line4'),
-  //     'line5' => theme_get_setting('lockup.line5'),
-  //   ]
-  // ];
-  //
-  // $form['options_settings']['lockup_preview']['lockup'] = [
-  //   '#markup' => \Drupal::service('renderer')->render($elements)
-  // ];
 
   // BrowserSync support.
   $form['options_settings']['stanford_basic_browser_sync'] = [

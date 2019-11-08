@@ -22,17 +22,17 @@
 
 // Then we override the variables, mixins, and functions.
 @import
-  'config/index',
-  'utilities/index';
+'config/index',
+'utilities/index';
 
 // Stanford Basic components
 @import
-  'all/index', // All comes first so others can override.
-  'alert/index',
-  'main-nav/index',
-  'masthead/index',
-  'multi-menu/index',
-  'nav-toggle/index',
-  'secondary-nav/index',
-  'stanford-page/index',
-  'wysiwyg/index';
+'all/index', // All comes first so others can override.
+'alert/index',
+'main-nav/index',
+'masthead/index',
+'multi-menu/index',
+'nav-toggle/index',
+'secondary-nav/index',
+'stanford-page/index',
+'wysiwyg/index';
