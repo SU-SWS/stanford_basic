@@ -20,7 +20,7 @@
 {%- import "@stanford_basic/menus/macros/nav-menu.twig" as menus -%}
 <nav{{ attributes }}>
   {% block multimenubutton %}
-  <button class="su-multi-menu__nav-toggle {{ toggle_modifier_class }}" aria-expanded="false">{{ toggle_text|default('Menu') }}</button>
+  <button class="su-multi-menu__nav-toggle su-multi-menu__nav-toggle--right {{ toggle_modifier_class }}" aria-expanded="false">{{ toggle_text|default('Menu') }}</button>
   {% endblock %}
   {% spaceless %}
   {% if items is iterable %}

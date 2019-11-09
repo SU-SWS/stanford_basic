@@ -4,27 +4,23 @@
 // ----------------------------------------------------------------------
 .su-masthead {
 
-  // Main navigation overrides.
-  .su-main-nav {
-
-    @include grid-media-only('xs') {
-      width: auto;
-    }
-
-    @include grid-media-only('sm') {
-      width: auto;
-    }
-
-    // Align the toggle to the right.
-    .su-main-nav__toggle {
-      @include margin(null 0 null auto);
-    }
+  .system-menu-block,
+  .block-menu,
+  .navigation,
+  .menu--main {
+    display: inline;
   }
 
-  // Drupal override helper.
-  .menu--main {
+  .su-multi-menu {
     @include grid-media-max('sm') {
-      width: 100%;
+      top: -57px;
+    }
+
+    .su-multi-menu__menu-lv1 {
+      @include grid-media('md') {
+        width: 28em;
+        right: 0px;
+      }
     }
   }
 }
@@ -32,7 +28,25 @@
 // Center everything.
 // ----------------------------------------------------------------------
 .su-masthead__wrapper {
-  @include flex-container;
-  @include centered-column;
+  // @include flex-container;
+  // @include centered-column;
+  @include grid-media('md') {
+    @include flex-container;
+    @include margin(null auto);
+    max-width: $su-screen-md;
+  }
+
+  @include grid-media('lg') {
+    max-width: $su-screen-lg;
+  }
+
+  @include grid-media('xl') {
+    max-width: $su-screen-xl;
+  }
+
+  @include grid-media('2xl') {
+    max-width: $su-screen-2xl;
+  }
+
   @include modular-spacing('padding', 1 null null);
 }
