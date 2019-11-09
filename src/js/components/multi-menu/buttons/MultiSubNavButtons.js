@@ -2,6 +2,7 @@ import SecondarySubNavButtons from '../../secondary-nav/buttons/SecondarySubNavB
 import OnArrowRightToggleLV1 from './events/OnArrowRightToggleLV1';
 import OnArrowLeftLV1 from './events/OnArrowLeftLV1';
 import OnArrowDownToggleLV1 from './events/OnArrowDownToggleLV1';
+import OnClickToggleLV1 from './events/OnClickToggleLV1';
 
 /**
  * SecondarySubNavAccordion Class
@@ -31,31 +32,26 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
       });
     }
 
-    // if (this.getDepth() == 2) {
-    //   registryDefaults = Object.assign(registryDefaults, {
-    //     onKeydownArrowLeft: OnArrowLeftLV2
-    //   });
-    // }
-
     return registryDefaults;
   }
 
   /**
    * Initialize the toggle button.
    */
-  initToggleButton() {
-    var options = this.options;
+   initToggleButton() {
+     var options = {};
 
-    // Overrides for level 1 desktop.
-    if (this.getDepth() === 1) {
-      options.eventRegistry = Object.assign(options.eventRegistry, {
-        onKeydownArrowRight: OnArrowRightToggleLV1,
-        onKeydownArrowDown: OnArrowDownToggleLV1
-      });
-    }
+     // Overrides for level 1 desktop.
+     if (this.getDepth() === 1) {
+       options.eventRegistry = {
+         onKeydownArrowRight: OnArrowRightToggleLV1,
+         onKeydownArrowDown: OnArrowDownToggleLV1,
+         onClick: OnClickToggleLV1
+       };
+     }
 
-    // Do eet.
-    super.initToggleButton(options);
-  }
+     // Do eet.
+     super.initToggleButton(options);
+   }
 
 }
