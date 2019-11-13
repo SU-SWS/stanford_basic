@@ -4,44 +4,66 @@
 // ----------------------------------------------------------------------
 .su-masthead {
 
-  .system-menu-block,
-  .block-menu,
-  .navigation,
-  .menu--main {
-    display: inline;
-    left: 0;
-
-    @include grid-media-max("md") {
-      position: absolute;
-      width: calc(100%);
+  @include grid-media-max('sm') {
+    .su-multi-menu {
+      @include margin(-57px null null);
     }
+  }
 
-    .contextual {
-      right: 35px;
+  @include grid-media-only('md') {
+    .su-multi-menu {
+      @include flex-column(2);
+      @include margin(auto null null);
     }
   }
 
   .su-multi-menu {
-
-    .su-multi-menu__nav-toggle {
-      @include grid-media-max('xs') {
-        @include margin(null #{$su-gutter-xs} null null);
-      }
-
-      @include grid-media-max('sm') {
-        @include margin(null #{$su-gutter-sm} null null);
-      }
-
-      @include grid-media-max('md') {
-        @include margin(null #{$su-gutter-md} null null);
+    @include grid-media-max('md') {
+      > ul {
+        @include box-shadow('medium', 0);
       }
     }
 
-    .su-multi-menu__menu-lv1 {
-      @include grid-media('md') {
-        width: 28em;
+    @include grid-media('lg') {
+      width: 100%;
+    }
+
+    .su-multi-menu__nav-toggle[aria-expanded=true] + .su-multi-menu__menu-lv1 {
+      @include grid-media-max('md') {
         right: 0px;
       }
+    }
+
+    > ul,
+    .su-multi-menu__nav-toggle[aria-expanded="true"] + .su-multi-menu__menu-lv1 + .su-site-search {
+      @include grid-media-only('md') {
+        width: 40rem;
+      }
+
+      @include grid-media-only('xs') {
+        transform: translateX(map-get($su-screen-margins, 'xs'));
+      }
+
+      @include grid-media-only('sm') {
+        transform: translateX(map-get($su-screen-margins, 'sm'));
+      }
+
+      @include grid-media-only('md') {
+        transform: translateX(map-get($su-screen-margins, 'md'));
+      }
+    }
+  }
+
+  .su-multi-menu,
+  .su-multi-menu > ul,
+  .su-multi-menu .su-multi-menu__nav-toggle[aria-expanded="true"] + .su-multi-menu__menu-lv1 + .su-site-search {
+    @include grid-media-only('xs') {
+      // We can't use 100vw for this because it doesn't work with OSX system preference to always show scrollbar
+      width: calc(100% + #{map-get($su-screen-margins, 'xs') * 2});
+    }
+
+    @include grid-media-only('sm') {
+      width: calc(100% + #{map-get($su-screen-margins, 'sm') * 2});
     }
   }
 
