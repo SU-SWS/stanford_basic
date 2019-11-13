@@ -3,19 +3,18 @@
 {% endif %}
 
 <header class="su-masthead">
-  <div class="su-masthead__wrapper">
-    {% if page.header %}
-      {{ page.header }}
-    {% endif %}
+  <section>
+  {% if page.header %}
+    {{ page.header }}
+  {% endif %}
 
-    {% if page.search %}
-      {{ page.search }}
-    {% endif %}
-
-    {% if page.menu %}
-      {{ page.menu }}
-    {% endif %}
-  </div>
+  {% if page.search %}
+    {{ page.search }}
+  {% endif %}
+  {% if page.menu %}
+    {{ page.menu }}
+  {% endif %}
+  </section>
 </header>
 
 {{ page.content }}

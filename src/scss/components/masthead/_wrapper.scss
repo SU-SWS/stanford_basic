@@ -9,11 +9,32 @@
   .navigation,
   .menu--main {
     display: inline;
+    left: 0;
+
+    @include grid-media-max("md") {
+      position: absolute;
+      width: calc(100%);
+    }
+
+    .contextual {
+      right: 35px;
+    }
   }
 
   .su-multi-menu {
-    @include grid-media-max('sm') {
-      top: -57px;
+
+    .su-multi-menu__nav-toggle {
+      @include grid-media-max('xs') {
+        @include margin(null #{$su-gutter-xs} null null);
+      }
+
+      @include grid-media-max('sm') {
+        @include margin(null #{$su-gutter-sm} null null);
+      }
+
+      @include grid-media-max('md') {
+        @include margin(null #{$su-gutter-md} null null);
+      }
     }
 
     .su-multi-menu__menu-lv1 {
@@ -23,30 +44,5 @@
       }
     }
   }
-}
 
-// Center everything.
-// ----------------------------------------------------------------------
-.su-masthead__wrapper {
-  // @include flex-container;
-  // @include centered-column;
-  @include grid-media('md') {
-    @include flex-container;
-    @include margin(null auto);
-    max-width: $su-screen-md;
-  }
-
-  @include grid-media('lg') {
-    max-width: $su-screen-lg;
-  }
-
-  @include grid-media('xl') {
-    max-width: $su-screen-xl;
-  }
-
-  @include grid-media('2xl') {
-    max-width: $su-screen-2xl;
-  }
-
-  @include modular-spacing('padding', 1 null null);
 }
