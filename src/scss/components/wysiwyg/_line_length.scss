@@ -6,18 +6,21 @@
 // This sets a maximum width based the size of the letter "O".
 
 .su-wysiwyg-text {
-  li, p {
+  li,
+  p {
     max-width: 70ch;
   }
 
-  p.text-align-right {
-    text-align: right;
-    margin-left: auto;
-  }
+  p {
+    &.text-align-right {
+      text-align: right;
+      margin-left: auto;
+    }
 
-  p.text-align-center {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    &.text-align-center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

@@ -1,0 +1,40 @@
+{#
+/**
+ * Macro for creating nested menus.
+ */
+#}
+{% macro secondary_nav_menu(items, menu_level, class_prefix, parent) %}
+  {% import _self as menus %}
+  <ul class="{{ class_prefix }}__menu {{ class_prefix }}__menu-lv{{ menu_level }}">
+  {% for item in items %}
+
+    {# Link Attribtues #}
+    {% set link_attributes = item.attributes %}
+    {% set link_attributes = link_attributes.addClass(class_prefix ~ "__link") %}
+    {% set link_attributes = link_attributes.setAttribute('href', item.url|render) %}
+
+    {# Item Attributes #}
+    {% set list_attributes = create_attribute() %}
+    {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item") %}
+    {% if item.below is not empty %}
+      {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--parent") %}
+    {% endif %}
+    {% if item.in_active_trail == true %}
+      {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--active-trail") %}
+    {% endif %}
+    {% if item.is_active == true %}
+      {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--current") %}
+    {% endif %}
+
+    {# Skip non-trail items below the first level. #}
+    {% if item.in_active_trail == true or menu_level == 1 or parent.in_active_trail == true %}
+      <li{{ list_attributes }}>
+        <a{{ link_attributes }}>{{ item.title }}</a>
+        {% if item.below %}
+          {{ menus.secondary_nav_menu(item.below, menu_level + 1, class_prefix, item) }}
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endmacro %}

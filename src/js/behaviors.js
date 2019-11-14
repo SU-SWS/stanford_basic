@@ -1,2 +1,2 @@
 // Theme code.
-import "./stanford_basic.behavior.js";
+import './stanford_basic.behavior.js';

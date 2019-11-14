@@ -1,20 +1,13 @@
 {# Create classes array. The 'node' class is required for contextual edit links. #}
-{% set classes = [
-  'node'
-] %}
-
-{# BEM inspired class syntax: https://en.bem.info/
-   Enable this code if you would like node classes like "article article--layout-teaser", where article is the content type and teaser is the view mode.
-{% set classes = classes|merge([
-  node.bundle|clean_class,
-  view_mode ? node.bundle|clean_class ~ '--layout-' ~ view_mode|clean_class
+{% set node_classes = ['node'] %}
+{% set node_classes = node_classes|merge([
+  node.type ? node.type.entity.label|clean_class,
+  view_mode ? 'node--layout-' ~ view_mode|clean_class
 ]) %}
-{% set title_classes = [
-  node.bundle|clean_class ~ '__title'
-] %}
-#}
-
-<article{{ attributes.addClass(classes) }}>
+{% set title_classes = [ node.bundle|clean_class ~ '__title'] %}
+{% set attributes = attributes.addClass(node_classes) %}
+{% set attributes = attributes.removeAttribute('role') %}
+<article{{ attributes }}>
 
   {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
     <header>

@@ -17,7 +17,7 @@
 
 // Dropcap styles.
 .su-drop-cap {
-  &:first-letter {
+  &::first-letter {
     float: left;
     font-style: normal;
     font-weight: bold;
@@ -30,7 +30,7 @@
 // A shadowy type.
 .su-related-text {
   @include box-shadow('paper');
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   padding: 25px;
 }
 

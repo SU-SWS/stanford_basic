@@ -1,29 +1,25 @@
 {#
-+/**
-+ * @file
-+ * Secondary Navigation Template
-+ *
-+ * A sidebar style navigation.
-+ *
-+ * Available variables:
-+ * - attributes: For additional HTML attributes not already provided.
-+ * - modifier_class: Additional css classes to change look and behaviour of the component.
-+ * - toggle_modifier_class: Additional css classes to change look and behaviour of the toggle.
-+ * - aria_label: Aria label for the <nav> element. Default is "main menu". If there are multiple instances of the component on the same page, use a different aria_label for each instance.
-+ *
-+ */
-+#}
-{#
- The following code is temporary until https://github.com/SU-SWS/decanter/pull/443 is merged.
+/**
+ * @file
+ * Secondary Navigation Template
+ *
+ * A sidebar style navigation.
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - modifier_class: Additional css classes to change look and behaviour of the component.
+ * - toggle_modifier_class: Additional css classes to change look and behaviour of the toggle.
+ * - aria_label: Aria label for the <nav> element. Default is "main menu". If there are multiple instances of the component on the same page, use a different aria_label for each instance.
+ *
+ */
 #}
-{% import "@stanford_basic/menus/macros/main-nav-menu.twig" as menus %}
-{% set attributes = attributes.addClass('su-secondary-nav') %}
-{% set attributes = attributes.addClass('no-js') %}
-{% set attributes = attributes.attribute('aria-label', aria_label|default('secondary menu')) %}
-<nav {{ attributes }}>
+{% import "@stanford_basic/menus/macros/secondary-nav-menu.twig" as menus %}
+{% set attributes = attributes.addClass(['su-secondary-nav', 'su-secondary-nav--light']) %}
+{% set attributes = attributes.setAttribute('aria-label', aria_label|default('secondary menu')) %}
+<nav{{ attributes }}>
   {% spaceless %}
   {% if items is iterable %}
-    {{ menus.main_nav_menu(items, 1) }}
+    {{ menus.secondary_nav_menu(items, 1, 'su-secondary-nav') }}
   {% else %}
     {# If custom markup is provided, emit it as is #}
     {{ items }}

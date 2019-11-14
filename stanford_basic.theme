@@ -215,3 +215,42 @@ function stanford_basic_preprocess_page(&$vars) {
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
   $vars['lockup'] = theme_get_setting('lockup');
 }
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function stanford_basic_preprocess_menu(&$variables, $hook) {
+  $current_path = \Drupal::request()->getRequestUri();
+
+  if ($variables['menu_name'] !== "main") {
+    return;
+  }
+
+  foreach($variables['items'] as &$item) {
+    $menu_item = [$item];
+    _stanford_basic_menu_process_submenu($menu_item, $current_path);
+    $item = $menu_item[0];
+  }
+}
+
+/**
+ * Set active and active-trail class for sub-menus recursively.
+ *
+ * @param  array $submenu      The `$item['below']` structure from a menu array.
+ * @param  string $current_path A path to match against for "on this page".
+ */
+function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
+  foreach ($submenu as &$item) {
+
+    if ($item['in_active_trail']) {
+      $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
+
+      if ($item_path == $current_path) {
+        $item['is_active'] = TRUE;
+      }
+      elseif (count($item['below'])) {
+        _stanford_basic_menu_process_submenu($item['below'], $current_path);
+      }
+    }
+  }
+}

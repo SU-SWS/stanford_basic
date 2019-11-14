@@ -10,12 +10,12 @@
 export default {
 
   // Attach Drupal Behavior.
-  attach (context, settings) {
-    console.log("Attached.");
+  attach(context, settings) {
+    // console.log("Attached.");
   },
 
   // Detach Example.
-  detach () {
-    console.log("Detached.");
+  detach() {
+    // console.log("Detached.");
   }
-}
+};
