@@ -55,7 +55,13 @@ function stanford_basic_preprocess_html(&$variables) {
   $variables['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
 
   // Add global google analytics tracker if the site is on Acquia.
-  $variables['add_global_ga'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
+  if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    $variables['add_global_ga'] = TRUE;
+    if (\Drupal::moduleHandler()->moduleExists('google_analytics')) {
+      $variables['ga_module_enabled'] = !empty(\Drupal::config('google_analytics.settings')
+        ->get('account'));
+    }
+  }
 }
 
 /**
@@ -212,7 +218,9 @@ function stanford_basic_preprocess_page(&$vars) {
 
 /**
  * Pass through the lockup configuration settings.
+ *
  * @param  [type] $vars [description]
+ *
  * @return [type]       [description]
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
@@ -229,7 +237,7 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
     return;
   }
 
-  foreach($variables['items'] as &$item) {
+  foreach ($variables['items'] as &$item) {
     $menu_item = [$item];
     _stanford_basic_menu_process_submenu($menu_item, $current_path);
     $item = $menu_item[0];
@@ -239,8 +247,8 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
 /**
  * Set active and active-trail class for sub-menus recursively.
  *
- * @param  array $submenu      The `$item['below']` structure from a menu array.
- * @param  string $current_path A path to match against for "on this page".
+ * @param array $submenu The `$item['below']` structure from a menu array.
+ * @param string $current_path A path to match against for "on this page".
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
