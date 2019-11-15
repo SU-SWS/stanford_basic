@@ -61,6 +61,28 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+
+      {% if add_global_ga %}
+        {% if not ga_module_enabled %}
+        <!-- Global analytics tag (gtag.js) - Google Analytics -->
+        <script async
+                src="https://www.googletagmanager.com/gtag/js?id=UA-26605114-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+          gtag('config', 'UA-26605114-1');
+        </script>
+        {% else %}
+        <script>
+          ga("create", "UA-26605114-1", {"cookieDomain":"auto"}, 'globalTracker');
+        </script>
+        {% endif %}
+      {% endif %}
   </head>
   {% set classes = [is_front ? 'front', not is_front ? 'not-front'] %}
   {% for role in user.roles %}
