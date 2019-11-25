@@ -27,3 +27,17 @@
 
 // Roll up partial imports.
 @import 'typography';
+
+.dialog-off-canvas-main-canvas {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-content {
+  flex: 1 0 auto;
+}
+
+.test-footer {
+  flex-shrink: 0;
+}
