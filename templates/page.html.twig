@@ -20,11 +20,12 @@
 <div id="main-content">
   {{ page.content }}
 </div>
-
+</div>
+<footer class="test-footer">
 {% if page.footer %}
   <div id="footer">
     {{ page.footer }}
   </div>
 {% endif %}
-</div>
-<footer class="test-footer">{{ pattern("globalfooter") }}</footer>
+{{ pattern("globalfooter") }}
+</footer>
