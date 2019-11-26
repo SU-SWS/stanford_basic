@@ -205,7 +205,7 @@ function stanford_basic_preprocess_page(&$vars) {
     }
   }
 
-  $variables['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
+  $vars['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
 }
 
 /**
