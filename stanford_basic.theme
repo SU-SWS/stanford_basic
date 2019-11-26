@@ -52,7 +52,6 @@ function stanford_basic_preprocess_html(&$variables) {
   // The base path.
   $variables['base_path'] = base_path();
   $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
-  $variables['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
 }
 
 /**
@@ -205,6 +204,8 @@ function stanford_basic_preprocess_page(&$vars) {
       $block['#attributes']['class'][] = 'centered-container';
     }
   }
+
+  $variables['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
 }
 
 /**
