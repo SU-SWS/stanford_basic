@@ -10,4 +10,15 @@
       @include padding(null 0 null null);
     }
   }
+
+  &.su-multi-menu--accordion {
+    > ul {
+      > li:last-of-type {
+        > a {
+          @include padding(null 0 null null);
+        }
+      }
+    }
+  }
+
 }
