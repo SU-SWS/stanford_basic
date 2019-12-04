@@ -15,7 +15,7 @@
     > ul {
       > li:last-of-type {
         > a {
-          @include padding(null 0 null null);
+          @include margin(null 0 null null);
         }
       }
     }
