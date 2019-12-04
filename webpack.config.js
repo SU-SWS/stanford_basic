@@ -48,6 +48,7 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
+    "admin": path.resolve(__dirname, srcSass + "/admin/index.scss"),
     "base": path.resolve(__dirname, srcJS + "/base.js"),
     "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
