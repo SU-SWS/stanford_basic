@@ -2,7 +2,7 @@
   {{ page.help }}
 {% endif %}
 
-<header class="su-masthead">
+<header class="su-masthead su-masthead--right">
   <section>
   {% if page.header %}
     {{ page.header }}
@@ -11,11 +11,13 @@
   {% if page.search %}
     {{ page.search }}
   {% endif %}
+
   {% if page.menu %}
     {{ page.menu }}
   {% endif %}
   </section>
 </header>
+
 <div id="main-content">
   {{ page.content }}
 </div>

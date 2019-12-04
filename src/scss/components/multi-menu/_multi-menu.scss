@@ -109,12 +109,12 @@
     // --------------------------
     > .su-multi-menu__item {
       > .su-multi-menu__link {
-        color: color(h--link, $su-multi-menu-colors);
-        @include padding(null 0);
-        @include margin(0 1.2em 0 0);
-        font-size: 2.1rem;
+        @include padding(null 0 2.4rem 0);
+        @include margin(0 1.8em 0 0);
+        font-size: 1.9rem;
         border-bottom: 0;
         font-weight: $su-font-semi-bold;
+        color: color(h--link, $su-multi-menu-colors);
 
         &::before {
           height: 6px;
@@ -133,12 +133,12 @@
           color: color(h--link-hover, $su-multi-menu-colors);
           text-decoration: none;
 
-          &::before {
-            transform: scaleX(1);
-            visibility: visible;
-            left: 0;
-            background-color: color(h--border-hover, $su-multi-menu-colors);
-          }
+          // &::before {
+          //   transform: scaleX(1);
+          //   visibility: visible;
+          //   left: 0;
+          //   background-color: color(h--border-hover, $su-multi-menu-colors);
+          // }
         }
       }
     }
@@ -254,7 +254,6 @@
     &:hover,
     &:focus {
       &::before {
-        left: 6px;
         transition: left 0.1s ease-out;
         background-color: color(border--active, $su-multi-menu-colors);
       }

@@ -16,6 +16,17 @@
         @include padding(null 1.6rem null null);
       }
 
+      &:hover {
+        @include grid-media('lg') {
+          > .su-nav-toggle {
+            &::before {
+              background: transparent url("#{$basic-svg-path}/caret-down-red.svg") no-repeat 50%/50%;
+              background-size: 13px;
+            }
+          }
+        }
+      }
+
       > .su-multi-menu__link {
         // Desktop Styles.
         @include grid-media('lg') {
@@ -36,8 +47,8 @@
           max-height: 55px;
 
           &::before {
-            width: 28px;
-            max-width: 28px;
+            width: 23px;
+            max-width: 23px;
             height: 55px;
             max-height: 55px;
             top: 0px;
