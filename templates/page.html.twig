@@ -1,3 +1,5 @@
+{% include "@basic/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } %}
+
 {% if page.help %}
   {{ page.help }}
 {% endif %}
@@ -7,7 +9,6 @@
   {% if page.header %}
     {{ page.header }}
   {% endif %}
-
   {% if page.search %}
     {{ page.search }}
   {% endif %}
@@ -16,12 +17,12 @@
   {% endif %}
   </section>
 </header>
+
 <div id="main-content">
   {{ page.content }}
 </div>
 
-{% if page.footer %}
-  <div id="footer">
-    {{ page.footer }}
-  </div>
-{% endif %}
+<footer id="footer">
+  {{ page.footer }}
+  {% include "@basic/decanter/components/global-footer/global-footer.twig" %}
+</div>

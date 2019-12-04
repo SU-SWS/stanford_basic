@@ -23,6 +23,7 @@ component-libraries:
   basic:
     paths:
       - templates
+      - dist/templates
 
 libraries:
   - stanford_basic/basic
