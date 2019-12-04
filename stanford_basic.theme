@@ -51,7 +51,15 @@ function stanford_basic_preprocess_html(&$variables) {
 
   // The base path.
   $variables['base_path'] = base_path();
-  $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
+
+  // Add global google analytics tracker if the site is on Acquia.
+  if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    $variables['add_global_ga'] = TRUE;
+    if (\Drupal::moduleHandler()->moduleExists('google_analytics')) {
+      $variables['ga_module_enabled'] = !empty(\Drupal::config('google_analytics.settings')
+        ->get('account'));
+    }
+  }
 }
 
 /**
