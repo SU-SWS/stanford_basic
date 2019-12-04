@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+.su-multi-menu--right {
+
+  > ul {
+    justify-content: flex-end;
+
+    > li:last-of-type,
+    .su-multi-menu__item--parent:last-of-type {
+      @include padding(null 0 null null);
+    }
+  }
+}

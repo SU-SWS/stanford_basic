@@ -37,7 +37,7 @@ $_circle_diameter: 36px;
   &::before {
     content: "";
     background: color(border--expanded, $su-secondary-nav-colors) url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-    background-size: 15px;
+    background-size: 13px;
     border-radius: 19px;
     height: $_circle_diameter;
     width: $_circle_diameter;

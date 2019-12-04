@@ -65,6 +65,7 @@ var webpackConfig = {
   // Relative output paths for css assets.
   resolve: {
     alias: {
+      'basic-assets': path.resolve(__dirname, 'src/assets'),
       'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
       'decanter-src': path.resolve(npmPackage + 'decanter/core/src'),
       '@fortawesome': path.resolve(npmPackage + '@fortawesome'),

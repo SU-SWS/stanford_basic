@@ -67,4 +67,35 @@
     }
   }
 
+  > section:last-of-type {
+    @include grid-media('lg') {
+      @include padding(3.6rem null null null);
+    }
+  }
+
+  .su-lockup {
+    @include grid-media('lg') {
+      @include margin(null null 2.2rem null);
+    }
+  }
+
+  .su-lockup--option-a {
+    .su-lockup__line1 {
+      @include grid-media('lg') {
+        line-height: .75em;
+      }
+    }
+  }
+
+  .su-site-search__input {
+    @include padding(.6rem 2rem .8rem);
+    font-family: $su-font-sans;
+    border: 1px solid #d9d9d9;
+  }
+
+  .su-site-search__submit {
+    opacity: 100;
+    right: 1.6rem;
+  }
+
 }
