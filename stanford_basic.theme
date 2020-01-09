@@ -12,6 +12,17 @@ use Drupal\ui_patterns\UiPatterns;
 use Drupal\Core\Url;
 
 /**
+ * Implements hook_page_attachments_alter().
+ *
+ * Because hook_page_attachments() is only executed in modules, not themes.
+ */
+function stanford_basic_page_attachments_alter(array &$attachments) {
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    $attachments['#attached']['library'][] = 'stanford_basic/admin';
+  }
+}
+
+/**
  * Prepares variables for the html.html.twig template.
  */
 function stanford_basic_preprocess_html(&$variables) {
@@ -51,8 +62,6 @@ function stanford_basic_preprocess_html(&$variables) {
 
   // The base path.
   $variables['base_path'] = base_path();
-  $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
-  $variables['brand_bar_variant'] = theme_get_setting('brand_bar_variant');
 
   // Add global google analytics tracker if the site is on Acquia.
   if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
@@ -178,11 +187,25 @@ function stanford_basic_preprocess_patterns_overview_page(&$variables) {
 }
 
 /**
- * Prepares non node/panel pages to be in a single column.
+ * Implements hook_preprocess_page().
  */
 function stanford_basic_preprocess_page(&$vars) {
+  // Variant setting for the brand bar.
+  $bbv = theme_get_setting('brand_bar_variant');
+  if ($bbv !== "none") {
+    $vars['brand_bar_variant'] = 'su-brand-bar--' . $bbv;
+  }
 
-  // Only center the container if the page is not a node and not a panel.
+  // Prepares non node/panel pages to be in a single column.
+  _stanford_basic_preprocess_not_nodes($vars);
+}
+
+/**
+ * Only center the container if the page is not a node and not a panel.
+ *
+ * @param array $vars the page vars
+ */
+function _stanford_basic_preprocess_not_nodes(&$vars) {
   $pbag = \Drupal::routeMatch()->getParameters();
   $pkeys = $pbag->keys();
   $blacklist = [
@@ -262,4 +285,35 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_ds_entity_view(&$variables) {
+  $variables['content']['#pre_render'][] = 'stanford_basic_pattern_process_contextual';
+}
+
+/**
+ * PreRender process to render out the contextual links for ui patterns.
+ *
+ * @param array $element
+ *   Pre-rendered element.
+ *
+ * @return array
+ *   Modified element.
+ *
+ * @see stanford_basic_preprocess_ds_entity_view()
+ * @see https://github.com/nuvoleweb/ui_patterns/pull/117/files
+ */
+function stanford_basic_pattern_process_contextual(array $element) {
+  $module_handler = \Drupal::moduleHandler();
+  if (isset($element['#contextual_links']) && $module_handler->moduleExists('contextual')) {
+    $placeholder = [
+      '#type' => 'contextual_links_placeholder',
+      '#id' => _contextual_links_to_id($element['#contextual_links']),
+    ];
+    $element['#prefix'] = render($placeholder);
+  }
+  return $element;
 }

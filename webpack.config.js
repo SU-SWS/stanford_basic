@@ -48,6 +48,7 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
+    "admin": path.resolve(__dirname, srcSass + "/admin/index.scss"),
     "base": path.resolve(__dirname, srcJS + "/base.js"),
     "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
@@ -67,8 +68,7 @@ var webpackConfig = {
     alias: {
       'basic-assets': path.resolve(__dirname, 'src/assets'),
       'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
-      'decanter-src': path.resolve(npmPackage + 'decanter/core/src'),
-      '@fortawesome': path.resolve(npmPackage + '@fortawesome'),
+      'fa-fonts': path.resolve(__dirname, npmPackage, '@fortawesome/fontawesome-free/webfonts')
     }
   },
   // Additional module rules.
@@ -121,9 +121,6 @@ var webpackConfig = {
             loader: 'sass-loader',
             options: {
               includePaths: [
-                path.resolve(__dirname, srcSass),
-                path.resolve(__dirname, npmPackage, "bourbon/core"),
-                path.resolve(__dirname, npmPackage + "/decanter/core/src/scss"),
                 path.resolve(__dirname, npmPackage)
               ],
               sourceMap: true,
@@ -151,18 +148,11 @@ var webpackConfig = {
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
           {
-            loader: 'url-loader',
+            loader: "file-loader",
             options: {
-              // Maximum size of a file in bytes. 8.192 Kilobtyes.
-              limit: 8192,
-              fallback: {
-                loader: "file-loader",
-                options: {
-                  name: "[name].[ext]",
-                  publicPath: "../assets/img",
-                  outputPath: "../assets/img"
-                }
-              }
+              name: "[name].[ext]",
+              publicPath: "../assets/img",
+              outputPath: "../assets/img"
             }
           }
         ]
@@ -171,21 +161,12 @@ var webpackConfig = {
       {
         test: /\.(svg)$/i,
         use: [
-          // A loader for webpack which transforms files into base64 URIs.
-          // https://github.com/webpack-contrib/url-loader
           {
-            loader: 'url-loader',
+            loader: "file-loader",
             options: {
-              // Maximum size of a file in bytes. 8.192 Kilobtyes.
-              limit: 8192,
-              fallback: {
-                loader: "file-loader",
-                options: {
-                  name: "[name].[ext]",
-                  publicPath: "../assets/svg",
-                  outputPath: "../assets/svg"
-                }
-              }
+              name: "[name].[ext]",
+              publicPath: "../assets/svg",
+              outputPath: "../assets/svg"
             }
           }
         ]

@@ -92,7 +92,6 @@
       <a href="#main-content" class="visually-hidden focusable su-skipnav">
         {{ 'Skip to main content'|t }}
       </a>
-    {{ pattern("brandbar", {}, brand_bar_variant) }}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
@@ -102,6 +101,5 @@
       document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
       </script>
     {% endif %}
-    {{ pattern("globalfooter") }}
   </body>
 </html>
