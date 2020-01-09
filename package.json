@@ -58,6 +58,6 @@
   ],
   "dependencies": {
     "drupal-behaviors-loader": "^1.0",
-    "npm": "^6.12.1"
+    "npm": "^6.13.4"
   }
 }
