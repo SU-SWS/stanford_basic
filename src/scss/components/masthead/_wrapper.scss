@@ -29,8 +29,16 @@
     }
 
     .su-multi-menu__nav-toggle[aria-expanded=true] + .su-multi-menu__menu-lv1 {
-      @include grid-media-max('md') {
-        right: 0px;
+      @include grid-media-only('xs') {
+        right: -16px;
+      }
+
+      @include grid-media-only('sm') {
+        right: -23px;
+      }
+
+      @include grid-media-only('md') {
+        right: 0;
       }
     }
 
@@ -40,17 +48,6 @@
         width: 40rem;
       }
 
-      @include grid-media-only('xs') {
-        transform: translateX(map-get($su-screen-margins, 'xs'));
-      }
-
-      @include grid-media-only('sm') {
-        transform: translateX(map-get($su-screen-margins, 'sm'));
-      }
-
-      @include grid-media-only('md') {
-        transform: translateX(map-get($su-screen-margins, 'md'));
-      }
     }
   }
 

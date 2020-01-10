@@ -12,10 +12,7 @@
 // <a href="https://github.com/SU-SWS/decanter/wiki/About-the-Main-Nav-Component">About the Main Nav Component</a>
 // on Decanter's wiki.
 //
-// .su-multi-menu--accordion      - A multiple tier menu with accordion nested menus
-// .su-multi-menu--accordion-dark - Accordion style with a dark twist.
 // .su-multi-menu--buttons        - A multiple tier (split) menu that expand with button toggles.
-// .su-multi-menu--buttons-dark   - Button style with a dark twist.
 //
 // Markup: ../templates/components/multi-menu/multi-menu.twig
 //
@@ -132,13 +129,6 @@
           font-weight: $su-font-semi-bold;
           color: color(h--link-hover, $su-multi-menu-colors);
           text-decoration: none;
-
-          // &::before {
-          //   transform: scaleX(1);
-          //   visibility: visible;
-          //   left: 0;
-          //   background-color: color(h--border-hover, $su-multi-menu-colors);
-          // }
         }
       }
     }
@@ -184,12 +174,6 @@
             visibility: visible;
             background-color: color(h--border-hover, $su-multi-menu-colors);
           }
-        }
-      }
-
-      &:hover {
-        > .su-multi-menu__menu {
-          display: flex;
         }
       }
     }

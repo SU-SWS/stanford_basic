@@ -17,8 +17,8 @@ $_circle_diameter: 36px;
 
 .su-nav-toggle {
   @include margin(0);
-  vertical-align: middle;
-  text-align: center;
+  vertical-align: top;
+  text-align: left;
   font-size: 0;
   text-indent: -9999px;
   overflow: hidden;

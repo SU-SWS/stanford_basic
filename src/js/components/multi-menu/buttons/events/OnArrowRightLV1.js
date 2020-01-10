@@ -1,12 +1,12 @@
 import EventAbstract from '../../../secondary-nav/common/events/EventAbstract';
-import OnArrowLeft from '../../../secondary-nav/common/events/OnArrowLeft';
+import OnArrowLeft from '../../../secondary-nav/common/events/OnArrowRight';
 
 /**
  * OnArrowLeft
  *
  * Event action handler class.
  */
-export default class OnArrowLeftLV1 extends EventAbstract {
+export default class OnArrowRightLV1 extends EventAbstract {
 
   /**
    * Execute the action to the event.
@@ -25,8 +25,8 @@ export default class OnArrowLeftLV1 extends EventAbstract {
    */
   handleDesktop() {
     var element =
-      this.getElement('prev') ||
-      this.getElement('last');
+      this.getElement('next') ||
+      this.getElement('first');
 
     element.focus();
   }
@@ -35,7 +35,7 @@ export default class OnArrowLeftLV1 extends EventAbstract {
    * Handle the events for mobile sized screens.
    */
   handleMobile() {
-    var classicEvent = new OnArrowLeft(this.item, this.event, this.target);
+    var classicEvent = new OnArrowRight(this.item, this.event, this.target);
     classicEvent.init();
   }
 
