@@ -59,7 +59,8 @@
     color(border--active, $su-multi-menu-colors),
     'left'
   );
-  @include padding(1.6rem 4.8rem 1.6rem 2.4rem);
+  @include padding(1.6rem 0 1.6rem 2.4rem);
+  @include margin(null 1.6rem null null);
   display: block;
   color: color(link, $su-multi-menu-colors);
   font-weight: $su-font-semi-bold;
@@ -111,13 +112,12 @@
         font-size: 1.9rem;
         border-bottom: 0;
         font-weight: $su-font-semi-bold;
-        color: color(h--link, $su-multi-menu-colors);
+        color: $su-color-bright-red;
 
         &::before {
           height: 6px;
           width: 100%;
           transition: transform 0.3s ease-out;
-          background-color: color(h--border, $su-multi-menu-colors);
           transform: scaleX(0);
         }
 
@@ -127,8 +127,8 @@
         &:active,
         &:focus {
           font-weight: $su-font-semi-bold;
-          color: color(h--link-hover, $su-multi-menu-colors);
-          text-decoration: none;
+          color: $su-color-black;
+          text-decoration: underline;
         }
       }
     }
@@ -140,6 +140,8 @@
       &.su-multi-menu__item--active-trail {
 
         > .su-multi-menu__link {
+          color: $su-color-black;
+
           &::before {
             height: 6px;
             transform: scaleX(1);
@@ -149,8 +151,10 @@
 
           &:hover,
           &:focus {
+            color: $su-color-black;
+
             &::before {
-              background-color: color(h--border-hover, $su-multi-menu-colors);
+              background: 0;
             }
           }
         }
@@ -172,7 +176,6 @@
             height: 6px;
             transform: scaleX(1);
             visibility: visible;
-            background-color: color(h--border-hover, $su-multi-menu-colors);
           }
         }
       }

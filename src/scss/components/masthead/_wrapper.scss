@@ -30,11 +30,11 @@
 
     .su-multi-menu__nav-toggle[aria-expanded=true] + .su-multi-menu__menu-lv1 {
       @include grid-media-only('xs') {
-        right: -16px;
+        right: -20px;
       }
 
       @include grid-media-only('sm') {
-        right: -23px;
+        right: -30px;
       }
 
       @include grid-media-only('md') {

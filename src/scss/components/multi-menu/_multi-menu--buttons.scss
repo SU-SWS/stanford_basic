@@ -1,11 +1,14 @@
 @charset "UTF-8";
 
-.su-multi-menu--buttons,
-.su-multi-menu--buttons-dark {
+.su-multi-menu--buttons {
 
   // Parent Items
   .su-multi-menu__item--parent {
     position: relative;
+  }
+
+  .su-nav-toggle {
+    right: 6px;
   }
 
   // Menu Level 1 (top)
