@@ -16,46 +16,49 @@
 }
 
 // Caption Styles.
-.caption figcaption {
-  text-align: center;
-}
-
-// Dropcap styles.
-.su-drop-cap {
-  &::first-letter {
-    float: left;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 67px;
-    line-height: 119.41%;
-    padding: 4px 8px 0 3px;
+.caption {
+  figcaption {
+    text-align: center;
   }
 }
 
-// A shadowy type.
-.su-related-text {
-  @include box-shadow('paper');
-  border: 1px solid #e3e3e3;
-  padding: 25px;
-}
+  // Dropcap styles.
+  .su-drop-cap {
+    &::first-letter {
+      float: left;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 67px;
+      line-height: 119.41%;
+      padding: 4px 8px 0 3px;
+    }
+  }
 
-// Override of Decanter's styles.
-// See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
-.su-quote-text {
-  @include type-b;
-}
+  // A shadowy type.
+  .su-related-text {
+    @include box-shadow('paper');
+    border: 1px solid #e3e3e3;
+    padding: 25px;
+  }
 
-// WYSIWYG Styles Margin overrides.
-.su-button {
-  @include modular-spacing('margin-bottom', 3);
-}
+  // Override of Decanter's styles.
+  // See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
+  .su-quote-text {
+    @include type-b;
+  }
 
-.su-button--big {
-  @include modular-spacing('margin-bottom', 3);
-}
+  // WYSIWYG Styles Margin overrides.
+  .su-button {
+    @include modular-spacing('margin-bottom', 3);
+  }
 
-.su-button--secondary {
-  @include modular-spacing('margin-bottom', 3);
+  .su-button--big {
+    @include modular-spacing('margin-bottom', 3);
+  }
+
+  .su-button--secondary {
+    @include modular-spacing('margin-bottom', 3);
+  }
 }
 
 /*
