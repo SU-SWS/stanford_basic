@@ -23,6 +23,8 @@ component-libraries:
   basic:
     paths:
       - templates
+  basic-dist:
+    paths:
       - dist/templates
 
 libraries:

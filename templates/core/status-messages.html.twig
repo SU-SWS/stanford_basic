@@ -24,17 +24,14 @@
  */
 #}
 {% for type, messages in message_list %}
-
-  {%
-    set classes = [
-      'su-alert'
-    ]
-  %}
+  {% set attributes = create_attribute() %}
+  {% set attributes = attributes.addClass('su-alert') %}
+  {% set attributes = attributes.setAttribute('role', 'alert') %}
 
   {% if type == "status" %}
-    {% set classes = classes|merge(['su-alert--info']) %}
+    {% set attributes = attributes.addClass('su-alert--info') %}
   {% else %}
-    {% set classes = classes|merge(['su-alert--' ~ type]) %}
+    {% set attributes = attributes.addClass('su-alert--' ~ type) %}
   {% endif %}
 
   {# Good for everyone. #}
@@ -43,16 +40,10 @@
   {% endif %}
 
   {% for message in messages %}
-    {{
-      pattern('alert',
-        {
-          'attributes': {
-            'class': classes,
-            'role': 'alert',
-          },
-          'alert_text': message,
-        }
-      )
-    }}
+    {% set data = {
+      'alert_text': message
+      }
+    %}
+    {% include "@basic-dist/decanter/components/alert/alert.twig" with data %}
   {% endfor %}
 {% endfor %}

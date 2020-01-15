@@ -13,10 +13,11 @@
  *
  */
 #}
-{% import "@stanford_basic/menus/macros/secondary-nav-menu.twig" as menus %}
-{% set attributes = attributes.addClass(['su-secondary-nav', 'su-secondary-nav--light']) %}
-{% set attributes = attributes.setAttribute('aria-label', aria_label|default('secondary menu')) %}
-<nav{{ attributes }}>
+
+{% set attributes = attributes.addClass(['su-secondary-nav--light', 'su-secondary-nav', 'no-js']) %}
+{# Macros #}
+{%- import "@basic/menus/macros/secondary-nav-menu.twig" as menus -%}
+<nav{{ attributes }} aria-label="{{ aria_label|default('secondary menu') }}">
   {% spaceless %}
   {% if items is iterable %}
     {{ menus.secondary_nav_menu(items, 1, 'su-secondary-nav') }}
