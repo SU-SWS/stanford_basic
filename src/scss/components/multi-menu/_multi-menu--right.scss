@@ -1,13 +1,17 @@
 @charset 'UTF-8';
 
 .su-multi-menu--right {
+  @include grid-media('lg') {
+    > ul {
+      justify-content: flex-end;
 
-  > ul {
-    justify-content: flex-end;
-
-    > li:last-of-type,
-    .su-multi-menu__item--parent:last-of-type {
-      @include padding(null 0 null null);
+      > li:last-of-type,
+      .su-multi-menu__item--parent:last-of-type {
+        @include padding(null 0 null null);
+        & > a {
+          @include padding(null 0 null null);
+        }
+      }
     }
   }
 }
