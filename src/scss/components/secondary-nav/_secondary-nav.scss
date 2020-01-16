@@ -18,7 +18,8 @@
     @include padding(null null null 0);
 
     > .su-secondary-nav__item {
-      border-top: solid 1px $su-color-cloud;
+      border-top: solid 1px #d9d9d9;
+      line-height: 1.2em;
     }
 
     > .su-secondary-nav__item:first-child {
