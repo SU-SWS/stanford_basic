@@ -34,7 +34,7 @@ export default class OnArrowDownSubNav extends EventAbstract {
     // with javascript we are going to do it the long way.
 
     var above = this.elem.parentNode;
-    while (above.tagName !== "NAV") {
+    while (above.tagName !== 'NAV') {
       try {
         node = above.nextElementSibling.querySelector(':scope a:last-child');
       }
