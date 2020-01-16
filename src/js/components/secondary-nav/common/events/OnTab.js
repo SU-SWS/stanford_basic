@@ -46,12 +46,5 @@ export default class OnTab extends EventAbstract {
         return;
       }
     }
-
-    // No nodes were found. Close up behind us.
-    if (!node) {
-      if (this.item.getDepth() > 1) {
-        this.parentNav.closeSubNav();
-      }
-    }
   }
 }

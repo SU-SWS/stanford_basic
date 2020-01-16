@@ -6,7 +6,6 @@ import {createEvent} from '../../../polyfills/createEvent';
 // Keyboard events.
 import OnHome from '../common/events/OnHome';
 import OnEnd from '../common/events/OnEnd';
-import OnTab from './events/OnTab';
 import OnEsc from '../common/events/OnEsc';
 import OnSpace from '../common/events/OnSpace';
 import OnArrowUp from '../common/events/OnArrowUp';
@@ -46,7 +45,7 @@ export default class SecondarySubNavButtons {
     this.options = Object.assign({
       itemExpandedClass: 'su-secondary-nav__item--expanded',
       toggleClass: 'su-nav-toggle',
-      toggleLabel: 'expand menu',
+      toggleLabel: 'expand' + this.elem.innerText + " menu",
       subNavToggleText: '+'
     }, options);
 
@@ -88,7 +87,6 @@ export default class SecondarySubNavButtons {
       onKeydownEnter: OnSpace,
       onKeydownHome: OnHome,
       onKeydownEnd: OnEnd,
-      onKeydownTab: OnTab,
       onKeydownEscape: OnEsc,
       onKeydownArrowUp: OnArrowUp,
       onKeydownArrowRight: OnArrowRight,

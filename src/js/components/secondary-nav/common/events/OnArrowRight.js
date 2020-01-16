@@ -16,7 +16,7 @@ export default class OnArrowRight extends EventAbstract {
     // the parent.
     if (this.item.getDepth() > 1) {
       let node = this.getElement('parentNavNext');
-      this.parentNav.closeSubNav();
+      // this.parentNav.closeSubNav();
 
       if (node) {
         node.querySelector('a').focus();
