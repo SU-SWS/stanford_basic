@@ -47,7 +47,37 @@
   @include type-b;
 }
 
-// WYSIWYG Styles Margin overrides.
+// Headings overrides.
+h1 {
+  @include modular-spacing('margin-bottom', 5);
+  @include modular-spacing('margin-top', 4);
+}
+
+h2 {
+  @include modular-spacing('margin-bottom', 2);
+  @include modular-spacing('margin-top', 1);
+}
+
+h3 {
+  @include modular-spacing('margin-bottom', 2);
+  @include modular-spacing('margin-top', 0);
+}
+
+h4 {
+  @include modular-spacing('margin-bottom', 1);
+  @include modular-spacing('margin-top', 0);
+}
+
+h5 {
+  @include modular-spacing('margin-bottom', 1);
+  @include modular-spacing('margin-top', -1);
+}
+
+h6 {
+  @include modular-spacing('margin-bottom', 0);
+}
+
+// WYSIWYG Styles overrides.
 .su-button {
   @include modular-spacing('margin-bottom', 3);
 }
@@ -61,12 +91,12 @@
 }
 
 .su-callout-text {
-//  @include modular-spacing('margin-bottom', 3.5);
+  @include modular-spacing('margin-bottom', 4);
   @include modular-spacing('margin-top', -3);
 }
 
 .su-font-splash {
-//  @include modular-spacing('margin-bottom', 3.5);
+  @include modular-spacing('margin-bottom', 4);
   @include modular-spacing('margin-top', -1);
 }
 
@@ -75,14 +105,10 @@
 }
 
 .su-related-text {
-//  @include modular-spacing('margin-bottom', 3.5);
+  @include modular-spacing('margin-bottom', 4);
 }
 
-.su-wysiwyg-text::after {
+.su-wysiwyg-text {
   @include modular-spacing('margin-bottom', 3);
 }
-
-
-
-
 
