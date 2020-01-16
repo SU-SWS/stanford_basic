@@ -45,7 +45,7 @@ export default class SecondarySubNavButtons {
     this.options = Object.assign({
       itemExpandedClass: 'su-secondary-nav__item--expanded',
       toggleClass: 'su-nav-toggle',
-      toggleLabel: 'expand' + this.elem.innerText + " menu",
+      toggleLabel: 'expand' + this.elem.innerText + ' menu',
       subNavToggleText: '+'
     }, options);
 

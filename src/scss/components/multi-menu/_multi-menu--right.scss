@@ -10,6 +10,7 @@
       > .su-multi-menu__item:last-child,
       > .su-multi-menu__item--parent:last-of-type {
         @include padding(null 0 null null);
+
         & > .su-multi-menu__link {
           @include margin(null 0 null null);
         }

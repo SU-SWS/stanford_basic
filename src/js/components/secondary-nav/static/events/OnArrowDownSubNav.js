@@ -38,7 +38,7 @@ export default class OnArrowDownSubNav extends EventAbstract {
       try {
         node = above.nextElementSibling.querySelector(':scope a:last-child');
       }
-      catch(err) {
+      catch (err) {
         // Nada.
       }
 

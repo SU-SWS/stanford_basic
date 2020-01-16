@@ -56,9 +56,9 @@ export default class SecondaryNavStatic extends SecondaryNavAbstract {
    */
   newNavItem(item, depth, parent) {
     var myEvents = {
-      'onKeydownArrowDown': OnArrowDownSubNav,
-      'onKeydownArrowUp': OnArrowUpSubNav,
-      'onKeydownArrowRight': OnArrowRightSubNav,
+      onKeydownArrowDown: OnArrowDownSubNav,
+      onKeydownArrowUp: OnArrowUpSubNav,
+      onKeydownArrowRight: OnArrowRightSubNav
     };
     var opts = {
       eventRegistry: myEvents,

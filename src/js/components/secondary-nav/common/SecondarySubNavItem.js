@@ -1,4 +1,3 @@
-import EventHandlerDispatch from '../../nav/EventHandlerDispatch';
 import SecondaryNavItem from './SecondaryNavItem';
 
 /**
@@ -22,7 +21,6 @@ export default class SecondarySubNavItem extends SecondaryNavItem {
    * Close all SubNavs.
    *
    * Please override this method in your class.
-   * @return null
    */
   closeAllSubNavs() {
     return;
@@ -30,7 +28,8 @@ export default class SecondarySubNavItem extends SecondaryNavItem {
 
   /**
    * Close this SubNav.
-   * @return
+   *
+   * Please override this method in your class.
    */
   closeSubNav() {
     return;
