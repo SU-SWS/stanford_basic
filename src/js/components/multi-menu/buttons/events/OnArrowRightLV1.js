@@ -1,5 +1,5 @@
 import EventAbstract from '../../../secondary-nav/common/events/EventAbstract';
-import OnArrowLeft from '../../../secondary-nav/common/events/OnArrowRight';
+import OnArrowRight from '../../../secondary-nav/common/events/OnArrowRight';
 
 /**
  * OnArrowLeft
@@ -35,6 +35,13 @@ export default class OnArrowRightLV1 extends EventAbstract {
    * Handle the events for mobile sized screens.
    */
   handleMobile() {
+
+    let node = this.elem.nextElementSibling;
+    if (node) {
+      node.focus();
+      return;
+    }
+
     var classicEvent = new OnArrowRight(this.item, this.event, this.target);
     classicEvent.init();
   }
