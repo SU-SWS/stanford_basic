@@ -1,12 +1,12 @@
-import EventAbstract from './EventAbstract';
-import OnEnd from './OnEnd';
+import EventAbstract from '../../common/events/EventAbstract';
+import OnEnd from '../../common/events/OnEnd';
 
 /**
- * OnArrowUp
+ * OnArrowUpSubNav
  *
  * Event action handler class.
  */
-export default class OnArrowUp extends EventAbstract {
+export default class OnArrowUpSubNav extends EventAbstract {
 
   /**
    * Execute the action to the event.
@@ -15,14 +15,15 @@ export default class OnArrowUp extends EventAbstract {
     this.event.preventDefault();
 
     // Go to the previous item.
-    let node = this.getElement('prev');
+    let node = this.getElement('prevElement');
     if (node) {
-      node.focus();
+      var links = node.querySelectorAll(':scope a');
+      links[links.length - 1].focus();
       return;
     }
 
     // Go to the prev item last subnav item.
-    node = this.getElement('prevElementSiblingSubnavLast');
+    node = this.getElement('parentItem');
     if (node) {
       node.focus();
       return;

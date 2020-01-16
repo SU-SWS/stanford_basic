@@ -2,14 +2,15 @@
 
 .su-multi-menu--right {
   @include grid-media('lg') {
-    > ul {
+    > ul,
+    .su-multi-menu__menu-lv1 {
       justify-content: flex-end;
 
       > li:last-of-type,
-      .su-multi-menu__item,
-      .su-multi-menu__item--parent:last-of-type {
+      > .su-multi-menu__item:last-child,
+      > .su-multi-menu__item--parent:last-of-type {
         @include padding(null 0 null null);
-        & > .su-multi-menu__item-link {
+        & > .su-multi-menu__link {
           @include margin(null 0 null null);
         }
       }

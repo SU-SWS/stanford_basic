@@ -14,7 +14,7 @@
  */
 #}
 
-{% set attributes = attributes.addClass(['su-secondary-nav--light', 'su-secondary-nav', 'no-js']) %}
+{% set attributes = attributes.addClass(['su-secondary-nav--light', 'su-secondary-nav', 'su-secondary-nav--static', 'no-js']) %}
 {# Macros #}
 {%- import "@basic/menus/macros/secondary-nav-menu.twig" as menus -%}
 <nav{{ attributes }} aria-label="{{ aria_label|default('secondary menu') }}">
