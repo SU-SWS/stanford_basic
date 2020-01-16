@@ -113,7 +113,6 @@ export default class SecondarySubNavButtons {
 
     element.setAttribute('class', this.options.toggleClass);
     element.setAttribute('aria-expanded', 'false');
-    // element.setAttribute('aria-controls', this.subNav.id);
     element.setAttribute('aria-label', this.options.toggleLabel);
     element.setAttribute('id', id);
     element.appendChild(label);
@@ -189,7 +188,6 @@ export default class SecondarySubNavButtons {
     }
 
     // Add the aria stuff.
-    this.toggleElement.setAttribute('aria-controls', sectionID);
     section.setAttribute('aria-labelledby', elemID);
   }
 
