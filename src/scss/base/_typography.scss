@@ -36,8 +36,9 @@
 .su-quote-text {
   @include type-b;
 }
-
+//
 // Headings overrides.
+//
 h1 {
   @include modular-spacing('margin-bottom', 5);
   @include modular-spacing('margin-top', 4);
@@ -67,7 +68,9 @@ h6 {
   @include modular-spacing('margin-bottom', 0);
 }
 
+//
 // WYSIWYG Styles overrides.
+//
 .su-button {
   @include modular-spacing('margin-bottom', 3);
 }
