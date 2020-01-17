@@ -64,13 +64,13 @@ h6 {
 
 // Big bold beautiful callout text.
 .su-callout-text {
+  @include margin(0 auto 1em 0);
   @include modular-spacing('margin', -3 null 4 null);
   display: block;
   font-size: 28px;
   font-style: normal;
   font-weight: bold;
   line-height: 33px;
-  margin: 0 auto 1em 0;
   width: 80%;
 }
 
