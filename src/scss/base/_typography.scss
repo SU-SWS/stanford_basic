@@ -2,8 +2,8 @@
 /**
  * This file overrides and extends base typography styles found in Decanter.
  * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
+ * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
-
 
 // Caption Styles.
 .caption {
@@ -12,19 +12,6 @@
   }
 }
 
-
-// A shadowy type.
-.su-related-text {
-  @include box-shadow('paper');
-  border: 1px solid #e3e3e3;
-  padding: 25px;
-}
-
-// Override of Decanter's styles.
-// See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
-.su-quote-text {
-  @include type-b;
-}
 //
 // Headings overrides.
 //
@@ -106,8 +93,16 @@ h6 {
   @include modular-spacing('margin-bottom', 3);
 }
 
+.su-quote-text {
+  @include type-b;
+}
+
+// A shadowy type.
 .su-related-text {
+  @include box-shadow('paper');
   @include modular-spacing('margin-bottom', 4);
+  border: 1px solid #e3e3e3;
+  padding: 25px;
 }
 
 .su-wysiwyg-text {
