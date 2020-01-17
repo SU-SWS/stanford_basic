@@ -5,6 +5,14 @@
  * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
 
+.stanford-wysiwyg:first-child {
+    margin-top: 0;
+  }
+
+.stanford-wysiwyg:last-child {
+    margin-bottom: 0;
+  }
+
 // Caption Styles.
 .caption {
   figcaption {
@@ -16,28 +24,23 @@
 // Headings overrides.
 //
 h1 {
-  @include modular-spacing('margin-bottom', 5);
-  @include modular-spacing('margin-top', 4);
+  @include modular-spacing('margin', 4 null 5 null);
 }
 
 h2 {
-  @include modular-spacing('margin-bottom', 2);
-  @include modular-spacing('margin-top', 1);
+  @include modular-spacing('margin', 1 null 2 null);
 }
 
 h3 {
-  @include modular-spacing('margin-bottom', 2);
-  @include modular-spacing('margin-top', 0);
+  @include modular-spacing('margin', 0 null 2 null);
 }
 
 h4 {
-  @include modular-spacing('margin-bottom', 1);
-  @include modular-spacing('margin-top', 0);
+  @include modular-spacing('margin', 0 null 1 null);
 }
 
 h5 {
-  @include modular-spacing('margin-bottom', 1);
-  @include modular-spacing('margin-top', -1);
+  @include modular-spacing('margin', -1 null 1 null);
 }
 
 h6 {
@@ -61,8 +64,7 @@ h6 {
 
 // Big bold beautiful callout text.
 .su-callout-text {
-  @include modular-spacing('margin-bottom', 4);
-  @include modular-spacing('margin-top', -3);
+  @include modular-spacing('margin', -3 null 4 null);
   display: block;
   font-size: 28px;
   font-style: normal;
@@ -85,8 +87,7 @@ h6 {
 }
 
 .su-font-splash {
-  @include modular-spacing('margin-bottom', 4);
-  @include modular-spacing('margin-top', -1);
+  @include modular-spacing('margin', -1 null 4 null);
 }
 
 .su-intro-text {
