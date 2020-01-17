@@ -4,16 +4,6 @@
  * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
  */
 
-// Big bold beautiful text.
-.su-callout-text {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 33px;
-  width: 80%;
-  margin: 0 auto 1em;
-  display: block;
-}
 
 // Caption Styles.
 .caption {
@@ -90,9 +80,17 @@ h6 {
   @include modular-spacing('margin-bottom', 3);
 }
 
+// Big bold beautiful callout text.
 .su-callout-text {
   @include modular-spacing('margin-bottom', 4);
   @include modular-spacing('margin-top', -3);
+  display: block;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 33px;
+  margin: 0 auto 1em 0;
+  width: 80%;
 }
 
 .su-font-splash {
