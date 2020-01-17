@@ -22,8 +22,9 @@
     font-style: normal;
     font-weight: bold;
     font-size: 3em;
-    line-height: 0.99em;
-    padding: 0 12px 0 0;
+    line-height: 0.7;
+    margin: 18px 12px 0 0;
+    text-transform: uppercase;
   }
   // Adding a drop-cap will automatically apply intro-text
   @include intro-text;
