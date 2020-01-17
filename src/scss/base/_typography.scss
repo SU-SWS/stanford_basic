@@ -21,10 +21,13 @@
     float: left;
     font-style: normal;
     font-weight: bold;
-    font-size: 67px;
-    line-height: 119.41%;
-    padding: 4px 8px 0 3px;
+    font-size: 3em;
+    line-height: 0.7;
+    margin: 18px 12px 0 0;
+    text-transform: uppercase;
   }
+  // Adding a drop-cap will automatically apply intro-text
+  @include intro-text;
 }
 
 // A shadowy type.
