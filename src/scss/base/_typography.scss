@@ -12,17 +12,6 @@
   }
 }
 
-// Drop cap styles.
-.su-drop-cap {
-  &::first-letter {
-    float: left;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 67px;
-    line-height: 119.41%;
-    padding: 4px 8px 0 3px;
-  }
-}
 
 // A shadowy type.
 .su-related-text {
@@ -94,6 +83,18 @@ h6 {
   line-height: 33px;
   margin: 0 auto 1em 0;
   width: 80%;
+}
+
+// Drop cap styles.
+.su-drop-cap {
+  &::first-letter {
+    float: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 67px;
+    line-height: 119.41%;
+    padding: 4px 8px 0 3px;
+  }
 }
 
 .su-font-splash {
