@@ -7,10 +7,10 @@
 
 .su-wysiwyg-text {
 
-
   //
   // Headings overrides.
   //
+
   h1 {
     @include modular-spacing('margin', 4 null 5 null);
   }
@@ -45,7 +45,7 @@
       text-align: center;
     }
   }
-  
+
   p {
     @include modular-spacing('padding-bottom', 1);
     margin-bottom: 0;
