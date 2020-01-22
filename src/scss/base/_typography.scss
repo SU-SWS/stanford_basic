@@ -16,11 +16,11 @@
   }
 
   h2 {
-    @include modular-spacing('margin', 1 null 2 null);
+    @include modular-spacing('margin', 1 null 1 null);
   }
 
   h3 {
-    @include modular-spacing('margin', 0 null 2 null);
+    @include modular-spacing('margin', 0 null 1 null);
   }
 
   h4 {
@@ -28,11 +28,11 @@
   }
 
   h5 {
-    @include modular-spacing('margin', -1 null 1 null);
+    @include modular-spacing('margin', -1 null -1 null);
   }
 
   h6 {
-    @include modular-spacing('margin-bottom', 0);
+    @include modular-spacing('margin-bottom', -2);
   }
 
   //
@@ -45,23 +45,27 @@
       text-align: center;
     }
   }
+  p {
+    @include modular-spacing('padding-bottom', 1);
+    margin-bottom: 0;
+  }
 
   .su-button {
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 0);
   }
 
   .su-button--big {
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 0);
   }
 
   .su-button--secondary {
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 0);
   }
 
   // Big bold beautiful callout text.
   .su-callout-text {
     @include margin(0 auto 1em 0);
-    @include modular-spacing('margin', -3 null 4 null);
+    @include modular-spacing('margin', -3 null 1 null);
     display: block;
     font-size: 28px;
     font-style: normal;
@@ -76,9 +80,9 @@
       float: left;
       font-style: normal;
       font-weight: bold;
-      font-size: 3em;
-      line-height: 0.7;
-      margin: 18px 12px 0 0;
+      font-size: 3.5em;
+      line-height: .6;
+      margin: 11px 12px 0 0;
       text-transform: uppercase;
     }
 
@@ -87,11 +91,11 @@
   }
 
   .su-font-splash {
-    @include modular-spacing('margin', -1 null 4 null);
+    @include modular-spacing('margin', -1 null 2 null);
   }
 
   .su-intro-text {
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 0);
   }
 
   .su-quote-text {
@@ -101,12 +105,12 @@
   // A shadowy type.
   .su-related-text {
     @include box-shadow('paper');
-    @include modular-spacing('margin-bottom', 4);
+    @include modular-spacing('margin-bottom', 3);
     border: 1px solid #e3e3e3;
     padding: 25px;
   }
 
   .su-wysiwyg-text {
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 6);
   }
 }
