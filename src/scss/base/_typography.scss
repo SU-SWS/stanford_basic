@@ -45,6 +45,7 @@
       text-align: center;
     }
   }
+  
   p {
     @include modular-spacing('padding-bottom', 1);
     margin-bottom: 0;
@@ -86,7 +87,7 @@
       font-style: normal;
       font-weight: bold;
       font-size: 3.5em;
-      line-height: .6;
+      line-height: 0.6;
       margin: 11px 12px 0 0;
       text-transform: uppercase;
     }
