@@ -72,6 +72,11 @@
     font-weight: bold;
     line-height: 33px;
     width: 80%;
+
+    &:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+    }
   }
 
   // Drop cap styles.
@@ -92,6 +97,11 @@
 
   .su-font-splash {
     @include modular-spacing('margin', -1 null 2 null);
+
+    &:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+    }
   }
 
   .su-intro-text {
