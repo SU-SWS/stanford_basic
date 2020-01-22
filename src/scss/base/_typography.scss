@@ -5,103 +5,108 @@
  * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
 
-// Caption Styles.
-.caption {
-  figcaption {
-    text-align: center;
+.su-wysiwyg-text {
+
+
+  //
+  // Headings overrides.
+  //
+  h1 {
+    @include modular-spacing('margin', 4 null 5 null);
   }
-}
 
-//
-// Headings overrides.
-//
-h1 {
-  @include modular-spacing('margin', 4 null 5 null);
-}
+  h2 {
+    @include modular-spacing('margin', 1 null 2 null);
+  }
 
-h2 {
-  @include modular-spacing('margin', 1 null 2 null);
-}
+  h3 {
+    @include modular-spacing('margin', 0 null 2 null);
+  }
 
-h3 {
-  @include modular-spacing('margin', 0 null 2 null);
-}
+  h4 {
+    @include modular-spacing('margin', 0 null 1 null);
+  }
 
-h4 {
-  @include modular-spacing('margin', 0 null 1 null);
-}
+  h5 {
+    @include modular-spacing('margin', -1 null 1 null);
+  }
 
-h5 {
-  @include modular-spacing('margin', -1 null 1 null);
-}
+  h6 {
+    @include modular-spacing('margin-bottom', 0);
+  }
 
-h6 {
-  @include modular-spacing('margin-bottom', 0);
-}
+  //
+  // WYSIWYG Styles overrides.
+  //
 
-//
-// WYSIWYG Styles overrides.
-//
-.su-button {
-  @include modular-spacing('margin-bottom', 3);
-}
+  // Caption Styles.
+  .caption {
+    figcaption {
+      text-align: center;
+    }
+  }
 
-.su-button--big {
-  @include modular-spacing('margin-bottom', 3);
-}
+  .su-button {
+    @include modular-spacing('margin-bottom', 3);
+  }
 
-.su-button--secondary {
-  @include modular-spacing('margin-bottom', 3);
-}
+  .su-button--big {
+    @include modular-spacing('margin-bottom', 3);
+  }
 
-// Big bold beautiful callout text.
-.su-callout-text {
-  @include margin(0 auto 1em 0);
-  @include modular-spacing('margin', -3 null 4 null);
-  display: block;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 33px;
-  width: 80%;
-}
+  .su-button--secondary {
+    @include modular-spacing('margin-bottom', 3);
+  }
 
-// Drop cap styles.
-.su-drop-cap {
-  &::first-letter {
-    float: left;
+  // Big bold beautiful callout text.
+  .su-callout-text {
+    @include margin(0 auto 1em 0);
+    @include modular-spacing('margin', -3 null 4 null);
+    display: block;
+    font-size: 28px;
     font-style: normal;
     font-weight: bold;
-    font-size: 3em;
-    line-height: 0.7;
-    margin: 18px 12px 0 0;
-    text-transform: uppercase;
+    line-height: 33px;
+    width: 80%;
   }
-  // Adding a drop-cap will automatically apply intro-text
-  @include intro-text;
-}
 
-.su-font-splash {
-  @include modular-spacing('margin', -1 null 4 null);
-}
+  // Drop cap styles.
+  .su-drop-cap {
+    &::first-letter {
+      float: left;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 0.7;
+      margin: 18px 12px 0 0;
+      text-transform: uppercase;
+    }
 
-.su-intro-text {
-  @include modular-spacing('margin-bottom', 3);
-}
+    // Adding a drop-cap will automatically apply intro-text
+    @include intro-text;
+  }
 
-.su-quote-text {
-  @include type-b;
-}
+  .su-font-splash {
+    @include modular-spacing('margin', -1 null 4 null);
+  }
 
-// A shadowy type.
-.su-related-text {
-  @include box-shadow('paper');
-  @include modular-spacing('margin-bottom', 4);
-  border: 1px solid #e3e3e3;
-  padding: 25px;
-}
+  .su-intro-text {
+    @include modular-spacing('margin-bottom', 3);
+  }
 
-.su-wysiwyg-text {
-  @include modular-spacing('margin-bottom', 3);
-}
+  .su-quote-text {
+    @include type-b;
+  }
 
+  // A shadowy type.
+  .su-related-text {
+    @include box-shadow('paper');
+    @include modular-spacing('margin-bottom', 4);
+    border: 1px solid #e3e3e3;
+    padding: 25px;
+  }
+
+  .su-wysiwyg-text {
+    @include modular-spacing('margin-bottom', 3);
+  }
+}
