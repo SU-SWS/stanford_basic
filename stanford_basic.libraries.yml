@@ -111,6 +111,12 @@ basic:
     - core/modernizr
     - stanford_basic/fontawesome
 
+admin:
+  version: VERSION
+  css:
+    base:
+      dist/css/admin.css: {  }
+
 fontawesome:
   version: 5.7.1
   remote: https://use.fontawesome.com/releases/v5.7.1/css/all.css
