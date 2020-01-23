@@ -11,53 +11,36 @@
   // Headings overrides.
   //
 
+  h1, h2, h3, h4, h5, h6 {
+    // Remove margin-top and padding-top when a heading is the first item on the page
+    &:first-of-type {
+      @include margin(0 null null null);
+      @include padding(0 null null null);
+    }
+  }
+
   h1 {
     @include modular-spacing('margin', 4 null 5 null);
   }
 
   h2 {
     @include modular-spacing('margin', 1 null 1 null);
-
-    &:first-of-type {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
   }
 
   h3 {
     @include modular-spacing('margin', 0 null 1 null);
-
-    &:first-of-type {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
   }
 
   h4 {
     @include modular-spacing('margin', 0 null 1 null);
-
-    &:first-of-type {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
   }
 
   h5 {
     @include modular-spacing('margin', -1 null -1 null);
-
-    &:first-of-type {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
   }
 
   h6 {
     @include modular-spacing('margin-bottom', -2);
-
-    &:first-of-type {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
   }
 
   //
@@ -74,6 +57,19 @@
   p {
     @include modular-spacing('padding-bottom', 1);
     @include margin(0 null null null);
+
+    // Remove margin-top and padding-top when a <p> is the first item on the page
+    &:first-of-type {
+      @include margin(0 null null null);
+      @include padding(0 null null null);
+    }
+
+  // Remove margin-bottom and padding-bottom when a <p> is the last item on the page
+
+    &:last-of-type {
+      @include margin(null null 0 null);
+      @include padding(null null 0 null);
+    }
   }
 
   .su-button {
@@ -144,9 +140,11 @@
     @include modular-spacing('margin-bottom', 3);
     @include padding(25px);
     border: 1px solid #e3e3e3;
-  }
 
-  .su-wysiwyg-text {
-    @include modular-spacing('margin-bottom', 6);
+    // Yeah, let's not remove this.
+    &:last-of-type {
+      @include modular-spacing('margin-bottom', 3);
+      @include padding(25px);
+    }
   }
 }
