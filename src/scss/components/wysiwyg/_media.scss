@@ -1,6 +1,10 @@
 @charset 'UTF-8';
 
-.align-center img,
-.align-center picture {
-  @include margin(0 auto);
+.su-wysiwyg-text {
+  .align-center {
+    img,
+    picture {
+      @include margin(0 auto);
+    }
+  }
 }
