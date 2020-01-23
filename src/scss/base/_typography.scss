@@ -11,7 +11,12 @@
   // Headings overrides.
   //
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     // Remove margin-top and padding-top when a heading is the first item on the page
     &:first-of-type {
       @include margin(0 null null null);
@@ -64,8 +69,7 @@
       @include padding(0 null null null);
     }
 
-  // Remove margin-bottom and padding-bottom when a <p> is the last item on the page
-
+    // Remove margin-bottom and padding-bottom when a <p> is the last item on the page
     &:last-of-type {
       @include margin(null null 0 null);
       @include padding(null null 0 null);
