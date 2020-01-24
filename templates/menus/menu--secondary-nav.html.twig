@@ -18,6 +18,7 @@
 {% set attributes = attributes.setAttribute('aria-label', aria_label|default('secondary menu')) %}
 {# Macros #}
 {%- import "@basic/menus/macros/secondary-nav-menu.twig" as menus -%}
+<a href="#main-content" class="visually-hidden focusable su-skipnav">{{ 'Skip to main content'|t }}</a>
 <nav{{ attributes }}>
   {% spaceless %}
   {% if items is iterable %}
