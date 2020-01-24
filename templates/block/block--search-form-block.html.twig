@@ -1,5 +1,6 @@
 {% set attributes = attributes.addClass('su-site-search') %}
-{% set action = base_path ~ "/search/node" %}
+{% set attributes = attributes.addClass('mobile-hidden') %}
+{% set action = base_path ~ "/search/content" %}
 
 {% include "@basic-dist/decanter/components/site-search/site-search.twig" with
   {

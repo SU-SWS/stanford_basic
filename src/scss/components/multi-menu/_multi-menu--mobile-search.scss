@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.su-multi-menu--mobile-search {
+  > .su-multi-menu__menu {
+    @include grid-media-max('md') {
+      @include padding(72px null null null);
+    }
+  }
+}

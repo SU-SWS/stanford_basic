@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', event => {
   multiMenus.forEach((nav, index) => {
     if (nav.className.match(/su-multi-menu--buttons/)) {
       var theNav = new MultiMenuButtons(nav);
+      var theSearch = nav.parentElement.querySelector(":scope .su-site-search");
       var toggleElem = nav.querySelector(':scope .su-multi-menu__nav-toggle');
+
       if (toggleElem) {
-        new MobileToggle(toggleElem, theNav);
+        new MobileToggle(toggleElem, theNav, theSearch, {});
       }
     }
   });
