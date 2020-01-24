@@ -273,16 +273,13 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
+    $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
+    if ($item_path == $current_path) {
+      $item['is_active'] = TRUE;
+    }
 
-    if ($item['in_active_trail']) {
-      $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
-
-      if ($item_path == $current_path) {
-        $item['is_active'] = TRUE;
-      }
-      elseif (count($item['below'])) {
-        _stanford_basic_menu_process_submenu($item['below'], $current_path);
-      }
+    if ($item['in_active_trail'] && count($item['below'])) {
+      _stanford_basic_menu_process_submenu($item['below'], $current_path);
     }
   }
 }
