@@ -6,7 +6,6 @@ import {createEvent} from '../../../polyfills/createEvent';
 // Keyboard events.
 import OnHome from '../common/events/OnHome';
 import OnEnd from '../common/events/OnEnd';
-import OnTab from './events/OnTab';
 import OnEsc from '../common/events/OnEsc';
 import OnSpace from '../common/events/OnSpace';
 import OnArrowUp from '../common/events/OnArrowUp';
@@ -46,7 +45,7 @@ export default class SecondarySubNavButtons {
     this.options = Object.assign({
       itemExpandedClass: 'su-secondary-nav__item--expanded',
       toggleClass: 'su-nav-toggle',
-      toggleLabel: 'expand menu',
+      toggleLabel: 'expand' + this.elem.innerText + ' menu',
       subNavToggleText: '+'
     }, options);
 
@@ -88,7 +87,6 @@ export default class SecondarySubNavButtons {
       onKeydownEnter: OnSpace,
       onKeydownHome: OnHome,
       onKeydownEnd: OnEnd,
-      onKeydownTab: OnTab,
       onKeydownEscape: OnEsc,
       onKeydownArrowUp: OnArrowUp,
       onKeydownArrowRight: OnArrowRight,
@@ -113,7 +111,6 @@ export default class SecondarySubNavButtons {
 
     element.setAttribute('class', this.options.toggleClass);
     element.setAttribute('aria-expanded', 'false');
-    // element.setAttribute('aria-controls', this.subNav.id);
     element.setAttribute('aria-label', this.options.toggleLabel);
     element.setAttribute('id', id);
     element.appendChild(label);
@@ -189,7 +186,6 @@ export default class SecondarySubNavButtons {
     }
 
     // Add the aria stuff.
-    this.toggleElement.setAttribute('aria-controls', sectionID);
     section.setAttribute('aria-labelledby', elemID);
   }
 

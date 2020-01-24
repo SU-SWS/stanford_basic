@@ -1,18 +1,18 @@
 @charset 'UTF-8';
 
 // Load the decanter dependencies.
-@import 'decanter-no-markup';
+@import 'decanter/core/src/scss/decanter-no-markup';
 
 // Load up the theme config overrides first.
 @import 'config/index';
 @import 'utilities/index';
 
 // Then import Decanter styles.
-@import '~decanter-src/scss/elements/typography/typography';
-@import '~decanter-src/scss/elements/list/index';
-@import '~decanter-src/scss/elements/table/index';
-@import '~decanter-src/scss/components/button/index';
-@import '~decanter-src/scss/components/link/index';
+@import 'decanter/core/src/scss/elements/typography/typography';
+@import 'decanter/core/src/scss/elements/list/index';
+@import 'decanter/core/src/scss/elements/table/index';
+@import 'decanter/core/src/scss/components/button/index';
+@import 'decanter/core/src/scss/components/link/index';
 
 // Add our custom styles.
 @import 'base/typography';

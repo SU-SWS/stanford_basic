@@ -37,7 +37,7 @@ export default class OnArrowLeft extends EventAbstract {
    */
   nestedLeft() {
     let node = this.getElement('parentItem') || this.getElement('parentNavLast');
-    this.parentNav.closeSubNav();
+    // this.parentNav.closeSubNav();
 
     if (node) {
       node.focus();

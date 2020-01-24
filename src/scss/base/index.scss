@@ -14,16 +14,16 @@
 @import '../config/index';
 
 // First import decanter as no markup.
-@import 'decanter-no-markup';
+@import 'decanter/core/src/scss/decanter-no-markup';
 
 // Then we override the variables, mixins, and functions.
 @import '../utilities/index';
 
 // Then we import All of Decanter.
-@import "~decanter-src/scss/core/index";
-@import "~decanter-src/scss/elements/index";
-@import "~decanter-src/scss/layout/index";
-@import "~decanter-src/scss/components/index";
+@import "decanter/core/src/scss/core/index";
+@import "decanter/core/src/scss/elements/index";
+@import "decanter/core/src/scss/layout/index";
+@import "decanter/core/src/scss/components/index";
 
 // Roll up partial imports.
 @import 'typography';

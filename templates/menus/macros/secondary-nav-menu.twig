@@ -24,6 +24,7 @@
     {% endif %}
     {% if item.is_active == true %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--current") %}
+      {% set link_attributes = link_attributes.setAttribute('aria-current', 'true') %}
     {% endif %}
 
     {# Skip non-trail items below the first level. #}

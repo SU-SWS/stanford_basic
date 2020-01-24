@@ -18,18 +18,17 @@
 // .component-name__sub-object
 
 // First import decanter as no markup.
-@import 'decanter-no-markup';
+@import 'decanter/core/src/scss/decanter-no-markup';
 
 // Then we override the variables, mixins, and functions.
 @import
-'config/index',
-'utilities/index';
+'../config/index',
+'../utilities/index';
 
 // Stanford Basic components
 @import
 'all/index', // All comes first so others can override.
 'alert/index',
-'main-nav/index',
 'masthead/index',
 'multi-menu/index',
 'nav-toggle/index',

@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 // First import decanter as no markup.
-@import 'decanter-no-markup';
+@import 'decanter/core/src/scss/decanter-no-markup';
 
 // Then we override the variables, mixins, and functions.
 @import
