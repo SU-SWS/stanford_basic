@@ -25,7 +25,6 @@
 #}
 {% for type, messages in message_list %}
   {% set attributes = create_attribute() %}
-  {% set attributes = attributes.addClass('su-alert') %}
   {% set attributes = attributes.setAttribute('role', 'alert') %}
 
   {% if type == "status" %}
@@ -33,6 +32,9 @@
   {% else %}
     {% set attributes = attributes.addClass('su-alert--' ~ type) %}
   {% endif %}
+
+  {% set modifier_class = attributes.class %}
+  {% set attributes = attributes|without('class') %}
 
   {# Good for everyone. #}
   {% if status_headings[type] %}
