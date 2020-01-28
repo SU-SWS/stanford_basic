@@ -13,6 +13,7 @@
   The variant classes change when there is more than one line to render.
   Add that logic here.
 #}
+
 {% if lockup.option is not empty %}
   {% set attributes = attributes.addClass(["su-lockup", "su-lockup--option-" ~ lockup.option]) %}
 {% endif %}
@@ -33,7 +34,8 @@
 
 {%
   set data = {
-  'attributes': attributes,
+  'attributes': attributes|without('class'),
+  'modifier_class': attributes.class,
   'link': url('<front>'),
   'line1': line1,
   'line2': line2,
