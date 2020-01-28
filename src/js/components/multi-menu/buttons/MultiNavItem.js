@@ -1,5 +1,6 @@
 import SecondaryNavItem from '../../secondary-nav/common/SecondaryNavItem';
 import OnArrowLeftLV1 from './events/OnArrowLeftLV1';
+import OnArrowRightLV1 from './events/OnArrowRightLV1';
 
 /**
  * SecondarySubNavAccordion Class
@@ -23,7 +24,8 @@ export default class MultiNavItem extends SecondaryNavItem {
 
     if (this.getDepth() === 1) {
       registryDefaults = Object.assign(registryDefaults, {
-        onKeydownArrowLeft: OnArrowLeftLV1
+        onKeydownArrowLeft: OnArrowLeftLV1,
+        onKeydownArrowRight: OnArrowRightLV1
       });
     }
 

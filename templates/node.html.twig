@@ -7,8 +7,14 @@
 {% set title_classes = [ node.bundle|clean_class ~ '__title'] %}
 {% set attributes = attributes.addClass(node_classes) %}
 {% set attributes = attributes.removeAttribute('role') %}
-<article{{ attributes }}>
 
+{% if page %}
+{# Node as a page should be a section. #}
+<section{{ attributes }}>
+{# Node in a list should be it's own article. #}
+{% else %}
+<article{{ attributes }}>
+{% endif %}
   {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
     <header>
       {{ title_prefix }}
@@ -43,4 +49,8 @@
     </div><!-- /.links -->
   {% endif %}
 
-</article><!-- /.node -->
+{% if page %}
+</section><!-- /.node as page -->
+{% else %}
+</article><!-- /.node as a list -->
+{% endif %}

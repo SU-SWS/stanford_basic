@@ -21,6 +21,13 @@ export default class OnArrowUp extends EventAbstract {
       return;
     }
 
+    // Go to the prev item last subnav item.
+    node = this.getElement('prevElementSiblingSubnavLast');
+    if (node) {
+      node.focus();
+      return;
+    }
+
     // Default to the end..
     var eventEnd = new OnEnd(this.item, this.event, this.target);
     eventEnd.init();

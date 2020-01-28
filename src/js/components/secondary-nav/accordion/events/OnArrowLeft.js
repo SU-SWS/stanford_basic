@@ -12,14 +12,11 @@ export default class OnArrowLeft extends EventAbstract {
    * Execute the action to the event.
    */
   exec() {
-    // Go up a level and close the nav.
+    // Go up a level.
     this.event.preventDefault();
 
     // Previous nav parents link item to focus on.
     var node = this.getElement('parentItem');
-    if (this.parentNav) {
-      this.parentNav.closeSubNav();
-    }
 
     // If we found a previous item focus on it.
     if (node) {

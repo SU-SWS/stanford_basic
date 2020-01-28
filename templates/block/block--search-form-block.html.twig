@@ -1,8 +1,9 @@
 {% set attributes = attributes.addClass('su-site-search') %}
-{% set action = base_path ~ "/search/node" %}
 
-{% include "@decanter/components/site-search/site-search.twig" with
+{% include "@basic-dist/decanter/components/site-search/site-search.twig" with
   {
+    "attributes": attributes|without('class', 'role'),
+    "modifier_class": attributes.class,
     "action": content['#action'],
     "method": "get",
     "search_label": "Search this site"|t,

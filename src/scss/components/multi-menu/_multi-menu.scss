@@ -12,10 +12,7 @@
 // <a href="https://github.com/SU-SWS/decanter/wiki/About-the-Main-Nav-Component">About the Main Nav Component</a>
 // on Decanter's wiki.
 //
-// .su-multi-menu--accordion      - A multiple tier menu with accordion nested menus
-// .su-multi-menu--accordion-dark - Accordion style with a dark twist.
 // .su-multi-menu--buttons        - A multiple tier (split) menu that expand with button toggles.
-// .su-multi-menu--buttons-dark   - Button style with a dark twist.
 //
 // Markup: ../templates/components/multi-menu/multi-menu.twig
 //
@@ -62,7 +59,8 @@
     color(border--active, $su-multi-menu-colors),
     'left'
   );
-  @include padding(1.6rem 4.8rem 1.6rem 2.4rem);
+  @include padding(1.6rem 0 1.6rem 2.4rem);
+  @include margin(null 1.6rem null null);
   display: block;
   color: color(link, $su-multi-menu-colors);
   font-weight: $su-font-semi-bold;
@@ -109,18 +107,17 @@
     // --------------------------
     > .su-multi-menu__item {
       > .su-multi-menu__link {
-        color: color(h--link, $su-multi-menu-colors);
-        @include padding(null 0);
-        @include margin(0 1.2em 0 0);
-        font-size: 2.1rem;
+        @include padding(null 0 2.4rem 0);
+        @include margin(0 1.8em 0 0);
+        font-size: 1.9rem;
         border-bottom: 0;
         font-weight: $su-font-semi-bold;
+        color: $su-color-bright-red;
 
         &::before {
           height: 6px;
           width: 100%;
           transition: transform 0.3s ease-out;
-          background-color: color(h--border, $su-multi-menu-colors);
           transform: scaleX(0);
         }
 
@@ -130,15 +127,8 @@
         &:active,
         &:focus {
           font-weight: $su-font-semi-bold;
-          color: color(h--link-hover, $su-multi-menu-colors);
-          text-decoration: none;
-
-          &::before {
-            transform: scaleX(1);
-            visibility: visible;
-            left: 0;
-            background-color: color(h--border-hover, $su-multi-menu-colors);
-          }
+          color: $su-color-black;
+          text-decoration: underline;
         }
       }
     }
@@ -150,6 +140,8 @@
       &.su-multi-menu__item--active-trail {
 
         > .su-multi-menu__link {
+          color: $su-color-black;
+
           &::before {
             height: 6px;
             transform: scaleX(1);
@@ -159,8 +151,10 @@
 
           &:hover,
           &:focus {
+            color: $su-color-black;
+
             &::before {
-              background-color: color(h--border-hover, $su-multi-menu-colors);
+              background: 0;
             }
           }
         }
@@ -182,14 +176,7 @@
             height: 6px;
             transform: scaleX(1);
             visibility: visible;
-            background-color: color(h--border-hover, $su-multi-menu-colors);
           }
-        }
-      }
-
-      &:hover {
-        > .su-multi-menu__menu {
-          display: flex;
         }
       }
     }
@@ -254,7 +241,6 @@
     &:hover,
     &:focus {
       &::before {
-        left: 6px;
         transition: left 0.1s ease-out;
         background-color: color(border--active, $su-multi-menu-colors);
       }

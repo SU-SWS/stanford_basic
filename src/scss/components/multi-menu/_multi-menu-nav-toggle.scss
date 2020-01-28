@@ -38,6 +38,7 @@
         background-size: 16px 16px;
       }
 
+      &:focus::before,
       &:hover::before {
         background-color: color(h--border-hover, $su-multi-menu-colors);
       }
