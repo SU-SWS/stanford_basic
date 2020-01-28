@@ -11,19 +11,19 @@ export default {
 
   // Attach Drupal Behavior.
   attach(context, settings) {
-    (function($) {
+    (function ($) {
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
-      $mc = $('#main-content').length;
+      var $mc = $('#main-content').length;
       if (!$mc) {
-        $(".su-skipnav--content").attr('href', "#page-content");
+        $('.su-skipnav--content').attr('href', '#page-content');
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
       // remove the skip link.
-      $sn = $('#secondary-navigation').length;
+      var $sn = $('#secondary-navigation').length;
       if (!$sn) {
-        $(".su-skipnav--secondary").remove();
+        $('.su-skipnav--secondary').remove();
       }
     })(jQuery);
   },
