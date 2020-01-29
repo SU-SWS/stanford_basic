@@ -7,27 +7,30 @@
 
 .su-wysiwyg-text {
 
-    &:first-child {
-      @include margin(0 null null null);
-      @include padding(0 null null null);
-    }
-
-  ////
-  //// Headings overrides.
-  ////
   //
-  //h1,
-  //h2,
-  //h3,
-  //h4,
-  //h5,
-  //h6 {
-  //  // Remove margin-top and padding-top when a heading is the first item on the page
-  //  &:first-of-type {
-  //    @include margin(0 null null null);
-  //    @include padding(0 null null null);
-  //  }
-  //}
+  // Margin overrides.
+  //
+  
+  > {
+    * {
+
+      &:last-child {
+        // Remove margin-bottom and padding-bottom when it is the last item on the page
+        @include margin(null null 0 null);
+        @include padding(null null 0 null);
+      }
+
+      &:first-child {
+        // Remove margin-top and padding-top when it is the first item on the page
+        @include margin(0 null null null);
+        @include padding(0 null null null);
+      }
+    }
+  }
+
+  //
+  // Headings overrides
+  //
 
   h1 {
     @include modular-spacing('margin', 4 null 5 null);
@@ -67,19 +70,7 @@
   p {
     @include modular-spacing('padding-bottom', 1);
     @include margin(0 null null null);
-
-    //// Remove margin-top and padding-top when a <p> is the first item on the page
-    //&:first-of-type {
-    //  @include margin(0 null null null);
-    //  @include padding(0 null null null);
-    //}
-
-    // Remove margin-bottom and padding-bottom when a <p> is the last item on the page
-    &:last-of-type {
-      @include margin(null null 0 null);
-      @include padding(null null 0 null);
-    }
-  }
+   }
 
   .su-button {
     @include modular-spacing('margin-bottom', 0);
@@ -104,9 +95,16 @@
     line-height: 33px;
     width: 80%;
 
-    &:first-of-type {
+    &:first-child {
+      // Remove margin-top and padding-top when it is the first item on the page
       @include margin(0 null null null);
       @include padding(0 null null null);
+    }
+
+    &:last-child {
+      // Remove margin-bottom and padding-bottom when it is the last item on the page
+      @include margin(null null 0 null);
+      @include padding(null null 0 null);
     }
   }
 
@@ -122,16 +120,23 @@
       text-transform: uppercase;
     }
 
-    // Adding a drop-cap will automatically apply intro-text
+    // Adding a drop-cap automatically applies intro-text
     @include intro-text;
   }
 
   .su-font-splash {
     @include modular-spacing('margin', -1 null 2 null);
 
-    &:first-of-type {
+    &:first-child {
+      // Remove margin-top and padding-top when it is the first item on the page
       @include margin(0 null null null);
       @include padding(0 null null null);
+    }
+
+    &:last-child {
+      // Remove margin-bottom and padding-bottom when it is the last item on the page
+      @include margin(null null 0 null);
+      @include padding(null null 0 null);
     }
   }
 
@@ -150,10 +155,10 @@
     @include padding(25px);
     border: 1px solid #e3e3e3;
 
-    // Yeah, let's not remove the margin-bottom when it is last.
-    &:last-of-type {
-      @include modular-spacing('margin-bottom', 3);
+    // Yeah, let's not remove padding-bottom when it is last.
+    &:last-child {
       @include padding(25px);
+      @include margin(null null 0 null);
     }
   }
 }
