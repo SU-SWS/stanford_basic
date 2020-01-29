@@ -14,16 +14,16 @@ export default {
     (function ($) {
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
-      var $mc = $('#main-content').length;
+      var $mc = $('#main-content', context).length;
       if (!$mc) {
-        $('.su-skipnav--content').attr('href', '#page-content');
+        $('.su-skipnav--content', context).attr('href', '#page-content');
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
       // remove the skip link.
-      var $sn = $('#secondary-navigation').length;
+      var $sn = $('#secondary-navigation', context).length;
       if (!$sn) {
-        $('.su-skipnav--secondary').remove();
+        $('.su-skipnav--secondary', context).remove();
       }
     })(jQuery);
   },
