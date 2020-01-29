@@ -10,7 +10,6 @@
   //
   // Margin overrides.
   //
-  
   > {
     * {
 
@@ -31,7 +30,6 @@
   //
   // Headings overrides
   //
-
   h1 {
     @include modular-spacing('margin', 4 null 5 null);
   }
@@ -120,7 +118,7 @@
       text-transform: uppercase;
     }
 
-    // Adding a drop-cap automatically applies intro-text
+    // Adding drop-cap automatically applies intro-text
     @include intro-text;
   }
 
