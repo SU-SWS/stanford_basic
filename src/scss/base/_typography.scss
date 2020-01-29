@@ -153,7 +153,7 @@
     @include padding(25px);
     border: 1px solid #e3e3e3;
 
-    // Yeah, let's not remove padding-bottom when it is last.
+    // Yeah, let's not remove padding-bottom when last.
     &:last-child {
       @include padding(25px);
       @include margin(null null 0 null);
