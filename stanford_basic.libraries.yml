@@ -108,6 +108,7 @@ basic:
     - classy/messages
     - classy/progress
     - core/drupal
+    - core/jquery
     - core/modernizr
     - stanford_basic/fontawesome
 
