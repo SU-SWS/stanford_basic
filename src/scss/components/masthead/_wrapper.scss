@@ -3,6 +3,7 @@
 // Decanter overrides.
 // ----------------------------------------------------------------------
 .su-masthead {
+  z-index: 1;
 
   @include grid-media-max('sm') {
     .su-multi-menu {
