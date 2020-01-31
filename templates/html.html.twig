@@ -61,16 +61,40 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+
+      {% if add_global_ga %}
+        {% if not ga_module_enabled %}
+        <!-- Global analytics tag (gtag.js) - Google Analytics -->
+        <script async
+                src="https://www.googletagmanager.com/gtag/js?id=UA-26605114-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+          gtag('config', 'UA-26605114-1');
+        </script>
+        {% else %}
+        <script>
+          ga("create", "UA-26605114-1", {"cookieDomain":"auto"}, 'globalTracker');
+        </script>
+        {% endif %}
+      {% endif %}
   </head>
   {% set classes = [is_front ? 'front', not is_front ? 'not-front'] %}
   {% for role in user.roles %}
     {% set classes = classes|merge(['role--' ~ role|clean_class]) %}
   {% endfor %}
   <body{{ attributes.addClass(classes) }}>
-      <a href="#main-content" class="visually-hidden focusable su-skipnav">
+      <a href="#main-content" class="visually-hidden focusable su-skipnav su-skipnav--content">
         {{ 'Skip to main content'|t }}
       </a>
-    {{ pattern("brandbar", {}, brand_bar_variant) }}
+      <a href="#secondary-navigation" class="visually-hidden focusable su-skipnav su-skipnav--secondary">
+        {{ 'Skip to secondary navigation'|t }}
+      </a>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
@@ -80,6 +104,5 @@
       document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
       </script>
     {% endif %}
-    {{ pattern("globalfooter") }}
   </body>
 </html>

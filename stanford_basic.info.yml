@@ -2,7 +2,7 @@ name: Stanford Basic
 type: theme
 description: 'Stanford Basic Branding Theme.'
 package: Stanford
-version: 8.x-4.0-alpha2
+version: 8.x-4.0-dev
 core_version_requirement: ^8 || ^9
 
 regions:
@@ -23,6 +23,9 @@ component-libraries:
   basic:
     paths:
       - templates
+  basic-dist:
+    paths:
+      - dist/templates
 
 libraries:
   - stanford_basic/basic

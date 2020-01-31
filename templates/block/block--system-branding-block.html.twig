@@ -13,8 +13,9 @@
   The variant classes change when there is more than one line to render.
   Add that logic here.
 #}
+
 {% if lockup.option is not empty %}
-  {% set classes = classes ~ " su-lockup--option-" ~ lockup.option %}
+  {% set attributes = attributes.addClass(["su-lockup", "su-lockup--option-" ~ lockup.option]) %}
 {% endif %}
 
 {# Do not default the line 1 on variant O, S, or T #}
@@ -31,20 +32,16 @@
  {% set line2 = lockup.line2|render|striptags %}
 {% endif %}
 
-{#
-  RENDER
-#}
-{{ pattern(
-  'lockup',
-  {
-    'attributes': {
-      'class': classes,
-    },
-    'link': url('<front>'),
-    'line1': line1,
-    'line2': line2,
-    'line3': lockup.line3|render|striptags,
-    'line4': lockup.line4|render|striptags,
-    'line5': lockup.line5|render|striptags,
-  })
-}}
+{%
+  set data = {
+  'attributes': attributes|without('class'),
+  'modifier_class': attributes.class,
+  'link': url('<front>'),
+  'line1': line1,
+  'line2': line2,
+  'line3': lockup.line3|render|striptags,
+  'line4': lockup.line4|render|striptags,
+  'line5': lockup.line5|render|striptags
+  }
+%}
+{% include "@basic-dist/decanter/components/lockup/lockup.twig" with data only %}

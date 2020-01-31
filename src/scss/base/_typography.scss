@@ -2,40 +2,106 @@
 /**
  * This file overrides and extends base typography styles found in Decanter.
  * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
+ * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
 
-// Big bold beautiful text.
-.su-callout-text {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 33px;
-  width: 80%;
-  margin: 0 auto 1em;
-  display: block;
+// Caption Styles.
+.caption {
+  figcaption {
+    text-align: center;
+  }
 }
 
-// Dropcap styles.
+//
+// Headings overrides.
+//
+h1 {
+  @include modular-spacing('margin', 4 null 5 null);
+}
+
+h2 {
+  @include modular-spacing('margin', 1 null 2 null);
+}
+
+h3 {
+  @include modular-spacing('margin', 0 null 2 null);
+}
+
+h4 {
+  @include modular-spacing('margin', 0 null 1 null);
+}
+
+h5 {
+  @include modular-spacing('margin', -1 null 1 null);
+}
+
+h6 {
+  @include modular-spacing('margin-bottom', 0);
+}
+
+//
+// WYSIWYG Styles overrides.
+//
+.su-button {
+  @include modular-spacing('margin-bottom', 3);
+}
+
+.su-button--big {
+  @include modular-spacing('margin-bottom', 3);
+}
+
+.su-button--secondary {
+  @include modular-spacing('margin-bottom', 3);
+}
+
+// Big bold beautiful callout text.
+.su-callout-text {
+  @include margin(0 auto 1em 0);
+  @include modular-spacing('margin', -3 null 4 null);
+  display: block;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 33px;
+  width: 80%;
+}
+
+// Drop cap styles.
 .su-drop-cap {
   &::first-letter {
     float: left;
     font-style: normal;
     font-weight: bold;
-    font-size: 67px;
-    line-height: 119.41%;
-    padding: 4px 8px 0 3px;
+    font-size: 3em;
+    line-height: 0.7;
+    margin: 18px 12px 0 0;
+    text-transform: uppercase;
   }
+  // Adding a drop-cap will automatically apply intro-text
+  @include intro-text;
+}
+
+.su-font-splash {
+  @include modular-spacing('margin', -1 null 4 null);
+}
+
+.su-intro-text {
+  @include modular-spacing('margin-bottom', 3);
+}
+
+.su-quote-text {
+  @include type-b;
 }
 
 // A shadowy type.
 .su-related-text {
   @include box-shadow('paper');
+  @include modular-spacing('margin-bottom', 4);
   border: 1px solid #e3e3e3;
   padding: 25px;
 }
 
-// Override of Decanter's styles.
-// See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
-.su-quote-text {
-  @include type-b;
+.su-wysiwyg-text {
+  @include modular-spacing('margin-bottom', 3);
 }
+

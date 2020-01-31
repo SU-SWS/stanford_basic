@@ -25,9 +25,7 @@ export default class OnArrowLeftLV1 extends EventAbstract {
    */
   handleDesktop() {
     var element =
-      this.getElement('prevToggle') ||
       this.getElement('prev') ||
-      this.getElement('lastToggle') ||
       this.getElement('last');
 
     element.focus();
