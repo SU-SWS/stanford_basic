@@ -31,10 +31,28 @@ body {
     max-width: 300px;
     @include padding(30px);
 
-    .su-button {
+    input {
+      &:focus {
+        @include box-shadow('paper', '2px solid ' + $su-color-vivid-red);
+      }
+    }
+
+    .su-button,
+    input[type="submit"] {
       &:hover,
       &:focus {
         background-color: $su-color-vivid-red;
+      }
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        color: $su-color-white;
+      }
+
+      &:focus {
+        @include box-shadow('paper');
       }
     }
   }
