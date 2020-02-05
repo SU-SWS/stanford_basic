@@ -9,23 +9,33 @@
 // indents and relying on a component class for other applications.
 @import '../config/index';
 
+@import 'decanter/core/src/scss/decanter-no-markup';
+
 body {
   background: url("../../assets/img/login-page.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .system-main-block {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: calc(100vh - 30px);
 
   form {
-    background: #2e2d29;
-    color: #fff;
+    background: $su-color-black;
+    color: $su-color-white;
     text-align: center;
-    padding: 30px;
     max-width: 300px;
+    @include padding(30px);
+
+    .su-button {
+      &:hover,
+      &:focus {
+        background-color: $su-color-vivid-red;
+      }
+    }
   }
 }
