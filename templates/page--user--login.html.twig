@@ -1,0 +1,10 @@
+{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+
+{%- if page.help -%}
+  {{ page.help }}
+{%- endif -%}
+
+<div class="page-content">
+  <a name="page-content" id="page-content" tabindex="-1" class="visually-hidden focusable">Page Content</a>
+  {{ page.content }}
+</div>

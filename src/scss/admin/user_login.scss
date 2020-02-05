@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+
+// Base rules consist of styling for HTML elements only, such as used in a CSS
+// reset or Normalize.css. Base rules should never include class selectors.
+//
+// To avoid "undoing" styles in components, base styles should reflect the
+// simplest possible appearance of each element. For example, the simplest usage
+// of the ul element may be completely unstyled, removing list markers and
+// indents and relying on a component class for other applications.
+@import '../config/index';
+
+body {
+  background: url("../../assets/img/login-page.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.system-main-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  form {
+    background: #2E2D29;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    max-width: 300px;
+  }
+}

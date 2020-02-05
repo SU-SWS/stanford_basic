@@ -20,6 +20,10 @@ function stanford_basic_page_attachments_alter(array &$attachments) {
   if (\Drupal::currentUser()->isAuthenticated()) {
     $attachments['#attached']['library'][] = 'stanford_basic/admin';
   }
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getRouteName() == 'user.login') {
+    $attachments['#attached']['library'][] = 'stanford_basic/user_login';
+  }
 }
 
 /**
