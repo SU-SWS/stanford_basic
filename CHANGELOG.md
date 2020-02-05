@@ -1,5 +1,23 @@
 # Stanford Basic Theme
 
+8.x-4.0
+--------------------------------------------------------------------------------  
+_Release Date: 2020-02-05_
+- Stable release!
+- Massive improvements to accessibility and HTML semantics.
+- D8CORE-1012: Center images in the WYSIWYG.
+- Revisions to main and secondary navigation look and feel.
+- Removed use of the `pattern()` twig function to remove the dependency on ui_patterns module.
+- Added `@basic-dist` twig namespace.
+- Fixed bug where all the status messages were of the same type.
+- Fixed bugs where attributes were duplicated.
+- D8CORE-931: Revisions to skip links where you can skip to content or secondary navigation.
+- Added default GitHub issue/feature/pull-request templates.
+- D8CORE-1099: Added z-index to the masthead to keep the shadow on top.
+- D8CORE-1231: Fixed bug on footer closing tag.
+- D8CORE-941: Moved WYSIWYG paragraph styles to stanford_profile where they belong.
+- Updated Decanter to version 6.0.1 which removed many layout templates from dist.
+
 8.x-4.0-alpha3
 --------------------------------------------------------------------------------  
 _Release Date: 2020-01-22_
