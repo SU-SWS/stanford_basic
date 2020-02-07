@@ -122,3 +122,4 @@ exclude_patterns:
 - "webpack.config.js"
 - "**.min.*"
 - "spec/"
+- "dist/"

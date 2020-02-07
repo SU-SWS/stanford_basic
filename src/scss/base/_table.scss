@@ -1,0 +1,36 @@
+table {
+  @include modular-spacing('margin-bottom', 5);
+  border-collapse: collapse;
+
+  caption {
+    @include caption;
+  }
+
+  thead,
+  tbody {
+
+    th {
+      background: transparent;
+      font-weight: $su-font-semi-bold;
+    }
+
+    tr {
+      border-top: 1px solid $su-color-cool-grey-25;
+
+      &:first-of-type {
+        border-top: 0;
+      }
+    }
+  }
+
+  thead + tbody {
+    border-top: 1px solid $su-color-cool-grey-25;
+  }
+
+  td,
+  th {
+    border: 0;
+    background: transparent;
+  }
+
+}
