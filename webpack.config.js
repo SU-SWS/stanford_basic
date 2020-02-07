@@ -67,7 +67,7 @@ var webpackConfig = {
   resolve: {
     alias: {
       'basic-assets': path.resolve(__dirname, 'src/assets'),
-      'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
+      'decanter-assets': path.resolve(__dirname, npmPackage, 'decanter/core/src/img'),
       'fa-fonts': path.resolve(__dirname, npmPackage, '@fortawesome/fontawesome-free/webfonts')
     }
   },
