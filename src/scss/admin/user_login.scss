@@ -11,7 +11,7 @@
 
 @import 'decanter/core/src/scss/decanter-no-markup';
 
-body {
+.dialog-off-canvas-main-canvas {
   background: url("../../assets/img/login-page.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 30px);
+  @include padding(100px null);
 
   form {
     background: $su-color-black;
