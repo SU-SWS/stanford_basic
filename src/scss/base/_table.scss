@@ -1,0 +1,16 @@
+table {
+  @include modular-spacing('margin-bottom', 5);
+  thead {
+    border-top: none;
+
+    td,
+    th {
+      background: transparent;
+      font-weight: $su-font-semi-bold;
+    }
+  }
+
+  td {
+    border-top: 1px solid $su-color-cool-grey-25;
+  }
+}
