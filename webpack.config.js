@@ -49,6 +49,7 @@ var webpackConfig = {
   // What build?
   entry: {
     "admin": path.resolve(__dirname, srcSass + "/admin/index.scss"),
+    "user_login": path.resolve(__dirname, srcSass + "/admin/user_login.scss"),
     "base": path.resolve(__dirname, srcJS + "/base.js"),
     "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
