@@ -49,6 +49,7 @@ var webpackConfig = {
   // What build?
   entry: {
     "admin": path.resolve(__dirname, srcSass + "/admin/index.scss"),
+    "user_login": path.resolve(__dirname, srcSass + "/admin/user_login.scss"),
     "base": path.resolve(__dirname, srcJS + "/base.js"),
     "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
     "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
@@ -67,7 +68,7 @@ var webpackConfig = {
   resolve: {
     alias: {
       'basic-assets': path.resolve(__dirname, 'src/assets'),
-      'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
+      'decanter-assets': path.resolve(__dirname, npmPackage, 'decanter/core/src/img'),
       'fa-fonts': path.resolve(__dirname, npmPackage, '@fortawesome/fontawesome-free/webfonts')
     }
   },

@@ -1,0 +1,59 @@
+@charset 'UTF-8';
+
+// Base rules consist of styling for HTML elements only, such as used in a CSS
+// reset or Normalize.css. Base rules should never include class selectors.
+//
+// To avoid "undoing" styles in components, base styles should reflect the
+// simplest possible appearance of each element. For example, the simplest usage
+// of the ul element may be completely unstyled, removing list markers and
+// indents and relying on a component class for other applications.
+@import '../config/index';
+
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.dialog-off-canvas-main-canvas {
+  background: url("../../assets/img/login-page.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.system-main-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include padding(100px null);
+
+  form {
+    background: $su-color-black;
+    color: $su-color-white;
+    text-align: center;
+    max-width: 300px;
+    @include padding(30px);
+
+    input {
+      &:focus {
+        @include box-shadow('paper', '2px solid ' + $su-color-vivid-red);
+      }
+    }
+
+    .su-button,
+    input[type="submit"] {
+      &:hover,
+      &:focus {
+        background-color: $su-color-vivid-red;
+      }
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        color: $su-color-white;
+      }
+
+      &:focus {
+        @include box-shadow('paper');
+      }
+    }
+  }
+}
