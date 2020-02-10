@@ -14,6 +14,9 @@
   .form-search {
     border-color: $su-color-cool-grey-25;
     display: inline-block;
+    @include grid-media-between('md', 'xl') {
+      @include modular-spacing('margin-left', -1);
+    }
   }
   @include grid-media-between('xs', 'md') {
     .button {
@@ -21,9 +24,6 @@
       @include modular-spacing('margin-bottom', -1);
       @include modular-spacing('margin-top', -1);
     }
-  }
-
-  .search-help-link {
   }
 }
 
