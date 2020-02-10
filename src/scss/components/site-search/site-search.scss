@@ -5,22 +5,32 @@
 //
 // Search form on search results page
 .search-form {
-  @include margin(5rem 0);
+  @include margin(0 auto);
+  @include padding(5rem 0 0 0);
+  @include modular-spacing('margin-bottom', 6);
+
+  max-width: 775px;
 
   .form-search {
+    border-color: $su-color-cool-grey-25;
     display: inline-block;
   }
-  @include grid-media-max('sm') {
-    .form-submit {
-      margin: 1em 0;
+  @include grid-media-between('xs', 'md') {
+    .button {
+      margin: 0;
+      @include modular-spacing('margin-bottom', -1);
+      @include modular-spacing('margin-top', -1);
     }
+  }
+
+  .search-help-link {
   }
 }
 
 //Search results
 .search-result__item {
-  @include padding(20px 0 10px);
+  @include modular-spacing('padding', 3 3 4 3);
 
-  border-top: 1px solid $su-color-driftwood;
+  border-top: 1px solid $su-color-cool-grey-25;
   list-style: none;
 }
