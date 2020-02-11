@@ -20,7 +20,7 @@
   }
   @include grid-media-between('xs', 'md') {
     .button {
-      margin: 0;
+      @include margin (0);
       @include modular-spacing('margin-bottom', -1);
       @include modular-spacing('margin-top', -1);
     }

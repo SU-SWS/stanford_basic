@@ -1,3 +1,5 @@
+{% extends "item-list.html.twig" %}
+
 {#
 /**
  * @file
@@ -19,21 +21,8 @@
  * @see template_preprocess_item_list()
  */
 #}
-{% if context.list_style %}
-  {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
-{% endif %}
-{% if items or empty %}
-  {%- if title is not empty -%}
-    <h3>{{ title }}</h3>
-  {%- endif -%}
-
   {%- if items -%}
-    <{{ list_type }}{{ attributes }}>
       {%- for item in items -%}
-        <li{{ item.attributes.addClass("search-result__item") }}>{{ item.value }}</li>
+        {% set item = item.attributes.addClass("search-result__item") %}
       {%- endfor -%}
-    </{{ list_type }}>
-  {%- else -%}
-    {{- empty -}}
   {%- endif -%}
-{%- endif %}
