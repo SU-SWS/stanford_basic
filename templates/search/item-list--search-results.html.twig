@@ -1,5 +1,3 @@
-{% extends "item-list.html.twig" %}
-
 {#
 /**
  * @file
@@ -21,8 +19,10 @@
  * @see template_preprocess_item_list()
  */
 #}
-  {%- if items -%}
-      {%- for item in items -%}
-        {% set item = item.attributes.addClass("search-result__item") %}
-      {%- endfor -%}
-  {%- endif -%}
+
+{% extends "item-list.html.twig" %}
+{%- if items -%}
+  {%- for item in items -%}
+    {% set item = item.attributes.addClass("search-result__item") %}
+  {%- endfor -%}
+{%- endif -%}
