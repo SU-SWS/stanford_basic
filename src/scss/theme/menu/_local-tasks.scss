@@ -1,9 +1,15 @@
 @charset 'UTF-8';
 
+// page conent
+.page-content {
+  &:focus {
+    outline: solid 5px rgb(137,206,255);
+  }
+}
+
 // view/edit/delete/manage tabs.
 .block--local-tasks {
   @include margin(0 auto 10px auto);
-  border-bottom: solid 2px $su-color-cardinal-red;
 
   nav {
     @include centered-column;
@@ -17,18 +23,16 @@
   a {
     @include padding(7px null);
     color: $su-color-white;
-    background-color: $su-color-stone;
-    border: solid 2px $su-color-stone;
-    border-bottom: 0;
+    background-color: $su-color-bright-blue;
+    border: solid 1px $su-color-stone;
   }
 
   a {
     &:hover,
+    &:focus,
     &.is-active {
-      color: $su-color-stone;
-      background-color: $su-color-white;
-      border: solid 2px $su-color-cardinal-red;
-      border-bottom: 0;
+      color: $su-color-white;
+      background-color: $su-color-blue;
     }
   }
 }
