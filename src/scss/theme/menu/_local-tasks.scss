@@ -11,13 +11,21 @@
 .block--local-tasks {
   @include margin(0 auto 10px auto);
 
-  nav {
-    @include centered-column;
-  }
-
   ul,
   li {
     @include margin(0);
+  }
+
+  li:nth-child(-n+4) {
+    float: left;
+  }
+  
+  
+  li:nth-child(n+5) {
+    float: right;
+    a {
+      float: left;
+    }
   }
 
   a {
