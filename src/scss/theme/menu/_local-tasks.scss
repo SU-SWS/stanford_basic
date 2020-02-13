@@ -2,45 +2,45 @@
 
 // page conent
 .page-content {
-  &:focus {
-    outline: solid 5px rgb(137,206,255);
-  }
+	&:focus {
+		outline: solid 5px rgb(137, 206, 255);
+	}
 }
 
 // view/edit/delete/manage tabs.
 .block--local-tasks {
-  @include margin(0 auto 10px auto);
+	@include margin(0 auto 10px auto);
 
-  ul,
-  li {
-    @include margin(0);
-  }
+	ul,
+	li {
+		@include margin(0);
+	}
 
-  li:nth-child(-n+4) {
-    float: left;
-  }
-  
-  
-  li:nth-child(n+5) {
-    float: right;
-    a {
-      float: left;
-    }
-  }
+	li:nth-child(-n + 4) {
+		float: left;
+	}
 
-  a {
-    @include padding(7px null);
-    color: $su-color-white;
-    background-color: $su-color-bright-blue;
-    border: solid 1px $su-color-stone;
-  }
+	li:nth-child(n + 5) {
+		float: right;
 
-  a {
-    &:hover,
-    &:focus,
-    &.is-active {
-      color: $su-color-white;
-      background-color: $su-color-blue;
-    }
-  }
+		a {
+			float: left;
+		}
+	}
+
+	a {
+		@include padding(7px null);
+		color: $su-color-white;
+		background-color: $su-color-bright-blue;
+		border: solid 1px $su-color-stone;
+	}
+
+	a {
+		&:hover,
+		&:focus,
+		&.is-active {
+			color: $su-color-white;
+			background-color: $su-color-blue;
+		}
+	}
 }
