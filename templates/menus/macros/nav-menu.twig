@@ -26,7 +26,6 @@
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--current") %}
       {% set link_attributes = link_attributes.setAttribute('aria-current', 'true') %}
     {% endif %}
-
     <li{{ list_attributes }}>
       <a{{ link_attributes }}>{{ item.title }}</a>
       {% if item.below %}
