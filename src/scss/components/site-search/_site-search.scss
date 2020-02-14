@@ -3,6 +3,13 @@
 //
 // Custom Styles For Stanford Page Search form and search results.
 //
+// Search Header
+h1 {
+  @include type-a;
+  @include modular-spacing('margin-top', 6);
+}
+
+
 // Search form on search results page
 .search-form {
   @include margin(0 auto);
