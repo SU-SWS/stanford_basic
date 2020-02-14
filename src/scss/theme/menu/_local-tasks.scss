@@ -16,16 +16,44 @@
 		@include margin(0);
 	}
 
-	li:nth-child(-n + 4) {
-		float: left;
+	ul {
+		display: flex;
 	}
 
-	li:nth-child(n + 5) {
-		float: right;
+	li:nth-child(n + 4) {
+		text-align: right;
+	}
 
+	li:nth-child(3) {
 		a {
-			float: left;
+			order: 3;
+			visibility: hidden;
+			height: 0;
+			width: 0;
 		}
+
+		&:before {
+			display: block;
+			font-family: "Font Awesome 5 Free";
+			content: "\f2ed";
+			padding: 7px 1em;
+			text-align: center;
+			color: $su-color-white;
+			background-color: $su-color-bright-blue;
+			border: 1px solid $su-color-stone;
+		}
+	}
+
+	li:nth-child(5) {
+		margin-left: auto;
+	}
+
+	// li:nth-child(6) a {
+	// 	order: 4;
+	// }
+
+	li:last-child {
+		display: none;
 	}
 
 	a {
