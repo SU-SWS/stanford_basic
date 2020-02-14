@@ -7,6 +7,8 @@ _Release Date: 2020-02-14_
 - D8CORE-1260: Table Style Revisions (#127)
 - D8CORE-1024: Template and styles for login portal style page (#124)
 - Updated to Decanter 6.0.3
+- D8CORE-1082: Search Results Page (#128)
+- D8CORE-1286: Search page title styles (#131)
 
 8.x-4.0
 --------------------------------------------------------------------------------  
