@@ -11,13 +11,15 @@ export default class MobileToggle {
    *
    * @param {HTMLLIElement} element  - The <li> that is the NavItem in the DOM.
    * @param {*|Object} nav           - The main nav object that this toggle controls.
+   * @param {*|Object} search        - The search field to hide/show when hiding and showing the menu on mobile..
    * @param {Object} options         - A simple object of key values used as
    *                                   configuration options for each instance.
    */
-  constructor(element, nav, options) {
+  constructor(element, nav, search, options) {
     // Params.
     this.elem = element;
     this.nav = nav;
+    this.search = search;
 
     // Merge options with defualts.
     this.options = Object.assign({
@@ -148,6 +150,9 @@ export default class MobileToggle {
     this.setExpanded('true');
     this.elem.innerText = this.options.closeText;
     this.firstLevel.classList.remove('mobile-hidden');
+    if (this.search) {
+      this.search.classList.remove('mobile-hidden');
+    }
     // Alert others the nav has opened.
     this.elem.dispatchEvent(this.openEvent);
   }
@@ -160,6 +165,9 @@ export default class MobileToggle {
     this.setExpanded('false');
     this.elem.innerText = this.options.toggleText;
     this.firstLevel.classList.add('mobile-hidden');
+    if (this.search) {
+      this.search.classList.add('mobile-hidden');
+    }
     // Alert others the  nav has closed.
     this.elem.dispatchEvent(this.closeEvent);
   }

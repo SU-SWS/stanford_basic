@@ -85,6 +85,12 @@
     }
   }
 
+  .su-site-search {
+    @include grid-media-max('lg') {
+      display: block;
+    }
+  }
+
   .su-site-search__input {
     @include padding(0.6rem 2rem 0.8rem);
     font-family: $su-font-sans;

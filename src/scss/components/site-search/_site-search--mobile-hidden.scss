@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+.su-site-search {
+  &.mobile-hidden {
+    @include grid-media-max('md') {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+.su-masthead--mobile-search {
+  .su-site-search {
+    @include grid-media-max('md') {
+      position: absolute;
+      top: 105px;
+      z-index: 101;
+      right: 2%;
+      width: 96%;
+    }
+
+    @include grid-media-only('md') {
+      right: 63px;
+      width: 368px;
+    }
+  }
+}
