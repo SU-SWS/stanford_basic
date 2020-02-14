@@ -1,15 +1,18 @@
 @charset 'UTF-8';
 
-// page conent
 .page-content {
 	&:focus {
 		outline: solid 5px rgb(137, 206, 255);
 	}
 }
 
-// view/edit/delete/manage tabs.
 .block--local-tasks {
 	@include margin(0 auto 10px auto);
+
+	position: -webkit-sticky;  // required for Safari
+	position: sticky;
+	top: 79px;
+	z-index: 500;
 
 	ul,
 	li {
@@ -18,42 +21,71 @@
 
 	ul {
 		display: flex;
+		flex-direction: row;
 	}
 
-	li:nth-child(n + 4) {
-		text-align: right;
-	}
+	.primary {
+		:first-child {
+			order: 1;
+		}
 
-	li:nth-child(3) {
-		a {
+		:nth-child(2) {
 			order: 3;
-			visibility: hidden;
-			height: 0;
-			width: 0;
 		}
 
-		&:before {
-			display: block;
-			font-family: "Font Awesome 5 Free";
-			content: "\f2ed";
-			padding: 7px 1em;
-			text-align: center;
-			color: $su-color-white;
-			background-color: $su-color-bright-blue;
-			border: 1px solid $su-color-stone;
+		:nth-child(3) {
+			order: 4;
+	
+			// Replacing Delete with Font Awesome Trash Icon
+			&:before {
+				@include padding(7px 1em);
+				display: block;
+				font-family: "Font Awesome 5 Free";
+				content: "\f2ed";
+				text-align: center;
+				color: $su-color-white;
+				background-color: $su-color-bright-blue;
+				border: 1px solid $su-color-stone;
+			}
+	
+			a {
+				@include accessibly-hidden;
+			}
 		}
-	}
 
-	li:nth-child(5) {
-		margin-left: auto;
-	}
+		:nth-child(4) {
+			margin-left: auto;
+			order: 5;
+		}
 
-	// li:nth-child(6) a {
-	// 	order: 4;
-	// }
+		:nth-child(5) {
+			order: 6;
+		}
 
-	li:last-child {
-		display: none;
+		:nth-child(6) {
+			order: 2;
+
+			&:before {
+				@include padding(7px 1em);
+				display: block;
+				content: "Version History";
+				text-align: center;
+				color: $su-color-white;
+				background-color: $su-color-bright-blue;
+				border: 1px solid $su-color-stone;
+			}
+
+			a {
+				@include accessibly-hidden;
+			}
+		}
+
+		.tabs__tab {
+			&:last-child {
+				display: none;
+			}
+		}
+	
 	}
 
 	a {
