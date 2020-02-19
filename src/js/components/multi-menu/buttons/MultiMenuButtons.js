@@ -21,7 +21,8 @@ export default class MultiMenuButtons extends SecondaryNavButtons {
       itemActiveClass: 'su-multi-menu__item--current',
       itemActiveTrailClass: 'su-multi-menu__item--active-trail',
       itemParentClass: 'su-multi-menu__item--parent',
-      expand: false
+      expand: false,
+      activeTrail: false
     };
 
     // Merge in defaults.
