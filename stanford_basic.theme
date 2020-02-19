@@ -326,4 +326,8 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
   if ($variables['link']['#url']->getRouteName() == 'entity.node.canonical') {
     $variables['link']['#title'] = 'Page content';
   }
+  if ($variables['link']['#url']->getRouteName() == 'entity.node.version_history') {
+    $variables['link']['#title'] = 'Version History';
+  }
+  $variables['attributes']['class'][] = strtolower(Html::cleanCssIdentifier($variables['link']['#title']));
 }
