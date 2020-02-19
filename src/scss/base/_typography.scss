@@ -4,3 +4,11 @@
  * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
  * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
+
+// Lists styling for the paragraph text blocks
+.paragraph {
+  ul,
+  ol {
+    @include big-paragraph;
+  }
+}
