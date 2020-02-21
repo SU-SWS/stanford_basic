@@ -48,11 +48,10 @@ export default class SecondaryNavAbstract {
     this.dispatch = new EventHandlerDispatch(element, this);
 
     // Handle the active state.
-    this.activePath = new ActivePath(element, this, this.options);
-    this.activePath.setActivePath();
-
     // Optionally set the trail.
     if (this.options.activeTrail) {
+      this.activePath = new ActivePath(element, this, this.options);
+      this.activePath.setActivePath();
       this.activePath.setActiveTrail();
     }
 
