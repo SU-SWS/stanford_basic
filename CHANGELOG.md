@@ -1,5 +1,15 @@
 # Stanford Basic Theme
 
+8.x-4.2
+--------------------------------------------------------------------------------  
+_Release Date: 2020-02-21_
+
+- D8CORE-1286: Search page styles refactoring. (#137)
+- D8CORE-1352: Prevent javascript active path highlighting on secondary nav. (#135)
+- D8CORE-1335 Updated login page (#138)
+- D8CORE-1396: increased the z-index on the header (#136)
+- Upgrade to Decanter 6.0.4
+
 8.x-4.1
 --------------------------------------------------------------------------------  
 _Release Date: 2020-02-14_
