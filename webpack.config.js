@@ -48,16 +48,17 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
-    "admin": path.resolve(__dirname, srcSass + "/admin/index.scss"),
-    "user_login": path.resolve(__dirname, srcSass + "/admin/user_login.scss"),
-    "base": path.resolve(__dirname, srcJS + "/base.js"),
-    "behaviors": path.resolve(__dirname, srcJS + "/behaviors.js"),
-    "components": path.resolve(__dirname, srcSass + "/components/index.scss"),
-    "layout": path.resolve(__dirname, srcSass + "/layout/index.scss"),
-    "print": path.resolve(__dirname, srcSass + "/print/index.scss"),
-    "state": path.resolve(__dirname, srcSass + "/state/index.scss"),
-    "theme": path.resolve(__dirname, srcSass + "/theme/index.scss"),
-    "ckeditor": path.resolve(__dirname, srcSass + "/ckeditor.scss"),
+    "admin":         path.resolve(__dirname, srcSass, "admin/index.scss"),
+    "base":          path.resolve(__dirname, srcJS,   "base.js"),
+    "behaviors":     path.resolve(__dirname, srcJS,   "behaviors.js"),
+    "ckeditor":      path.resolve(__dirname, srcSass, "ckeditor.scss"),
+    "components":    path.resolve(__dirname, srcSass, "components/index.scss"),
+    "layout":        path.resolve(__dirname, srcSass, "layout/index.scss"),
+    "print":         path.resolve(__dirname, srcSass, "print/index.scss"),
+    "search-page":   path.resolve(__dirname, srcSass, "pages/search/index.scss"),
+    "state":         path.resolve(__dirname, srcSass, "state/index.scss"),
+    "theme":         path.resolve(__dirname, srcSass, "theme/index.scss"),
+    "user_login":    path.resolve(__dirname, srcSass, "admin/user_login.scss"),
   },
   // Where put build?
   output: {

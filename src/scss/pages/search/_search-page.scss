@@ -1,34 +1,31 @@
-@charset "UTF-8";
-
+@charset 'UTF-8';
 //
 // Custom Styles For Stanford Page Search form and search results.
 //
 // Search form on search results page
 
 // Search Header
-.page-search-content {
-  h1 {
-    @include type-a;
-    @include modular-spacing('margin-top', 6);
+h1 {
+  @include type-a;
+  @include modular-spacing('margin-top', 6);
+}
+
+//Search results
+.search-result__item {
+  @include modular-spacing('padding', 3 3 4 3);
+
+  border-top: 1px solid $su-color-cool-grey-25;
+  list-style: none;
+}
+
+// Mobile spacing changes
+@include grid-media-only('xs') {
+  ol {
+    @include padding(null 0 null);
   }
 
-  //Search results
   .search-result__item {
-    @include modular-spacing('padding', 3 3 4 3);
-
-    border-top: 1px solid $su-color-cool-grey-25;
-    list-style: none;
-  }
-
-  // Mobile spacing changes
-  @include grid-media-only('xs') {
-    ol {
-      @include padding(null 0 null);
-    }
-
-    .search-result__item {
-      @include modular-spacing('padding', 1);
-    }
+    @include modular-spacing('padding', 1);
   }
 }
 

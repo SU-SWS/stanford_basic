@@ -85,6 +85,11 @@
 #     theme:
 #       css/pattern-library/theme/theme.css: {}
 #       css/pattern-library/theme/print.css: { media: print }
+admin:
+  version: VERSION
+  css:
+    base:
+      dist/css/admin.css: {  }
 
 basic:
   version: VERSION
@@ -112,11 +117,11 @@ basic:
     - core/modernizr
     - stanford_basic/fontawesome
 
-admin:
+search-page:
   version: VERSION
   css:
-    base:
-      dist/css/admin.css: {  }
+    theme:
+      dist/css/search-page.css: {  }
 
 user_login:
   version: VERSION
