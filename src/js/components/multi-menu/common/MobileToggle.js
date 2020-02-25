@@ -105,7 +105,6 @@ export default class MobileToggle {
     }
     else {
       this.openNav();
-      this.nav.elem.querySelector('a').focus();
     }
   }
 
@@ -121,6 +120,9 @@ export default class MobileToggle {
     // Do the click toggle for enter and space keys.
     if (isEnter(theKey) || isSpace(theKey)) {
       this.onClick(event, this.elem);
+      if (this.isExpanded()) {
+        this.nav.elem.querySelector('a').focus();
+      }
     }
   }
 

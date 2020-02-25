@@ -163,9 +163,19 @@
       // First level current items.
       &.su-multi-menu__item--current {
         > .su-multi-menu__link {
+          color: $su-color-black;
+
           &::before {
+            background-color: $su-color-black;
             transform: scaleX(1);
           }
+
+          &:hover {
+            &:before {
+              display: none;
+            }
+          }
+
         }
       }
 
