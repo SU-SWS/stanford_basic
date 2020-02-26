@@ -1,17 +1,1 @@
-.contextual-region .contextual-region .contextual {
-  right: 0px; }
-
-.contextual-region .contextual-region .contextual-region .contextual {
-  right: 32px; }
-
-.contextual-region .contextual-region .contextual-region .contextual-region .contextual {
-  right: 64px; }
-
-.contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual {
-  right: 96px; }
-
-.contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual {
-  right: 128px; }
-
-
-/*# sourceMappingURL=admin.css.map*/
+.contextual-region .contextual-region .contextual{right:0}.contextual-region .contextual-region .contextual-region .contextual{right:32px}.contextual-region .contextual-region .contextual-region .contextual-region .contextual{right:64px}.contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual{right:96px}.contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual-region .contextual{right:128px}
