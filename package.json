@@ -18,15 +18,15 @@
     "lint:sass": "sass-lint -c .sass-lint.yml '**/*.scss' -v -q -i 'vendor/**/*.scss, node_modules/**/*.scss'"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
     "@babel/polyfill": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0",
     "bourbon": "^5.1",
     "browserslist": "^4.8.7",
     "css-loader": "^2.1",
-    "decanter": "^6.0.4",
+    "decanter": "^6.0.5",
     "drupal-behaviors-loader": "^1.0",
     "element-closest-polyfill": "^1.0.0",
     "element-matches-polyfill": "^1.0.0",
@@ -54,8 +54,7 @@
     "webpack-fix-style-only-entries": "^0.2",
     "webpack-manifest-plugin": "^2.2"
   },
-  "description": "=========================== How to Use Grunt with Stanford Basic ===========================",
-  "main": "Gruntfile.js",
+  "description": "",
   "author": "",
   "license": "MIT",
   "keywords": [
