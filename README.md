@@ -1,5 +1,5 @@
 # [Stanford Basic](https://github.com/SU-SWS/stanford_basic)
-##### Version: 8.x
+##### Version: 8.4.3
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
