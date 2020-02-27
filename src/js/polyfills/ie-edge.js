@@ -1,5 +1,5 @@
 // All the polyfills.
-require("@babel/polyfill");
+require('@babel/polyfill');
 
 // IE11 Fix for Element.matches
 // See: https://www.npmjs.com/package/element-matches-polyfill
@@ -13,4 +13,4 @@ import 'element-qsa-scope';
 require('es6-object-assign').polyfill();
 
 // https://www.npmjs.com/package/element-closest-polyfill
-require("element-closest-polyfill");
+require('element-closest-polyfill');
