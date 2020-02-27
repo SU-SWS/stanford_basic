@@ -4,7 +4,9 @@
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_
 
--
+- D8CORE-1430: Fix nav color & focus state event (#140)
+- D8CORE-1327: fixing the header lockup to have special characters (#141)
+- Decanter Version 6.0.5 (#143)
 
 8.x-4.2
 --------------------------------------------------------------------------------
