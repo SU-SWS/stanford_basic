@@ -48,7 +48,7 @@ function stanford_basic_preprocess_html(&$variables) {
     if (!empty($alias)) {
       $name = str_replace('/', '-', $alias);
       $variables['attributes']['class'][] = 'page-' . $name;
-      list($section,) = explode('/', $alias, 2);
+      [$section,] = explode('/', $alias, 2);
       if (!empty($section)) {
         $variables['attributes']['class'][] = 'section-' . $section;
       }
@@ -245,8 +245,6 @@ function _stanford_basic_preprocess_not_nodes(&$vars) {
 
 /**
  * Pass through the lockup configuration settings.
- * @param  [type] $vars [description]
- * @return [type]       [description]
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
   $vars['lockup'] = theme_get_setting('lockup');
@@ -262,7 +260,7 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
     return;
   }
 
-  foreach($variables['items'] as &$item) {
+  foreach ($variables['items'] as &$item) {
     $menu_item = [$item];
     _stanford_basic_menu_process_submenu($menu_item, $current_path);
     $item = $menu_item[0];
@@ -272,19 +270,38 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
 /**
  * Set active and active-trail class for sub-menus recursively.
  *
- * @param  array $submenu      The `$item['below']` structure from a menu array.
- * @param  string $current_path A path to match against for "on this page".
+ * @param array $submenu
+ *   The `$item['below']` structure from a menu array.
+ * @param string $current_path
+ *   A path to match against for "on this page".
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
+
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
     if ($item_path == $current_path) {
       $item['is_active'] = TRUE;
     }
 
+    if ($item['url'] instanceof Url && !_stanford_basic_link_is_public($item['url'])) {
+      $item['unpublished'] = TRUE;
+    }
+
     if ($item['in_active_trail'] && count($item['below'])) {
       _stanford_basic_menu_process_submenu($item['below'], $current_path);
     }
+  }
+}
+
+function _stanford_basic_link_is_public(Url $url) {
+  if ($url->getRouteName() == 'entity.node.canonical') {
+    $parameters = $url->getRouteParameters();
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($parameters['node']);
+    return $node->isPublished();
   }
 }
 
