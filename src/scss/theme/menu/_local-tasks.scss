@@ -13,6 +13,14 @@
 	position: sticky;
 	top: 79px;
 	z-index: 500;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+	}
 
 	ul,
 	li {
@@ -24,7 +32,11 @@
 		flex-direction: row;
 	}
 
-	.page-content {
+	.page-content-label {
+		@include padding(7px 1em);
+		color: $su-color-white;
+		background-color: $su-color-blue;
+		border: solid 1px $su-color-stone;
 		order: 1;
 	}
 
@@ -44,6 +56,7 @@
 				font-family: 'Font Awesome 5 Free';
 				content: '\f2ed';
 				font-size: 1.8rem;
+				font-weight: 100;
 
 				@media only screen and (min-width: 1500px) {
 					font-size: 1.9rem;
@@ -65,6 +78,7 @@
 		order: 2;
 	}
 
+	.viewspan-classvisually-hiddenactive-tab-span,
 	.devel {
 		display: none;
 	}
