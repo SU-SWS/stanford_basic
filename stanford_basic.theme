@@ -296,6 +296,18 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   }
 }
 
+/**
+ * Is the given url public.
+ *
+ * @param \Drupal\Core\Url $url
+ *   Menu link url object.
+ *
+ * @return bool
+ *   False if the link is a node link to an unpublished link, true otherwise.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
 function _stanford_basic_link_is_public(Url $url) {
   if ($url->getRouteName() == 'entity.node.canonical') {
     $parameters = $url->getRouteParameters();
@@ -303,6 +315,7 @@ function _stanford_basic_link_is_public(Url $url) {
     $node = \Drupal::entityTypeManager()->getStorage('node')->load($parameters['node']);
     return $node->isPublished();
   }
+  return TRUE;
 }
 
 /**
