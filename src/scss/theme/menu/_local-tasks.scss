@@ -9,7 +9,7 @@
 .block--local-tasks {
 	@include margin(0 auto 10px auto);
 
-	position: -webkit-sticky;  // required for Safari
+	position: -webkit-sticky; // required for Safari
 	position: sticky;
 	top: 79px;
 	z-index: 500;
@@ -40,13 +40,16 @@
 			font-size: 0;
 
 			&::before {
-			@include padding(null 1em);
-			font-family: "Font Awesome 5 Free";
-			content: "\f2ed";
-			font-size: 1.8rem;
-		}
-	}
+				@include padding(null 1em);
+				font-family: 'Font Awesome 5 Free';
+				content: '\f2ed';
+				font-size: 1.8rem;
 
+				@media only screen and (min-width: 1500px) {
+					font-size: 1.9rem;
+				}
+			}
+		}
 	}
 
 	.manage-display {
