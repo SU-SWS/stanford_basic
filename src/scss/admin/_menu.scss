@@ -2,16 +2,17 @@
 
 nav {
   .unpublished-indicator {
-    content: "unpublished page";
+    @include padding(4px 10px);
+
+    content: "Unpublished Page";
     display: block;
-    background: #00548f;
-    color: #fff;
-    font-size: 10px;
-    text-align: center;
+    background: $su-color-blue;
+    color: $su-color-white;
+    font-size: 11px;
     position: absolute;
-    padding: 4px;
-    top: 0;
+    top: -15px;
     left: 0;
+    width: 115px;
 
     &::after {
       content: '';
@@ -19,9 +20,18 @@ nav {
       height: 0;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
-      border-top: 10px solid #00548f;
-      position: relative;
-      bottom: -25px;
+      border-top: 10px solid $su-color-blue;
+      position: absolute;
+      bottom: -10px;
+      right: 90px;
     }
+  }
+
+  &.su-secondary-nav {
+    .unpublished-indicator {
+      left: 25px;
+      top: -25px;
+    }
+
   }
 }
