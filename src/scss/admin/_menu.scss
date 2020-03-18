@@ -1,22 +1,23 @@
 @charset "UTF-8";
 
+@keyframes fade {
+  0% { opacity: 0 }
+  20% { opacity: 1 } /* 20% of 5 seconds = 1 second */
+  80% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
 .unpublished-indicator {
-  animation-duration: 3s;
-  animation-name: slidein;
+  opacity:0;
+  animation: fade ease-in-out 5s;
+  animation-fill-mode: forwards;
 }
 
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
+nav li:hover {
+  .unpublished-indicator {
+    opacity: 1;
   }
 }
-
 
 .unpublished-indicator {
   @include padding(4px 10px);
