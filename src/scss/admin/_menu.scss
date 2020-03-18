@@ -8,12 +8,12 @@
 }
 
 .unpublished-indicator {
-  opacity:0;
+  opacity: 0;
   animation: fade ease-in-out 5s;
   animation-fill-mode: forwards;
 }
 
-// Will need to make this less specific. 
+// Will need to make this less specific.
 nav {
   li:hover {
     .unpublished-indicator {
