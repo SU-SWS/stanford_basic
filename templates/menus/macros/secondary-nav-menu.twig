@@ -33,7 +33,7 @@
         <a{{ link_attributes }}>
           {{ item.title }}
           {% if item.unpublished %}
-            <div class="unpublished-indicator">Unpublished Page</div>
+            <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
           {% endif %}
         </a>
         {% if item.below %}

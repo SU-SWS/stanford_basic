@@ -1,37 +1,86 @@
 @charset "UTF-8";
 
-nav {
-  .unpublished-indicator {
-    @include padding(4px 10px);
+.unpublished-indicator {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
 
-    content: "Unpublished Page";
-    display: block;
-    background: $su-color-blue;
-    color: $su-color-white;
-    font-size: 11px;
-    position: absolute;
-    top: -15px;
-    left: 0;
-    width: 115px;
-
-    &::after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid $su-color-blue;
-      position: absolute;
-      bottom: -10px;
-      right: 90px;
-    }
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
   }
 
-  &.su-secondary-nav {
-    .unpublished-indicator {
-      left: 25px;
-      top: -25px;
-    }
-
+  to {
+    margin-left: 0%;
+    width: 100%;
   }
 }
+
+
+.unpublished-indicator {
+  @include padding(4px 10px);
+
+  display: block;
+  background: $su-color-blue;
+  color: $su-color-white;
+  font-size: 11px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 115px;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $su-color-blue;
+    position: absolute;
+    bottom: -10px;
+    right: 90px;
+  }
+}
+
+.su-secondary-nav {
+  .unpublished-indicator {
+    left: 25px;
+    top: -25px;
+  }
+}
+
+
+
+//.unpublished-indicator {
+//  @include padding(4px 10px);
+//
+//  display: block;
+//  background: $su-color-blue;
+//  color: $su-color-white;
+//  font-size: 11px;
+//  position: absolute;
+//  top: -15px;
+//  left: 0;
+//  width: 115px;
+//
+//  &::after {
+//    content: '';
+//    width: 0;
+//    height: 0;
+//    border-left: 10px solid transparent;
+//    border-right: 10px solid transparent;
+//    border-top: 10px solid $su-color-blue;
+//    position: absolute;
+//    bottom: -10px;
+//    right: 90px;
+//  }
+//}
+//
+//.su-secondary-nav {
+//  .unpublished-indicator {
+//    left: 25px;
+//    top: -25px;
+//  }
+//}
+//
