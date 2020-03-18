@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 @keyframes fade {
-  0% { opacity: 0 }
-  20% { opacity: 1 } /* 20% of 5 seconds = 1 second */
-  80% { opacity: 1 }
-  100% { opacity: 0 }
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .unpublished-indicator {
@@ -13,9 +13,12 @@
   animation-fill-mode: forwards;
 }
 
-nav li:hover {
-  .unpublished-indicator {
-    opacity: 1;
+// Will need to make this less specific. 
+nav {
+  li:hover {
+    .unpublished-indicator {
+      opacity: 1;
+    }
   }
 }
 
