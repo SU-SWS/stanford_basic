@@ -9,6 +9,7 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\layout_builder\Plugin\SectionStorage\DefaultsSectionStorage;
 use Drupal\Component\Utility\Html;
 use Drupal\ui_patterns\UiPatterns;
+use Drupal\ui_patterns\Element\PatternContext;
 use Drupal\Core\Url;
 
 /**
@@ -155,8 +156,8 @@ function stanford_basic_preprocess_image(&$vars) {
  * Implements hook_preprocess().
  */
 function stanford_basic_preprocess(&$variables, $hook) {
-  $moduleHandler = \Drupal::service('module_handler');
-  if (!$moduleHandler->moduleExists('ui_patterns')) {
+  // Only want pattern contexts.
+  if (isset($variables['context']) && !($variables['context'] instanceof PatternContext)) {
     return;
   }
 
