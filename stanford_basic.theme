@@ -167,10 +167,6 @@ function stanford_basic_preprocess(&$variables, $hook) {
         $ids[$pattern_id] = 0;
       }
 
-      if (!isset($variables['attributes']['id'])) {
-        $variables['attributes']['id'] = Html::getUniqueId($pattern_id);
-      }
-
       $definition = $pattern->toArray();
       if (isset($variables['variant']) && isset($definition['variants'][$variables['variant']]['modifier_class'])) {
         $variables['modifier_class'] = $definition['variants'][$variables['variant']]['modifier_class'];
