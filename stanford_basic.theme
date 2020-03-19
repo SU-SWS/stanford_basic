@@ -8,8 +8,6 @@
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\layout_builder\Plugin\SectionStorage\DefaultsSectionStorage;
 use Drupal\Component\Utility\Html;
-use Drupal\ui_patterns\UiPatterns;
-use Drupal\ui_patterns\Element\PatternContext;
 use Drupal\Core\Url;
 
 /**
@@ -149,31 +147,6 @@ function stanford_basic_preprocess_image(&$vars) {
   // Decorative images get the role="presentation" attribute.
   if (!isset($vars['attributes']['alt'])) {
     $vars['attributes']['role'] = 'presentation';
-  }
-}
-
-/**
- * Implements hook_preprocess().
- */
-function stanford_basic_preprocess(&$variables, $hook) {
-  // Only want pattern contexts.
-  if (isset($variables['context']) && !($variables['context'] instanceof PatternContext)) {
-    return;
-  }
-
-  foreach (UiPatterns::getPatternDefinitions() as $pattern_id => $pattern) {
-    if (strpos($hook, $pattern_id) !== FALSE) {
-
-      if (isset($variables['attributes']['id'])) {
-        $variables['attributes']['id'] = Html::getUniqueId($variables['attributes']['id']);
-      }
-
-      $definition = $pattern->toArray();
-      if (isset($variables['variant']) && isset($definition['variants'][$variables['variant']]['modifier_class'])) {
-        $variables['modifier_class'] = $definition['variants'][$variables['variant']]['modifier_class'];
-      }
-      break;
-    }
   }
 }
 
