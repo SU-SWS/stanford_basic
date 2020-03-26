@@ -1,8 +1,27 @@
 @charset 'UTF-8';
 
 .page-content {
-	&:focus {
-		outline: solid 5px rgb(137, 206, 255);
+	border: none;
+	transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .55s ease-in-out;
+
+
+	.block--local-tasks {
+		opacity: 0;
+		transition: opacity .5s ease-in-out;
+		-moz-transition: opacity .5s ease-in-out;
+		-webkit-transition: opacity .55s ease-in-out;
+	
+	}
+
+	&:focus,
+	&:hover {
+		.block--local-tasks {
+			opacity: 1;
+		}
+
+		border: 5px solid rgb(137, 206, 255);
 	}
 }
 
@@ -13,14 +32,6 @@
 	position: sticky;
 	top: 79px;
 	z-index: 500;
-	opacity: 0;
-	transition: opacity .5s ease-in-out;
-	-moz-transition: opacity .5s ease-in-out;
-	-webkit-transition: opacity .55s ease-in-out;
-
-	&:hover {
-		opacity: 1;
-	}
 
 	ul,
 	li {
@@ -33,10 +44,12 @@
 	}
 
 	.page-content-label {
-		@include padding(7px 1em);
+		@include padding(10px 1em);
 		color: $su-color-white;
 		background-color: $su-color-blue;
-		border: solid 1px $su-color-stone;
+		border-right: 1px solid #00548F;
+		border-bottom: 1px solid #00548F;
+		font-weight: 400;
 		order: 1;
 	}
 
@@ -56,7 +69,7 @@
 				font-family: 'Font Awesome 5 Free';
 				content: '\f2ed';
 				font-size: 1.8rem;
-				font-weight: 100;
+				font-weight: 400;
 
 				@media only screen and (min-width: 1500px) {
 					font-size: 1.9rem;
@@ -84,10 +97,12 @@
 	}
 
 	a {
-		@include padding(7px null);
+		@include padding(10px null);
+		font-weight: 400;
 		color: $su-color-white;
 		background-color: $su-color-bright-blue;
-		border: solid 1px $su-color-stone;
+		border-right: 1px solid #00548F;
+		border-bottom: 1px solid #00548F;
 	}
 
 	a {
