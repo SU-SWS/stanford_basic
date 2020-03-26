@@ -264,9 +264,10 @@ div[data-drupal-selector="search-block-form-2"],
 div[id^="block-searchform-"]	{ // In case lots of search boxes get added.
   display: none;
 }
+
 .su-multi-menu {
   @include grid-media-between('xs', 'md') {
-    div[data-drupal-selector='search-block-form-2']{
+    div[data-drupal-selector='search-block-form-2'] {
       @include modular-spacing('margin', 1 1 0 0);
 
       display: block;
