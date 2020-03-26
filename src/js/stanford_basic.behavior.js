@@ -25,6 +25,11 @@ export default {
       if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
       }
+
+      // Move the second search block to the navigation. Hide it and then only show for mobile sites.
+      var $ms = $('.su-site-search[data-drupal-selector="search-block-form-2"]');
+      $($ms).prependTo('nav.su-multi-menu button + ul').wrap("<li></li>");
+
     })(jQuery);
   },
 
