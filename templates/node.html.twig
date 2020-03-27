@@ -34,7 +34,7 @@
       {% endif %}
 
       {% if not node.published %}
-        <p class="node--unpublished">{{ 'Unpublished'|t }}</p>
+        <p class="node--unpublished su-alert--warning">{{ 'This page is currently unpublished and not visible to the public.'|t }}</p>
       {% endif %}
     </header>
   {% endif %}

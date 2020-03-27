@@ -54,37 +54,12 @@ nav {
   }
 }
 
+.node--unpublished {
+  @include big-paragraph;
+  @include modular-spacing('padding', 0);
 
+  &.su-alert--warning {
+    background-image: none;
+  }
+}
 
-//.unpublished-indicator {
-//  @include padding(4px 10px);
-//
-//  display: block;
-//  background: $su-color-blue;
-//  color: $su-color-white;
-//  font-size: 11px;
-//  position: absolute;
-//  top: -15px;
-//  left: 0;
-//  width: 115px;
-//
-//  &::after {
-//    content: '';
-//    width: 0;
-//    height: 0;
-//    border-left: 10px solid transparent;
-//    border-right: 10px solid transparent;
-//    border-top: 10px solid $su-color-blue;
-//    position: absolute;
-//    bottom: -10px;
-//    right: 90px;
-//  }
-//}
-//
-//.su-secondary-nav {
-//  .unpublished-indicator {
-//    left: 25px;
-//    top: -25px;
-//  }
-//}
-//
