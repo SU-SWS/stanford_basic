@@ -53,13 +53,3 @@ nav {
     top: -25px;
   }
 }
-
-.node--unpublished {
-  @include big-paragraph;
-  @include modular-spacing('padding', 0);
-
-  &.su-alert--warning {
-    background-image: none;
-  }
-}
-
