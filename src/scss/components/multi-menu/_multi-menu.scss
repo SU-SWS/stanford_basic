@@ -259,13 +259,26 @@
 }
 
 // Search box styling for devices and mobile views.
+// Hide the extra search box everywhere
 // -----------------------------------------------------------------------
-div[data-drupal-selector="search-block-form-2"],
-div[id^="block-searchform-"]	{ // In case lots of search boxes get added.
-  display: none;
+// Hide the search box before moved - in case more than one is added.
+nav {
+  &+ .su-site-search {
+    display: none;
+  }
+}
+
+// Hide the moved box
+ul {
+  li {
+    .su-site-search {
+      display: none;
+    }
+  }
 }
 
 .su-multi-menu {
+  // show the extra search box in responsive menu.
   @include grid-media-between('xs', 'md') {
     div[data-drupal-selector='search-block-form-2'] {
       @include modular-spacing('margin', 1 1 0 0);
