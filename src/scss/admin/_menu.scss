@@ -7,23 +7,21 @@
   100% { opacity: 0; }
 }
 
-.unpublished-indicator {
-  opacity: 0;
-  animation: fade ease-in-out 5s;
-  animation-fill-mode: forwards;
-}
-
-// Will need to make this less specific.
-nav {
-  li:hover {
-    .unpublished-indicator {
-      opacity: 1;
-    }
+a:hover {
+  .unpublished-indicator {
+    display: inline-block;
+    opacity: 1;
+    animation: fade 5s ease-in-out;
   }
 }
 
 .unpublished-indicator {
   @include padding(4px 10px);
+
+  // Animation definition
+  opacity: 0;
+  animation: fade ease-in-out 5s;
+  animation-fill-mode: forwards;
 
   display: block;
   background: $su-color-blue;
