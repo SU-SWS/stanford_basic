@@ -277,13 +277,16 @@ ul {
   }
 }
 
-.su-multi-menu {
-  // show the extra search box in responsive menu.
-  @include grid-media-between('xs', 'md') {
-    div[data-drupal-selector='search-block-form-2'] {
-      @include modular-spacing('margin', 1 1 0 0);
-
-      display: block;
+// Show the moved box.
+ul {
+  li {
+    .su-site-search {
+      &.search-block-form {
+        @include grid-media-between('xs', 'md') {
+          @include modular-spacing('margin', 1 1 0 0);
+          display: block;
+        }
+      }
     }
   }
 }
