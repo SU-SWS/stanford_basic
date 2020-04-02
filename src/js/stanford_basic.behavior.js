@@ -26,7 +26,7 @@ export default {
         $('.su-skipnav--secondary', context).remove();
       }
 
-      // Check for search box and move the second search block to the mobile navigation.
+      // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
       var $search = $('#block-stanford-basic-search', context).length;
       if ($search) {
