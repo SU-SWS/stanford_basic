@@ -28,9 +28,9 @@ export default {
 
       // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
-      var $search = $('#block-stanford-basic-search', context).length;
+      var $search = $('.su-masthead .su-site-search', context).length;
       if ($search) {
-        var $ms = $('nav + .su-site-search', context);
+        var $ms = $('.su-masthead nav + .su-site-search', context);
         $($ms).prependTo('.su-masthead .su-multi-menu > ul', context).wrap('<li></li>');
       }
 
