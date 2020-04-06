@@ -1,10 +1,11 @@
 @charset 'UTF-8';
 
 .page-content {
-	border: none;
-	transition: opacity .5s ease-in-out;
-	-moz-transition: opacity .5s ease-in-out;
-	-webkit-transition: opacity .55s ease-in-out;
+	outline: none;
+	outline-color: transparent;
+	transition: outline-color .5s ease-in-out;
+	-moz-transition: outline-color .5s ease-in-out;
+	-webkit-transition: outline-color .55s ease-in-out;
 
 
 	.block--local-tasks {
@@ -21,7 +22,8 @@
 			opacity: 1;
 		}
 
-		border: 5px solid rgb(137, 206, 255);
+		outline: 5px solid rgb(137, 206, 255);
+		z-index: 500;
 	}
 }
 
