@@ -317,3 +317,17 @@ function stanford_basic_pattern_process_contextual(array $element) {
   }
   return $element;
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * for adding grid classes to multirow paragraphs
+ */
+function stanford_profile_styles_preprocess_react_paragraphs(&$variables) {
+  foreach ($variables['rows'] as &$row) {
+    foreach ($row['items'] as &$item) {
+      $width = $item['width'];
+      $item['attributes']->addClass("flex-$width-of-12");
+      $row['attributes']->addClass("container-$width-columns");
+    }
+  }
+}
