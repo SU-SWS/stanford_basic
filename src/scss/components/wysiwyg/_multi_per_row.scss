@@ -13,18 +13,22 @@
       // to keep the large margins on full-width and the
       // homepage
       @include grid-media('xl') {
-        .ptype-stanford-card.flex-3-of-12,
-        .ptype-stanford-media-caption.flex-3-of-12,
-        .ptype-stanford-wysiwyg.flex-3-of-12 {
-          max-width: 25%;
+        .ptype-stanford-card,
+        .ptype-stanford-media-caption,
+        .ptype-stanford-wysiwyg {
+          &.flex-3-of-12 {
+            max-width: 25%;
+          }
         }
 
-        .ptype-stanford-card.flex-4-of-12,
-        .ptype-stanford-media-caption.flex-4-of-12,
-        .ptype-stanford-wysiwyg.flex-4-of-12 {
-          @include margin(null 0);
+        .ptype-stanford-card,
+        .ptype-stanford-media-caption,
+        .ptype-stanford-wysiwyg {
+          &.flex-4-of-12 {
+            @include margin(null 0);
 
-          max-width: 33%;
+            max-width: 33%;
+          }
         }
       }
 
