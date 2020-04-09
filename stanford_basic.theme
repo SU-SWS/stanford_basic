@@ -327,7 +327,7 @@ function stanford_profile_styles_preprocess_react_paragraphs(&$variables) {
     foreach ($row['items'] as &$item) {
       $width = $item['width'];
       $item['attributes']->addClass("flex-$width-of-12");
-      $row['attributes']->addClass("container-$width-columns");
     }
+    $row['attributes']->addClass("container-$width-columns");
   }
 }

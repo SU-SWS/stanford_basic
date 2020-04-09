@@ -10,8 +10,9 @@
       }
 
       // Setting the max width to help with display and
-      // to keep the large margins on full-width and the
-      // homepage
+      // to keep the large margins on full-width and
+      // the homepage
+
       @include grid-media('xl') {
         .ptype-stanford-card,
         .ptype-stanford-media-caption,
@@ -30,24 +31,14 @@
             max-width: 33%;
           }
         }
-      }
 
-      &.container-6-columns {
-        @include grid-media-only('lg') {
-          .ptype-stanford-card,
-          .ptype-stanford-media-caption,
-          .ptype-stanford-wysiwyg {
-            max-width: 400px;
-          }
-        }
-      }
+        .ptype-stanford-card,
+        .ptype-stanford-media-caption,
+        .ptype-stanford-wysiwyg {
+          &.flex-6-of-12 {
+            @include margin(null 0);
 
-      &.container-4-columns {
-        @include grid-media-only('lg') {
-          .ptype-stanford-card,
-          .ptype-stanford-media-caption,
-          .ptype-stanford-wysiwyg {
-            max-width: 200px;
+            max-width: 50%;
           }
         }
       }
