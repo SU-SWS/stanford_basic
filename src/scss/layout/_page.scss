@@ -17,3 +17,12 @@ body {
   width: 100%;
   @include sticky-footer("#footer");
 }
+
+// Fix for IE11
+.su-local-footer__columns {
+  display: block;
+  @supports( grid-area: auto ) {
+    display: -ms-grid;
+    display: grid;
+  }
+}
