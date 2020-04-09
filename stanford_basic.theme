@@ -278,7 +278,7 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
  * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function _stanford_basic_link_is_public(Url $url) {
-  if ($url->getRouteName() == 'entity.node.canonical') {
+  if ($url->isRouted() && $url->getRouteName() == 'entity.node.canonical') {
     $parameters = $url->getRouteParameters();
     /** @var \Drupal\node\NodeInterface $node */
     $node = \Drupal::entityTypeManager()->getStorage('node')->load($parameters['node']);
