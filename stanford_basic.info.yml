@@ -37,11 +37,5 @@ ckeditor_stylesheets:
 libraries-override:
   jumpstart_ui/base: false
 
-# Not working yet.
-# Waiting on: https://www.drupal.org/project/drupal/issues/474684
-# dependencies:
-#   - ui_patterns
-#   - ui_patterns_layouts
-#   - ui_patterns_library
-#   - layout_discovery
-#   - jumpstart_ui
+dependencies:
+  - components
