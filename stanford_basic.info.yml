@@ -38,4 +38,4 @@ libraries-override:
   jumpstart_ui/base: false
 
 dependencies:
-  - components
+  - components:components
