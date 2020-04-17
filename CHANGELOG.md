@@ -1,5 +1,16 @@
 # Stanford Basic Theme
 
+8.x-4.4
+--------------------------------------------------------------------------------
+_Release Date: 2020-04-17_
+
+- Update stanford_basic.info.yml (#133)
+- D8CORE-1504: Remove ids from pattern templates. (#147)
+- D8CORE-1349 Added visual indicator for links to unpublished pages (#146)
+- D8CORE-1644: Dev branch workflow
+- Check if the menu link is routed before checking what route (#151)
+- D8CORE-1402: add {grid: true} to autoprefixer (#155)
+
 8.x-4.3
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_

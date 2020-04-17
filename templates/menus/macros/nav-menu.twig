@@ -28,7 +28,12 @@
     {% endif %}
 
     <li{{ list_attributes }}>
-      <a{{ link_attributes }}>{{ item.title }}</a>
+      <a{{ link_attributes }}>
+        {{ item.title }}
+        {% if item.unpublished %}
+          <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
+        {% endif %}
+      </a>
       {% if item.below %}
         {{ menus.nav_menu(item.below, menu_level + 1, class_prefix) }}
       {% endif %}
