@@ -19,7 +19,7 @@ Installation
 
 Install this theme like any other theme. [See Drupal Documentation](https://www.drupal.org/docs/8/extending-drupal-8/installing-themes)
 
-Configuration
+Configuration 2
 ---
 
 Nothing special needed. Install, enable, and set as the default active theme. Once you have the theme enabled, be sure to check out the appearance settings for additional configuration items.
