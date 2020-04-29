@@ -12,7 +12,7 @@
   &:focus,
   &:hover {
     border: 5px solid rgb(137, 206, 255);
-    z-index: 500;
+    z-index: 102;
 
     .block--local-tasks {
       opacity: 1;
@@ -26,7 +26,7 @@
   position: sticky;
   position: -webkit-sticky; // required for Safari
   top: 79px;
-  z-index: 500;
+  z-index: 102;
 
   ul,
   li {
