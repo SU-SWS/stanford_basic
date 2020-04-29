@@ -63,11 +63,15 @@
         @include padding(null 1em);
         font-family: 'Font Awesome 5 Free';
         content: '\f2ed';
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 400;
 
         @include grid-media-min('2xl') {
           font-size: 1.9rem;
+        }
+
+        @include grid-media-min('md') {
+          font-size: 1.8rem;
         }
       }
     }
