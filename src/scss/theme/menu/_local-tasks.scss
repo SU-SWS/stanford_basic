@@ -2,6 +2,7 @@
 
 .role--authenticated .page-content {
   border: 0;
+  position: relative;
   transition: border 0.5s ease-in-out;
 
   .block--local-tasks {
@@ -23,9 +24,7 @@
 .block--local-tasks {
   @include margin(0 auto 10px auto);
 
-  position: sticky;
-  position: -webkit-sticky; // required for Safari
-  top: 79px;
+  position: absolute;
   z-index: 102;
 
   ul,
@@ -34,6 +33,7 @@
   }
 
   ul {
+    position: relative;
     display: flex;
     flex-direction: row;
   }
