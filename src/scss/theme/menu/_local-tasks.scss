@@ -3,14 +3,10 @@
 .role--authenticated .page-content {
   border: 0;
   transition: border 0.5s ease-in-out;
-  -moz-transition: border 0.5s ease-in-out;
-  -webkit-transition: border 0.55s ease-in-out;
 
   .block--local-tasks {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.55s ease-in-out;
   }
 
   &:focus,
