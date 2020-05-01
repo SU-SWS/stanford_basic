@@ -324,7 +324,7 @@ function stanford_basic_pattern_process_contextual(array $element) {
  */
 function stanford_basic_preprocess_menu_local_task(&$variables) {
   if ($variables['link']['#url']->getRouteName() == 'entity.node.version_history') {
-    $variables['link']['#title'] = 'Version History';
+    $variables['link']['#title'] = t('Version History');
   }
   $variables['attributes']['class'][] = strtolower(Html::cleanCssIdentifier($variables['link']['#title']));
 }
