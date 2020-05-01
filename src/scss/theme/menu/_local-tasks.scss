@@ -66,12 +66,12 @@
         font-size: 1.6rem;
         font-weight: 400;
 
-        @include grid-media-min('2xl') {
-          font-size: 1.9rem;
-        }
-
         @include grid-media-min('md') {
           font-size: 1.8rem;
+        }
+
+        @include grid-media-min('2xl') {
+          font-size: 1.9rem;
         }
       }
     }
@@ -82,11 +82,13 @@
     order: 5;
   }
 
-  .layout {
+  .layout,
+  .shortcuts {
     order: 6;
   }
 
-  .version-history {
+  .version-history,
+  .roles {
     order: 2;
   }
 
