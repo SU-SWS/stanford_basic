@@ -5,4 +5,4 @@
       "backend": ["*.php", "*.module"],
       "ci": [".circleci", "blt", ".github"]
     }
-  }
+}
