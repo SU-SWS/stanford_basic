@@ -2,12 +2,12 @@ window.onscroll = function () {
   stickyHeaderOnScroll();
 };
 
-var header = document.getElementById('block-stanford-basic-local-tasks'),
-  sticky = header.getBoundingClientRect().top;
+var header = document.getElementById('block-stanford-basic-local-tasks');
+var sticky = header.getBoundingClientRect().top;
 
 function stickyHeaderOnScroll() {
-  var toolbarHeight = 0,
-    toolbarOpen = document.body.classList.contains('toolbar-tray-open');
+  var toolbarHeight = 0;
+  var toolbarOpen = document.body.classList.contains('toolbar-tray-open');
 
   if (toolbarOpen === true) {
     toolbarHeight = 79;
