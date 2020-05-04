@@ -13,7 +13,7 @@
   &:focus,
   &:hover {
     border: 5px solid rgb(137, 206, 255);
-    z-index: 102;
+    z-index: 103;
 
     .block--local-tasks {
       opacity: 1;
@@ -24,7 +24,8 @@
 .block--local-tasks {
   @include margin(0 auto 10px auto);
 
-  position: absolute;
+  // position: fixed;
+  // top: 200px;
   z-index: 102;
 
   ul,
@@ -33,9 +34,15 @@
   }
 
   ul {
-    position: relative;
     display: flex;
     flex-direction: row;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 102;
   }
 
   .page-content-label {
