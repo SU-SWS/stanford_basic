@@ -11,7 +11,7 @@ Stanford Basic is a Stanford Branded Drupal 8 base theme that integrates with th
 Accessibility
 ---
 [![WCAG Conformance 2.0 AA Badge](https://www.w3.org/WAI/wcag2AA-blue.png)](https://www.w3.org/TR/WCAG20/)
-Evaluation Date: 2020-02-05  
+Evaluation Date: 2020-02-05
 This theme conforms to level AA WCAG 2.0 standards as required by the university's accessibility policy. For more information on the policy please visit: [https://ucomm.stanford.edu/policies/accessibility-policy.html](https://ucomm.stanford.edu/policies/accessibility-policy.html).
 
 Installation
@@ -75,3 +75,5 @@ Steps to build a new release:
 - Give the PR a semver-compliant label, e.g., (`patch`, `minor`, `major`).  This may happen automatically via Github actions (if a labeler action is configured).
 - When the PR is merged to `master`, a new tag will be created automatically, bumping the version by the semver label.
 - The github action is built from: [semver-release-action](https://github.com/K-Phoen/semver-release-action), and further documentation is available there.
+
+change to trigger rebuild.
