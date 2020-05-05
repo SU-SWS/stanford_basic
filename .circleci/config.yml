@@ -12,27 +12,6 @@ defaults: &defaults
   working_directory: /var/www/html
 
 #Jobs
-behat: &behat
-  <<: *defaults
-  steps:
-    - restore_cache:
-        keys:
-          - dependencies-v1
-    - checkout:
-        path: /var/www/test
-    - run:
-        name: Run Behat Tests
-        command: |
-          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
-          ~/.composer/vendor/bin/sws-caravan behat /var/www/html --extension-dir=/var/www/test
-    - save_cache:
-        key: dependencies-v1-{{ epoch }}
-        paths:
-          - .
-    - store_test_results:
-        path: /var/www/html/artifacts/behat
-    - store_artifacts:
-        path: /var/www/html/artifacts
 
 back_to_dev: &back_to_dev
   <<: *defaults
@@ -44,29 +23,10 @@ back_to_dev: &back_to_dev
           composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
           ~/.composer/vendor/bin/sws-caravan back-to-dev ${CIRCLE_TAG} ${CIRCLE_WORKING_DIRECTORY}
 
-codeception: &codeception
-  <<: *defaults
-  steps:
-    - checkout:
-        path: /var/www/test
-    - run:
-        name: Run Behat Tests
-        command: |
-          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
-          ~/.composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=/var/www/test
-    - store_test_results:
-        path: /var/www/html/artifacts/behat
-    - store_artifacts:
-        path: /var/www/html/artifacts
-
 # Declare all of the jobs we should run.
 jobs:
-  run-behat:
-    <<: *behat
   run-back-to-dev:
     <<: *back_to_dev
-  run-codeception:
-    <<: *codeception
 
 # Declare a workflow that runs all of our jobs in parallel.
 workflows:
@@ -81,18 +41,3 @@ workflows:
             branches:
               ignore:
                 - /.*/
-  tests:
-    jobs:
-      - run-behat
-      - run-codeception
-  # Re-test every sunday in case this code becomes stale.
-  sundays:
-    jobs:
-      - run-behat
-    triggers:
-      - schedule:
-          cron: "0 0 * * 0"
-          filters:
-            branches:
-              only:
-                - 8.x-4.x
