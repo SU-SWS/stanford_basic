@@ -1,0 +1,74 @@
+@charset 'UTF-8';
+//
+// Custom Styles For Stanford Page Search form and search results.
+//
+// Search form on search results page
+
+// Search Header
+h1 {
+  @include type-a;
+  @include modular-spacing('margin-top', 6);
+}
+
+//Search results
+.search-result__item {
+  @include modular-spacing('padding', 3 3 4 3);
+
+  border-top: 1px solid $su-color-cool-grey-25;
+  list-style: none;
+}
+
+// Mobile spacing changes
+@include grid-media-only('xs') {
+  ol {
+    @include padding(null 0 null);
+  }
+
+  .search-result__item {
+    @include modular-spacing('padding', 1);
+  }
+}
+
+.search-form {
+  @include margin(0 auto);
+  @include padding(5rem 0 0 0);
+  @include modular-spacing('margin-bottom', 6);
+
+  @include grid-media-only('xs') {
+    @include modular-spacing('margin-bottom', 4);
+  }
+
+  max-width: 775px;
+
+  .form-search {
+    border-color: $su-color-cool-grey-25;
+    display: inline-block;
+    @include grid-media-between('md', 'xl') {
+      @include margin(3px null null);
+    }
+    @include grid-media-between('lg', 'xl') {
+      @include modular-spacing('margin-left', -1);
+    }
+  }
+
+  @include grid-media-between('xs', 'md') {
+    .button {
+      @include margin(0);
+      @include modular-spacing('margin-bottom', -1);
+      @include modular-spacing('margin-top', -1);
+    }
+  }
+
+  @include grid-media-between('sm', 'md') {
+    label,
+    .form-submit {
+      display: block;
+    }
+
+    .button {
+      &.form-submit {
+        width: 100vw;
+      }
+    }
+  }
+}

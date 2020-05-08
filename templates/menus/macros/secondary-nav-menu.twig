@@ -30,7 +30,12 @@
     {# Skip non-trail items below the first level. #}
     {% if item.in_active_trail == true or menu_level == 1 or parent.in_active_trail == true %}
       <li{{ list_attributes }}>
-        <a{{ link_attributes }}>{{ item.title }}</a>
+        <a{{ link_attributes }}>
+          {{ item.title }}
+          {% if item.unpublished %}
+            <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
+          {% endif %}
+        </a>
         {% if item.below %}
           {{ menus.secondary_nav_menu(item.below, menu_level + 1, class_prefix, item) }}
         {% endif %}
