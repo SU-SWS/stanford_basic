@@ -1,9 +1,11 @@
-window.onscroll = function () {
-  stickyHeaderOnScroll();
-};
-
-var header = document.getElementById('block-stanford-basic-local-tasks');
-var sticky = header.getBoundingClientRect().top;
+if (document.body.classList.contains('role--authenticated')) {
+  window.onscroll = function () {
+    stickyHeaderOnScroll();
+  };
+  
+  var header = document.getElementById('block-stanford-basic-local-tasks');
+  var sticky = header.getBoundingClientRect().top;
+}
 
 function stickyHeaderOnScroll() {
   var toolbarHeight = 0;
