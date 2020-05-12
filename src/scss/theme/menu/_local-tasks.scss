@@ -2,9 +2,9 @@
 
 .role--authenticated {
   .page-content {
-    border: 0;
+    outline: 0;
     position: relative;
-    transition: border 0.5s ease-in-out;
+    transition: outline 0.5s ease-in-out;
 
     .block--local-tasks {
       opacity: 0;
@@ -13,7 +13,7 @@
 
     &:focus,
     &:hover {
-      border: 5px solid rgb(137, 206, 255);
+      outline: 5px solid rgb(137, 206, 255);
       z-index: 103;
 
       .block--local-tasks {
