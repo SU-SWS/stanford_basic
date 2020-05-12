@@ -1,7 +1,8 @@
 var header = document.getElementById('block-stanford-basic-local-tasks');
+var sticky = 0;
 
 if (header) {
-  var sticky = header.getBoundingClientRect().top;
+  sticky = header.getBoundingClientRect().top;
   window.onscroll = function () {
     stickyHeaderOnScroll();
   };
