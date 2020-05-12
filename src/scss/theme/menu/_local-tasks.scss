@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 .role--authenticated {
-  .page-content {
+  .outline {
     outline: 0;
     position: relative;
     transition: outline 0.5s ease-in-out;
@@ -61,7 +61,6 @@
     .delete {
       order: 4;
 
-      // Replacing Delete with Font Awesome Trash Icon
       a {
         font-size: 0;
 
