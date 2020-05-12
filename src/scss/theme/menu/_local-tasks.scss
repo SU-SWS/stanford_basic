@@ -14,6 +14,7 @@
     &:focus,
     &:hover {
       outline: 5px solid rgb(137, 206, 255);
+      outline-offset: -5px;
       z-index: 103;
 
       .block--local-tasks {
