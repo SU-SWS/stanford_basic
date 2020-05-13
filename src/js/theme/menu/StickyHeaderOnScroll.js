@@ -8,6 +8,9 @@ if (header) {
   };
 }
 
+/**
+ * Stick the local block tasks to the top of the window.
+ */
 function stickyHeaderOnScroll() {
   var toolbarHeight = 0;
   var toolbarOpen = document.body.classList.contains('toolbar-tray-open');
