@@ -25,6 +25,14 @@ export default {
       if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
       }
+
+      // Add an outline class to the page-content region if local tasks are
+      // available.
+      var localTab = $('#block-stanford-basic-local-tasks', context);
+      if (localTab.length) {
+        $('.page-content', context).addClass('stanford-basic--outline');
+      }
+
     })(jQuery);
   },
 

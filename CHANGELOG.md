@@ -1,5 +1,13 @@
 # Stanford Basic Theme
 
+8.x-4.5
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-15_
+
+- D8CORE-2004 JS Error in stanford_basic local tabs. (#159) (a892e90)
+- D8CORE-1869: Added circleci configuration (#158) (08f4fae)
+- D8CORE-1022: Tweak Edit Buttons display in D8 page authoring (#129) (9a6243d)
+
 8.x-4.4
 --------------------------------------------------------------------------------
 _Release Date: 2020-04-17_
