@@ -4,7 +4,6 @@
   outline: 0;
   position: relative;
   transition: outline 0.5s ease-in-out;
-  z-index: 103;
 
   .block--local-tasks {
     opacity: 0;
@@ -24,7 +23,7 @@
 
 .block--local-tasks {
   @include margin(0 auto 10px auto);
-  z-index: 102;
+  z-index: 15;
 
   ul,
   li {
@@ -40,7 +39,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 102;
+    z-index: 15;
   }
 
   .page-content-label {
