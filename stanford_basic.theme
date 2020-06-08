@@ -216,7 +216,7 @@ function _stanford_basic_preprocess_not_nodes(&$vars) {
  * Pass through the lockup configuration settings.
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
-  $vars['lockup'] = theme_get_setting('lockup');
+  $vars['lockup'] = theme_get_setting('lockup') ?: 'a';
 }
 
 /**
