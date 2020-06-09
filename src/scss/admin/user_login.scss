@@ -11,6 +11,22 @@
 
 @import 'decanter/core/src/scss/decanter-no-markup';
 
+.su-back-to-site {
+  .su-button {
+    &.su-link {
+      background-color: $su-color-blue;
+    }
+  }
+
+  position: absolute;
+  top: 6%;
+  left: 9%;
+
+  @include grid-media-max('xs') {
+    top: 10%
+  }
+}
+
 .dialog-off-canvas-main-canvas {
   background: url("../../assets/img/login-page.jpg") no-repeat;
   background-size: cover;
