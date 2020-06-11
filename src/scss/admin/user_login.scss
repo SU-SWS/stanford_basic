@@ -12,18 +12,19 @@
 @import 'decanter/core/src/scss/decanter-no-markup';
 
 .su-back-to-site {
+
+  position: absolute;
+  top: 6%;
+  left: 9%;
+
   .su-button {
     &.su-link {
       background-color: $su-color-blue;
     }
   }
 
-  position: absolute;
-  top: 6%;
-  left: 9%;
-
   @include grid-media-max('xs') {
-    top: 10%
+    top: 10%;
   }
 }
 
