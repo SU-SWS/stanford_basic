@@ -7,6 +7,12 @@ _Release Date: 2020-06-17_
 - D8CORE-000: Provide a default lockup option in preprocess for subthemes (#165) (2531b38)
 - D8CORE-2189: Update to Decanter 6.0.6 (#164) (2d81504)
 
+8.x-4.6
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-21_
+
+- Reduce the z indexes to fix layout builder overlays (#162)
+
 8.x-4.5
 --------------------------------------------------------------------------------
 _Release Date: 2020-05-15_
