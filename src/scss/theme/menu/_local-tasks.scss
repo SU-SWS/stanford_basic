@@ -118,3 +118,19 @@
     }
   }
 }
+
+// Styling for anonymous users
+.role--anonymous {
+  .stanford-basic--outline {
+    transition: none;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+    }
+
+    .block--local-tasks {
+      opacity: 1;
+    }
+  }
+}

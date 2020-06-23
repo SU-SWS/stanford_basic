@@ -11,15 +11,28 @@
 
 @import 'decanter/core/src/scss/decanter-no-markup';
 
+.su-login-task {
+  display: inline-flex;
+}
+
 .su-back-to-site {
-
-  position: absolute;
-  top: 6%;
-  left: 9%;
-
   .su-button {
     &.su-link {
-      background-color: $su-color-blue;
+      @include padding(10px 1em);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: $su-color-white;
+      background-color: $su-color-bright-blue;
+      border-right: 1px solid #00548f;
+      border-bottom: 1px solid #00548f;
+
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $su-color-white;
+        background-color: $su-color-blue;
+      }
     }
   }
 

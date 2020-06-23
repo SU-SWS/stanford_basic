@@ -6,17 +6,21 @@
 
 <div class="page-content">
   <a name="page-content" id="page-content" tabindex="-1" class="visually-hidden focusable">Page Content</a>
+  {{ page.content.stanford_basic_messages }}
 
-  <div class="su-back-to-site">
-    <div>
-      <a href="{{ url('<front>') }}" class="su-link su-button">
-        <i class="fa fa-chevron-left"></i> 
-        Back to your site
-      </a>
+  <div class="su-login-task">
+    <div class="su-back-to-site">
+      <div>
+        <a href="{{ url('<front>') }}" class="su-link su-button">
+          <i class="fa fa-chevron-left"></i>
+          Back to your site
+        </a>
+      </div>
     </div>
+    {{ page.content.stanford_basic_local_tasks }}
   </div>
 
-  {{ page.content }}
+  {{ page.content.stanford_basic_content }}
 
 </div>
 
