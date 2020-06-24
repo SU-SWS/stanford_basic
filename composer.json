@@ -5,5 +5,14 @@
   "homepage": "https://github.com/SU-SWS/stanford_basic",
   "authors": [],
   "license": "GPL-2.0+",
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "drupal/core": "^8.9||^9.0"
+  }
 }
