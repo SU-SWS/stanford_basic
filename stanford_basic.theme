@@ -216,7 +216,7 @@ function _stanford_basic_preprocess_not_nodes(&$vars) {
  * Pass through the lockup configuration settings.
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
-  $vars['lockup'] = theme_get_setting('lockup');
+  $vars['lockup'] = theme_get_setting('lockup') ?: 'a';
 }
 
 /**
@@ -316,4 +316,14 @@ function stanford_basic_pattern_process_contextual(array $element) {
     $element['#prefix'] = render($placeholder);
   }
   return $element;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_menu_local_task(&$variables) {
+  if ($variables['link']['#url']->getRouteName() == 'entity.node.version_history') {
+    $variables['link']['#title'] = t('Version History');
+  }
+  $variables['attributes']['class'][] = strtolower(Html::cleanCssIdentifier($variables['link']['#title']));
 }

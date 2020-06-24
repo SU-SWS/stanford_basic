@@ -1,5 +1,37 @@
 # Stanford Basic Theme
 
+8.x-4.7
+--------------------------------------------------------------------------------
+_Release Date: 2020-06-17_
+
+- D8CORE-000: Provide a default lockup option in preprocess for subthemes (#165) (2531b38)
+- D8CORE-2189: Update to Decanter 6.0.6 (#164) (2d81504)
+
+8.x-4.6
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-21_
+
+- Reduce the z indexes to fix layout builder overlays (#162)
+
+8.x-4.5
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-15_
+
+- D8CORE-2004 JS Error in stanford_basic local tabs. (#159) (a892e90)
+- D8CORE-1869: Added circleci configuration (#158) (08f4fae)
+- D8CORE-1022: Tweak Edit Buttons display in D8 page authoring (#129) (9a6243d)
+
+8.x-4.4
+--------------------------------------------------------------------------------
+_Release Date: 2020-04-17_
+
+- Update stanford_basic.info.yml (#133)
+- D8CORE-1504: Remove ids from pattern templates. (#147)
+- D8CORE-1349 Added visual indicator for links to unpublished pages (#146)
+- D8CORE-1644: Dev branch workflow
+- Check if the menu link is routed before checking what route (#151)
+- D8CORE-1402: add {grid: true} to autoprefixer (#155)
+
 8.x-4.3
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_

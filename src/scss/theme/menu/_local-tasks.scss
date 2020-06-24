@@ -1,34 +1,120 @@
 @charset 'UTF-8';
 
-// view/edit/delete/manage tabs.
+.stanford-basic--outline {
+  outline: 0;
+  position: relative;
+  transition: outline 0.5s ease-in-out;
+
+  .block--local-tasks {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  &:focus,
+  &:hover {
+    outline: 5px solid rgb(137, 206, 255);
+    outline-offset: -5px;
+
+    .block--local-tasks {
+      opacity: 1;
+    }
+  }
+}
+
 .block--local-tasks {
   @include margin(0 auto 10px auto);
-  border-bottom: solid 2px $su-color-cardinal-red;
-
-  nav {
-    @include centered-column;
-  }
+  z-index: 15;
 
   ul,
   li {
     @include margin(0);
   }
 
-  a {
-    @include padding(7px null);
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+  }
+
+  .page-content-label {
+    @include padding(10px 1em);
     color: $su-color-white;
-    background-color: $su-color-stone;
-    border: solid 2px $su-color-stone;
-    border-bottom: 0;
+    background-color: $su-color-blue;
+    border-right: 1px solid #00548f;
+    border-bottom: 1px solid #00548f;
+    font-weight: 400;
+    order: 1;
+  }
+
+  .edit {
+    order: 3;
+  }
+
+  .delete {
+    order: 4;
+
+    a {
+      font-size: 0;
+
+      &::before {
+        @include padding(null 1em);
+        font-family: 'Font Awesome 5 Free';
+        content: '\f2ed';
+        font-size: 1.6rem;
+        font-weight: 400;
+
+        @include grid-media-min('md') {
+          font-size: 1.8rem;
+        }
+
+        @include grid-media-min('2xl') {
+          font-size: 1.9rem;
+        }
+      }
+    }
+  }
+
+  .manage-display {
+    margin-left: auto;
+    order: 5;
+  }
+
+  .layout,
+  .shortcuts {
+    order: 6;
+  }
+
+  .version-history,
+  .roles {
+    order: 2;
+  }
+
+  .viewspan-classvisually-hiddenactive-tab-span,
+  .devel {
+    display: none;
+  }
+
+  a {
+    @include padding(10px null);
+    font-weight: 400;
+    color: $su-color-white;
+    background-color: $su-color-bright-blue;
+    border-right: 1px solid #00548f;
+    border-bottom: 1px solid #00548f;
   }
 
   a {
     &:hover,
+    &:focus,
     &.is-active {
-      color: $su-color-stone;
-      background-color: $su-color-white;
-      border: solid 2px $su-color-cardinal-red;
-      border-bottom: 0;
+      color: $su-color-white;
+      background-color: $su-color-blue;
     }
   }
 }
