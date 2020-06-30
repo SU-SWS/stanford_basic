@@ -112,20 +112,8 @@
   }
 }
 
-.su-back-to-site {
-  //opacity: 0;
-  display: none; // This will have to be rewritten
-}
-
 // Styling for anonymous users
 .role--anonymous {
-  .page-user-login {
-    .su-back-to-site {
-      //opacity: 1;
-      display: block;
-    }
-  }
-
   .stanford-basic--outline {
     transition: none;
 
