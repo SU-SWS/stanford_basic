@@ -14,22 +14,34 @@
   Add that logic here.
 #}
 
-{% if lockup.option is not empty %}
-  {% set attributes = attributes.addClass(["su-lockup", "su-lockup--option-" ~ lockup.option]) %}
+{% if su_use_theme_logo == '0' %}
+    {% set su_custom_logo = true %}
+{% else %}
+  {% set su_custom_logo = false %}
 {% endif %}
 
-{# Do not default the line 1 on variant O, S, or T #}
-{% if lockup.option != "o" and lockup.option != "s" and lockup.option != "t" %}
-  {% set line1 = content.site_name %}
+{% if su_custom_logo and su_path_to_custom_logo is not empty %}
+  <img src="{{ su_path_to_custom_logo }}" alt="site logo" />
 {% endif %}
 
-{% if lockup.line1 is not empty %}
- {% set line1 = lockup.line1 %}
-{% endif %}
+{% if su_use_theme_logo == '1' %}
+  {% if lockup.option is not empty %}
+    {% set attributes = attributes.addClass(["su-lockup", "su-lockup--option-" ~ lockup.option]) %}
+  {% endif %}
 
-{% set line2 = content.site_slogan %}
-{% if lockup.line2 is not empty %}
- {% set line2 = lockup.line2 %}
+  {# Do not default the line 1 on variant O, S, or T #}
+  {% if lockup.option != "o" and lockup.option != "s" and lockup.option != "t" %}
+    {% set line1 = content.site_name %}
+  {% endif %}
+
+  {% if lockup.line1 is not empty %}
+   {% set line1 = lockup.line1 %}
+  {% endif %}
+
+  {% set line2 = content.site_slogan %}
+  {% if lockup.line2 is not empty %}
+   {% set line2 = lockup.line2 %}
+  {% endif %}
 {% endif %}
 
 {%
@@ -44,4 +56,6 @@
   'line5': lockup.line5
   }
 %}
-{% include "@basic-dist/decanter/components/lockup/lockup.twig" with data only %}
+{% if su_use_theme_logo == '1' %}
+  {% include "@basic-dist/decanter/components/lockup/lockup.twig" with data only %}
+{% endif %}
