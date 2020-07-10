@@ -15,7 +15,14 @@
 #}
 
 {% if su_use_theme_logo == "0" and su_path_to_custom_logo is not empty %}
-<img src="{{ su_path_to_custom_logo }}" alt="site logo" />
+  {% set link = url('<front>') %}
+  {% if link is not empty %}
+    <a href="{{ link }}" {{ link_attributes }}>
+  {% endif %}
+    <img src="{{ su_path_to_custom_logo }}" alt="site logo" />
+  {% if link is not empty %}
+    </a>
+  {% endif %}
 {% endif %}
 
 {% if su_use_theme_logo is empty or su_use_theme_logo == "1" %}
