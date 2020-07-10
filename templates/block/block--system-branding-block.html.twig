@@ -19,7 +19,7 @@
   {% if link is not empty %}
     <a href="{{ link }}" {{ link_attributes }}>
   {% endif %}
-    <img src="{{ su_path_to_custom_logo }}" alt="site logo" />
+    <img src="{{ su_path_to_custom_logo }}" alt="{{ content.site_name }}" />
   {% if link is not empty %}
     </a>
   {% endif %}
