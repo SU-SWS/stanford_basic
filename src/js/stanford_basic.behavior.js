@@ -34,8 +34,8 @@ export default {
       }
 
       var userLogin = $('.page-user-login', context);
-      if (userLogin.length === 0) {
-        $('.su-back-to-site', context).addClass('visually-hidden');
+      if (userLogin) {
+        $('.su-back-to-site', context).removeClass('visually-hidden');
       }
 
     })(jQuery);
