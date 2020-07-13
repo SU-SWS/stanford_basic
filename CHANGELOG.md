@@ -1,5 +1,13 @@
 # Stanford Basic Theme
 
+8.x-4.8
+--------------------------------------------------------------------------------
+_Release Date: 2020-07-13_
+
+- Merge pull request #168 from SU-SWS/D8CORE-1406-remove-name (7601f5d)
+- D8CORE-1406: fix to login page (a552691)
+- D8CORE-1406: remove link, move page-content ID (3f676ce)
+
 8.x-4.7
 --------------------------------------------------------------------------------
 _Release Date: 2020-06-17_
