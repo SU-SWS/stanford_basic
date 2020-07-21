@@ -52,10 +52,10 @@
  {% set line2 = lockup.line2 %}
 {% endif %}
 
-{# If the theme has a custom logo. Use that. #}
+{# If the theme has a custom logo. Use that. We can do this by overriding the twig block in lockup.twig #}
 {% block cell1 %}
   {% if site_logo|render|striptags|trim is not empty and use_logo == false %}
-    <a href="{{ url('<front>') }}"><img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" /></a>
+    <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
   {% else %}
     <div class="su-lockup__wordmark-wrapper">
       <span class="su-lockup__wordmark">Stanford</span>
@@ -63,6 +63,27 @@
         <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
       {% endif %}
     </div>
+  {% endif %}
+{% endblock %}
+
+{# Override block cell2 because we want to hide some elements if the none option is selected. #}
+{% block cell2 %}
+  {% if lockup.option != 'none' %}
+    {% if line1 is not empty or line2 is not empty or line3 is not empty %}
+    <div class="su-lockup__cell2">
+      {% if line1 is not empty %}
+      <span class="su-lockup__line1" {{ region_attributes.line1 }}>{{ line1 }}</span>
+      {% endif %}
+
+      {% if line2 is not empty %}
+      <span class="su-lockup__line2" {{ region_attributes.line2 }}>{{ line2 }}</span>
+      {% endif %}
+
+      {% if line3 is not empty %}
+      <span class="su-lockup__line3" {{ region_attributes.line3 }}>{{ line3 }}</span>
+      {% endif %}
+    </div>
+    {% endif %}
   {% endif %}
 {% endblock %}
 

@@ -3,3 +3,13 @@
 .su-lockup__custom-logo {
   max-width: 150px;
 }
+
+.su-lockup--option-none {
+  .su-lockup__cell1 {
+    border-right: 0;
+  }
+
+  .su-lockup__custom-logo {
+    max-width: 300px;
+  }
+}

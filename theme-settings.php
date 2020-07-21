@@ -13,8 +13,6 @@ $theme_name = \Drupal::theme()->getActiveTheme()->getName();
  */
 function stanford_basic_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state) {
 
-  dpm($form);
-
   $form['options_settings'] = [
     '#type' => 'fieldset',
     '#title' => t('Theme Specific Settings'),
@@ -74,7 +72,7 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
       's' => t('Option S'),
       't' => t('Option T'),
     ],
-    '#default_value' => theme_get_setting('lockup.option') || 'a',
+    '#default_value' => theme_get_setting('lockup.option') ?? 'a',
     '#description' => t("Layout options."),
   ];
 
