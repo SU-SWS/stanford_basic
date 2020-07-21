@@ -8,6 +8,7 @@
  * site_slogan: Slogan for site as defined in Site information settings
  * content: Containts the above vars with more information.
  * lockup: Settings from the theme.
+ * use_logo: Setting from the theme
  * configuration: More settings from the theme.
  * - id: "system_branding_block"
  * - label: "Site Branding"
@@ -17,8 +18,7 @@
  */
 #}
 
-{% extends "@basic-dist/decanter/components/lockup/lockup.twig" %}
-
+{# Set some of the default options for the lockup. #}
 {% set attributes = attributes|without('class') %}
 {% set modifier_class = attributes.class %}
 {% set link = url('<front>') %}
@@ -28,7 +28,7 @@
   {% set line5 = lockup.line5 %}
 {% endif %}
 
-{# Stuff and things. #}
+{# Default classes for the lockup wrapper. #}
 {% set classes = 'su-lockup' %}
 
 {# The variant classes change when there is more than one line to render. #}
@@ -53,8 +53,17 @@
 {% endif %}
 
 {# If the theme has a custom logo. Use that. #}
-{% if site_logo is not empty %}
-  {% block cell1 %}
+{% block cell1 %}
+  {% if site_logo|render|striptags|trim is not empty and use_logo == false %}
     <a href="{{ url('<front>') }}"><img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" /></a>
-  {% endblock %}
-{% endif %}
+  {% else %}
+    <div class="su-lockup__wordmark-wrapper">
+      <span class="su-lockup__wordmark">Stanford</span>
+      {% if line4 is not empty %}
+        <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% extends "@basic-dist/decanter/components/lockup/lockup.twig" %}
