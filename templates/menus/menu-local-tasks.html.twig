@@ -15,14 +15,19 @@
  * @ingroup themeable
  */
 #}
-{% if primary %}
-  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="tabs primary">
-    <li class="tabs__tab page-content-label">{{ 'Page Content'|t }}</li>
-    {{ primary }}
-  </ul>
-{% endif %}
-{% if secondary %}
-  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul class="tabs secondary">{{ secondary }}</ul>
-{% endif %}
+  {% if primary %}
+    <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+    <ul class="tabs primary">
+      <li class="su-back-to-site hidden">
+        <a href="{{ url('<front>') }}">
+          <i class="fa fa-chevron-left"></i>
+          Back to your site
+        </a>
+      </li>
+      {{ primary }}
+    </ul>
+  {% endif %}
+  {% if secondary %}
+    <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+    <ul class="tabs secondary">{{ secondary }}</ul>
+  {% endif %}
