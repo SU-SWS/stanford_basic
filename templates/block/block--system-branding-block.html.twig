@@ -41,6 +41,11 @@
   {% set line1 = content.site_name %}
 {% endif %}
 
+{# Enforce no line 5 on no lines. #}
+{% if lockup.option == 'none' %}
+  {% set line5 = '' %}
+{% endif %}
+
 {# Grab the site1 variable if it is not empty #}
 {% if lockup.line1 is not empty %}
  {% set line1 = lockup.line1 %}
