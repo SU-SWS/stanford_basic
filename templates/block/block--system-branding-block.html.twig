@@ -20,7 +20,6 @@
 
 {# Set some of the default options for the lockup. #}
 {% set attributes = attributes|without('class') %}
-{% set modifier_class = attributes.class %}
 {% set link = url('<front>') %}
 {% if lockup is not empty %}
   {% set line3 = lockup.line3 %}
@@ -28,12 +27,9 @@
   {% set line5 = lockup.line5 %}
 {% endif %}
 
-{# Default classes for the lockup wrapper. #}
-{% set classes = 'su-lockup' %}
-
 {# The variant classes change when there is more than one line to render. #}
 {% if lockup.option is not empty %}
-  {% set attributes = attributes.addClass(["su-lockup", "su-lockup--option-" ~ lockup.option]) %}
+  {% set modifier_class = "su-lockup--option-" ~ lockup.option %}
 {% endif %}
 
 {# Do not default the line 1 on variant O, S, or T #}
