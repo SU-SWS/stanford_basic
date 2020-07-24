@@ -17,7 +17,7 @@
 .su-lockup--option-s,
 .su-lockup--option-t {
   .su-lockup__line4 {
-    &:after {
+    &::after {
       width: auto;
     }
   }
