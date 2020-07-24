@@ -37,11 +37,6 @@
   {% set line1 = content.site_name %}
 {% endif %}
 
-{# Enforce no line 5 on no lines. #}
-{% if lockup.option == 'none' %}
-  {% set line5 = '' %}
-{% endif %}
-
 {# Grab the site1 variable if it is not empty #}
 {% if lockup.line1 is not empty %}
  {% set line1 = lockup.line1 %}
@@ -51,6 +46,15 @@
 {% set line2 = site_slogan %}
 {% if lockup.line2 is not empty %}
  {% set line2 = lockup.line2 %}
+{% endif %}
+
+{# Enforce no lines on none. #}
+{% if lockup.option == 'none' %}
+  {% set line1 = '' %}
+  {% set line2 = '' %}
+  {% set line3 = '' %}
+  {% set line4 = '' %}
+  {% set line5 = '' %}
 {% endif %}
 
 {# If the theme has a custom logo. Use that. We can do this by overriding the twig block in lockup.twig #}
