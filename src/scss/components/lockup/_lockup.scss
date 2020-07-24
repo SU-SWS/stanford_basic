@@ -13,3 +13,23 @@
     max-width: 300px;
   }
 }
+
+.su-lockup--option-s,
+.su-lockup--option-t {
+  .su-lockup__line4 {
+    &:after {
+      width: auto;
+    }
+  }
+}
+
+.su-lockup--option-h,
+.su-lockup--option-i,
+.su-lockup--option-p {
+  .su-lockup__cell1 {
+    .su-lockup__line4 {
+      overflow-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+}
