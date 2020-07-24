@@ -60,7 +60,12 @@
 {# If the theme has a custom logo. Use that. We can do this by overriding the twig block in lockup.twig #}
 {% block cell1 %}
   {% if site_logo|render|striptags|trim is not empty and use_logo == false %}
-    <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
+    <div class="su-lockup__logo-wrapper">
+      <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
+      {% if line4 is not empty %}
+        <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
+      {% endif %}
+    </div>
   {% else %}
     <div class="su-lockup__wordmark-wrapper">
       <span class="su-lockup__wordmark">Stanford</span>
