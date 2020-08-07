@@ -33,6 +33,11 @@ export default {
         $('.page-content', context).addClass('stanford-basic--outline');
       }
 
+      var userLogin = $('.page-user-login', context);
+      if (userLogin) {
+        $('.su-back-to-site', context).removeClass('hidden');
+      }
+
     })(jQuery);
   },
 

@@ -1,5 +1,14 @@
 # Stanford Basic Theme
 
+8.x-4.9
+--------------------------------------------------------------------------------
+_Release Date: 2020-08-07_
+
+- D8CORE-2467 Fixed local links (#174) (9d7a58e)
+- D8CORE-1472: Updates to lockup settings for logo support (#170) (eb0108d)
+- Bump lodash from 4.17.15 to 4.17.19 (#172) (144597b)
+- D8CORE-1410: Back to site link (#166) (3d996b5)
+
 8.x-4.8
 --------------------------------------------------------------------------------
 _Release Date: 2020-07-13_

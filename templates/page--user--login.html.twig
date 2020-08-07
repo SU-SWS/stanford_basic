@@ -3,6 +3,13 @@
 {%- if page.help -%}
   {{ page.help }}
 {%- endif -%}
+<header class="su-masthead su-masthead--right">
+  <section>
+  {%- if page.header -%}
+    {{ page.header }}
+  {%- endif -%}
+  </section>
+</header>
 
 <div class="page-content" id="page-content">
   {{ page.content }}

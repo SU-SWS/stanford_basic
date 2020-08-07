@@ -23,7 +23,7 @@
 
 .block--local-tasks {
   @include margin(0 auto 10px auto);
-  z-index: 15;
+  z-index: 10;
 
   ul,
   li {
@@ -43,12 +43,6 @@
   }
 
   .page-content-label {
-    @include padding(10px 1em);
-    color: $su-color-white;
-    background-color: $su-color-blue;
-    border-right: 1px solid #00548f;
-    border-bottom: 1px solid #00548f;
-    font-weight: 400;
     order: 1;
   }
 
@@ -95,7 +89,6 @@
     order: 2;
   }
 
-  .viewspan-classvisually-hiddenactive-tab-span,
   .devel {
     display: none;
   }
@@ -118,3 +111,27 @@
     }
   }
 }
+
+// Styling for anonymous users
+.role--anonymous {
+  .stanford-basic--outline {
+    transition: none;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+    }
+
+    .block--local-tasks {
+      opacity: 1;
+
+      &.sticky {
+        position: relative;
+      }
+    }
+  }
+}
+
+
+
+
