@@ -118,6 +118,9 @@ var webpackConfig = {
               ]
             }
           },
+          {
+            loader: 'resolve-url-loader'
+          },
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
