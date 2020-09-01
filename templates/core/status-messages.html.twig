@@ -36,6 +36,32 @@
   {% set modifier_class = attributes.class %}
   {% set attributes = attributes|without('class') %}
 
+  {# Default Icon for Alerts. #}
+  {%- set fa_class = "su-fa-bell" -%}
+  {# Icon for error style. #}
+  {%- if 'su-alert--error' in modifier_class -%}
+    {%- set fa_class = "su-fa-exclamation-triangle" -%}
+  {%- endif -%}
+  {# Icon for success style. #}
+  {%- if 'su-alert--success' in modifier_class -%}
+    {%- set fa_class = "su-fa-check-circle" -%}
+  {%- endif -%}
+  {# Icon for warning style. #}
+  {%- if 'su-alert--warning' in modifier_class -%}
+    {%- set fa_class = "su-fa-exclamation-circle" -%}
+  {%- endif -%}
+  {# Icon for info style. #}
+  {%- if 'su-alert--info' in modifier_class -%}
+    {%- set fa_class = "su-fa-info-circle" -%}
+  {%- endif -%}
+
+  {# Create the HTML for the Alert Icon #}
+  {% if alert_icon|render|striptags("<drupal-placeholder>") is empty %}
+    {%- set alert_icon -%}
+      <i class="su-far {{ fa_class }}"></i>
+    {%- endset -%}
+  {% endif %}
+
   {# Good for everyone. #}
   {% if status_headings[type] %}
     <h2 class="visually-hidden">{{ status_headings[type] }}</h2>

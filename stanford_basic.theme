@@ -289,7 +289,7 @@ function _stanford_basic_link_is_public(Url $url) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_ds_entity_view().
  */
 function stanford_basic_preprocess_ds_entity_view(&$variables) {
   $variables['content']['#pre_render'][] = 'stanford_basic_pattern_process_contextual';
@@ -320,7 +320,7 @@ function stanford_basic_pattern_process_contextual(array $element) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_menu_local_task().
  */
 function stanford_basic_preprocess_menu_local_task(&$variables) {
   if ($variables['link']['#url']->getRouteName() == 'entity.node.version_history') {
@@ -331,4 +331,11 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
     $variables['link']['#title'] = t('Page Content');
     $variables['attributes']['class'][] = 'page-content-label';
   }
+}
+
+/**
+ * Implements hook_preprocess_status_messages().
+ */
+function stanford_basic_preprocess_status_messages(&$variables) {
+  dpm($variables);
 }
