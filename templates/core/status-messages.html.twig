@@ -42,28 +42,28 @@
   {% set attributes = attributes|without('class') %}
 
   {# Default Icon for Alerts. #}
-  {%- set fa_class = "fa-bell" -%}
+  {%- set fa_class = "su-fas fa-bell" -%}
   {# Icon for error style. #}
   {%- if 'su-alert--error' in modifier_class -%}
-    {%- set fa_class = "fa-exclamation-triangle" -%}
+    {%- set fa_class = "su-fas fa-exclamation-triangle" -%}
   {%- endif -%}
   {# Icon for success style. #}
   {%- if 'su-alert--success' in modifier_class -%}
-    {%- set fa_class = "fa-check-circle" -%}
+    {%- set fa_class = "su-fas fa-check-circle" -%}
   {%- endif -%}
   {# Icon for warning style. #}
   {%- if 'su-alert--warning' in modifier_class -%}
-    {%- set fa_class = "fa-exclamation-circle" -%}
+    {%- set fa_class = "su-fas fa-exclamation-circle" -%}
   {%- endif -%}
   {# Icon for info style. #}
   {%- if 'su-alert--info' in modifier_class -%}
-    {%- set fa_class = "fa-info-circle" -%}
+    {%- set fa_class = "su-fas fa-info-circle" -%}
   {%- endif -%}
 
   {# Create the HTML for the Alert Icon #}
   {% if alert_icon|render|striptags("<drupal-placeholder>") is empty %}
     {%- set alert_icon -%}
-      <i class="fas {{ fa_class }}"></i>
+      <i class="{{ fa_class }}"></i>
     {%- endset -%}
   {% endif %}
 
