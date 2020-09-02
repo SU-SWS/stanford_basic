@@ -28,7 +28,7 @@
     "browserslist": "^4.13.0",
     "caniuse-lite": "^1.0.30001122",
     "css-loader": "^2.1",
-    "decanter": "git://github.com/SU-SWS/decanter.git#D8CORE-2490",
+    "decanter": "^6.1.0",
     "dot-prop": "^5.2.0",
     "drupal-behaviors-loader": "^1.0.1",
     "element-closest-polyfill": "^1.0.0",
@@ -59,9 +59,9 @@
     "webpack-fix-style-only-entries": "^0.4.0",
     "webpack-manifest-plugin": "^2.2"
   },
-  "description": "",
-  "author": "",
-  "license": "MIT",
+  "description": "Stanford Drupal Base Theme",
+  "author": "Stanford Web Services",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "css",
     "scss",
