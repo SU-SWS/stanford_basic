@@ -77,14 +77,6 @@
     }
   }
 
-  .su-lockup--option-a {
-    .su-lockup__line1 {
-      @include grid-media('lg') {
-        line-height: 0.75em;
-      }
-    }
-  }
-
   .su-site-search__input {
     @include padding(0.6rem 2rem 0.8rem);
     font-family: $su-font-sans;

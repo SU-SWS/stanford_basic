@@ -1,5 +1,16 @@
 # Stanford Basic Theme
 
+8.x-4.10
+--------------------------------------------------------------------------------
+_Release Date: 2020-09-09_
+
+- D8CORE-2454: Lockup default array structure mis-match fix. (#181) (413399f)
+- Update Decanter to v 6.1.1 and compile. (#180) (71ff31a)
+- D8CORE-2490: Alert Component Updates (#178) (3c5bb6a)
+- D8CORE-2562: Update option A line-height to prevent overlap. (#177) (f39cf7a)
+- D8CORE-2499 Updated composer license (#176) (8fbde04)
+- D8CORE-1333: Add '<main>' landmark (#173) (da19fb9)
+
 8.x-4.9
 --------------------------------------------------------------------------------
 _Release Date: 2020-08-07_
