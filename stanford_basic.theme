@@ -217,7 +217,7 @@ function _stanford_basic_preprocess_not_nodes(&$vars) {
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
   $vars['use_logo'] = theme_get_setting('logo.use_default');
-  $vars['lockup'] = theme_get_setting('lockup') ?: 'a';
+  $vars['lockup'] = theme_get_setting('lockup') ?: ['option' => 'a'];
 }
 
 /**
