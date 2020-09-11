@@ -1,20 +1,46 @@
-{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+{% extends "page.html.twig" %}
 
-{%- if page.help -%}
-  {{ page.help }}
-{%- endif -%}
-<header class="su-masthead su-masthead--right">
-  <section>
-  {%- if page.header -%}
-    {{ page.header }}
-  {%- endif -%}
-  </section>
-</header>
 
-<div class="page-content" id="page-content">
-  {{ page.content }}
-</div>
+{# same brandbar block #}
+{#{% block brandbar %}#}
+{#  {%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}#}
+{#{% endblock %}#}
 
-<footer id="footer">
-  {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
-</footer>
+{# same help block #}
+{#{% block help %}#}
+{#{%- if page.help -%}#}
+{#  {{ page.help }}#}
+{#{%- endif -%}#}
+{#{% endblock %}#}
+
+
+{% block header %}
+  <header class="su-masthead su-masthead--right">
+    {% block headerContent %}
+      <section>
+      {%- if page.header -%}
+        {{ page.header }}
+      {%- endif -%}
+      </section>
+    {% endblock %}
+  </header>
+{% endblock %}
+
+{# same main block #}
+{#{% block main %}#}
+{#  <main class="page-content" id="page-content">#}
+{#    {% block pageContent %}#}
+{#      {{ page.content }}#}
+{#    {% endblock %}#}
+{#  </main>#}
+{#{% endblock %}#}
+
+{# same footer block #}
+{#{% block footer %}#}
+{#  <footer id="footer">#}
+{#    {% block footerContent %}#}
+{#      {{ page.footer }}#}
+{#      {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}#}
+{#    {% endblock %}#}
+{#  </footer>#}
+{#{% endblock %}#}
