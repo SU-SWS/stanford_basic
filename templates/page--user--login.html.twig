@@ -1,46 +1,19 @@
 {% extends "page.html.twig" %}
 
+{# same brandbar block -- inheritted now #}
 
-{# same brandbar block #}
-{#{% block brandbar %}#}
-{#  {%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}#}
-{#{% endblock %}#}
-
-{# same help block #}
-{#{% block help %}#}
-{#{%- if page.help -%}#}
-{#  {{ page.help }}#}
-{#{%- endif -%}#}
-{#{% endblock %}#}
-
+{# same help block -- inheritted now #}
 
 {% block header %}
   <header class="su-masthead su-masthead--right">
-    {% block headerContent %}
       <section>
       {%- if page.header -%}
         {{ page.header }}
       {%- endif -%}
       </section>
-    {% endblock %}
   </header>
 {% endblock %}
 
-{# same main block #}
-{#{% block main %}#}
-{#  <main class="page-content" id="page-content">#}
-{#    {% block pageContent %}#}
-{#      {{ page.content }}#}
-{#    {% endblock %}#}
-{#  </main>#}
-{#{% endblock %}#}
+{# same main block -- inheritted now #}
 
-{# same footer block #}
-{#{% block footer %}#}
-{#  <footer id="footer">#}
-{#    {% block footerContent %}#}
-{#      {{ page.footer }}#}
-{#      {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}#}
-{#    {% endblock %}#}
-{#  </footer>#}
-{#{% endblock %}#}
+{# same footer block -- inheritted now #}
