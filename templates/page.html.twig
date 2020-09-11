@@ -1,9 +1,15 @@
-{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+{% block brandbar %}
+  {%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+{% endblock %}
 
+
+{% block help %}
 {%- if page.help -%}
   {{ page.help }}
 {%- endif -%}
+{% endblock %}
 
+{% block header %}
 <header class="su-masthead su-masthead--right">
   <section>
   {%- if page.header -%}
@@ -17,12 +23,17 @@
   {%- endif -%}
   </section>
 </header>
+{% endblock %}
 
+{% block main %}
 <main class="page-content" id="page-content">
   {{ page.content }}
 </main>
+{% endblock %}
 
-<footer id="footer">
-  {{ page.footer }}
-  {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
-</footer>
+{% block footer %}
+  <footer id="footer">
+    {{ page.footer }}
+    {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
+  </footer>
+{% endblock %}
