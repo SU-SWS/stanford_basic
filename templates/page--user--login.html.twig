@@ -3,13 +3,11 @@
 {# same help block -- inheritted now #}
 
 {% block header %}
-  <header class="su-masthead su-masthead--right">
-      <section>
-      {%- if page.header -%}
-        {{ page.header }}
-      {%- endif -%}
-      </section>
-  </header>
+    <section>
+    {%- if page.header -%}
+      {{ page.header }}
+    {%- endif -%}
+    </section>
 {% endblock %}
 
 {# same main block -- inheritted now #}

@@ -8,37 +8,31 @@
   {%- endif -%}
 {% endblock %}
 
-{% block header %}
-  <header class="su-masthead su-masthead--right">
-    {% block headerContent %}
+<header class="su-masthead su-masthead--right">
+  {% block header %}
     <section>
-    {%- if page.header -%}
-      {{ page.header }}
-    {%- endif -%}
-    {%- if page.search -%}
-      {{ page.search }}
-    {%- endif -%}
-    {%- if page.menu -%}
-      {{ page.menu }}
-    {%- endif -%}
+      {%- if page.header -%}
+        {{ page.header }}
+      {%- endif -%}
+      {%- if page.search -%}
+        {{ page.search }}
+      {%- endif -%}
+      {%- if page.menu -%}
+        {{ page.menu }}
+      {%- endif -%}
     </section>
-    {% endblock %}
-  </header>
-{% endblock %}
+  {% endblock %}
+</header>
 
-{% block main %}
-  <main class="page-content" id="page-content">
-    {% block pageContent %}
-      {{ page.content }}
-    {% endblock %}
-  </main>
-{% endblock %}
+<main class="page-content" id="page-content">
+  {% block main %}
+    {{ page.content }}
+  {% endblock %}
+</main>
 
-{% block footer %}
-  <footer id="footer">
-    {% block footerContent %}
-      {{ page.footer }}
-      {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
-    {% endblock %}
-  </footer>
-{% endblock %}
+<footer id="footer">
+  {% block footer %}
+    {{ page.footer }}
+    {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
+  {% endblock %}
+</footer>
