@@ -286,6 +286,7 @@ function _stanford_basic_link_is_public(Url $url) {
     if ($node) {
       return $node->isPublished();
     }
+    return TRUE;
   }
   return TRUE;
 }
