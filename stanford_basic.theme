@@ -283,7 +283,10 @@ function _stanford_basic_link_is_public(Url $url) {
     $parameters = $url->getRouteParameters();
     /** @var \Drupal\node\NodeInterface $node */
     $node = \Drupal::entityTypeManager()->getStorage('node')->load($parameters['node']);
-    return $node->isPublished();
+    if ($node) {
+      return $node->isPublished();
+    }
+    return TRUE;
   }
   return TRUE;
 }
