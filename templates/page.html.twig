@@ -1,28 +1,30 @@
-{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } only -%}
 
-{%- if page.help -%}
-  {{ page.help }}
-{%- endif -%}
-
-<header class="su-masthead su-masthead--right">
-  <section>
-  {%- if page.header -%}
-    {{ page.header }}
+<div{{ attributes }}>
+  {%- if page.help -%}
+    {{ page.help }}
   {%- endif -%}
-  {%- if page.search -%}
-    {{ page.search }}
-  {%- endif -%}
-  {%- if page.menu -%}
-    {{ page.menu }}
-  {%- endif -%}
-  </section>
-</header>
 
-<main class="page-content" id="page-content">
-  {{ page.content }}
-</main>
+  <header class="su-masthead su-masthead--right">
+    <section>
+    {%- if page.header -%}
+      {{ page.header }}
+    {%- endif -%}
+    {%- if page.search -%}
+      {{ page.search }}
+    {%- endif -%}
+    {%- if page.menu -%}
+      {{ page.menu }}
+    {%- endif -%}
+    </section>
+  </header>
 
-<footer id="footer">
-  {{ page.footer }}
-  {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
-</footer>
+  <main class="page-content" id="page-content">
+    {{ page.content }}
+  </main>
+
+  <footer id="footer">
+    {{ page.footer }}
+    {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
+  </footer>
+</div>
