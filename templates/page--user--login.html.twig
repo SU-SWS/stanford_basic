@@ -1,14 +1,9 @@
 {% extends "page.html.twig" %}
-{# same brandbar block -- inheritted now #}
-{# same help block -- inheritted now #}
 
-{% block header %}
+{% block block_header %}
+  {%- if page.header -%}
     <section>
-    {%- if page.header -%}
       {{ page.header }}
-    {%- endif -%}
     </section>
+  {%- endif -%}
 {% endblock %}
-
-{# same main block -- inheritted now #}
-{# same footer block -- inheritted now #}

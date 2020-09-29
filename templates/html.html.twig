@@ -89,18 +89,16 @@
     {% set classes = classes|merge(['role--' ~ role|clean_class]) %}
   {% endfor %}
   <body{{ attributes.addClass(classes) }}>
-    {% block skipLinksMain %}
+    {% block block_skiplinks %}
       <a href="#main-content" class="visually-hidden focusable su-skipnav su-skipnav--content">
         {{ 'Skip to main content'|t }}
       </a>
-    {% endblock %}
-    {% block skipLinksNavigation %}
       <a href="#secondary-navigation" class="visually-hidden focusable su-skipnav su-skipnav--secondary">
         {{ 'Skip to secondary navigation'|t }}
       </a>
     {% endblock %}
 
-  {{ page_top }}
+    {{ page_top }}
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
