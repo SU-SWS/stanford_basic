@@ -1,7 +1,14 @@
 {#
- /**
-  * page.html.twig.
-  */
+/**
+ * @file
+ * Main Page Template.
+ *
+ * Available variables:
+ * - page: The content regions for this page.
+ * - attributes: HTML attributes for the region div.
+ *
+ * @see template_preprocess_page()
+ */
 #}
 
 {# Template Paths #}
@@ -45,7 +52,7 @@
 </main>
 
 {# Footer Section #}
-{%- block footer -%}
+{%- block block_footer -%}
   <footer id="footer">
     {{ page.footer }}
     {%- include template_global_footer -%}

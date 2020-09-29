@@ -1,9 +1,11 @@
 {% extends "page.html.twig" %}
 
-{% block block_header %}
-  {%- if page.header -%}
-    <section>
-      {{ page.header }}
-    </section>
-  {%- endif -%}
+{%- block block_header -%}
+  {{ page.help }}
+{%- endblock -%}
+
+{% block block_footer %}
+<footer id="footer">
+  {%- include template_global_footer -%}
+</footer>
 {% endblock %}
