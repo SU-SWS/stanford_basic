@@ -1,7 +1,14 @@
 {% extends "page.html.twig" %}
 
+{# Remove Nav and Search. #}
 {%- block block_header -%}
-  {# Nothing. #}
+  {%- if page.header -%}
+    <header class="su-masthead su-masthead--right">
+      <section>
+        {{ page.header }}
+      </section>
+    </header>
+  {%- endif -%}
 {%- endblock -%}
 
 {% block block_footer %}
