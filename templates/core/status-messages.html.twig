@@ -23,6 +23,13 @@
  * @see template_preprocess_status_messages()
  */
 #}
+
+{# Template Paths #}
+{%- if template_alert is empty -%}
+  {% set template_alert = "@basic-dist/decanter/components/alert/alert.twig" %}
+{%- endif -%}
+{# End Template Paths. #}
+
 {% for type, messages in message_list %}
   {% set attributes = create_attribute() %}
   {% set attributes = attributes.setAttribute('role', 'alert') %}
@@ -82,6 +89,6 @@
       'alert_dismiss': true
       }
     %}
-    {% include "@basic-dist/decanter/components/alert/alert.twig" with data only %}
+    {% include template_alert with data only %}
   {% endfor %}
 {% endfor %}

@@ -1,14 +1,18 @@
 {% extends "page.html.twig" %}
-{# same brandbar block -- inheritted now #}
-{# same help block -- inheritted now #}
 
-{% block header %}
-    <section>
-    {%- if page.header -%}
-      {{ page.header }}
-    {%- endif -%}
-    </section>
+{# Remove Nav and Search. #}
+{%- block block_header -%}
+  {%- if page.header -%}
+    <header class="su-masthead su-masthead--right">
+      <section>
+        {{ page.header }}
+      </section>
+    </header>
+  {%- endif -%}
+{%- endblock -%}
+
+{% block block_footer %}
+<footer id="footer">
+  {%- include template_global_footer -%}
+</footer>
 {% endblock %}
-
-{# same main block -- inheritted now #}
-{# same footer block -- inheritted now #}
