@@ -1,5 +1,14 @@
 # Stanford Basic Theme
 
+8.x-4.11
+--------------------------------------------------------------------------------
+_Release Date: 2020-10-05_
+
+- updating-decanter: Needed to update decanter. (#188) (fdfe91a)
+- Add blocks for extending stanford_basic (#183) (59b2afc)
+- D8CORE-2565: adding margin below the secondary menu (#185) (15b8d3f)
+- D8CORE-000: Protection from null object in menu (#184) (8dfbfe9)
+
 8.x-4.10
 --------------------------------------------------------------------------------
 _Release Date: 2020-09-09_
