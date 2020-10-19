@@ -178,13 +178,7 @@ export default class SecondarySubNavButtons {
       elemID = 'su-acc-' + this.getDepth() + '-' + elementIndex;
       this.toggleElement.setAttribute('id', elemID);
     }
-
-    // If there isnt an ID on the section add one.
-    if (!sectionID) {
-      sectionID = 'su-acs-' + this.getDepth() + '-' + elementIndex;
-      section.setAttribute('id', sectionID);
-    }
-
+    
     // Add the aria stuff.
     section.setAttribute('aria-labelledby', elemID);
   }
