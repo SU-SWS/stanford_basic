@@ -8,6 +8,12 @@
 {% set attributes = attributes.addClass(node_classes) %}
 {% set attributes = attributes.removeAttribute('role') %}
 
+{# Template Paths #}
+{%- if template_alert is empty -%}
+  {%- set template_alert = "@basic-dist/decanter/components/alert/alert.twig" -%}
+{%- endif -%}
+{# End Template Paths #}
+
 {% if page %}
 {# Node as a page should be a section. #}
 <section{{ attributes }}>
@@ -17,37 +23,52 @@
 {% endif %}
   {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
     <header>
+
+      {# Title Prefix #}
       {{ title_prefix }}
-      {% if not page and label %}
+
+      {%- if not page and label -%}
         <h2{{ title_attributes.addClass(title_classes) }}>
           <a href="{{ url }}" rel="bookmark">{{ label }}</a>
         </h2>
-      {% endif %}
+      {%- endif -%}
+
+      {# Title Suffix #}
       {{ title_suffix }}
 
-      {% if display_submitted %}
+      {# Display Submitted #}
+      {%- if display_submitted -%}
         <div class="submitted">
           {{ author_picture }}
           {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
           {{ metadata }}
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if not node.published %}
-        <p class="node--unpublished">{{ 'Unpublished'|t }}</p>
-      {% endif %}
+      {# Unpublished Warning. #}
+      {%- if not node.published -%}
+        {%-
+          set data = {
+          'attributes': create_attribute({'class': 'su-alert su-alert--warning'}),
+          'alert_text': "This page is currently unpublished and not visible to the public."|t,
+        }
+        -%}
+        {%- include template_alert with data only -%}
+      {%- endif -%}
+
     </header>
-  {% endif %}
+  {%- endif -%}
 
+  {# Main content container. #}
   <div{{ content_attributes.addClass('content') }}>
     {{ content|without('links') }}
   </div><!-- /.content -->
 
-  {% if content.links %}
+  {%- if content.links -%}
     <div class="links">
       {{ content.links }}
     </div><!-- /.links -->
-  {% endif %}
+  {%- endif -%}
 
 {% if page %}
 </section><!-- /.node as page -->

@@ -26,12 +26,25 @@ export default {
         $('.su-skipnav--secondary', context).remove();
       }
 
+
       // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
       var $search = $('.su-masthead .su-site-search', context).length;
       if ($search) {
-        var $ms = $('.su-masthead nav + .su-site-search', context);
-        $($ms).prependTo('.su-masthead .su-multi-menu > ul', context).wrap('<li></li>');
+        var $ms = $('.su-masthead .su-site-search', context);
+        $($ms.clone()).prependTo('.su-masthead .su-multi-menu > ul', context).wrap('<li></li>');
+      }
+
+      // Add an outline class to the page-content region if local tasks are
+      // available.
+      var localTab = $('#block-stanford-basic-local-tasks', context);
+      if (localTab.length) {
+        $('.page-content', context).addClass('stanford-basic--outline');
+      }
+
+      var userLogin = $('.page-user-login', context);
+      if (userLogin) {
+        $('.su-back-to-site', context).removeClass('hidden');
       }
 
     })(jQuery);

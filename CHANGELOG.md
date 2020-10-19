@@ -1,5 +1,74 @@
 # Stanford Basic Theme
 
+8.x-4.11
+--------------------------------------------------------------------------------
+_Release Date: 2020-10-05_
+
+- updating-decanter: Needed to update decanter. (#188) (fdfe91a)
+- Add blocks for extending stanford_basic (#183) (59b2afc)
+- D8CORE-2565: adding margin below the secondary menu (#185) (15b8d3f)
+- D8CORE-000: Protection from null object in menu (#184) (8dfbfe9)
+
+8.x-4.10
+--------------------------------------------------------------------------------
+_Release Date: 2020-09-09_
+
+- D8CORE-2454: Lockup default array structure mis-match fix. (#181) (413399f)
+- Update Decanter to v 6.1.1 and compile. (#180) (71ff31a)
+- D8CORE-2490: Alert Component Updates (#178) (3c5bb6a)
+- D8CORE-2562: Update option A line-height to prevent overlap. (#177) (f39cf7a)
+- D8CORE-2499 Updated composer license (#176) (8fbde04)
+- D8CORE-1333: Add '<main>' landmark (#173) (da19fb9)
+
+8.x-4.9
+--------------------------------------------------------------------------------
+_Release Date: 2020-08-07_
+
+- D8CORE-2467 Fixed local links (#174) (9d7a58e)
+- D8CORE-1472: Updates to lockup settings for logo support (#170) (eb0108d)
+- Bump lodash from 4.17.15 to 4.17.19 (#172) (144597b)
+- D8CORE-1410: Back to site link (#166) (3d996b5)
+
+8.x-4.8
+--------------------------------------------------------------------------------
+_Release Date: 2020-07-13_
+
+- Merge pull request #168 from SU-SWS/D8CORE-1406-remove-name (7601f5d)
+- D8CORE-1406: fix to login page (a552691)
+- D8CORE-1406: remove link, move page-content ID (3f676ce)
+
+8.x-4.7
+--------------------------------------------------------------------------------
+_Release Date: 2020-06-17_
+
+- D8CORE-000: Provide a default lockup option in preprocess for subthemes (#165) (2531b38)
+- D8CORE-2189: Update to Decanter 6.0.6 (#164) (2d81504)
+
+8.x-4.6
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-21_
+
+- Reduce the z indexes to fix layout builder overlays (#162)
+
+8.x-4.5
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-15_
+
+- D8CORE-2004 JS Error in stanford_basic local tabs. (#159) (a892e90)
+- D8CORE-1869: Added circleci configuration (#158) (08f4fae)
+- D8CORE-1022: Tweak Edit Buttons display in D8 page authoring (#129) (9a6243d)
+
+8.x-4.4
+--------------------------------------------------------------------------------
+_Release Date: 2020-04-17_
+
+- Update stanford_basic.info.yml (#133)
+- D8CORE-1504: Remove ids from pattern templates. (#147)
+- D8CORE-1349 Added visual indicator for links to unpublished pages (#146)
+- D8CORE-1644: Dev branch workflow
+- Check if the menu link is routed before checking what route (#151)
+- D8CORE-1402: add {grid: true} to autoprefixer (#155)
+
 8.x-4.3
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_

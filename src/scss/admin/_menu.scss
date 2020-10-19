@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+a:hover,
+a:focus {
+  .unpublished-indicator {
+    display: inline-block;
+    opacity: 1;
+    animation: fade 5s ease-in-out;
+  }
+}
+
+.unpublished-indicator {
+  @include padding(4px 10px);
+
+  // Animation definition
+  opacity: 0;
+  animation: fade ease-in-out 5s;
+  animation-fill-mode: forwards;
+
+  display: block;
+  background: $su-color-blue;
+  color: $su-color-white;
+  font-size: 11px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 115px;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $su-color-blue;
+    position: absolute;
+    bottom: -10px;
+    right: 90px;
+  }
+}
+
+.su-secondary-nav {
+  .unpublished-indicator {
+    left: 25px;
+    top: -25px;
+  }
+}

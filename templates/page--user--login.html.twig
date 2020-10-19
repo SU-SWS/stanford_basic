@@ -1,14 +1,18 @@
-{%- include "@basic-dist/decanter/components/brand-bar/brand-bar.twig" with { modifier_class : brand_bar_variant } -%}
+{% extends "page.html.twig" %}
 
-{%- if page.help -%}
-  {{ page.help }}
-{%- endif -%}
+{# Remove Nav and Search. #}
+{%- block block_header -%}
+  {%- if page.header -%}
+    <header class="su-masthead su-masthead--right">
+      <section>
+        {{ page.header }}
+      </section>
+    </header>
+  {%- endif -%}
+{%- endblock -%}
 
-<div class="page-content">
-  <a name="page-content" id="page-content" tabindex="-1" class="visually-hidden focusable">Page Content</a>
-  {{ page.content }}
-</div>
-
+{% block block_footer %}
 <footer id="footer">
-  {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
+  {%- include template_global_footer -%}
 </footer>
+{% endblock %}

@@ -1,47 +1,28 @@
-name: Stanford Basic
+name: 'Stanford Basic'
 type: theme
 description: 'Stanford Basic Branding Theme.'
 package: Stanford
-version: 8.x-4.4-dev
-core_version_requirement: ^8 || ^9
-base theme: stable
-
+version: 8.x-4.12-dev
+core_version_requirement: '^8 || ^9'
+'base theme': stable
 regions:
-  page_top: 'Page top'
-  header: Header
-  search: Search
-  menu: Menu
-  help: Help
-  content: Content
-  footer: Footer
-  page_bottom: 'Page bottom'
-
+    page_top: 'Page top'
+    header: Header
+    search: Search
+    menu: Menu
+    help: Help
+    content: Content
+    footer: Footer
+    page_bottom: 'Page bottom'
 features:
-  - favicon
-  - logo
-
+    - favicon
+    - logo
 component-libraries:
-  basic:
-    paths:
-      - templates
-  basic-dist:
-    paths:
-      - dist/templates
-
+    basic: { paths: [templates] }
+    basic-dist: { paths: [dist/templates] }
 libraries:
-  - stanford_basic/basic
-
+    - stanford_basic/basic
 ckeditor_stylesheets:
-  - dist/css/ckeditor.css
-
+    - dist/css/ckeditor.css
 libraries-override:
-  jumpstart_ui/base: false
-
-# Not working yet.
-# Waiting on: https://www.drupal.org/project/drupal/issues/474684
-# dependencies:
-#   - ui_patterns
-#   - ui_patterns_layouts
-#   - ui_patterns_library
-#   - layout_discovery
-#   - jumpstart_ui
+    jumpstart_ui/base: false

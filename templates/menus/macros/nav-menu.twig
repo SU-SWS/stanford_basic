@@ -13,11 +13,18 @@
     {% set link_attributes = link_attributes.addClass(class_prefix ~ "__link") %}
     {% set link_attributes = link_attributes.setAttribute('href', item.url|render) %}
 
+    {# Tooltips #}
+    {% if item.url.options.attributes.title is not empty %}
+      {% set link_attributes = link_attributes.setAttribute('data-toggle', 'tooltip') %}
+      {% set link_attributes = link_attributes.setAttribute('title', item.url.options.attributes.title) %}
+    {% endif %}
+
     {# Item Attributes #}
     {% set list_attributes = create_attribute() %}
     {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item") %}
     {% if item.below is not empty %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--parent") %}
+      {% set link_attributes = link_attributes.setAttribute('aria-expanded', 'false') %}
     {% endif %}
     {% if item.in_active_trail == true %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--active-trail") %}
@@ -28,7 +35,12 @@
     {% endif %}
 
     <li{{ list_attributes }}>
-      <a{{ link_attributes }}>{{ item.title }}</a>
+      <a{{ link_attributes }}>
+        {{ item.title }}
+        {% if item.unpublished %}
+          <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
+        {% endif %}
+      </a>
       {% if item.below %}
         {{ menus.nav_menu(item.below, menu_level + 1, class_prefix) }}
       {% endif %}
