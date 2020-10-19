@@ -26,8 +26,6 @@ export default {
         $('.su-skipnav--secondary', context).remove();
       }
 
-<<<<<<< HEAD
-
       // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
       var $search = $('.su-masthead .su-site-search', context).length;
@@ -36,8 +34,6 @@ export default {
         $($ms.clone()).prependTo('.su-masthead .su-multi-menu > ul', context).wrap('<li></li>');
       }
 
-=======
->>>>>>> 8.x-4.x
       // Add an outline class to the page-content region if local tasks are
       // available.
       var localTab = $('#block-stanford-basic-local-tasks', context);

@@ -1,0 +1,1 @@
+*{background-color:transparent}#footer,#header-region,#navigation,.breadcrumb,.feed-icon,.links,.sidebar,.tabs{display:none}.layout-container{width:100%}#content,.title{margin:20px 0;width:auto}a:active,a:hover,a:link,a:visited{color:#2e2d29}#content a:link:after,#content a:visited:after{content:" (" attr(href) ") ";font-size:.8em;font-weight:400}
