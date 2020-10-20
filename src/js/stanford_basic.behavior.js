@@ -35,7 +35,7 @@ export default {
           .prependTo('.su-masthead .su-multi-menu > ul', context)
           .wrap('<li class="su-mobile-site-search"></li>')
           .attr('id', 'block-stanford-basic-search-mobile')
-          .find('[id]').each(() => {$(this).attr('id', $(this).attr('id') + '-mobile')});
+          .find('[id]').each(() => {$(this).attr('id', $(this).attr('id') + '-mobile');});
       }
 
       // Add an outline class to the page-content region if local tasks are
