@@ -169,22 +169,14 @@ export default class SecondarySubNavButtons {
    */
   initAccessibility() {
     var elementIndex = Array.from(this.item.parentNode.children).indexOf(this.item);
-    var parentIndex = Array.from(this.item.parentNode).indexOf();
     var elemID = this.toggleElement.getAttribute('id');
     var section = this.item.querySelector(':scope > ul');
-    var sectionID = section.getAttribute('id');
 
 
     // If there isnt an ID on the element add one.
     if (!elemID) {
       elemID = 'su-acc-' + this.getDepth() + '-' + elementIndex;
       this.toggleElement.setAttribute('id', elemID);
-    }
-
-    // If there isnt an ID on the section add one.
-    if (!sectionID) {
-      sectionID = 'su-acs' + parentIndex + '-' + this.getDepth() + '-' + elementIndex;
-      section.setAttribute('id', sectionID);
     }
 
     // Add the aria stuff.
