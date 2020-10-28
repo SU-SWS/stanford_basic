@@ -257,3 +257,36 @@
     }
   }
 }
+
+// Search box styling for devices and mobile views.
+// Hide the extra search box everywhere
+// -----------------------------------------------------------------------
+// Hide the search box before moved - in case more than one is added.
+nav {
+  &+ .su-site-search {
+    display: none;
+  }
+}
+
+// Hide the moved box
+ul {
+  li {
+    .su-site-search {
+      display: none;
+    }
+  }
+}
+
+// Show the moved box.
+ul {
+  li {
+    .su-site-search {
+      &.search-block-form {
+        @include grid-media-between('xs', 'md') {
+          @include modular-spacing('margin', 1 1 0 0);
+          display: block;
+        }
+      }
+    }
+  }
+}
