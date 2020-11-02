@@ -249,7 +249,6 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
  * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
-  $path_is_home = _stanford_basic_path_is_home('/');
   foreach ($submenu as &$item) {
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
     if ($item_path == $current_path ||
