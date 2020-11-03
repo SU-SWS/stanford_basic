@@ -171,12 +171,24 @@ export default class SecondarySubNavButtons {
     var elementIndex = Array.from(this.item.parentNode.children).indexOf(this.item);
     var elemID = this.toggleElement.getAttribute('id');
     var section = this.item.querySelector(':scope > ul');
-
+    var sectionID = section.getAttribute('id');
 
     // If there isnt an ID on the element add one.
     if (!elemID) {
       elemID = 'su-acc-' + this.getDepth() + '-' + elementIndex;
       this.toggleElement.setAttribute('id', elemID);
+    }
+
+    if (!sectionID) {
+      sectionID = 'su-acs-' + this.getDepth() + '-' + elementIndex;
+      let uniqueIndex = 0;
+      // Make sure the id attribute will be unique.
+      while (document.getElementById(sectionID)) {
+        sectionID = 'su-acs-' + this.getDepth() + '-' + elementIndex + '-' + uniqueIndex;
+        uniqueIndex++;
+      }
+      // If there isnt an ID on the section add one.
+      section.setAttribute('id', sectionID);
     }
 
     // Add the aria stuff.
