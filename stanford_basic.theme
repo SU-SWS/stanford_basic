@@ -289,7 +289,7 @@ function _stanford_basic_path_is_home(string $path) {
       $normal_path == '<front>') {
         return TRUE;
   }
-  return false;
+  return FALSE;
 }
 
 /**
