@@ -250,9 +250,10 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
-
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
-    if ($item_path == $current_path) {
+    if ($item_path == $current_path ||
+        strpos($current_path, $item_path . '/') !== FALSE ||
+        (_stanford_basic_path_is_home($item_path) && \Drupal::service('path.matcher')->isFrontPage())) {
       $item['is_active'] = TRUE;
     }
 
@@ -264,6 +265,31 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
       _stanford_basic_menu_process_submenu($item['below'], $current_path);
     }
   }
+}
+
+/**
+ * Determine if a menu path corresponds to the current home page.
+ *
+ * @param string $path
+ *   The path given for a menu entry
+ *
+ * @return bool
+ *   TRUE if the path corresponds to the current home page.
+ */
+function _stanford_basic_path_is_home(string $path) {
+  // account for weird paths in input
+  $normal_path = strtolower(trim($path));
+  $config = \Drupal::config('system.site');
+  $front_uri = $config->get('page.front');
+  $alias = \Drupal::service('path.alias_manager')->getAliasByPath($front_uri);
+
+  if ($normal_path == base_path() ||
+      $normal_path == $front_uri ||
+      $normal_path == $alias ||
+      $normal_path == '<front>') {
+        return TRUE;
+  }
+  return FALSE;
 }
 
 /**
