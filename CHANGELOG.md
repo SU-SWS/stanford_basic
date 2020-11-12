@@ -1,5 +1,11 @@
 # Stanford Basic Theme
 
+8.x-4.13
+--------------------------------------------------------------------------------
+_Release Date: 2020-11-12_
+
+- D8CORE-3000: Hotfix to remove partial path matches in the menu for active classes.
+
 8.x-4.12
 --------------------------------------------------------------------------------
 _Release Date: 2020-11-09_
