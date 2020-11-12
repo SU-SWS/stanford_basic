@@ -318,37 +318,6 @@ function _stanford_basic_link_is_public(Url $url) {
 }
 
 /**
- * Implements hook_preprocess_ds_entity_view().
- */
-function stanford_basic_preprocess_ds_entity_view(&$variables) {
-  $variables['content']['#pre_render'][] = 'stanford_basic_pattern_process_contextual';
-}
-
-/**
- * PreRender process to render out the contextual links for ui patterns.
- *
- * @param array $element
- *   Pre-rendered element.
- *
- * @return array
- *   Modified element.
- *
- * @see stanford_basic_preprocess_ds_entity_view()
- * @see https://github.com/nuvoleweb/ui_patterns/pull/117/files
- */
-function stanford_basic_pattern_process_contextual(array $element) {
-  $module_handler = \Drupal::moduleHandler();
-  if (isset($element['#contextual_links']) && $module_handler->moduleExists('contextual')) {
-    $placeholder = [
-      '#type' => 'contextual_links_placeholder',
-      '#id' => _contextual_links_to_id($element['#contextual_links']),
-    ];
-    $element['#prefix'] = render($placeholder);
-  }
-  return $element;
-}
-
-/**
  * Implements hook_preprocess_menu_local_task().
  */
 function stanford_basic_preprocess_menu_local_task(&$variables) {
