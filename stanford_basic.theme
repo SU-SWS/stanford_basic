@@ -252,7 +252,6 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
     if ($item_path == $current_path ||
-        strpos($current_path, $item_path . '/') !== FALSE ||
         (_stanford_basic_path_is_home($item_path) && \Drupal::service('path.matcher')->isFrontPage())) {
       $item['is_active'] = TRUE;
     }
