@@ -1,5 +1,11 @@
 # Stanford Basic Theme
 
+8.x-4.14
+--------------------------------------------------------------------------------
+_Release Date: 0000-00-00_
+
+- Removed preprocess function on ds entity view for contextual links to allow Drupal 9 compatability.
+
 8.x-4.13
 --------------------------------------------------------------------------------
 _Release Date: 2020-11-12_
