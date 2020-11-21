@@ -1,5 +1,26 @@
 # Stanford Basic Theme
 
+8.x-4.14
+--------------------------------------------------------------------------------
+_Release Date: 0000-00-00_
+
+- Removed preprocess function on ds entity view for contextual links to allow Drupal 9 compatability.
+
+8.x-4.13
+--------------------------------------------------------------------------------
+_Release Date: 2020-11-12_
+
+- D8CORE-3000: Hotfix to remove partial path matches in the menu for active classes.
+
+8.x-4.12
+--------------------------------------------------------------------------------
+_Release Date: 2020-11-09_
+
+- D8CORE-2592: removing the id that isn't used on sub menus (#193) (5db6f86)
+- D8CORE-2102: Add check to see if the path is part of the url (#190) (dbb43ab)
+- D8CORE-1073: A new way to move the search box into the mobile menu (#148) (17549b9)
+- D8CORE-1366: Added tooltips to menu items which have a `description` set. (#191) (b2fe939)
+
 8.x-4.11
 --------------------------------------------------------------------------------
 _Release Date: 2020-10-05_
