@@ -6,12 +6,14 @@
     picture {
       @include margin(0 auto);
     }
+
     .media {
       &.file {
         text-align: center;
       }
     }
   }
+
   .align-left {
     .file {
        &.media {
@@ -19,6 +21,7 @@
       }
     }
   }
+
   .align-right {
     .file {
       &.media {
