@@ -13,7 +13,8 @@ export default class OnClickToggleLV1 extends EventAbstract {
    */
   exec() {
     if (this.isDesktop()) {
-      this.handleDesktop();
+      //this.handleDesktop();
+      this.handleMobile();
     }
     else {
       this.handleMobile();

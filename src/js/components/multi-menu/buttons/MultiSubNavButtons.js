@@ -29,8 +29,8 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
     // If we are the first level (top) we need to adjust for mobile vs desktop.
     if (this.getDepth() === 1) {
       registryDefaults = Object.assign(registryDefaults, {
-        onKeydownArrowLeft: OnArrowLeftLV1,
-        onKeydownArrowRight: OnArrowRightLV1
+    //    onKeydownArrowLeft: OnArrowLeftLV1,
+    //    onKeydownArrowRight: OnArrowRightLV1
       });
     }
 
@@ -45,11 +45,12 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
 
      // Overrides for level 1 desktop.
      if (this.getDepth() === 1) {
-       options.eventRegistry = {
-         onKeydownArrowRight: OnArrowRightToggleLV1,
-         onKeydownArrowDown: OnArrowDownToggleLV1,
-         onClick: OnClickToggleLV1
-       };
+     // IDM
+     //  options.eventRegistry = {
+     //    onKeydownArrowRight: OnArrowRightToggleLV1,
+     //    onKeydownArrowDown: OnArrowDownToggleLV1,
+     //    onClick: OnClickToggleLV1
+     //  };
      }
 
      // Do eet.

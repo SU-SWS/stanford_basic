@@ -13,7 +13,8 @@ export default class OnArrowRightToggleLV1 extends EventAbstract {
    */
   exec() {
     if (this.isDesktop()) {
-      this.handleDesktop();
+      //this.handleDesktop();
+      this.handleMobile();
     }
     else {
       this.handleMobile();

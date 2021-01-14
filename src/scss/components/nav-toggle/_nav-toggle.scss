@@ -9,12 +9,53 @@
   height: 56px;
   line-height: 56px;
 
+  @include grid-media('lg') {
+    //display: inline-block;
+    //  display: none;
+
+    content: "";
+
+    &::before {
+      @include margin(null null 1px 6px);
+      background: url("#{$su-image-path}/caret-down-black.svg") no-repeat 0 0;
+      background-size: 100%;
+      position: fixed;
+      right: 0;
+      top: calc(100% / 2.25);
+      //margin-top: 25px;
+      height: 11px; // Small svg gets chopped off if use em instead of px
+      width: 11px;
+      //transition: transform 0.3s ease-out;
+      content: "";
+      border: 1px black solid;
+      //background: #b1040e url(../assets/svg/caret-down-white.svg) no-repeat center/50%;
+      //background-size: 15px;
+      //border-radius: 19px;
+      //height: 38px;
+      //width: 38px;
+      //display: block;
+      //position: absolute;
+      //top: calc(50% - 11px);
+      //right: calc(50% - 11px);
+    }
+
+  }
+
+  // IDM
+  // Desktop Styles.
+  //@include grid-media('lg') {
+  //  height: 25px;
+  //  line-height: 25px;
+  //}
+
   &[aria-expanded="true"] {
+    transform-origin: center;
     transform: rotate(180deg);
     transition: transform 0.3s ease-out;
   }
 
   &[aria-expanded="false"] {
+    transform-origin: center;
     transform: rotate(0deg);
     transition: transform 0.3s ease-out;
   }
