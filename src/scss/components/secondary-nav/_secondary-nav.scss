@@ -4,6 +4,8 @@
 // Decanter overrides.
 
 .su-secondary-nav {
+  @include modular-spacing('margin-bottom', 8);
+
   &,
   .su-secondary-nav__menu {
     background: transparent;

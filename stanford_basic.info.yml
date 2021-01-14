@@ -2,9 +2,10 @@ name: 'Stanford Basic'
 type: theme
 description: 'Stanford Basic Branding Theme.'
 package: Stanford
-version: 8.x-4.10-dev
+version: 8.x-4.15-dev
 core_version_requirement: '^8.9 || ^9'
-base theme: stable
+'base theme': stable
+
 regions:
   page_top: 'Page top'
   header: Header
@@ -18,8 +19,8 @@ features:
   - favicon
   - logo
 component-libraries:
-  basic: { paths: [templates] }
-  basic-dist: { paths: [dist/templates] }
+  basic: { paths: [ templates ] }
+  basic-dist: { paths: [ dist/templates ] }
 libraries:
   - stanford_basic/basic
 ckeditor_stylesheets:

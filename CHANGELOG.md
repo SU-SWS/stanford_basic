@@ -1,5 +1,55 @@
 # Stanford Basic Theme
 
+8.x-4.14
+--------------------------------------------------------------------------------
+_Release Date: 2020-12-04_
+
+- D8CORE-2268: adjusting the spacing for media files in the wysiwyg and fixing the centering for the pdf. (#202) (9e490bf)
+- D8CORE-2963: updating Decanter version (#201) (c27e9d1)
+- D8CORE-2899: Updating the character line length to 100 from 70 (#196) (67d53d3)
+- D9 Readiness (#198) (59a5ae7)
+
+8.x-4.14
+--------------------------------------------------------------------------------
+_Release Date: 0000-00-00_
+
+- Removed preprocess function on ds entity view for contextual links to allow Drupal 9 compatability.
+
+8.x-4.13
+--------------------------------------------------------------------------------
+_Release Date: 2020-11-12_
+
+- D8CORE-3000: Hotfix to remove partial path matches in the menu for active classes.
+
+8.x-4.12
+--------------------------------------------------------------------------------
+_Release Date: 2020-11-09_
+
+- D8CORE-2592: removing the id that isn't used on sub menus (#193) (5db6f86)
+- D8CORE-2102: Add check to see if the path is part of the url (#190) (dbb43ab)
+- D8CORE-1073: A new way to move the search box into the mobile menu (#148) (17549b9)
+- D8CORE-1366: Added tooltips to menu items which have a `description` set. (#191) (b2fe939)
+
+8.x-4.11
+--------------------------------------------------------------------------------
+_Release Date: 2020-10-05_
+
+- updating-decanter: Needed to update decanter. (#188) (fdfe91a)
+- Add blocks for extending stanford_basic (#183) (59b2afc)
+- D8CORE-2565: adding margin below the secondary menu (#185) (15b8d3f)
+- D8CORE-000: Protection from null object in menu (#184) (8dfbfe9)
+
+8.x-4.10
+--------------------------------------------------------------------------------
+_Release Date: 2020-09-09_
+
+- D8CORE-2454: Lockup default array structure mis-match fix. (#181) (413399f)
+- Update Decanter to v 6.1.1 and compile. (#180) (71ff31a)
+- D8CORE-2490: Alert Component Updates (#178) (3c5bb6a)
+- D8CORE-2562: Update option A line-height to prevent overlap. (#177) (f39cf7a)
+- D8CORE-2499 Updated composer license (#176) (8fbde04)
+- D8CORE-1333: Add '<main>' landmark (#173) (da19fb9)
+
 8.x-4.9
 --------------------------------------------------------------------------------
 _Release Date: 2020-08-07_

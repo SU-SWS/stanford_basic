@@ -42,7 +42,7 @@ function stanford_basic_preprocess_html(&$variables) {
   if (!$variables['is_front']) {
     // Add unique classes for each page and website section.
     $path = \Drupal::service('path.current')->getPath();
-    $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
     $alias = trim($alias, '/');
     if (!empty($alias)) {
       $name = str_replace('/', '-', $alias);
@@ -217,7 +217,7 @@ function _stanford_basic_preprocess_not_nodes(&$vars) {
  */
 function stanford_basic_preprocess_block__system_branding_block(&$vars) {
   $vars['use_logo'] = theme_get_setting('logo.use_default');
-  $vars['lockup'] = theme_get_setting('lockup') ?: 'a';
+  $vars['lockup'] = theme_get_setting('lockup') ?: ['option' => 'a'];
 }
 
 /**
@@ -250,9 +250,9 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
  */
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
-
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
-    if ($item_path == $current_path) {
+    if ($item_path == $current_path ||
+        (_stanford_basic_path_is_home($item_path) && \Drupal::service('path.matcher')->isFrontPage())) {
       $item['is_active'] = TRUE;
     }
 
@@ -264,6 +264,31 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
       _stanford_basic_menu_process_submenu($item['below'], $current_path);
     }
   }
+}
+
+/**
+ * Determine if a menu path corresponds to the current home page.
+ *
+ * @param string $path
+ *   The path given for a menu entry
+ *
+ * @return bool
+ *   TRUE if the path corresponds to the current home page.
+ */
+function _stanford_basic_path_is_home(string $path) {
+  // account for weird paths in input
+  $normal_path = strtolower(trim($path));
+  $config = \Drupal::config('system.site');
+  $front_uri = $config->get('page.front');
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($front_uri);
+
+  if ($normal_path == base_path() ||
+      $normal_path == $front_uri ||
+      $normal_path == $alias ||
+      $normal_path == '<front>') {
+        return TRUE;
+  }
+  return FALSE;
 }
 
 /**
@@ -283,44 +308,16 @@ function _stanford_basic_link_is_public(Url $url) {
     $parameters = $url->getRouteParameters();
     /** @var \Drupal\node\NodeInterface $node */
     $node = \Drupal::entityTypeManager()->getStorage('node')->load($parameters['node']);
-    return $node->isPublished();
+    if ($node) {
+      return $node->isPublished();
+    }
+    return TRUE;
   }
   return TRUE;
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- */
-function stanford_basic_preprocess_ds_entity_view(&$variables) {
-  $variables['content']['#pre_render'][] = 'stanford_basic_pattern_process_contextual';
-}
-
-/**
- * PreRender process to render out the contextual links for ui patterns.
- *
- * @param array $element
- *   Pre-rendered element.
- *
- * @return array
- *   Modified element.
- *
- * @see stanford_basic_preprocess_ds_entity_view()
- * @see https://github.com/nuvoleweb/ui_patterns/pull/117/files
- */
-function stanford_basic_pattern_process_contextual(array $element) {
-  $module_handler = \Drupal::moduleHandler();
-  if (isset($element['#contextual_links']) && $module_handler->moduleExists('contextual')) {
-    $placeholder = [
-      '#type' => 'contextual_links_placeholder',
-      '#id' => _contextual_links_to_id($element['#contextual_links']),
-    ];
-    $element['#prefix'] = render($placeholder);
-  }
-  return $element;
-}
-
-/**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_menu_local_task().
  */
 function stanford_basic_preprocess_menu_local_task(&$variables) {
   if ($variables['link']['#url']->getRouteName() == 'entity.node.version_history') {

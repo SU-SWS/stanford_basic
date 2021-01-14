@@ -179,9 +179,15 @@ export default class SecondarySubNavButtons {
       this.toggleElement.setAttribute('id', elemID);
     }
 
-    // If there isnt an ID on the section add one.
     if (!sectionID) {
       sectionID = 'su-acs-' + this.getDepth() + '-' + elementIndex;
+      let uniqueIndex = 0;
+      // Make sure the id attribute will be unique.
+      while (document.getElementById(sectionID)) {
+        sectionID = 'su-acs-' + this.getDepth() + '-' + elementIndex + '-' + uniqueIndex;
+        uniqueIndex++;
+      }
+      // If there isnt an ID on the section add one.
       section.setAttribute('id', sectionID);
     }
 

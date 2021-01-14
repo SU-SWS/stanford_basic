@@ -1,5 +1,14 @@
 @charset 'UTF-8';
 
+.su-lockup--option-a {
+  .su-lockup__line1 {
+    @include grid-media('md') {
+      line-height: 1.15em;
+      @include margin(-8px null -6px null);
+    }
+  }
+}
+
 .su-lockup__custom-logo {
   max-width: 150px;
 }

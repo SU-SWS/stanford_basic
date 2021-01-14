@@ -6,5 +6,27 @@
     picture {
       @include margin(0 auto);
     }
+
+    .media {
+      &.file {
+        text-align: center;
+      }
+    }
+  }
+
+  .align-left {
+    .file {
+      &.media {
+        padding: 0.4em 1.5em 0 0;
+      }
+    }
+  }
+
+  .align-right {
+    .file {
+      &.media {
+        padding: 0.4em 0 0 1.5em;
+      }
+    }
   }
 }
