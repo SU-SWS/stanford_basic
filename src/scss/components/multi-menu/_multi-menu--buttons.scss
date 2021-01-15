@@ -19,7 +19,8 @@
       > .su-multi-menu__link {
         // Desktop Styles.
         @include grid-media('lg') {
-          display: inline-block;
+          display: block;
+          padding-right: 15px;
         }
       }
 
@@ -32,6 +33,7 @@
       > .su-nav-toggle {
         // IDM
         // Desktop Styles.
+        //padding-right: 60px;
 
       }
     } // end top level parent items.

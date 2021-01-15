@@ -10,53 +10,71 @@
   line-height: 56px;
 
   @include grid-media('lg') {
-    //display: inline-block;
-    //  display: none;
 
-    content: "";
+    @include margin(0);
+    @include padding(15px 28px);
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0;
+    //text-indent: -9999px;
+    overflow: hidden;
+    //width: 65px;
+    max-width: 25px;
+    height: 61px;
+    line-height: 61px;
+    //position: absolute;
+    //right: 0;
+    //top: 0;
+    //left: 0;
+    z-index: 10;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
 
     &::before {
-      @include margin(null null 1px 6px);
-      background: url("#{$su-image-path}/caret-down-black.svg") no-repeat 0 0;
-      background-size: 100%;
-      position: fixed;
-      right: 0;
-      top: calc(100% / 2.25);
-      //margin-top: 25px;
-      height: 11px; // Small svg gets chopped off if use em instead of px
-      width: 11px;
-      //transition: transform 0.3s ease-out;
       content: "";
-      border: 1px black solid;
-      //background: #b1040e url(../assets/svg/caret-down-white.svg) no-repeat center/50%;
-      //background-size: 15px;
-      //border-radius: 19px;
-      //height: 38px;
-      //width: 38px;
+      background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+      background-size: 15px;
+      border-radius: 0px;
+      //height: 25px;
+      //width: 25px;
       //display: block;
-      //position: absolute;
-      //top: calc(50% - 11px);
-      //right: calc(50% - 11px);
+      //position: ;
+      //top: calc(50% - 19px);
+      //right: calc(50% - 19px);
+      //top: 0px;
+      //left: 0px;
+      //right: 0px;
+      //margin-left: 20px;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparent;
+      &::before {
+        background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+        background-size: 15px;
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+      font-weight: $su-font-bold;
+      background: transparent;
     }
 
   }
 
-  // IDM
-  // Desktop Styles.
-  //@include grid-media('lg') {
-  //  height: 25px;
-  //  line-height: 25px;
-  //}
-
   &[aria-expanded="true"] {
-    transform-origin: center;
     transform: rotate(180deg);
     transition: transform 0.3s ease-out;
   }
 
   &[aria-expanded="false"] {
-    transform-origin: center;
     transform: rotate(0deg);
     transition: transform 0.3s ease-out;
   }
+
 }
