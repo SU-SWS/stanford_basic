@@ -16696,6 +16696,95 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
 
 /***/ }),
 
+/***/ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js":
+/*!*******************************************************************************!*\
+  !*** ./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MultiMenuEventAbstract; });
+/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+/**
+ * MultiMenuEventAbstract class
+ *
+ * Event action handler with common code for MultiMenu.
+ */
+
+var MultiMenuEventAbstract = /*#__PURE__*/function (_EventAbstract) {
+  _inherits(MultiMenuEventAbstract, _EventAbstract);
+
+  var _super = _createSuper(MultiMenuEventAbstract);
+
+  function MultiMenuEventAbstract() {
+    _classCallCheck(this, MultiMenuEventAbstract);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(MultiMenuEventAbstract, [{
+    key: "exec",
+
+    /**
+     * Execute the action to the event.
+     */
+    value: function exec() {
+      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
+        this.handleDesktop();
+      } else {
+        this.handleMobile();
+      }
+    }
+    /**
+     * Handle the events for desktop sized screens.
+     */
+
+  }, {
+    key: "handleDesktop",
+    value: function handleDesktop() {// Do something.
+    }
+    /**
+     * Handle the events for mobile sized screens.
+     */
+
+  }, {
+    key: "handleMobile",
+    value: function handleMobile() {// Do something.
+    }
+  }]);
+
+  return MultiMenuEventAbstract;
+}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+/***/ }),
+
 /***/ "./src/js/components/multi-menu/buttons/events/OnArrowDownToggleLV1.js":
 /*!*****************************************************************************!*\
   !*** ./src/js/components/multi-menu/buttons/events/OnArrowDownToggleLV1.js ***!
@@ -16706,7 +16795,7 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnArrowDownToggleLV1; });
-/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
 /* harmony import */ var _secondary_nav_buttons_events_SubNavToggleSpace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/buttons/events/SubNavToggleSpace */ "./src/js/components/secondary-nav/buttons/events/SubNavToggleSpace.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -16738,8 +16827,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * Event action handler class.
  */
 
-var OnArrowDownToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
-  _inherits(OnArrowDownToggleLV1, _EventAbstract);
+var OnArrowDownToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnArrowDownToggleLV1, _MultiMenuEventAbstra);
 
   var _super = _createSuper(OnArrowDownToggleLV1);
 
@@ -16750,24 +16839,11 @@ var OnArrowDownToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }
 
   _createClass(OnArrowDownToggleLV1, [{
-    key: "exec",
+    key: "handleDesktop",
 
-    /**
-     * Execute the action to the event.
-     */
-    value: function exec() {
-      if (this.isDesktop()) {
-        this.handleDesktop();
-      } else {
-        this.handleMobile();
-      }
-    }
     /**
      * Handle the events for desktop sized screens.
      */
-
-  }, {
-    key: "handleDesktop",
     value: function handleDesktop() {
       this.parentNav.openSubNav();
       this.getElement('firstSubnavLink').focus();
@@ -16785,7 +16861,7 @@ var OnArrowDownToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }]);
 
   return OnArrowDownToggleLV1;
-}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
@@ -16801,7 +16877,7 @@ var OnArrowDownToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnArrowLeftLV1; });
-/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
 /* harmony import */ var _secondary_nav_common_events_OnArrowLeft__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/common/events/OnArrowLeft */ "./src/js/components/secondary-nav/common/events/OnArrowLeft.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -16833,8 +16909,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * Event action handler class.
  */
 
-var OnArrowLeftLV1 = /*#__PURE__*/function (_EventAbstract) {
-  _inherits(OnArrowLeftLV1, _EventAbstract);
+var OnArrowLeftLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnArrowLeftLV1, _MultiMenuEventAbstra);
 
   var _super = _createSuper(OnArrowLeftLV1);
 
@@ -16845,24 +16921,11 @@ var OnArrowLeftLV1 = /*#__PURE__*/function (_EventAbstract) {
   }
 
   _createClass(OnArrowLeftLV1, [{
-    key: "exec",
+    key: "handleDesktop",
 
-    /**
-     * Execute the action to the event.
-     */
-    value: function exec() {
-      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
-        this.handleDesktop();
-      } else {
-        this.handleMobile();
-      }
-    }
     /**
      * Handle the events for desktop sized screens.
      */
-
-  }, {
-    key: "handleDesktop",
     value: function handleDesktop() {
       var element = this.getElement('prev') || this.getElement('last');
       element.focus();
@@ -16880,7 +16943,7 @@ var OnArrowLeftLV1 = /*#__PURE__*/function (_EventAbstract) {
   }]);
 
   return OnArrowLeftLV1;
-}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
@@ -16896,7 +16959,7 @@ var OnArrowLeftLV1 = /*#__PURE__*/function (_EventAbstract) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnArrowRightLV1; });
-/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
 /* harmony import */ var _secondary_nav_common_events_OnArrowRight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/common/events/OnArrowRight */ "./src/js/components/secondary-nav/common/events/OnArrowRight.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -16928,8 +16991,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * Event action handler class.
  */
 
-var OnArrowRightLV1 = /*#__PURE__*/function (_EventAbstract) {
-  _inherits(OnArrowRightLV1, _EventAbstract);
+var OnArrowRightLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnArrowRightLV1, _MultiMenuEventAbstra);
 
   var _super = _createSuper(OnArrowRightLV1);
 
@@ -16940,24 +17003,11 @@ var OnArrowRightLV1 = /*#__PURE__*/function (_EventAbstract) {
   }
 
   _createClass(OnArrowRightLV1, [{
-    key: "exec",
+    key: "handleDesktop",
 
-    /**
-     * Execute the action to the event.
-     */
-    value: function exec() {
-      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
-        this.handleDesktop();
-      } else {
-        this.handleMobile();
-      }
-    }
     /**
      * Handle the events for desktop sized screens.
      */
-
-  }, {
-    key: "handleDesktop",
     value: function handleDesktop() {
       var element = this.getElement('next') || this.getElement('first');
       element.focus();
@@ -16982,7 +17032,7 @@ var OnArrowRightLV1 = /*#__PURE__*/function (_EventAbstract) {
   }]);
 
   return OnArrowRightLV1;
-}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
@@ -16998,7 +17048,7 @@ var OnArrowRightLV1 = /*#__PURE__*/function (_EventAbstract) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnArrowRightToggleLV1; });
-/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
 /* harmony import */ var _secondary_nav_buttons_events_SubNavToggleSpace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/buttons/events/SubNavToggleSpace */ "./src/js/components/secondary-nav/buttons/events/SubNavToggleSpace.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -17030,8 +17080,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * Event action handler class.
  */
 
-var OnArrowRightToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
-  _inherits(OnArrowRightToggleLV1, _EventAbstract);
+var OnArrowRightToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnArrowRightToggleLV1, _MultiMenuEventAbstra);
 
   var _super = _createSuper(OnArrowRightToggleLV1);
 
@@ -17042,24 +17092,11 @@ var OnArrowRightToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }
 
   _createClass(OnArrowRightToggleLV1, [{
-    key: "exec",
+    key: "handleDesktop",
 
-    /**
-     * Execute the action to the event.
-     */
-    value: function exec() {
-      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
-        this.handleDesktop();
-      } else {
-        this.handleMobile();
-      }
-    }
     /**
      * Handle the events for desktop sized screens.
      */
-
-  }, {
-    key: "handleDesktop",
     value: function handleDesktop() {
       if (this.getElement('next')) {
         this.getElement('next').focus();
@@ -17080,7 +17117,7 @@ var OnArrowRightToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }]);
 
   return OnArrowRightToggleLV1;
-}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
@@ -17096,7 +17133,7 @@ var OnArrowRightToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnClickToggleLV1; });
-/* harmony import */ var _secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../secondary-nav/common/events/EventAbstract */ "./src/js/components/secondary-nav/common/events/EventAbstract.js");
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
 /* harmony import */ var _secondary_nav_buttons_events_SubNavToggleClick__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/buttons/events/SubNavToggleClick */ "./src/js/components/secondary-nav/buttons/events/SubNavToggleClick.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -17128,8 +17165,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * Event action handler class.
  */
 
-var OnClickToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
-  _inherits(OnClickToggleLV1, _EventAbstract);
+var OnClickToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnClickToggleLV1, _MultiMenuEventAbstra);
 
   var _super = _createSuper(OnClickToggleLV1);
 
@@ -17140,24 +17177,11 @@ var OnClickToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }
 
   _createClass(OnClickToggleLV1, [{
-    key: "exec",
+    key: "handleDesktop",
 
-    /**
-     * Execute the action to the event.
-     */
-    value: function exec() {
-      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
-        this.handleDesktop();
-      } else {
-        this.handleMobile();
-      }
-    }
     /**
      * Handle the events for desktop sized screens.
      */
-
-  }, {
-    key: "handleDesktop",
     value: function handleDesktop() {
       this.event.preventDefault();
       var node = this.parentNav.elem;
@@ -17177,7 +17201,7 @@ var OnClickToggleLV1 = /*#__PURE__*/function (_EventAbstract) {
   }]);
 
   return OnClickToggleLV1;
-}(_secondary_nav_common_events_EventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 
