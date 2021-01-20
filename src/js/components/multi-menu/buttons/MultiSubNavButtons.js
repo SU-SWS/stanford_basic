@@ -41,7 +41,6 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
    */
    initToggleButton() {
      var options = {};
-     console.log('turned on: ' + drupalSettings.nav_dropdown_enabled);
      // Overrides for level 1 desktop.
      if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
        options.eventRegistry = {

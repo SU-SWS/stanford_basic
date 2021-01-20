@@ -16674,8 +16674,7 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
   }, {
     key: "initToggleButton",
     value: function initToggleButton() {
-      var options = {};
-      console.log('turned on: ' + drupalSettings.nav_dropdown_enabled); // Overrides for level 1 desktop.
+      var options = {}; // Overrides for level 1 desktop.
 
       if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
         options.eventRegistry = {
