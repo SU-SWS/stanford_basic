@@ -561,7 +561,7 @@ ul li .su-site-search {
         content: "";
         background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
         background-size: 15px;
-        border-radius: 0px; }
+        border-radius: 0; }
       .su-nav-toggle:focus, .su-nav-toggle:hover {
         background: transparent; }
         .su-nav-toggle:focus::before, .su-nav-toggle:hover::before {

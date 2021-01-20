@@ -82,7 +82,7 @@
     @include fancy-hover(
       color(border--hover, $su-multi-menu-light-colors),
       color(border--active, $su-multi-menu-light-colors),
-    'left'
+      'left'
     );
 
     color: color(link, $su-multi-menu-light-colors);

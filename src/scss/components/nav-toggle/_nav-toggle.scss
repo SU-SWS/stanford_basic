@@ -29,12 +29,13 @@
       content: "";
       background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
       background-size: 15px;
-      border-radius: 0px;
+      border-radius: 0;
     }
 
     &:focus,
     &:hover {
       background: transparent;
+
       &::before {
         background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
         background-size: 15px;

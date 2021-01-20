@@ -17,8 +17,7 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
     '#title' => t('Theme Specific Settings'),
   ];
 
-  // Dropdown navigation menu support
-
+  // Dropdown navigation menu support.
   $form['options_settings']['stanford_basic_navigation'] = [
     '#type' => 'fieldset',
     '#title' => t('Navigation Menu Settings'),
@@ -31,6 +30,7 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
     '#description' => t("Checking this box will enable dropdowns for your navigation menu."),
   ];
 
+  // Brand bar support.
   $form['options_settings']['stanford_basic_brand_bar'] = [
     '#type' => 'fieldset',
     '#title' => t('Brand Bar Settings'),
@@ -203,8 +203,6 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
       ],
     ],
   ];
-
-
 
   // BrowserSync support.
   $form['options_settings']['stanford_basic_browser_sync'] = [
