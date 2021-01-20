@@ -12,9 +12,8 @@ export default class OnArrowRightLV1 extends EventAbstract {
    * Execute the action to the event.
    */
   exec() {
-    if (this.isDesktop()) {
-      //this.handleDesktop();
-      this.handleMobile();
+    if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
+      this.handleDesktop();
     }
     else {
       this.handleMobile();

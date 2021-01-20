@@ -43,6 +43,10 @@
   width: 100%;
   list-style: none;
   background-color: color(bg, $su-multi-menu-colors);
+
+  @include grid-media("lg") {
+    background-color: color(bg, $su-multi-menu-light-colors);
+  }
 }
 
 // All li elements.
@@ -72,6 +76,23 @@
   &:hover {
     color: color(link, $su-multi-menu-colors);
     text-decoration: underline;
+  }
+
+  @include grid-media("lg") {
+    @include fancy-hover(
+      color(border--hover, $su-multi-menu-light-colors),
+      color(border--active, $su-multi-menu-light-colors),
+    'left'
+    );
+
+    color: color(link, $su-multi-menu-light-colors);
+    border-bottom: color(divider, $su-multi-menu-light-colors) solid 1px;
+
+    &:focus,
+    &:hover {
+      color: color(link, $su-multi-menu-light-colors);
+      text-decoration: underline;
+    }
   }
 }
 
@@ -147,6 +168,10 @@
             transform: scaleX(1);
             visibility: visible;
             background-color: color(h--border, $su-multi-menu-colors);
+
+            @include grid-media("lg") {
+              background-color: color(h--border, $su-multi-menu-light-colors);
+            }
           }
 
           &:hover,
@@ -246,6 +271,10 @@
       width: 6px;
       transform: scaleY(1);
       background-color: color(border--active, $su-multi-menu-colors);
+
+      @include grid-media("lg") {
+        background-color: color(border--active, $su-multi-menu-light-colors);
+      }
     }
 
     &:hover,
@@ -253,6 +282,10 @@
       &::before {
         transition: left 0.1s ease-out;
         background-color: color(border--active, $su-multi-menu-colors);
+
+        @include grid-media("lg") {
+          background-color: color(border--active, $su-multi-menu-light-colors);
+        }
       }
     }
   }
