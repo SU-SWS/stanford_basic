@@ -18237,6 +18237,16 @@ var SecondarySubNavButtons = /*#__PURE__*/function () {
     this.initToggleButton(options); // Add the accessibility meta-information.
 
     this.initAccessibility();
+
+    if (window.innerWidth >= 992 && !drupalSettings.nav_dropdown_enabled) {
+      // We are on desktop, and dropdowns are disabled.
+      // Remove the toggle button.
+      this.item.getElementsByTagName('button')[0].remove(); // Remove the submenu.
+
+      this.item.getElementsByTagName('ul')[0].remove(); // Remove the parent class to fix the button width.
+
+      this.item.classList.remove('su-multi-menu__item--parent');
+    }
   }
   /**
    * Initialize the toggle button.
