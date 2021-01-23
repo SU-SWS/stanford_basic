@@ -506,16 +506,17 @@ ul li .su-site-search {
 .su-multi-menu--buttons .su-multi-menu__item--parent {
   position: relative; }
 
-.su-multi-menu--buttons .su-nav-toggle {
-  right: 6px; }
-
 @media only screen and (min-width: 992px) {
   .su-multi-menu--buttons .su-multi-menu__menu-lv1 > .su-multi-menu__item--parent > .su-multi-menu__link {
     display: block;
-    padding-right: 15px; } }
+    padding-right: 0; } }
 
 .su-multi-menu--buttons .su-multi-menu__menu-lv1 > .su-multi-menu__item--parent:last-child > .su-multi-menu__link {
   margin-right: 0; }
+
+@media only screen and (min-width: 992px) {
+  .su-multi-menu--buttons.desktop_dropdowns_enabled .su-multi-menu__item--parent {
+    margin-right: 8px; } }
 
 @media only screen and (min-width: 992px) {
   .su-multi-menu--right > ul,
@@ -539,40 +540,12 @@ ul li .su-site-search {
         margin-right: 0; } }
 
 .su-nav-toggle {
+  right: 6px;
   height: 56px;
   line-height: 56px; }
   @media only screen and (min-width: 992px) {
     .su-nav-toggle {
-      margin: 0;
-      padding: 15px 28px;
-      vertical-align: middle;
-      text-align: center;
-      font-size: 0;
-      overflow: hidden;
-      max-width: 25px;
-      height: 61px;
-      line-height: 61px;
-      z-index: 10;
-      background: transparent;
-      outline: none;
-      -webkit-box-shadow: none;
-              box-shadow: none; }
-      .su-nav-toggle::before {
-        content: "";
-        background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
-        background-size: 15px;
-        border-radius: 0; }
-      .su-nav-toggle:focus, .su-nav-toggle:hover {
-        background: transparent; }
-        .su-nav-toggle:focus::before, .su-nav-toggle:hover::before {
-          background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
-          background-size: 15px; }
-      .su-nav-toggle:focus, .su-nav-toggle:active {
-        outline: none;
-        -webkit-box-shadow: none;
-                box-shadow: none;
-        font-weight: 700;
-        background: transparent; } }
+      display: none; } }
   .su-nav-toggle[aria-expanded="true"] {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
@@ -587,6 +560,46 @@ ul li .su-site-search {
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
+
+@media only screen and (min-width: 992px) {
+  .desktop_dropdowns_enabled .su-nav-toggle {
+    margin: 0;
+    padding: 15px 28px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0;
+    overflow: hidden;
+    max-width: 25px;
+    height: 61px;
+    line-height: 61px;
+    z-index: 10;
+    background: transparent;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+    .desktop_dropdowns_enabled .su-nav-toggle::before {
+      content: "";
+      background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
+      background-size: 15px;
+      border-radius: 0; }
+    .desktop_dropdowns_enabled .su-nav-toggle:focus, .desktop_dropdowns_enabled .su-nav-toggle:hover {
+      background: transparent; }
+      .desktop_dropdowns_enabled .su-nav-toggle:focus::before, .desktop_dropdowns_enabled .su-nav-toggle:hover::before {
+        background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
+        background-size: 15px; }
+    .desktop_dropdowns_enabled .su-nav-toggle:focus, .desktop_dropdowns_enabled .su-nav-toggle:active {
+      outline: none;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      font-weight: 700;
+      background: transparent; } }
+
+@media only screen and (min-width: 992px) {
+  .desktop_dropdowns_enabled .su-multi-menu__menu > .su-multi-menu__item--parent > .su-nav-toggle {
+    display: inline-block;
+    padding-right: 0; }
+  .desktop_dropdowns_enabled .su-multi-menu__menu > .su-multi-menu__item--parent:last-child > .su-multi-menu__link {
+    margin-right: 1.8em; } }
 
 @media only screen and (min-width: 0) {
   .su-secondary-nav {

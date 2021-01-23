@@ -7,10 +7,6 @@
     position: relative;
   }
 
-  .su-nav-toggle {
-    right: 6px;
-  }
-
   // Menu Level 1 (top)
   .su-multi-menu__menu-lv1 {
     // Top Level Parent Items.
@@ -20,7 +16,7 @@
         // Desktop Styles.
         @include grid-media('lg') {
           display: block;
-          padding-right: 15px;
+          padding-right: 0;
         }
       }
 
@@ -32,4 +28,13 @@
 
     } // end top level parent items.
   }
+
+  &.desktop_dropdowns_enabled {
+    .su-multi-menu__item--parent {
+      @include grid-media('lg') {
+        margin-right: 8px;
+      }
+    }
+  }
+
 }

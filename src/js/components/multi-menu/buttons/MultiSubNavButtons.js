@@ -26,7 +26,7 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
 
     var registryDefaults = super.createEventRegistry({});
     // If we are the first level (top) we need to adjust for mobile vs desktop.
-    if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
+    if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
       registryDefaults = Object.assign(registryDefaults, {
         onKeydownArrowLeft: OnArrowLeftLV1,
         onKeydownArrowRight: OnArrowRightLV1
@@ -42,7 +42,7 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
    initToggleButton() {
      var options = {};
      // Overrides for level 1 desktop.
-     if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
+     if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
        options.eventRegistry = {
          onKeydownArrowRight: OnArrowRightToggleLV1,
          onKeydownArrowDown: OnArrowDownToggleLV1,

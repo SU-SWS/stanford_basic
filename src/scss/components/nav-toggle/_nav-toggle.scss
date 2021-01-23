@@ -6,50 +6,13 @@
 //
 
 .su-nav-toggle {
+
+  right: 6px;
   height: 56px;
   line-height: 56px;
 
   @include grid-media('lg') {
-
-    @include margin(0);
-    @include padding(15px 28px);
-    vertical-align: middle;
-    text-align: center;
-    font-size: 0;
-    overflow: hidden;
-    max-width: 25px;
-    height: 61px;
-    line-height: 61px;
-    z-index: 10;
-    background: transparent;
-    outline: none;
-    box-shadow: none;
-
-    &::before {
-      content: "";
-      background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
-      background-size: 15px;
-      border-radius: 0;
-    }
-
-    &:focus,
-    &:hover {
-      background: transparent;
-
-      &::before {
-        background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
-        background-size: 15px;
-      }
-    }
-
-    &:focus,
-    &:active {
-      outline: none;
-      box-shadow: none;
-      font-weight: $su-font-bold;
-      background: transparent;
-    }
-
+    display: none;
   }
 
   &[aria-expanded="true"] {
@@ -60,6 +23,76 @@
   &[aria-expanded="false"] {
     transform: rotate(0deg);
     transition: transform 0.3s ease-out;
+  }
+
+}
+
+.desktop_dropdowns_enabled {
+
+  .su-nav-toggle {
+
+    @include grid-media('lg') {
+
+      @include margin(0);
+      @include padding(15px 28px);
+      vertical-align: middle;
+      text-align: center;
+      font-size: 0;
+      overflow: hidden;
+      max-width: 25px;
+      height: 61px;
+      line-height: 61px;
+      z-index: 10;
+      background: transparent;
+      outline: none;
+      box-shadow: none;
+
+      &::before {
+        content: "";
+        background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+        background-size: 15px;
+        border-radius: 0;
+      }
+
+      &:focus,
+      &:hover {
+        background: transparent;
+
+        &::before {
+          background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+          background-size: 15px;
+        }
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: none;
+        font-weight: $su-font-bold;
+        background: transparent;
+      }
+    }
+
+  }
+
+  @include grid-media('lg') {
+
+    .su-multi-menu__menu {
+
+      > .su-multi-menu__item--parent {
+        > .su-nav-toggle {
+          display:inline-block;
+          padding-right: 0;
+        }
+
+        &:last-child {
+          > .su-multi-menu__link {
+            margin-right: 1.8em;
+          }
+        }
+      }
+    }
+
   }
 
 }

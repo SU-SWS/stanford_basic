@@ -16658,7 +16658,7 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
       var registryDefaults = _get(_getPrototypeOf(MultiSubNavButtons.prototype), "createEventRegistry", this).call(this, {}); // If we are the first level (top) we need to adjust for mobile vs desktop.
 
 
-      if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
+      if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
         registryDefaults = Object.assign(registryDefaults, {
           onKeydownArrowLeft: _events_OnArrowLeftLV1__WEBPACK_IMPORTED_MODULE_2__["default"],
           onKeydownArrowRight: _events_OnArrowRightLV1__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -16676,7 +16676,7 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
     value: function initToggleButton() {
       var options = {}; // Overrides for level 1 desktop.
 
-      if (this.getDepth() === 1 && !drupalSettings.nav_dropdown_enabled) {
+      if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
         options.eventRegistry = {
           onKeydownArrowRight: _events_OnArrowRightToggleLV1__WEBPACK_IMPORTED_MODULE_1__["default"],
           onKeydownArrowDown: _events_OnArrowDownToggleLV1__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -16754,7 +16754,7 @@ var MultiMenuEventAbstract = /*#__PURE__*/function (_EventAbstract) {
      * Execute the action to the event.
      */
     value: function exec() {
-      if (this.isDesktop() && !drupalSettings.nav_dropdown_enabled) {
+      if (this.isDesktop() && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
         this.handleDesktop();
       } else {
         this.handleMobile();
@@ -18237,16 +18237,6 @@ var SecondarySubNavButtons = /*#__PURE__*/function () {
     this.initToggleButton(options); // Add the accessibility meta-information.
 
     this.initAccessibility();
-
-    if (window.innerWidth >= 992 && !drupalSettings.nav_dropdown_enabled) {
-      // We are on desktop, and dropdowns are disabled.
-      // Remove the toggle button.
-      this.item.getElementsByTagName('button')[0].remove(); // Remove the submenu.
-
-      this.item.getElementsByTagName('ul')[0].remove(); // Remove the parent class to fix the button width.
-
-      this.item.classList.remove('su-multi-menu__item--parent');
-    }
   }
   /**
    * Initialize the toggle button.
