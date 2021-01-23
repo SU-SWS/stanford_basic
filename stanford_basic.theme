@@ -238,7 +238,7 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
     $item = $menu_item[0];
   }
   if (theme_get_setting('nav_dropdown_enabled')) {
-    $variables['attributes']['class'][] = 'desktop_dropdowns_enabled';
+    $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
   }
 }
 

@@ -29,7 +29,7 @@
     } // end top level parent items.
   }
 
-  &.desktop_dropdowns_enabled {
+  &.su-multi-menu--dropdowns {
     .su-multi-menu__item--parent {
       @include grid-media('lg') {
         margin-right: 8px;

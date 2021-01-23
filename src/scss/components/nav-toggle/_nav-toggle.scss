@@ -27,7 +27,7 @@
 
 }
 
-.desktop_dropdowns_enabled {
+.su-multi-menu--dropdowns {
 
   .su-nav-toggle {
 
@@ -81,7 +81,7 @@
 
       > .su-multi-menu__item--parent {
         > .su-nav-toggle {
-          display:inline-block;
+          display: inline-block;
           padding-right: 0;
         }
 

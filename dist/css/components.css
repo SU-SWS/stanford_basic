@@ -515,7 +515,7 @@ ul li .su-site-search {
   margin-right: 0; }
 
 @media only screen and (min-width: 992px) {
-  .su-multi-menu--buttons.desktop_dropdowns_enabled .su-multi-menu__item--parent {
+  .su-multi-menu--buttons.su-multi-menu--dropdowns .su-multi-menu__item--parent {
     margin-right: 8px; } }
 
 @media only screen and (min-width: 992px) {
@@ -562,7 +562,7 @@ ul li .su-site-search {
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
 
 @media only screen and (min-width: 992px) {
-  .desktop_dropdowns_enabled .su-nav-toggle {
+  .su-multi-menu--dropdowns .su-nav-toggle {
     margin: 0;
     padding: 15px 28px;
     vertical-align: middle;
@@ -577,17 +577,17 @@ ul li .su-site-search {
     outline: none;
     -webkit-box-shadow: none;
             box-shadow: none; }
-    .desktop_dropdowns_enabled .su-nav-toggle::before {
+    .su-multi-menu--dropdowns .su-nav-toggle::before {
       content: "";
       background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
       background-size: 15px;
       border-radius: 0; }
-    .desktop_dropdowns_enabled .su-nav-toggle:focus, .desktop_dropdowns_enabled .su-nav-toggle:hover {
+    .su-multi-menu--dropdowns .su-nav-toggle:focus, .su-multi-menu--dropdowns .su-nav-toggle:hover {
       background: transparent; }
-      .desktop_dropdowns_enabled .su-nav-toggle:focus::before, .desktop_dropdowns_enabled .su-nav-toggle:hover::before {
+      .su-multi-menu--dropdowns .su-nav-toggle:focus::before, .su-multi-menu--dropdowns .su-nav-toggle:hover::before {
         background: url(../assets/svg/caret-down-black.svg) no-repeat center/50%;
         background-size: 15px; }
-    .desktop_dropdowns_enabled .su-nav-toggle:focus, .desktop_dropdowns_enabled .su-nav-toggle:active {
+    .su-multi-menu--dropdowns .su-nav-toggle:focus, .su-multi-menu--dropdowns .su-nav-toggle:active {
       outline: none;
       -webkit-box-shadow: none;
               box-shadow: none;
@@ -595,10 +595,10 @@ ul li .su-site-search {
       background: transparent; } }
 
 @media only screen and (min-width: 992px) {
-  .desktop_dropdowns_enabled .su-multi-menu__menu > .su-multi-menu__item--parent > .su-nav-toggle {
+  .su-multi-menu--dropdowns .su-multi-menu__menu > .su-multi-menu__item--parent > .su-nav-toggle {
     display: inline-block;
     padding-right: 0; }
-  .desktop_dropdowns_enabled .su-multi-menu__menu > .su-multi-menu__item--parent:last-child > .su-multi-menu__link {
+  .su-multi-menu--dropdowns .su-multi-menu__menu > .su-multi-menu__item--parent:last-child > .su-multi-menu__link {
     margin-right: 1.8em; } }
 
 @media only screen and (min-width: 0) {
