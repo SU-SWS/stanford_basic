@@ -17,7 +17,7 @@ export default class OnArrowRightLV1 extends MultiMenuEventAbstract {
       this.handleMobile();
       return;
     }
-    
+
     var element =
       this.getElement('next') ||
       this.getElement('first');

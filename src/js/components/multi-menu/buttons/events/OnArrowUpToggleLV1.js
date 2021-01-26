@@ -13,8 +13,8 @@ export default class OnArrowUpToggleLV1 extends MultiMenuEventAbstract {
    */
   handleDesktop() {
     if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
-        this.handleMobile();
-        return;
+      this.handleMobile();
+      return;
     }
   }
 
