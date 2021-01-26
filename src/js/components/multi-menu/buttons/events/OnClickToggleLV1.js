@@ -12,6 +12,12 @@ export default class OnClickToggleLV1 extends MultiMenuEventAbstract {
    * Handle the events for desktop sized screens.
    */
   handleDesktop() {
+    var themeName = drupalSettings.ajaxPageState.theme;
+    if (drupalSettings[themeName].nav_dropdown_enabled) {
+      this.handleMobile();
+      return;
+    }
+
     this.event.preventDefault();
     var node = this.parentNav.elem;
     node.click();
