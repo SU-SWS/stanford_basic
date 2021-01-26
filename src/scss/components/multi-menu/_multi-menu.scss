@@ -253,7 +253,7 @@
 .su-multi-menu__menu-lv4,
 .su-multi-menu__menu-lv5 {
   @include grid-media('lg') {
-    .su-multi-menu__item:not(.su-multi-menu__item--expanded){
+    .su-multi-menu__item:not(.su-multi-menu__item--expanded) {
       &:last-child {
         .su-multi-menu__link {
           border-bottom: 0;
