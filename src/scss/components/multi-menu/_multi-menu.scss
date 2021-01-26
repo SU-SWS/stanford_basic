@@ -135,6 +135,7 @@
         font-weight: $su-font-semi-bold;
         color: $su-color-bright-red;
 
+
         &::before {
           height: 6px;
           width: 100%;
@@ -230,6 +231,11 @@
     z-index: 101;
     position: absolute;
     max-width: 30rem;
+
+    .su-multi-menu__link {
+      width: 100%;
+    }
+
   }
 }
 
@@ -238,6 +244,24 @@
 // .su-multi-menu__menu-lv3 {
 // Nothing to see here.
 // }
+
+// We have to get rid of the bottom border for the last item in the menu
+// for desktop resolutions.
+// -----------------------------------------------------------------------
+.su-multi-menu__menu-lv2,
+.su-multi-menu__menu-lv3,
+.su-multi-menu__menu-lv4,
+.su-multi-menu__menu-lv5 {
+  @include grid-media('lg') {
+    .su-multi-menu__item:not(.su-multi-menu__item--expanded){
+      &:last-child {
+        a.su-multi-menu__link {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
 
 // Items with children
 // -----------------------------------------------------------------------
