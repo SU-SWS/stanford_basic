@@ -219,6 +219,24 @@
   } // End of media-lg.
 } // End of .su-multi-menu__menu-lv1
 
+// separator bar for dropdown toggle on desktop.
+.su-multi-menu--dropdowns {
+  .su-multi-menu__menu-lv1 {
+    > .su-multi-menu__item--parent {
+      > .su-multi-menu__link {
+        &::after {
+          content: '';
+          height: 1em;
+          margin-bottom: -5px;
+          border-right: #766253 solid 1px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+ }// end of separator bar for dropdown toggle.
+
 // Second level styles
 // -----------------------------------------------------------------------
 .su-multi-menu__menu-lv2 {
