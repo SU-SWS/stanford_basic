@@ -12,6 +12,12 @@ export default class OnArrowRightLV1 extends MultiMenuEventAbstract {
    * Handle the events for desktop sized screens.
    */
   handleDesktop() {
+
+    if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+      this.handleMobile();
+      return;
+    }
+    
     var element =
       this.getElement('next') ||
       this.getElement('first');

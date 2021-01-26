@@ -16592,6 +16592,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _events_OnArrowRightLV1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./events/OnArrowRightLV1 */ "./src/js/components/multi-menu/buttons/events/OnArrowRightLV1.js");
 /* harmony import */ var _events_OnArrowDownToggleLV1__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./events/OnArrowDownToggleLV1 */ "./src/js/components/multi-menu/buttons/events/OnArrowDownToggleLV1.js");
 /* harmony import */ var _events_OnClickToggleLV1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./events/OnClickToggleLV1 */ "./src/js/components/multi-menu/buttons/events/OnClickToggleLV1.js");
+/* harmony import */ var _events_OnArrowUpToggleLV1__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./events/OnArrowUpToggleLV1 */ "./src/js/components/multi-menu/buttons/events/OnArrowUpToggleLV1.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -16617,6 +16618,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -16658,7 +16660,7 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
       var registryDefaults = _get(_getPrototypeOf(MultiSubNavButtons.prototype), "createEventRegistry", this).call(this, {}); // If we are the first level (top) we need to adjust for mobile vs desktop.
 
 
-      if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
+      if (this.getDepth() === 1) {
         registryDefaults = Object.assign(registryDefaults, {
           onKeydownArrowLeft: _events_OnArrowLeftLV1__WEBPACK_IMPORTED_MODULE_2__["default"],
           onKeydownArrowRight: _events_OnArrowRightLV1__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -16676,10 +16678,11 @@ var MultiSubNavButtons = /*#__PURE__*/function (_SecondarySubNavButto) {
     value: function initToggleButton() {
       var options = {}; // Overrides for level 1 desktop.
 
-      if (this.getDepth() === 1 && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
+      if (this.getDepth() === 1) {
         options.eventRegistry = {
           onKeydownArrowRight: _events_OnArrowRightToggleLV1__WEBPACK_IMPORTED_MODULE_1__["default"],
           onKeydownArrowDown: _events_OnArrowDownToggleLV1__WEBPACK_IMPORTED_MODULE_4__["default"],
+          onKeydownArrowUp: _events_OnArrowUpToggleLV1__WEBPACK_IMPORTED_MODULE_6__["default"],
           onClick: _events_OnClickToggleLV1__WEBPACK_IMPORTED_MODULE_5__["default"]
         };
       } // Do eet.
@@ -16754,7 +16757,7 @@ var MultiMenuEventAbstract = /*#__PURE__*/function (_EventAbstract) {
      * Execute the action to the event.
      */
     value: function exec() {
-      if (this.isDesktop() && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
+      if (this.isDesktop()) {
         this.handleDesktop();
       } else {
         this.handleMobile();
@@ -16845,8 +16848,10 @@ var OnArrowDownToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
      * Handle the events for desktop sized screens.
      */
     value: function handleDesktop() {
-      this.parentNav.openSubNav();
-      this.getElement('firstSubnavLink').focus();
+      if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+        this.handleMobile();
+        return;
+      }
     }
     /**
      * Handle the events for mobile sized screens.
@@ -16927,6 +16932,11 @@ var OnArrowLeftLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
      * Handle the events for desktop sized screens.
      */
     value: function handleDesktop() {
+      if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+        this.handleMobile();
+        return;
+      }
+
       var element = this.getElement('prev') || this.getElement('last');
       element.focus();
     }
@@ -17009,6 +17019,11 @@ var OnArrowRightLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
      * Handle the events for desktop sized screens.
      */
     value: function handleDesktop() {
+      if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+        this.handleMobile();
+        return;
+      }
+
       var element = this.getElement('next') || this.getElement('first');
       element.focus();
     }
@@ -17117,6 +17132,90 @@ var OnArrowRightToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
   }]);
 
   return OnArrowRightToggleLV1;
+}(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+/***/ }),
+
+/***/ "./src/js/components/multi-menu/buttons/events/OnArrowUpToggleLV1.js":
+/*!***************************************************************************!*\
+  !*** ./src/js/components/multi-menu/buttons/events/OnArrowUpToggleLV1.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OnArrowUpToggleLV1; });
+/* harmony import */ var _MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MultiMenuEventAbstract */ "./src/js/components/multi-menu/buttons/events/MultiMenuEventAbstract.js");
+/* harmony import */ var _secondary_nav_buttons_events_SubNavToggleSpace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../secondary-nav/buttons/events/SubNavToggleSpace */ "./src/js/components/secondary-nav/buttons/events/SubNavToggleSpace.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+/**
+ * OnArrowLeft
+ *
+ * Event action handler class.
+ */
+
+var OnArrowUpToggleLV1 = /*#__PURE__*/function (_MultiMenuEventAbstra) {
+  _inherits(OnArrowUpToggleLV1, _MultiMenuEventAbstra);
+
+  var _super = _createSuper(OnArrowUpToggleLV1);
+
+  function OnArrowUpToggleLV1() {
+    _classCallCheck(this, OnArrowUpToggleLV1);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(OnArrowUpToggleLV1, [{
+    key: "handleDesktop",
+
+    /**
+     * Handle the events for desktop sized screens.
+     */
+    value: function handleDesktop() {
+      if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+        this.handleMobile();
+        return;
+      }
+    }
+    /**
+     * Handle the events for mobile sized screens.
+     */
+
+  }, {
+    key: "handleMobile",
+    value: function handleMobile() {
+      var collapseEvent = new _secondary_nav_buttons_events_SubNavToggleSpace__WEBPACK_IMPORTED_MODULE_1__["default"](this.item, this.event, this.target);
+      collapseEvent.init();
+    }
+  }]);
+
+  return OnArrowUpToggleLV1;
 }(_MultiMenuEventAbstract__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 

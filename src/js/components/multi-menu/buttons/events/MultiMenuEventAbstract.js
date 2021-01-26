@@ -11,7 +11,7 @@ export default class MultiMenuEventAbstract extends EventAbstract {
    * Execute the action to the event.
    */
   exec() {
-    if (this.isDesktop() && !drupalSettings.stanford_basic.nav_dropdown_enabled) {
+    if (this.isDesktop()) {
       this.handleDesktop();
     }
     else {
