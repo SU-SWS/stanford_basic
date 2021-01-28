@@ -12,8 +12,7 @@ export default class OnArrowDownToggleLV1 extends MultiMenuEventAbstract {
    * Handle the events for desktop sized screens.
    */
   handleDesktop() {
-    var themeName = drupalSettings.ajaxPageState.theme;
-    if (drupalSettings[themeName].nav_dropdown_enabled) {
+    if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
       this.handleMobile();
       return;
     }
