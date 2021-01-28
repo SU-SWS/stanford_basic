@@ -507,6 +507,7 @@
       .su-multi-menu__menu-lv1 {
 
         > .su-multi-menu__item--parent {
+          @include margin(0 43px 0 0);
 
           > .su-nav-toggle {
             position: relative;
