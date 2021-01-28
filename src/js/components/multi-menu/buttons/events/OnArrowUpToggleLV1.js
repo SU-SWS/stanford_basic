@@ -1,12 +1,12 @@
 import MultiMenuEventAbstract from './MultiMenuEventAbstract';
-import SubNavToggleClick from '../../../secondary-nav/buttons/events/SubNavToggleClick';
+import SubNavToggleSpace from '../../../secondary-nav/buttons/events/SubNavToggleSpace';
 
 /**
  * OnArrowLeft
  *
  * Event action handler class.
  */
-export default class OnClickToggleLV1 extends MultiMenuEventAbstract {
+export default class OnArrowUpToggleLV1 extends MultiMenuEventAbstract {
 
   /**
    * Handle the events for desktop sized screens.
@@ -16,19 +16,14 @@ export default class OnClickToggleLV1 extends MultiMenuEventAbstract {
       this.handleMobile();
       return;
     }
-
-    this.event.preventDefault();
-    var node = this.parentNav.elem;
-    node.click();
-    node.focus();
   }
 
   /**
    * Handle the events for mobile sized screens.
    */
   handleMobile() {
-    var clickEvent = new SubNavToggleClick(this.item, this.event, this.target);
-    clickEvent.init();
+    var collapseEvent = new SubNavToggleSpace(this.item, this.event, this.target);
+    collapseEvent.init();
   }
 
 }

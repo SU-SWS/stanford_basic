@@ -19,7 +19,7 @@ export default class MobileToggle {
     this.elem = element;
     this.nav = nav;
 
-    // Merge options with defualts.
+    // Merge options with defaults.
     this.options = Object.assign({
       toggleText: element.innerText || 'Open',
       closeText: 'Close',

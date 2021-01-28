@@ -2,6 +2,15 @@
 
 8.x-4.14
 --------------------------------------------------------------------------------
+_Release Date: 2020-12-04_
+
+- D8CORE-2268: adjusting the spacing for media files in the wysiwyg and fixing the centering for the pdf. (#202) (9e490bf)
+- D8CORE-2963: updating Decanter version (#201) (c27e9d1)
+- D8CORE-2899: Updating the character line length to 100 from 70 (#196) (67d53d3)
+- D9 Readiness (#198) (59a5ae7)
+
+8.x-4.14
+--------------------------------------------------------------------------------
 _Release Date: 0000-00-00_
 
 - Removed preprocess function on ds entity view for contextual links to allow Drupal 9 compatability.

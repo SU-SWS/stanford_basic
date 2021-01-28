@@ -1,4 +1,4 @@
-import EventAbstract from '../../../secondary-nav/common/events/EventAbstract';
+import MultiMenuEventAbstract from './MultiMenuEventAbstract';
 import OnArrowLeft from '../../../secondary-nav/common/events/OnArrowLeft';
 
 /**
@@ -6,24 +6,18 @@ import OnArrowLeft from '../../../secondary-nav/common/events/OnArrowLeft';
  *
  * Event action handler class.
  */
-export default class OnArrowLeftLV1 extends EventAbstract {
-
-  /**
-   * Execute the action to the event.
-   */
-  exec() {
-    if (this.isDesktop()) {
-      this.handleDesktop();
-    }
-    else {
-      this.handleMobile();
-    }
-  }
+export default class OnArrowLeftLV1 extends MultiMenuEventAbstract {
 
   /**
    * Handle the events for desktop sized screens.
    */
   handleDesktop() {
+
+    if (drupalSettings.stanford_basic.nav_dropdown_enabled) {
+      this.handleMobile();
+      return;
+    }
+
     var element =
       this.getElement('prev') ||
       this.getElement('last');
