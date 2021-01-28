@@ -30,7 +30,7 @@
   // Hide stuff.
   .mobile-hidden {
     @include grid-media-max('md') {
-    @include hide-visually;
+      @include hide-visually;
     }
   }
 
@@ -151,8 +151,9 @@
       > .su-multi-menu__item {
 
         @include margin(0 36px 0 0);
-        display:flex;
+        display: flex;
         flex-direction: row;
+
         > .su-multi-menu__link {
 
           font-size: 1.9rem;
@@ -189,14 +190,14 @@
             color: $su-color-black;
 
             &::before {
-            height: 6px;
-            transform: scaleX(1);
-            visibility: visible;
-            background-color: color(h--border, $su-multi-menu-colors);
+              height: 6px;
+              transform: scaleX(1);
+              visibility: visible;
+              background-color: color(h--border, $su-multi-menu-colors);
 
-            @include grid-media("lg") {
-              background-color: color(h--border, $su-multi-menu-light-colors);
-            }
+              @include grid-media("lg") {
+                background-color: color(h--border, $su-multi-menu-light-colors);
+              }
             }
 
             &:hover,
@@ -276,10 +277,10 @@
         > .su-multi-menu__link {
 
           @include padding(null 0 2.4rem 1rem);
-          @include margin(0 1.8em 0 .5rem);
+          @include margin(0 1.8em 0 0.5rem);
 
           &::before {
-            left:-6px;
+            left: -6px;
           }
         }
 
@@ -302,9 +303,10 @@
     .su-multi-menu__menu-lv1 {
       // Top Level Parent Items.
       @include grid-media("lg") {
-      > .su-multi-menu__item {
-        display:contents;
-      }
+
+        > .su-multi-menu__item {
+          display: contents;
+        }
       }
     }
   }
@@ -333,7 +335,7 @@
   // -----------------------------------------------------------------------
   .su-multi-menu__item--current {
     > .su-multi-menu__link {
-    font-weight: $su-font-bold;
+      font-weight: $su-font-bold;
 
       &::before {
         visibility: visible;
@@ -349,9 +351,10 @@
 
       &:hover,
       &:focus {
+
         &::before {
-        transition: left 0.1s ease-out;
-        background-color: color(border--active, $su-multi-menu-colors);
+          transition: left 0.1s ease-out;
+          background-color: color(border--active, $su-multi-menu-colors);
 
           @include grid-media("lg") {
             background-color: color(border--active, $su-multi-menu-light-colors);
@@ -379,66 +382,67 @@
       line-height: 0.7;
 
       &::after {
-      @include margin(0 auto);
-      display: inline-block;
-      width: 30px;
-      height: 26px;
-      background: url("#{$su-image-path}/hamburger-black.svg") no-repeat 3px 0;
-      content: "";
+        @include margin(0 auto);
+        display: inline-block;
+        width: 30px;
+        height: 26px;
+        background: url("#{$su-image-path}/hamburger-black.svg") no-repeat 3px 0;
+        content: "";
       }
 
       &[aria-expanded="true"] {
-      &::before {
-        visibility: visible;
-        transform: scaleX(1);
-        background-color: color(h--border-expanded, $su-multi-menu-colors);
-      }
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+          background-color: color(h--border-expanded, $su-multi-menu-colors);
+        }
 
-      &::after {
-        width: 22px;
-        background: url("#{$su-image-path}/close-black.svg") no-repeat 3px 0;
-        background-size: 16px 16px;
-      }
+        &::after {
+          width: 22px;
+          background: url("#{$su-image-path}/close-black.svg") no-repeat 3px 0;
+          background-size: 16px 16px;
+        }
 
-      &:focus::before,
-      &:hover::before {
-        background-color: color(h--border-hover, $su-multi-menu-colors);
-      }
+        &:focus::before,
+        &:hover::before {
+          background-color: color(h--border-hover, $su-multi-menu-colors);
+        }
 
-      &:active::before {
-        background-color: color(border--active, $su-multi-menu-colors);
-      }
+        &:active::before {
+          background-color: color(border--active, $su-multi-menu-colors);
+        }
       }
 
       &:hover,
       &:active,
       &:focus {
-      background-color: transparent;
-      color: color(h--link, $su-multi-menu-colors);
-      box-shadow: none;
+        background-color: transparent;
+        color: color(h--link, $su-multi-menu-colors);
+        box-shadow: none;
       }
 
       &[aria-expanded="false"] + .su-multi-menu__menu-lv1 {
-      display: none;
+        display: none;
       }
 
       &[aria-expanded="true"] + .su-multi-menu__menu-lv1 {
-      position: absolute;
+        position: absolute;
       }
 
       // Toggle button variants
       &--center {
-      @include margin(null auto);
+        @include margin(null auto);
       }
 
       &--right {
-      @include margin(null 0 null auto);
+        @include margin(null 0 null auto);
       }
     }
 
     @include grid-media-only('md') {
+
       &[aria-expanded="true"]  + .su-multi-menu__menu-lv1 {
-      max-width: 24em;
+        max-width: 24em;
       }
     }
 
@@ -455,6 +459,7 @@
     @include grid-media('lg') {
 
       .su-multi-menu__menu {
+
         > .su-multi-menu__item--parent {
 
           > .su-nav-toggle {
@@ -494,12 +499,12 @@
               background: transparent;
             }
           }
-
         }
       }
 
       // separator bar for dropdown toggle on desktop.
       .su-multi-menu__menu-lv1 {
+
         > .su-multi-menu__item--parent {
 
           > .su-nav-toggle {
@@ -526,6 +531,7 @@
   }
 
   &.su-multi-menu--right {
+
     @include grid-media('lg') {
 
       > ul,
