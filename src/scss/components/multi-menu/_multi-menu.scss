@@ -12,12 +12,13 @@
 // <a href="https://github.com/SU-SWS/decanter/wiki/About-the-Main-Nav-Component">About the Main Nav Component</a>
 // on Decanter's wiki.
 //
-// .su-multi-menu--buttons        - A multiple tier (split) menu that expand with button toggles.
+// .su-multi-menu--buttons    - A multiple tier (split) menu that expand with button toggles.
 //
 // Markup: ../templates/components/multi-menu/multi-menu.twig
 //
 // Style guide: Components.Multi Menu
 //
+
 
 .su-multi-menu {
   @include font-smoothing;
@@ -32,227 +33,524 @@
       @include hide-visually;
     }
   }
-}
 
-// All ul containers.
-// -----------------------------------------------------------------------
-.su-multi-menu__menu {
-  @include margin(0 null);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  list-style: none;
-  background-color: color(bg, $su-multi-menu-colors);
-}
+  // All ul containers.
+  // -----------------------------------------------------------------------
+  .su-multi-menu__menu {
+    @include margin(0 null);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    background-color: color(bg, $su-multi-menu-colors);
 
-// All li elements.
-// -----------------------------------------------------------------------
-.su-multi-menu__item {
-  @include margin(null null 0);
-}
-
-// All link elements.
-// -----------------------------------------------------------------------
-.su-multi-menu__link {
-  @include fancy-hover(
-    color(border--hover, $su-multi-menu-colors),
-    color(border--active, $su-multi-menu-colors),
-    'left'
-  );
-  @include padding(1.6rem 0 1.6rem 2.4rem);
-  @include margin(null 1.6rem null null);
-  display: block;
-  color: color(link, $su-multi-menu-colors);
-  font-weight: $su-font-semi-bold;
-  font-size: 1.8rem;
-  border-bottom: color(divider, $su-multi-menu-colors) solid 1px;
-  outline: 0;
-
-  &:focus,
-  &:hover {
-    color: color(link, $su-multi-menu-colors);
-    text-decoration: underline;
-  }
-}
-
-// First level styles - Vertical - Mobile.
-// -----------------------------------------------------------------------
-.su-multi-menu__menu-lv1 {
-
-  > .su-multi-menu__item--parent {
-    > .su-multi-menu__menu {
-      min-width: 300px;
+    @include grid-media("lg") {
+      background-color: color(bg, $su-multi-menu-light-colors);
     }
-  }
 
-  > li {
-    &:last-child {
-      > .su-multi-menu__menu-lv2 {
-        right: 0;
+    // All li elements.
+    // -----------------------------------------------------------------------
+    .su-multi-menu__item {
+      @include margin(null null 0);
+    }
+
+    // All link elements.
+    // -----------------------------------------------------------------------
+    .su-multi-menu__link {
+      @include fancy-hover(
+        color(border--hover, $su-multi-menu-colors),
+        color(border--active, $su-multi-menu-colors),
+        'left'
+      );
+      @include padding(1.6rem 0 1.6rem 2.4rem);
+      @include margin(null 1.6rem null null);
+      display: block;
+      color: color(link, $su-multi-menu-colors);
+      font-weight: $su-font-semi-bold;
+      font-size: 1.8rem;
+      border-bottom: color(divider, $su-multi-menu-colors) solid 1px;
+      outline: 0;
+
+      &:focus,
+      &:hover {
+        color: color(link, $su-multi-menu-colors);
+        text-decoration: underline;
       }
-    }
-  }
-}
 
-// First level styles - Horizontal - Desktop.
-// -----------------------------------------------------------------------
-.su-multi-menu__menu-lv1 {
-  @include grid-media("lg") {
-    @include padding(null null null 0);
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: transparent;
+      @include grid-media("lg") {
 
-    // Top level horizonal links.
-    // --------------------------
-    > .su-multi-menu__item {
-      > .su-multi-menu__link {
-        @include padding(null 0 2.4rem 0);
-        @include margin(0 1.8em 0 0);
-        font-size: 1.9rem;
-        border-bottom: 0;
-        font-weight: $su-font-semi-bold;
-        color: $su-color-bright-red;
+        @include fancy-hover(
+          color(border--hover, $su-multi-menu-light-colors),
+          color(border--active, $su-multi-menu-light-colors),
+          'left'
+        );
+        @include padding(1.6rem 0 1.6rem 0);
+        @include margin(0 0 0 0);
 
-        &::before {
-          height: 6px;
-          width: 100%;
-          transition: transform 0.3s ease-out;
-          transform: scaleX(0);
-        }
+        color: color(link, $su-multi-menu-light-colors);
+        border-bottom: color(divider, $su-multi-menu-light-colors) solid 1px;
 
-        // State styles for horizontal desktop.
-        // -----------------------------------------------------------------------
-        &:hover,
-        &:active,
-        &:focus {
-          font-weight: $su-font-semi-bold;
-          color: $su-color-black;
+        &:focus,
+        &:hover {
+          color: color(link, $su-multi-menu-light-colors);
           text-decoration: underline;
         }
       }
     }
 
-    // Top level list items.
-    // --------------------------
-    > .su-multi-menu__item {
-      // Items in the active trail should be highlighted.
-      &.su-multi-menu__item--active-trail {
+    // The buttons to open or close sub-menus.
+    // Not to be confused with the mobile menu toggle.
+    // -----------------------------------------------------------------------
+    .su-nav-toggle {
+
+      @include grid-media('lg') {
+        display: none;
+      }
+
+      &[aria-expanded="true"] {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-out;
+      }
+
+      &[aria-expanded="false"] {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-out;
+      }
+
+    }
+
+  }
+
+  // First level styles - Vertical - Mobile.
+  // -----------------------------------------------------------------------
+  .su-multi-menu__menu-lv1 {
+
+    > .su-multi-menu__item--parent {
+      > .su-multi-menu__menu {
+        min-width: 300px;
+      }
+    }
+
+    > li {
+      &:last-child {
+        > .su-multi-menu__menu-lv2 {
+          right: 0;
+        }
+      }
+    }
+
+    @include grid-media("lg") {
+
+      @include padding(null null null 0);
+      flex-direction: row;
+      flex-wrap: wrap;
+      background: transparent;
+
+      // Top level horizonal links.
+      // --------------------------
+      > .su-multi-menu__item {
+
+        @include margin(0 36px 0 0);
+        display: flex;
+        flex-direction: row;
 
         > .su-multi-menu__link {
-          color: $su-color-black;
+
+          font-size: 1.9rem;
+          border-bottom: 0;
+          font-weight: $su-font-semi-bold;
+          color: $su-color-bright-red;
+
 
           &::before {
             height: 6px;
-            transform: scaleX(1);
-            visibility: visible;
-            background-color: color(h--border, $su-multi-menu-colors);
+            width: 100%;
+            transition: transform 0.3s ease-out;
+            transform: scaleX(0);
           }
 
+          // State styles for horizontal desktop.
+          // -----------------------------------------------------------------------
           &:hover,
+          &:active,
           &:focus {
+            font-weight: $su-font-semi-bold;
+            color: $su-color-black;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      // Top level list items.
+      // --------------------------
+      > .su-multi-menu__item {
+        // Items in the active trail should be highlighted.
+        &.su-multi-menu__item--active-trail {
+          > .su-multi-menu__link {
             color: $su-color-black;
 
             &::before {
-              background: 0;
+              height: 6px;
+              transform: scaleX(1);
+              visibility: visible;
+              background-color: color(h--border, $su-multi-menu-colors);
+
+              @include grid-media("lg") {
+                background-color: color(h--border, $su-multi-menu-light-colors);
+              }
+            }
+
+            &:hover,
+            &:focus {
+              color: $su-color-black;
+
+              &::before {
+                background: 0;
+              }
             }
           }
         }
-      }
 
-      // First level current items.
-      &.su-multi-menu__item--current {
-        > .su-multi-menu__link {
-          color: $su-color-black;
+        // First level current items.
+        &.su-multi-menu__item--current {
+          > .su-multi-menu__link {
+            color: $su-color-black;
 
-          &::before {
-            background-color: $su-color-black;
-            transform: scaleX(1);
-          }
-
-          &:hover {
             &::before {
-              display: none;
+              background-color: $su-color-black;
+              transform: scaleX(1);
+            }
+
+            &:hover {
+              &::before {
+                display: none;
+              }
+            }
+
+          }
+        }
+
+        // First level expanded items.
+        &.su-multi-menu__item--expanded {
+          > a {
+            &::before {
+              height: 6px;
+              transform: scaleX(1);
+              visibility: visible;
             }
           }
-
         }
       }
+    }
+  }
 
-      // First level expanded items.
-      &.su-multi-menu__item--expanded {
-        > a {
+  // Second level styles
+  // -----------------------------------------------------------------------
+  .su-multi-menu__menu-lv2 {
+    // Drop down menu containers.
+    // --------------------------
+    @include grid-media('lg') {
+      @include padding(1px null null 1.2rem);
+      @include margin(null null null -1.7rem);
+      @include box-shadow('medium', none);
+      z-index: 101;
+      position: absolute;
+      top: 58px;
+      max-width: 30rem;
+
+      .su-multi-menu__link {
+        width: 100%;
+      }
+    }
+
+  }
+
+  // Desktop styles for various levels of dropdown menus.
+  // -----------------------------------------------------------------------
+  .su-multi-menu__menu-lv2,
+  .su-multi-menu__menu-lv3,
+  .su-multi-menu__menu-lv4,
+  .su-multi-menu__menu-lv5 {
+    @include grid-media('lg') {
+
+      > .su-multi-menu__item {
+
+        > .su-multi-menu__link {
+
+          @include padding(null 0 2.4rem 1rem);
+          @include margin(0 1.8em 0 0.5rem);
+
           &::before {
-            height: 6px;
-            transform: scaleX(1);
-            visibility: visible;
+            left: -6px;
+          }
+        }
+
+      }
+
+      // We have to get rid of the bottom border for the last item
+      // in the menu for desktop resolutions.
+      .su-multi-menu__item:not(.su-multi-menu__item--expanded) {
+        &:last-child {
+          .su-multi-menu__link {
+            border-bottom: 0;
           }
         }
       }
     }
-  } // End of media-lg.
-} // End of .su-multi-menu__menu-lv1
-
-// Second level styles
-// -----------------------------------------------------------------------
-.su-multi-menu__menu-lv2 {
-  // Drop down menu containers.
-  // --------------------------
-  @include grid-media('lg') {
-    @include padding(1px null null 1.2rem);
-    @include margin(null null null -1.7rem);
-    @include box-shadow('medium', none);
-    z-index: 101;
-    position: absolute;
-    max-width: 30rem;
   }
-}
 
-// Third level styles.
-// -----------------------------------------------------------------------
-// .su-multi-menu__menu-lv3 {
-// Nothing to see here.
-// }
+  .su-multi-menu--buttons {
+    // Menu Level 1 (top)
+    .su-multi-menu__menu-lv1 {
+      // Top Level Parent Items.
+      @include grid-media("lg") {
 
-// Items with children
-// -----------------------------------------------------------------------
-.su-multi-menu__item--parent {
-  position: relative;
-
-  // Hide the drop downs by default.
-  > .su-multi-menu__menu {
-    display: none;
+        > .su-multi-menu__item {
+          display: contents;
+        }
+      }
+    }
   }
-}
 
-// Expanded items state.
-// -----------------------------------------------------------------------
-.su-multi-menu__item--expanded {
-  // This shows the open children.
-  > .su-multi-menu__menu {
-    display: flex;
+  // Items with children
+  // -----------------------------------------------------------------------
+  .su-multi-menu__item--parent {
+    position: relative;
+
+    // Hide the drop downs by default.
+    > .su-multi-menu__menu {
+      display: none;
+    }
   }
-}
 
-// Active or Current items.
-// -----------------------------------------------------------------------
-.su-multi-menu__item--current {
-  > .su-multi-menu__link {
-    font-weight: $su-font-bold;
+  // Expanded items state.
+  // -----------------------------------------------------------------------
+  .su-multi-menu__item--expanded {
+    // This shows the open children.
+    > .su-multi-menu__menu {
+      display: flex;
+    }
+  }
 
-    &::before {
-      visibility: visible;
-      height: 100%;
-      width: 6px;
-      transform: scaleY(1);
-      background-color: color(border--active, $su-multi-menu-colors);
+  // Active or Current items.
+  // -----------------------------------------------------------------------
+  .su-multi-menu__item--current {
+    > .su-multi-menu__link {
+      font-weight: $su-font-bold;
+
+      &::before {
+        visibility: visible;
+        height: 100%;
+        width: 6px;
+        transform: scaleY(1);
+        background-color: color(border--active, $su-multi-menu-colors);
+
+        @include grid-media("lg") {
+          background-color: color(border--active, $su-multi-menu-light-colors);
+        }
+      }
+
+      &:hover,
+      &:focus {
+
+        &::before {
+          transition: left 0.1s ease-out;
+          background-color: color(border--active, $su-multi-menu-colors);
+
+          @include grid-media("lg") {
+            background-color: color(border--active, $su-multi-menu-light-colors);
+          }
+        }
+      }
+    }
+  }
+
+  // The button to toggle or close the mobile menu.
+  .su-multi-menu__nav-toggle {
+
+    @include grid-media-max('md') {
+      @include fancy-hover(color(h--border-hover, $su-multi-menu-colors), color(border--active, $su-multi-menu-colors));
+      @include padding(0 0 2rem);
+      @include margin(0);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      outline: none;
+      width: 40px;
+      background-color: transparent;
+      color: color(h--link, $su-multi-menu-colors);
+      font-size: 1.6rem;
+      line-height: 0.7;
+
+      &::after {
+        @include margin(0 auto);
+        display: inline-block;
+        width: 30px;
+        height: 26px;
+        background: url("#{$su-image-path}/hamburger-black.svg") no-repeat 3px 0;
+        content: "";
+      }
+
+      &[aria-expanded="true"] {
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+          background-color: color(h--border-expanded, $su-multi-menu-colors);
+        }
+
+        &::after {
+          width: 22px;
+          background: url("#{$su-image-path}/close-black.svg") no-repeat 3px 0;
+          background-size: 16px 16px;
+        }
+
+        &:focus::before,
+        &:hover::before {
+          background-color: color(h--border-hover, $su-multi-menu-colors);
+        }
+
+        &:active::before {
+          background-color: color(border--active, $su-multi-menu-colors);
+        }
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        color: color(h--link, $su-multi-menu-colors);
+        box-shadow: none;
+      }
+
+      &[aria-expanded="false"] + .su-multi-menu__menu-lv1 {
+        display: none;
+      }
+
+      &[aria-expanded="true"] + .su-multi-menu__menu-lv1 {
+        position: absolute;
+      }
+
+      // Toggle button variants
+      &--center {
+        @include margin(null auto);
+      }
+
+      &--right {
+        @include margin(null 0 null auto);
+      }
     }
 
-    &:hover,
-    &:focus {
-      &::before {
-        transition: left 0.1s ease-out;
-        background-color: color(border--active, $su-multi-menu-colors);
+    @include grid-media-only('md') {
+
+      &[aria-expanded="true"]  + .su-multi-menu__menu-lv1 {
+        max-width: 24em;
+      }
+    }
+
+    @include grid-media('lg') {
+      display: none;
+    }
+
+  }
+
+  // Specific overrides for dropdown menus on desktop
+  // -----------------------------------------------------------------------
+  &.su-multi-menu--dropdowns {
+
+    @include grid-media('lg') {
+
+      .su-multi-menu__menu {
+
+        > .su-multi-menu__item--parent {
+
+          > .su-nav-toggle {
+            @include padding(0);
+            display: inline-block;
+            right: 0;
+            text-align: center;
+            font-size: 0;
+            overflow: hidden;
+            z-index: 10;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+
+            &::before {
+              content: "";
+              background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+              background-size: 15px;
+              border-radius: 0;
+            }
+
+            &:focus,
+            &:hover {
+              background: transparent;
+
+              &::before {
+                background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+                background-size: 15px;
+              }
+            }
+
+            &:focus,
+            &:active {
+              outline: none;
+              box-shadow: none;
+              font-weight: $su-font-bold;
+              background: transparent;
+            }
+          }
+        }
+      }
+
+      // separator bar for dropdown toggle on desktop.
+      .su-multi-menu__menu-lv1 {
+
+        > .su-multi-menu__item--parent {
+          @include margin(0 43px 0 0);
+
+          > .su-nav-toggle {
+            position: relative;
+            width: 15px;
+            height: 15px;
+            top: calc(50% - 6px);
+            left: 6px;
+          }
+
+          > .su-multi-menu__link {
+            &::after {
+              content: '';
+              height: 1em;
+              margin-bottom: -5px;
+              margin-left: 12px;
+              border-right: #766253 solid 1px;
+              display: inline-block;
+            }
+          }
+        }
+      }// end of separator bar for dropdown toggle.
+    }
+  }
+
+  &.su-multi-menu--right {
+
+    @include grid-media('lg') {
+
+      > ul,
+      .su-multi-menu__menu-lv1 {
+        display: flex;
+        justify-content: flex-end;
+
+        > li:last-of-type,
+        > .su-multi-menu__item:last-child,
+        > .su-multi-menu__item--parent:last-of-type {
+          @include padding(null 0 null null);
+          @include margin(null 0 null null);
+
+          & > .su-multi-menu__link {
+            @include margin(null 0 null null);
+          }
+        }
       }
     }
   }

@@ -4,6 +4,7 @@ import OnArrowLeftLV1 from './events/OnArrowLeftLV1';
 import OnArrowRightLV1 from './events/OnArrowRightLV1';
 import OnArrowDownToggleLV1 from './events/OnArrowDownToggleLV1';
 import OnClickToggleLV1 from './events/OnClickToggleLV1';
+import OnArrowUpToggleLV1 from './events/OnArrowUpToggleLV1';
 
 /**
  * SecondarySubNavAccordion Class
@@ -25,7 +26,6 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
   createEventRegistry(options) {
 
     var registryDefaults = super.createEventRegistry({});
-
     // If we are the first level (top) we need to adjust for mobile vs desktop.
     if (this.getDepth() === 1) {
       registryDefaults = Object.assign(registryDefaults, {
@@ -42,12 +42,12 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
    */
    initToggleButton() {
      var options = {};
-
      // Overrides for level 1 desktop.
      if (this.getDepth() === 1) {
        options.eventRegistry = {
          onKeydownArrowRight: OnArrowRightToggleLV1,
          onKeydownArrowDown: OnArrowDownToggleLV1,
+         onKeydownArrowUp: OnArrowUpToggleLV1,
          onClick: OnClickToggleLV1
        };
      }
