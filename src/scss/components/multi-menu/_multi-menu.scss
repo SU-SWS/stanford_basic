@@ -203,6 +203,7 @@
             &:hover,
             &:focus {
               color: $su-color-black;
+
               &::before {
                 background: 0;
               }
@@ -464,7 +465,7 @@
 
           > .su-nav-toggle {
             @include padding(0);
-            display:inline-block;
+            display: inline-block;
             right: 0;
             text-align: center;
             font-size: 0;
@@ -508,7 +509,7 @@
         > .su-multi-menu__item--parent {
 
           > .su-nav-toggle {
-            position:relative;
+            position: relative;
             width: 15px;
             height: 15px;
             top: calc(50% - 6px);
@@ -536,7 +537,7 @@
 
       > ul,
       .su-multi-menu__menu-lv1 {
-        display:flex;
+        display: flex;
         justify-content: flex-end;
 
         > li:last-of-type,
@@ -579,8 +580,8 @@ ul {
     .su-site-search {
       &.search-block-form {
         @include grid-media-between('xs', 'md') {
-        @include modular-spacing('margin', 1 1 0 0);
-        display: block;
+          @include modular-spacing('margin', 1 1 0 0);
+          display: block;
         }
       }
     }
