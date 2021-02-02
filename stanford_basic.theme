@@ -237,7 +237,7 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
     _stanford_basic_menu_process_submenu($menu_item, $current_path);
     $item = $menu_item[0];
   }
-  if (theme_get_setting('nav_dropdown_enabled')) {
+  if (theme_get_setting('nav_dropdown_enabled', 'stanford_basic')) {
     $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
   }
 }
