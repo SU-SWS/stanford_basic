@@ -24,7 +24,7 @@ function stanford_basic_page_attachments_alter(array &$attachments) {
     $attachments['#attached']['library'][] = 'stanford_basic/user_login';
   }
   // Check if dropdown menus are activated
-  $attachments['#attached']['drupalSettings']['stanford_basic']['nav_dropdown_enabled'] = (theme_get_setting('nav_dropdown_enabled')) ? TRUE : FALSE;
+  $attachments['#attached']['drupalSettings']['stanford_basic']['nav_dropdown_enabled'] = (bool) theme_get_setting('nav_dropdown_enabled', 'stanford_basic');
 }
 
 /**
