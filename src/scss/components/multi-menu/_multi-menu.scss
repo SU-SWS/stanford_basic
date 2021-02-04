@@ -274,6 +274,7 @@
     @include grid-media('lg') {
 
       > .su-multi-menu__item {
+        overflow: hidden;
 
         > .su-multi-menu__link {
 
@@ -460,6 +461,7 @@
     @include grid-media('lg') {
 
       .su-multi-menu__menu {
+
 
         > .su-multi-menu__item--parent {
 
