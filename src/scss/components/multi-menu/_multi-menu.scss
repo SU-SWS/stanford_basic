@@ -489,6 +489,8 @@
             &:hover {
 
               &[aria-expanded="false"] {
+                transition: transform 0.3s ease-out, border-bottom 0.25s steps(1);
+                transform: rotate(0deg);
                 border-bottom: solid 1px $su-color-black;
               }
             }
