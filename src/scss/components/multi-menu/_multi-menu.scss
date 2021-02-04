@@ -475,11 +475,22 @@
             outline: none;
             box-shadow: none;
 
+            &[aria-expanded="true"] {
+              border: 0;
+            }
+
             &::before {
               content: "";
-              background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+              background: url("#{$theme-asset-path}/caret-down-red.svg") no-repeat center / 50%;
               background-size: 15px;
               border-radius: 0;
+            }
+
+            &:hover {
+
+              &[aria-expanded="false"] {
+                border-bottom: solid 1px black;
+              }
             }
 
             &:focus,
