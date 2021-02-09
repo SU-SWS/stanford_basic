@@ -1,5 +1,14 @@
 # Stanford Basic Theme
 
+8.x-4.15
+--------------------------------------------------------------------------------
+_Release Date: 2021-02-08_
+
+- D8CORE-3441: a11y changes for dropdowns (#208) (78ee97f)
+- fixup: Adjust `theme_get_setting` to target this theme, so that subthemes inherit it. (e25ebf0)
+- Adjust `theme_get_setting` to target this theme, so that subthemes inherit it. (#207) (d42b2c1)
+- D8CORE-1123: Enable dropdowns for desktop (#206) (6247410)
+
 8.x-4.14
 --------------------------------------------------------------------------------
 _Release Date: 2020-12-04_

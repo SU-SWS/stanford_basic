@@ -58,6 +58,7 @@ export default class SecondarySubNavButtons {
 
     // Add the accessibility meta-information.
     this.initAccessibility();
+
   }
 
   /**
