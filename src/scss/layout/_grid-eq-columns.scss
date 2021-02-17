@@ -11,8 +11,7 @@
   grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 40px;
-  grid-template-areas:
-    "A B C";
+  grid-template-areas: "A B C";
 
   @include grid-media('sm') {
     @include display-grid;
