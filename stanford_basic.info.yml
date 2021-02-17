@@ -20,7 +20,7 @@ features:
 components:
   namespaces:
     basic: templates
-    basic-dist: dist/templatesZ
+    basic-dist: dist/templates
 libraries:
   - stanford_basic/basic
 ckeditor_stylesheets:
