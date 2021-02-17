@@ -274,6 +274,7 @@
     @include grid-media('lg') {
 
       > .su-multi-menu__item {
+        overflow: hidden;
 
         > .su-multi-menu__link {
 
@@ -461,6 +462,7 @@
 
       .su-multi-menu__menu {
 
+
         > .su-multi-menu__item--parent {
 
           > .su-nav-toggle {
@@ -475,11 +477,24 @@
             outline: none;
             box-shadow: none;
 
+            &[aria-expanded="true"] {
+              border: 0;
+            }
+
             &::before {
               content: "";
-              background: url("#{$su-image-path}/caret-down-black.svg") no-repeat center / 50%;
+              background: url("#{$theme-asset-path}/caret-down-red.svg") no-repeat center / 50%;
               background-size: 15px;
               border-radius: 0;
+            }
+
+            &:hover {
+
+              &[aria-expanded="false"] {
+                transition: transform 0.3s ease-out, border-bottom 0.25s steps(1);
+                transform: rotate(0deg);
+                border-bottom: solid 1px $su-color-black;
+              }
             }
 
             &:focus,
