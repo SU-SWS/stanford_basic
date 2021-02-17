@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+// A grid to use with Event cards and People Grid
+// Used on:
+// 1. The people grid page.
+// 2. Event cards in a paragraph row
+
+.grid-container {
+  display: grid;
+
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  grid-template-areas:
+    "A B C";
+
+  @include grid-media('sm') {
+    @include display-grid;
+  }
+
+  @include grid-media-max('sm') {
+    display: block;
+  }
+
+  div {
+    div {
+      overflow: hidden;
+    }
+  }
+
+  .col-1 {
+    grid-area: A;
+  }
+
+  .col-2 {
+    grid-area: B;
+  }
+
+  .col-3 {
+    grid-area: C;
+  }
+
+}
+
+
+
