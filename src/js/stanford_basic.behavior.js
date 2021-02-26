@@ -28,9 +28,9 @@ export default {
 
       // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
-      const $search = $('.su-masthead .su-site-search', context).length;
-      if ($search) {
-        const $clonedSearch = $('.su-masthead .su-site-search', context).clone();
+      const $search = $('.su-masthead .su-site-search', context);
+      if ($search.length) {
+        const $clonedSearch = $search.clone();
         // Adjust the parent id attribute.
         $clonedSearch.attr('id', 'block-stanford-basic-search-mobile');
         // Adjust all the children id attributes and fix any labels.
