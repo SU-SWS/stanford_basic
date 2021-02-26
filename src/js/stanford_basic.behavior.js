@@ -36,9 +36,9 @@ export default {
         // Adjust all the children id attributes and fix any labels.
         $clonedSearch.find('[id]').each((i, element) => {
           const idAttribute = $(element).attr('id');
-          $clonedSearch.find(`[for="${idAttribute}"]`).attr('for', `${idAttribute}-mobile`)
+          $clonedSearch.find(`[for="${idAttribute}"]`).attr('for', `${idAttribute}-mobile`);
           $(element).attr('id', `${idAttribute}-mobile`);
-        })
+        });
 
         $clonedSearch.prependTo('.su-masthead .su-multi-menu > ul', context)
           .wrap('<li class="su-mobile-site-search"></li>');
