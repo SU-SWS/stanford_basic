@@ -28,14 +28,20 @@ export default {
 
       // Check for search box and move the second block to the mobile navigation.
       // Hide it and then only show for mobile sites.
-      var $search = $('.su-masthead .su-site-search', context).length;
-      if ($search) {
-        var $ms = $('.su-masthead .su-site-search', context);
-        $($ms.clone())
-          .prependTo('.su-masthead .su-multi-menu > ul', context)
-          .wrap('<li class="su-mobile-site-search"></li>')
-          .attr('id', 'block-stanford-basic-search-mobile')
-          .find('[id]').each(() => {$(this).attr('id', $(this).attr('id') + '-mobile');});
+      const $search = $('.su-masthead .su-site-search', context);
+      if ($search.length) {
+        const $clonedSearch = $search.clone();
+        // Adjust the parent id attribute.
+        $clonedSearch.attr('id', 'block-stanford-basic-search-mobile');
+        // Adjust all the children id attributes and fix any labels.
+        $clonedSearch.find('[id]').each((i, element) => {
+          const idAttribute = $(element).attr('id');
+          $clonedSearch.find(`[for="${idAttribute}"]`).attr('for', `${idAttribute}-mobile`);
+          $(element).attr('id', `${idAttribute}-mobile`);
+        });
+
+        $clonedSearch.prependTo('.su-masthead .su-multi-menu > ul', context)
+          .wrap('<li class="su-mobile-site-search"></li>');
       }
 
       // Add an outline class to the page-content region if local tasks are
