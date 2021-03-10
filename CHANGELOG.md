@@ -1,5 +1,28 @@
 # Stanford Basic Theme
 
+8.x-5.2
+--------------------------------------------------------------------------------
+_Release Date: 2021-03-10_
+
+- D8CORE-3502: Hotfix for active, focus pseudoclasses on dropdown toggle.
+
+8.x-5.1
+--------------------------------------------------------------------------------
+_Release Date: 2021-03-05_
+
+- retag only
+
+8.x-5.0
+--------------------------------------------------------------------------------
+_Release Date: 2021-03-05_
+
+- Merge branch '8.x-4.x' into 8.x-5.x (c518e21)
+- D8CORE-3473 Fix the mobile menu search attributes (#214) (f1c1abc)
+- D8CORE-2944: Using flex for the alignment (#213) (ad7722c)
+- Update components namespace for latest components version (#211) (89e32c9)
+- D8CORE-3495: adding a margin-top for the title (#210) (8e445c8)
+- Merge branch '8.x-4.x' into 8.x-5.x (b5429ac)
+
 8.x-4.15
 --------------------------------------------------------------------------------
 _Release Date: 2021-02-08_
