@@ -479,6 +479,12 @@
 
             &[aria-expanded="true"] {
               border: 0;
+
+              &:focus,
+              &:active {
+                border-top: solid 1px $su-color-black;
+                border-bottom: 0;
+              }
             }
 
             &::before {
@@ -513,6 +519,7 @@
               box-shadow: none;
               font-weight: $su-font-bold;
               background: transparent;
+              border-bottom: solid 1px $su-color-black;
             }
           }
         }
