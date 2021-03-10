@@ -3,6 +3,7 @@
 //
 // Custom Styles For Stanford Page Content Type.
 //
-.node-stanford-page-title {
+.node-stanford-page-title,
+.block--page-title {
   @include modular-spacing('margin-top', 6);
 }
