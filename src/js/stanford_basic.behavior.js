@@ -31,6 +31,7 @@ export default {
       const $search = $('.su-masthead .su-site-search', context);
       if ($search.length) {
         const $clonedSearch = $search.clone();
+        $clonedSearch.addClass('search-block-form');
         // Adjust the parent id attribute.
         $clonedSearch.attr('id', 'block-stanford-basic-search-mobile');
         // Adjust all the children id attributes and fix any labels.
