@@ -1,13 +1,15 @@
 @charset 'UTF-8';
 
-.stanford-events {
-  &.cards {
-    .views-view-grid {
-      > .flex-container {
-        justify-content: left;
+@include grid-media-min('lg') {
+  .stanford-events {
+    &.cards {
+      .views-view-grid {
+        > .flex-container {
+          justify-content: left;
 
-        > div:not(:last-of-type) {
-          @include responsive-spacing('padding-right', 1);
+          > div:not(:last-of-type) {
+            @include responsive-spacing('padding-right', 1);
+          }
         }
       }
     }
