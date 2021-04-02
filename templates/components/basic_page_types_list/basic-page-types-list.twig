@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Basic Page Types List
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - basic_page_types_category: The taxonomy term for the type.
+ * - basic_page_types_title: The Page title.
+ * - basic_page_types_description: The page description.
+ * - basic_page_types_page_image: the page image.
+ * - basic_page_types_footer: an open footer.
+ */
+#}
+{%- set attributes = attributes.addClass(['su-basic-page-types-list', modifier_class]) -%}
+
+<ul{{ attributes }}>
+
+{%- block block_basic_page_types_category  %}
+{% if basic_page_types_category|render|striptags('<drupal-render-placeholder>') is not empty %}
+    <li class="su-basic-page-list__category">{{- basic_page_types_category -}}</li>
+{% endif %}
+{% endblock -%}
+
+{%- block block_basic_page_types_title  %}
+{% if basic_page_types_title|render|striptags('<drupal-render-placeholder>') is not empty %}
+    <li class="su-basic-page-list__title">
+        {% if basic_page_types_page_image|render|striptags('<drupal-render-placeholder><img><picture>') is not empty %}
+            <li class="su-basic-page-list__image">{{- basic_page_types_page_image -}}</li>
+        {% endif %}
+        <h2>{{- basic_page_types_title -}}</h2>
+    </li>
+{% endif %}
+{% endblock -%}
+
+{%- block block_basic_page_types_description  %}
+{% if basic_page_types_description|render|striptags('<drupal-render-placeholder>') is not empty %}
+    <li class="su-basic-page-list__description">{{- basic_page_types_description -}}</li>
+{% endif %}
+{% endblock -%}
+
+{%- block block_basic_page_types_image  %}
+
+{% endblock -%}
+
+{%- block block_basic_page_types_footer  %}
+{% if basic_page_types_footer|render|striptags('<drupal-render-placeholder>') is not empty %}
+    <li class="su-basic-page-list__footer">{{- basic_page_types_footer -}}</li>
+{% endif %}
+{% endblock -%}
+
+</ul>

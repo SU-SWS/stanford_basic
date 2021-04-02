@@ -40,7 +40,6 @@
     "fibers": "^4.0.2",
     "file-loader": "^3.0",
     "filemanager-webpack-plugin": "^2.0",
-    "fsevents": "^2.2.1",
     "mini-css-extract-plugin": "^0.5",
     "node-gyp": "^7.1.2",
     "node-pre-gyp": "^0.15.0",

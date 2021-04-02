@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+//
+// Custom Styles For Stanford Page Content Type.
+//
+
+.su-basic-page-types-list {
+  @include margin(0);
+  @include padding(0);
+  @include modular-spacing('padding', 4 null);
+
+  list-style: none;
+  overflow: auto;
+  border-bottom: 1px solid $su-color-cool-grey-25;
+
+  a {
+    @include link;
+
+    color: $su-color-bright-red;
+    text-decoration: none;
+  }
+
+  h2 {
+    @include modular-spacing('margin-bottom', 1);
+
+    display: inline;
+  }
+
+  .media {
+    @include modular-spacing('margin-left', 3);
+    float: right;
+
+    @include grid-media-max('lg') {
+      display: none;
+    }
+  }
+
+  .su-basic-page-list__category {
+    @include small-paragraph;
+  }
+
+  .su-basic-page-list__title {}
+
+  .su-basic-page-list__description {
+    @include big-paragraph;
+    @include modular-spacing('margin-bottom', 2);
+  }
+
+  .su-basic-page-list__image {}
+
+  .su-basic-page-list__footer {
+    a {
+      @include button-secondary;
+      text-align: right;
+    }
+  }
+
+  .views-infinite-scroll-content-wrapper {
+    @include modular-spacing('margin-bottom', 5);
+
+    & + .js-pager__items {
+      @include modular-spacing('margin-bottom', 8);
+    }
+  }
+
+
+
+}
+
+// Load more button.
+.js-pager__items {
+  text-align: center;
+
+  .pager__item {
+    display: inline-block;
+
+    .button {
+      @include button-big;
+    }
+  }
+}
+
+
+// List Items.
+// Removes the padding top for the first item.
+.views-infinite-scroll-content-wrapper {
+
+  @include modular-spacing('margin-bottom', 5);
+
+  & + .js-pager__items {
+    @include modular-spacing('margin-bottom', 8);
+  }
+
+  div:first-child {
+    .su-basic-page-types-list {
+      @include grid-media-min('xl') {
+        padding-top: 0;
+      }
+    }
+  }
+}
