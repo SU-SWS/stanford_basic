@@ -80,7 +80,6 @@
   }
 }
 
-
 // List Items.
 // Removes the padding top for the first item.
 .views-infinite-scroll-content-wrapper {
@@ -98,4 +97,66 @@
       }
     }
   }
+}
+
+.su-basic-page-types-vertical-teaser {
+  &.su-card {
+
+    @include modular-spacing('margin-bottom', 2);
+    @include margin(0 auto);
+    max-width: 980px;
+    overflow: auto;
+
+    // Put the focus on the whole card
+    &:focus-within {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+
+  }
+
+  .su-media__wrapper {
+    @include modular-spacing('margin-bottom', 0);
+
+    img,
+    picture {
+      min-width: 100%;
+      width: 100%;
+    }
+
+  }
+
+  .su-news-header {
+    @include modular-spacing('margin-left', 2);
+    @include modular-spacing('margin-right', 2);
+
+    .su-basic-page-types__categories{
+      @include big-paragraph;
+    }
+
+    .su-card__link {
+      @include type-c;
+
+      a {
+        color: $su-color-black;
+        display: inline-block;
+        font-weight: $su-font-bold;
+
+        &::after {
+           @include modular-spacing('margin-left', -1);
+           background-color: $su-color-bright-red;
+        }
+      }
+
+    }
+  }
+
+  .su-card__contents {
+    &:not(.su-card--icon) {
+      padding-top: 0;
+    }
+  }
+
+
+
+
 }

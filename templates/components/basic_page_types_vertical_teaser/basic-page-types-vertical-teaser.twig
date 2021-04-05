@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Basic Page Types vertical teaser
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - basic_page_types_category: The taxonomy term for the type.
+ * - basic_page_types_title: The Page title.
+ * - basic_page_types_description: The page description.
+ * - basic_page_types_page_image: the page image.
+ * - basic_page_types_footer: an open footer.
+ */
+#}
+
+{%-
+  set classes = [
+    'su-card',
+    'su-basic-page-types-vertical-teaser',
+    modifier_class
+  ]
+-%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  <figure class="su-media su-media--image su-card__media">
+    <div class="su-media__wrapper">
+      {{- basic_page_types_page_image -}}
+    </div>
+  </figure>
+
+  <div class="su-news-header">
+    <p class="su-basic-page-types__categories">{{- basic_page_types_category -}}</p>
+    <h2 class="su-link su-card__link">
+      {{ basic_page_types_title }}
+    </h2>
+  </div>
+
+  <div class="su-card__contents">
+    {{- basic_page_types_description -}}
+  </div>
+
+   {%- if basic_page_types_footer is not empty -%}
+    <div class="su-basic-page-types-vertical-teaser__footer">{{- basic_page_types_footer -}}</div>
+  {%- endif -%}
+
+</article>
