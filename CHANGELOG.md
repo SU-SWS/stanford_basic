@@ -1,5 +1,13 @@
 # Stanford Basic Theme
 
+8.x-5.4
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-09_
+
+- D8CORE-3682: Fixed word wrapping on long menu titles (#222) (6547451)
+- D8CORE-3957: moved events styles code to the the events module (#221) (00a3784)
+- D8CORE-3474: unsetting the white color to fix for a11y (#218) (ba48fa8)
+
 8.x-5.3
 --------------------------------------------------------------------------------
 _Release Date: 2021-03-11_
