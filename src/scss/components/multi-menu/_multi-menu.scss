@@ -280,11 +280,22 @@
 
           @include padding(null 0 2.4rem 1rem);
           @include margin(0 1.8em 0 0.5rem);
-          max-width: calc(100% - 40px);
-          word-wrap: break-word;
 
           &::before {
             left: -6px;
+          }
+
+          .su-multi-menu__link-text-wrapper {
+            display: inline-block;
+            word-wrap: break-word;
+          }
+        }
+
+        &.su-multi-menu__item--parent {
+          > .su-multi-menu__link {
+            .su-multi-menu__link-text-wrapper {
+              max-width: calc(100% - 40px);
+            }
           }
         }
 
