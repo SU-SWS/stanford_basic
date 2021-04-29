@@ -275,6 +275,7 @@
 
       > .su-multi-menu__item {
         overflow: hidden;
+        z-index: 102;
 
         > .su-multi-menu__link {
 
@@ -288,6 +289,7 @@
           .su-multi-menu__link-text-wrapper {
             display: inline-block;
             word-wrap: break-word;
+            max-width: calc(100% - 10px);
           }
         }
 
