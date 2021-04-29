@@ -280,7 +280,7 @@
 
           @include padding(null 0 2.4rem 1rem);
           @include margin(0 1.8em 0 0.5rem);
-          max-width: calc(100% - 20px);
+          max-width: calc(100% - 40px);
           word-wrap: break-word;
 
           &::before {
