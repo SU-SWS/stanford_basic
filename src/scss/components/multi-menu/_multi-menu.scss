@@ -313,6 +313,19 @@
         }
       }
     }
+
+    @include grid-media-max('md') {
+      .su-multi-menu__item--parent {
+
+        .su-multi-menu__link-text-wrapper {
+          display: inline-block;
+          word-wrap: break-word;
+          max-width: calc(100% - 38px);
+        }
+
+      }
+
+    }
   }
 
   .su-multi-menu--buttons {
