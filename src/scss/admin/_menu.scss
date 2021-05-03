@@ -16,6 +16,8 @@ a:focus {
   }
 }
 
+.su-multi-menu__item--expanded { .unpublished-indicator { top: 0; } }
+
 .unpublished-indicator {
   @include padding(4px 10px);
 
