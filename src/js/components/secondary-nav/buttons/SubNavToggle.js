@@ -32,6 +32,11 @@ export default class SubNavToggle {
     // Assign the event dispatcher and event registry.
     this.eventRegistry = this.createEventRegistry(options);
     this.dispatch = new EventHandlerDispatch(element, this);
+
+    // Label the toggle to indicate what menu it opens
+    let menuName = this.parentNav.item.innerText.trim().split('\n');
+    this.toggle.ariaLabel = 'Open the ' + menuName[0].trim() + ' menu';
+
   }
 
   /**
@@ -60,6 +65,7 @@ export default class SubNavToggle {
     };
 
     return Object.assign(registryDefaults, options.eventRegistry);
+
   }
 
   /**
