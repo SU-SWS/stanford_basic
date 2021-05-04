@@ -178,6 +178,7 @@
             color: $su-color-black;
             text-decoration: underline;
           }
+
         }
       }
 
@@ -323,6 +324,10 @@
     // Hide the drop downs by default.
     > .su-multi-menu__menu {
       display: none;
+    }
+
+    @include grid-media-max('md') {
+      max-width: calc(100% - 58px);
     }
   }
 
