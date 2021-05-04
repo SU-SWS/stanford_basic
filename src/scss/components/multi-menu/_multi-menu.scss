@@ -326,9 +326,6 @@
       display: none;
     }
 
-    @include grid-media-max('md') {
-      max-width: calc(100% - 58px);
-    }
   }
 
   // Expanded items state.

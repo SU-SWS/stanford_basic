@@ -34,7 +34,7 @@ export default class OnEsc extends EventAbstract {
     if (node) {
       node.focus();
     }
-    return;
+
   }
 
 }
