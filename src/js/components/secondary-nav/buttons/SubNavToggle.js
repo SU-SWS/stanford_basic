@@ -34,8 +34,8 @@ export default class SubNavToggle {
     this.dispatch = new EventHandlerDispatch(element, this);
 
     // Label the toggle to indicate what menu it opens
-    let menuName = this.parentNav.item.innerText.trim().split('\n');
-    this.toggle.ariaLabel = 'Open the ' + menuName[0].trim() + ' menu';
+    var menuName = this.parentNav.item.innerText.trim().split('\n');
+    this.elem.setAttribute('aria-label', 'Open the ' + menuName[0].trim() + ' menu');
 
   }
 
