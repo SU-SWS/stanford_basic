@@ -33,9 +33,19 @@ export default class SubNavToggle {
     this.eventRegistry = this.createEventRegistry(options);
     this.dispatch = new EventHandlerDispatch(element, this);
 
-    // Label the toggle to indicate what menu it opens
+    // Label the toggle to indicate which menu it opens
     this.elem.setAttribute('aria-label', 'Open the ' + this.parentNav.elem.innerText.trim() + ' menu');
 
+    // Create an observer to watch if the toggled menu changes state.
+    var self = this;
+    this.observer = new MutationObserver(function () {
+      var verb = 'Close';
+      if (self.elem.getAttribute('aria-expanded') == 'false') {
+        verb = 'Open';
+      }
+      self.elem.setAttribute('aria-label', verb + ' the ' + self.parentNav.elem.innerText.trim() + ' menu');
+    });
+    this.observer.observe(this.elem, { attributeFilter: ['aria-expanded'] });
   }
 
   /**
@@ -73,6 +83,22 @@ export default class SubNavToggle {
    */
   getDepth() {
     return this.parentNav.getDepth();
+  }
+
+  /**
+   * Set the aria-label according to state.
+   *
+   */
+  setAriaLabel() {
+    console.log(this.elem.getAttribute('aria-expanded'));
+    var verb;
+    if (this.elem.getAttribute('aria-expanded') == 'false') {
+      verb = 'Open';
+    } else {
+      verb = 'Close';
+    }
+    // Label the toggle to indicate what menu it opens
+    this.elem.setAttribute('aria-label', verb + ' the ' + this.parentNav.elem.innerText.trim() + ' menu');
   }
 
 }
