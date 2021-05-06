@@ -275,17 +275,28 @@
     @include grid-media('lg') {
 
       > .su-multi-menu__item {
-        overflow: hidden;
 
         > .su-multi-menu__link {
 
           @include padding(null 0 2.4rem 1rem);
           @include margin(0 1.8em 0 0.5rem);
-          max-width: calc(100% - 20px);
-          word-wrap: break-word;
 
           &::before {
             left: -6px;
+          }
+
+          .su-multi-menu__link-text-wrapper {
+            display: inline-block;
+            word-wrap: break-word;
+            max-width: calc(100% - 10px);
+          }
+        }
+
+        &.su-multi-menu__item--parent {
+          > .su-multi-menu__link {
+            .su-multi-menu__link-text-wrapper {
+              max-width: calc(100% - 50px);
+            }
           }
         }
 
@@ -300,6 +311,19 @@
           }
         }
       }
+    }
+
+    @include grid-media-max('md') {
+      .su-multi-menu__item--parent {
+
+        .su-multi-menu__link-text-wrapper {
+          display: inline-block;
+          word-wrap: break-word;
+          max-width: calc(100% - 38px);
+        }
+
+      }
+
     }
   }
 
