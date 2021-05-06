@@ -85,20 +85,4 @@ export default class SubNavToggle {
     return this.parentNav.getDepth();
   }
 
-  /**
-   * Set the aria-label according to state.
-   *
-   */
-  setAriaLabel() {
-    console.log(this.elem.getAttribute('aria-expanded'));
-    var verb;
-    if (this.elem.getAttribute('aria-expanded') == 'false') {
-      verb = 'Open';
-    } else {
-      verb = 'Close';
-    }
-    // Label the toggle to indicate what menu it opens
-    this.elem.setAttribute('aria-label', verb + ' the ' + this.parentNav.elem.innerText.trim() + ' menu');
-  }
-
 }
