@@ -36,7 +36,7 @@
 
     <li{{ list_attributes }}>
       <a{{ link_attributes }}>
-        {{ item.title }}
+        <span class="su-multi-menu__link-text-wrapper">{{ item.title }}</span>
         {% if item.unpublished %}
           <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
         {% endif %}
