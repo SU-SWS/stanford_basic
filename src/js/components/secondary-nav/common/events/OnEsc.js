@@ -1,5 +1,5 @@
 import EventAbstract from './EventAbstract';
-import {createEvent} from '../../../../polyfills/createEvent';
+import { createEvent } from '../../../../polyfills/createEvent';
 
 /**
  * OnEsc
@@ -18,15 +18,15 @@ export default class OnEsc extends EventAbstract {
     if (this.item.getDepth() > 1) {
       this.event.stopPropagation();
       this.parentNav.closeSubNav();
-      node = this.getElement('parentItem');
+      node = this.getElement('parentItem').parentElement.getElementsByTagName('button')[0];
     }
     else {
       if (this.isDesktop()) {
         this.masterNav.closeAllSubNavs();
-        node = this.getElement('first', this.item.parentNode);
+        node = this.elem;
       }
       else {
-        var closeAllEvent = createEvent('closeAllMobileNavs', {bubbles: true, data: this.item});
+        var closeAllEvent = createEvent('closeAllMobileNavs', { bubbles: true, data: this.item });
         this.elem.dispatchEvent(closeAllEvent);
       }
     }
@@ -34,6 +34,7 @@ export default class OnEsc extends EventAbstract {
     if (node) {
       node.focus();
     }
+
   }
 
 }

@@ -24,7 +24,6 @@
     {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item") %}
     {% if item.below is not empty %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--parent") %}
-      {% set link_attributes = link_attributes.setAttribute('aria-expanded', 'false') %}
     {% endif %}
     {% if item.in_active_trail == true %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item--active-trail") %}
@@ -36,7 +35,7 @@
 
     <li{{ list_attributes }}>
       <a{{ link_attributes }}>
-        {{ item.title }}
+        <span class="su-multi-menu__link-text-wrapper">{{ item.title }}</span>
         {% if item.unpublished %}
           <div class="unpublished-indicator">{{ "Unpublished Page"|t }}</div>
         {% endif %}
