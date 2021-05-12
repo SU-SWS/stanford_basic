@@ -22,7 +22,8 @@ export default {
       // Validate there is a skip link for the secondary navigation. If not,
       // remove the skip link.
       var $sn = $('#secondary-navigation', context).length;
-      if (!$sn) {
+      var $snm = ($('.su-multi-menu__nav-toggle').css('display') === 'flex' );
+      if (!$sn || $snm) {
         $('.su-skipnav--secondary', context).remove();
       }
 
