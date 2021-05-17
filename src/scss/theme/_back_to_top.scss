@@ -5,19 +5,6 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
   text-align: center;
-
-  .fas:before {
-    position: absolute;
-    top: 15px;
-    left: calc(50% - 8px);
-  }
-
-  .label {
-    position: relative;
-    top: 6px;
-  }
+  border-radius: 7px;
 }
