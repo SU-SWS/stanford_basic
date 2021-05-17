@@ -57,6 +57,26 @@ export default {
         $('.su-back-to-site', context).removeClass('hidden');
       }
 
+      backToTop();
+      $(window).scroll(backToTop)
+
+      $('#back-to-top', context).once('back-to-top').click((e) => {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $('#page-content').attr('tabIndex', '-1').focus();
+      })
+
+      /**
+      * Hide show back to top links.
+      */
+      function backToTop() {
+        if ($(window).scrollTop() >= ($(window).height() * 3)) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
+      }
+
     })(jQuery);
   },
 
