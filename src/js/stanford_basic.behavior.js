@@ -20,7 +20,7 @@ export default {
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
-      // remove the skip link.
+      // remove the skip link. If the mobile hamburger is visible, remove the link.
       var $sn = $('#secondary-navigation', context).length;
       if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
