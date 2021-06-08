@@ -22,8 +22,7 @@ export default {
       // Validate there is a skip link for the secondary navigation. If not,
       // remove the skip link. If the mobile hamburger is visible, remove the link.
       var $sn = $('#secondary-navigation', context).length;
-      var $snm = ($('.su-multi-menu__nav-toggle').css('display') === 'flex' );
-      if (!$sn || $snm) {
+      if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
       }
 
