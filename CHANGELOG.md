@@ -1,5 +1,12 @@
 # Stanford Basic Theme
 
+8.x-5.6
+--------------------------------------------------------------------------------
+_Release Date: 2021-06-11_
+
+- D8CORE-2008: Removing the secondary skip link when the hamburger visible (#229) (45ee657)
+- D8CORE-2494 Add "Back to Top" button (#230) (ceb0563)
+
 8.x-5.5
 --------------------------------------------------------------------------------
 _Release Date: 2021-05-07_
