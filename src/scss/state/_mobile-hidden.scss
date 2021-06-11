@@ -1,0 +1,12 @@
+@charset 'UTF-8';
+
+// Remove the secondary skip nav from devices using the mobile menu.
+.su-skipnav--secondary {
+  @include grid-media-max(md) {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

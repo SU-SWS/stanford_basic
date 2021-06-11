@@ -20,7 +20,7 @@ export default {
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
-      // remove the skip link.
+      // remove the skip link. If the mobile hamburger is visible, remove the link.
       var $sn = $('#secondary-navigation', context).length;
       if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
@@ -55,6 +55,26 @@ export default {
       var userLogin = $('.page-user-login', context);
       if (userLogin) {
         $('.su-back-to-site', context).removeClass('hidden');
+      }
+
+      backToTop();
+      $(window).scroll(backToTop)
+
+      $('#back-to-top', context).once('back-to-top').click((e) => {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $('#page-content').attr('tabIndex', '-1').focus();
+      })
+
+      /**
+      * Hide show back to top links.
+      */
+      function backToTop() {
+        if ($(window).scrollTop() >= ($(window).height() * 3)) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
       }
 
     })(jQuery);
