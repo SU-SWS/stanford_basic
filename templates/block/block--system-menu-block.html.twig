@@ -41,6 +41,7 @@
 %}
 {% set heading_id = (configuration.id ~ '-menu')|clean_id %}
 <div {{ attributes.addClass(classes) }}>
+  <div id="secondary-navigation" tabindex="-1" class="visually-hidden focusable">{{ 'Secondary Navigation'|t }}</div>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
