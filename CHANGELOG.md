@@ -1,5 +1,12 @@
 # Stanford Basic Theme
 
+8.x-5.7
+--------------------------------------------------------------------------------
+_Release Date: 2021-07-09_
+
+- D8CORE-4490: adding secondary skip links to secondary navigation (#232) (24e659c)
+- D8CORE-4496 Prevent empty <ul> elements in secondary nav (#233) (2682a18)
+
 8.x-5.6
 --------------------------------------------------------------------------------
 _Release Date: 2021-06-11_
