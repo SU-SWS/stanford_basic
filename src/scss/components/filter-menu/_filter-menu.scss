@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+//
+// Filter menu
+//
+
+// Changing the layout for the filtered pages.
+@include grid-media-max('lg') {
+  .left-region {
+    &.flex-lg-3-of-12 {
+      flex: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+.filter-menu {
+  @include modular-spacing('padding', 3);
+
+  border: 1px solid $su-color-cool-grey-25;
+
+  .topics__collapsable-menu {
+    @include type-e;
+    @include padding(0);
+
+    background-color: transparent;
+    color: $su-color-bright-blue;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $su-font-semi-bold;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+
+    @include grid-media('xl') {
+      @include modular-spacing('margin-bottom', 2);
+    }
+
+    &.show {
+      @include modular-spacing('margin-bottom', 2);
+
+      @include grid-media('xl') {
+        margin-bottom: 0;
+
+        & + .menu {
+          & > li {
+            &.menu-item {
+              &:last-of-type {
+                padding-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    .su-link--jump {
+      float: right;
+    }
+
+    @include grid-media-max('lg') {
+      &::before {
+        @include small-paragraph;
+        @include padding(null 15px null null);
+
+        color: $su-color-bright-blue;
+        content: "\f1de"; // Placeholder Icon until SU ones in place.
+        font-family: 'Font Awesome 5 Free';
+        font-weight: $su-font-semi-bold; // Need this for the new version of FA. Will go away later.
+      }
+    }
+  }
+
+  .menu {
+    @include margin(0);
+    @include padding(0);
+
+    .menu-item {
+      @include modular-spacing('padding-bottom', 2);
+      @include modular-spacing('padding-left', 0);
+      @include small-paragraph;
+
+      a {
+        color: $su-color-black;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    & > li {
+      &.menu-item {
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .menu-item--active-trail {
+      &::before {
+        @include small-paragraph;
+
+        color: $su-color-bright-blue;
+        content: "\f00c"; ///* Need to switch to the SU icons.
+        font-family: 'Font Awesome 5 Free';
+        font-weight: $su-font-semi-bold; // Need this for the new version of FA. Will go away later.
+        left: 35px;
+        position: absolute;
+      }
+
+      .is-active {
+        color: $su-color-bright-blue;
+      }
+    }
+  }
+
+  // Filter open/close for xs-lg
+  @include grid-media-max('lg') {
+    .menu {
+      display: none;
+    }
+
+    .topics__collapsable-menu {
+      &.show {
+        & + .menu {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  // Filter open/close for xl
+  @include grid-media('xl') {
+    .menu {
+      display: block;
+    }
+
+    .topics__collapsable-menu {
+      &.show {
+        + .menu {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
