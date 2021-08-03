@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.su-link--action {
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+
+}
