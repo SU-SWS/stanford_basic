@@ -109,6 +109,14 @@ function stanford_basic_preprocess_field(&$variables, $hook) {
     }
   }
 
+  if (!$variables['label_hidden']) {
+    $variables['title_attributes']['class'][] = 'label';
+    $hash = "{$variables['entity_type']}-{$variables['bundle']}-{$variables['field_name']}";
+    $id = Html::getUniqueId('field--' . substr(md5($hash), 0, 5));
+    $variables['title_attributes']['id'] = $id;
+    $variables['attributes']['role'] = 'group';
+    $variables['attributes']['aria-labelledby'] = $id;
+  }
 }
 
 /**
