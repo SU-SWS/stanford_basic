@@ -334,3 +334,42 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
     $variables['attributes']['class'][] = 'page-content-label';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Adds block__system_menu_block so menu blocks work the same as core's menu
+ * blocks.
+ *
+ * File names to change:
+ * Events:
+ * block--menu-block--stanford-event-types.html.twig
+ *
+ * Person:
+ * block--menu-block--stanford-person-type.html.twig
+ * menu--stanford-person-type.html.twig
+ *
+ * Publications:
+ * Currently: block--system-menu-block.html.twig
+ * block--system-menu-block--stanford-publication-topics.html.twig
+ *
+ * News:
+ * block--menu-block--news-topics.html.twig
+*/
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+*/
+
+
+function stanford_basic_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+/**dpm($variables['elements']['#plugin_id']);*/
+
+  if (!empty($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] == 'menu_block:stanford-event-types') {
+    $suggestions[] = 'block__menu_block__filter_by';
+  }
+}
+
+
+
+
