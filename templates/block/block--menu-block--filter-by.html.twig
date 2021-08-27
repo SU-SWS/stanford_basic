@@ -37,9 +37,10 @@
   'block-menu',
   'navigation',
   'menu--' ~ derivative_plugin_id|clean_class,
+  'filter-menu',
 ]
 %}
-{% set menu_class = 'event-types__collapsable-menu' %}
+{% set menu_class = 'topics__collapsable-menu' %}
 {% set heading_id = (configuration.id ~ '-menu')|clean_id %}
 {% set attributes = attributes.setAttribute('id', heading_id) %}
 {% set button_label = ('button-label')|clean_id %}

@@ -6,57 +6,20 @@
 
 // Changing the layout for the filtered pages.
 @include grid-media-max('lg') {
-  .section-events-list--content {
-    .left-region {
-      &.flex-lg-3-of-12 {
-        flex: auto;
-        max-width: 100%;
-      }
+  .left-region {
+    &.flex-lg-3-of-12 {
+      flex: auto;
+      max-width: 100%;
     }
   }
 }
 
-.stanford-event-types {
-
-  // Filter open/close for xs-lg
-  @include grid-media-max('lg') {
-    @include modular-spacing('margin', null null 4 null);
-
-    & > .menu {
-      display: none;
-    }
-
-    .event-types__collapsable-menu {
-      &.show {
-        & + .menu {
-          display: block;
-        }
-      }
-    }
-  }
-
-
-  // Filter open/close for xl
-  @include grid-media('xl') {
-    & > .menu {
-      display: block;
-    }
-
-    .event-types__collapsable-menu {
-      &.show {
-        + .menu {
-          display: none;
-        }
-      }
-    }
-  }
-
+.filter-menu {
   @include modular-spacing('padding', 3);
-  @include modular-spacing('margin', null null 5 null);
 
   border: 1px solid $su-color-cool-grey-25;
 
-  .event-types__collapsable-menu {
+  .topics__collapsable-menu {
     @include type-e;
     @include padding(0);
 
@@ -158,4 +121,36 @@
       }
     }
   }
+
+  // Filter open/close for xs-lg
+  @include grid-media-max('lg') {
+    .menu {
+      display: none;
+    }
+
+    .topics__collapsable-menu {
+      &.show {
+        & + .menu {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  // Filter open/close for xl
+  @include grid-media('xl') {
+    .menu {
+      display: block;
+    }
+
+    .topics__collapsable-menu {
+      &.show {
+        + .menu {
+          display: none;
+        }
+      }
+    }
+  }
+
 }
