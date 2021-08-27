@@ -361,15 +361,27 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
 */
 
+/** Adding a hook for the filter by menu so that the pages share the same
+ * template file.
+ */
 
 function stanford_basic_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-/**dpm($variables['elements']['#plugin_id']);*/
 
   if (!empty($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] == 'menu_block:stanford-event-types') {
     $suggestions[] = 'block__menu_block__filter_by';
   }
+
+  if (!empty($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] == 'menu_block:news-topics') {
+    $suggestions[] = 'block__menu_block__filter_by';
+  }
+
+  if (!empty($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] == 'menu_block:stanford-person-type') {
+    $suggestions[] = 'block__menu_block__filter_by';
+  }
+
+  if (!empty($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] == 'system_menu_block:stanford-publication-topics') {
+    $suggestions[] = 'block__menu_block__filter_by';
+  }
+
 }
-
-
-
 
