@@ -18,6 +18,12 @@
       {% set link_attributes = link_attributes.addClass(class_prefix ~ "__link") %}
       {% set link_attributes = link_attributes.setAttribute('href', item.url|render) %}
 
+      {# Tooltips #}
+      {% if item.url.options.attributes.title is not empty %}
+        {% set link_attributes = link_attributes.setAttribute('data-toggle', 'tooltip') %}
+        {% set link_attributes = link_attributes.setAttribute('title', item.url.options.attributes.title) %}
+      {% endif %}
+
       {# Item Attributes #}
       {% set list_attributes = create_attribute() %}
       {% set list_attributes = list_attributes.addClass(class_prefix ~ "__item") %}
