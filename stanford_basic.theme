@@ -337,51 +337,15 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
- *
- * Adds block__system_menu_block so menu blocks work the same as core's menu
- * blocks.
- *
- * File names to change:
- * Events:
- * block--menu-block--stanford-event-types.html.twig
- *
- * Person:
- * block--menu-block--stanford-person-type.html.twig
- * menu--stanford-person-type.html.twig
- *
- * Publications:
- * Currently: block--system-menu-block.html.twig
- * block--system-menu-block--stanford-publication-topics.html.twig
- *
- * News:
- * block--menu-block--news-topics.html.twig
-*/
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
-*/
-
-/** Adding a hook for the filter by menu so that the pages share the same
- * template file.
  */
-
 function stanford_basic_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-
-  if (!empty($variables['elements']['#configuration']['id']) && $variables['elements']['#configuration']['id'] == 'menu_block:stanford-event-types') {
-    $suggestions[] = 'block__menu_block__filter_by';
+  if ($variables['elements']['#base_plugin_id'] == 'system_menu_block') {
+    $taxonomy_menu = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_menu')
+      ->loadByProperties(['menu' => $variables['elements']['#derivative_plugin_id']]);
+    if (!empty($taxonomy_menu)) {
+      $suggestions[] = 'block__system_menu_block__filter_by';
+    }
   }
-
-  if (!empty($variables['elements']['#configuration']['id']) && $variables['elements']['#configuration']['id'] == 'menu_block:news-topics') {
-    $suggestions[] = 'block__menu_block__filter_by';
-  }
-
-  if (!empty($variables['elements']['#configuration']['id']) && $variables['elements']['#configuration']['id'] == 'menu_block:stanford-person-type') {
-    $suggestions[] = 'block__menu_block__filter_by';
-  }
-
-  if (!empty($variables['elements']['#configuration']['id']) && $variables['elements']['#configuration']['id'] == 'system_menu_block:stanford-publication-topics') {
-    $suggestions[] = 'block__menu_block__filter_by';
-  }
-
 }
 
