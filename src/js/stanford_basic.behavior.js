@@ -22,8 +22,7 @@ export default {
       // Validate there is a skip link for the secondary navigation. If not,
       // remove the skip link. If the mobile hamburger is visible, remove the link.
       var $sn = $('#secondary-navigation', context).length;
-      var $pn = $('.menu--stanford-publication-topics', context).length;
-      if (!$sn && !$pn) {
+      if (!$sn) {
         $('.su-skipnav--secondary', context).remove();
       }
 
@@ -77,6 +76,19 @@ export default {
           $('#back-to-top').fadeOut();
         }
       }
+
+      /**
+       * Open and close on the filter menu: News, People, Publications, Events
+       */
+      $('.topics__collapsable-menu', context).click(function () {
+        $(this).toggleClass('show');
+        if ($(this).siblings('.menu').css('display') != 'none') {
+          $(this).attr('aria-expanded', 'true');
+        }
+        else {
+          $(this).attr('aria-expanded', 'false');
+        }
+      });
 
     })(jQuery);
   },
