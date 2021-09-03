@@ -130,11 +130,11 @@ user_login:
       dist/css/user_login.css: {  }
 
 fontawesome:
-  version: 5.7.1
-  remote: https://use.fontawesome.com/releases/v5.7.1/css/all.css
+  version: 5.15.4
+  remote: https://use.fontawesome.com/releases/v5.15.4/css/all.css
   license:
     name: FontAwesome
     url: http://fontawesome.io/license/
   css:
     base:
-      //use.fontawesome.com/releases/v5.7.1/css/all.css: {}
+      //use.fontawesome.com/releases/v5.15.4/css/all.css: {}

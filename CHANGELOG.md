@@ -1,5 +1,16 @@
 # Stanford Basic Theme
 
+
+8.x-5.9
+--------------------------------------------------------------------------------
+_Release Date: 2021-09-03
+
+- D8CORE-3161: moving pager css to theme (#242)
+- D8CORE-4643: moving to a single filter by menu (#237)
+- D8CORE-4714: adding the title description to the secondary menu links (#241)
+- Updated font awesome library to 5.15.4
+- D8CORE-4359 Adding an underline to the action-link (#238)
+
 8.x-5.8
 --------------------------------------------------------------------------------
 _Release Date: 2021-07-19_
