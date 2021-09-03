@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+// Load more button used on filtered pages and 
+// paragraph lists.
+
+.js-pager__items {
+    text-align: center;
+  
+    .pager__item {
+      display: inline-block;
+  
+      .button {
+        @include button-primary;
+      }
+    }
+}
+  
