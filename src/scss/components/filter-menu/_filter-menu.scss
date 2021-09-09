@@ -4,16 +4,6 @@
 // Filter menu
 //
 
-// Changing the layout for the filtered pages.
-@include grid-media-max('lg') {
-  .left-region {
-    &.flex-lg-3-of-12 {
-      flex: auto;
-      max-width: 100%;
-    }
-  }
-}
-
 .filter-menu {
   @include modular-spacing('padding', 3);
 
@@ -152,5 +142,4 @@
       }
     }
   }
-
 }
