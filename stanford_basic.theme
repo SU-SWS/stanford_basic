@@ -232,7 +232,7 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
   $items = $variables['items'];
   foreach ($items as $key => $item) {
     // If path is current_path, add aria-current to the link.
-    if ($item['url']->toString() == $current_path) {
+    if (parse_url($item['url']->toString(), PHP_URL_PATH) == $current_path) {
       $link_options = $variables['items'][$key]['url']->getOptions();
       $link_options['attributes']= [
         'aria-current' => 'true',
