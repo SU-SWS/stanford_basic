@@ -20,7 +20,7 @@ export default class SecondaryNavButtons extends SecondaryNavAbstract {
       itemExpandedClass: 'su-secondary-nav__item--expanded',
       toggleClass: 'su-nav-toggle',
       toggleLabel: 'expand menu',
-      subNavToggleText: '+'
+      subNavToggleText: ''
     }, options);
 
     // Call the super.
