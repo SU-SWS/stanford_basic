@@ -1,6 +1,14 @@
 # Stanford Basic Theme
 
 
+8.x-5.12
+--------------------------------------------------------------------------------
+_Release Date: 2021-11-04_
+
+- D8CORE-000: Add components module as a dependency (#252)
+- D8CORE-4802 D8CORE-4823: Updating Decanter Version (#249)
+
+
 8.x-5.11
 --------------------------------------------------------------------------------
 _Release Date: 2021-10-08_
