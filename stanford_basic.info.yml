@@ -5,7 +5,7 @@ package: Stanford
 version: 8.x-5.12-dev
 core_version_requirement: ^9
 dependencies:
-  - components:components
+  - jumpstart_ui:jumpstart_ui
 'base theme': stable9
 regions:
   page_top: 'Page top'

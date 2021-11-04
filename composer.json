@@ -6,8 +6,9 @@
     "authors": [],
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "drupal/core": "^9.0",
-        "drupal/components": "^2.0"
+        "su-sws/jumpstart_ui": "^8.1"
     }
 }
