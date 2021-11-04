@@ -354,7 +354,7 @@ function stanford_basic_preprocess_menu_local_task(&$variables) {
  */
 function stanford_basic_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   if ($variables['elements']['#base_plugin_id'] == 'system_menu_block') {
-    if(\Drupal::entityTypeManager()->hasDefinition('taxonomy_menu')) {
+    if (\Drupal::entityTypeManager()->hasDefinition('taxonomy_menu')) {
       $taxonomy_menu = \Drupal::entityTypeManager()
         ->getStorage('taxonomy_menu')
         ->loadByProperties(['menu' => $variables['elements']['#derivative_plugin_id']]);
