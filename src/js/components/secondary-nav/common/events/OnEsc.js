@@ -15,7 +15,10 @@ export default class OnEsc extends EventAbstract {
     this.event.preventDefault();
     let node = false;
 
-    if (this.item.getDepth() > 1) {
+    if (this.parentNav.getDepth() > 1) {
+      
+      console.log(this.parentNav.getDepth());
+      
       this.event.stopPropagation();
       this.parentNav.closeSubNav();
       node = this.getElement('parentItem').parentElement.getElementsByTagName('button')[0];

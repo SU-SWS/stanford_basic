@@ -5,6 +5,8 @@ import OnArrowRightLV1 from './events/OnArrowRightLV1';
 import OnArrowDownToggleLV1 from './events/OnArrowDownToggleLV1';
 import OnClickToggleLV1 from './events/OnClickToggleLV1';
 import OnArrowUpToggleLV1 from './events/OnArrowUpToggleLV1';
+import OnEsc from '../../secondary-nav/common/events/OnEsc.js';
+
 
 /**
  * SecondarySubNavAccordion Class
@@ -48,7 +50,8 @@ export default class MultiSubNavButtons extends SecondarySubNavButtons {
          onKeydownArrowRight: OnArrowRightToggleLV1,
          onKeydownArrowDown: OnArrowDownToggleLV1,
          onKeydownArrowUp: OnArrowUpToggleLV1,
-         onClick: OnClickToggleLV1
+         onClick: OnClickToggleLV1,
+         onKeydownEscape: OnEsc
        };
      }
 
