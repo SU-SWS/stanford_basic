@@ -14,6 +14,7 @@ div {
   &.far,
   &.fas {
     font-family: inherit;
+    font-weight: inherit;
 
     &:before {
       font-family: "Font Awesome 5 Brands";
