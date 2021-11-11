@@ -15,14 +15,12 @@ export default class OnEsc extends EventAbstract {
     this.event.preventDefault();
     let node = false;
 
-    if (this.parentNav.getDepth() > 1) {
-      
-      console.log(this.parentNav.getDepth());
-      
+    if (this.parentNav.getDepth() > 2) { 
       this.event.stopPropagation();
       this.parentNav.closeSubNav();
       node = this.getElement('parentItem').parentElement.getElementsByTagName('button')[0];
     }
+
     else {
       if (this.isDesktop()) {
         this.masterNav.closeAllSubNavs();
