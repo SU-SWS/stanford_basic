@@ -1,6 +1,15 @@
 # Stanford Basic Theme
 
 
+8.x-5.13
+--------------------------------------------------------------------------------
+_Release Date: 2021-11-19_
+
+- D8CORE-4234: change to how the onEsc.js works (#257)
+- D8CORE-4246 Inherit font family when using font awesome classes (#256)
+- Added core patch and some readme documentation (#255)
+
+
 8.x-5.12
 --------------------------------------------------------------------------------
 _Release Date: 2021-11-04_
