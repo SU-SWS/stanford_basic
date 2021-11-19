@@ -11,13 +11,21 @@ Stanford Basic is a Stanford Branded Drupal 8 base theme that integrates with th
 Accessibility
 ---
 [![WCAG Conformance 2.0 AA Badge](https://www.w3.org/WAI/wcag2AA-blue.png)](https://www.w3.org/TR/WCAG20/)
-Evaluation Date: 2020-02-05  
+Evaluation Date: 2020-02-05
 This theme conforms to level AA WCAG 2.0 standards as required by the university's accessibility policy. For more information on the policy please visit: [https://ucomm.stanford.edu/policies/accessibility-policy.html](https://ucomm.stanford.edu/policies/accessibility-policy.html).
 
 Installation
 ---
 
 Install this theme like any other theme. [See Drupal Documentation](https://www.drupal.org/docs/8/extending-drupal-8/installing-themes)
+
+This theme depends on the [`Components`](https://www.drupal.org/project/components) module to register template
+namespaces. If downloading this theme via composer, the module is already downloaded and simply needs to be enabled
+before the theme can be enabled.
+
+If using this theme in conjunction with configuration management and doing site install, a patch is included in the
+composer.json. Ensure that your project's root composer.json has [patching enabled](https://github.com/cweagans/composer-patches#allowing-patches-to-be-applied-from-dependencies)
+or download and patch Drupal Core manually.
 
 Configuration
 ---

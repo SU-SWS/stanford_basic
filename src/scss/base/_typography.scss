@@ -4,3 +4,20 @@
  * See: https://github.com/SU-SWS/decanter/blob/master/core/src/scss/elements/typography/_typography.scss
  * See: node_modules/decanter/core/src/scss/elements/typography/_typography.scss
  */
+
+// Restore font style when using font awesome icons on an element.
+p,
+div {
+  &.fab,
+  &.fad,
+  &.fal,
+  &.far,
+  &.fas {
+    font-family: inherit;
+    font-weight: inherit;
+
+    &:before {
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+}

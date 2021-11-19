@@ -9,5 +9,12 @@
     "require": {
         "drupal/core": "^9.0",
         "drupal/components": "^2.0"
+    },
+    "extra": {
+        "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3176625": "https://www.drupal.org/files/issues/2021-05-18/fix_ConfigImportSubscriber_validateThemes-3176625-29.patch"
+            }
+        }
     }
 }
