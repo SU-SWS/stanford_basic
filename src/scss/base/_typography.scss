@@ -8,16 +8,36 @@
 // Restore font style when using font awesome icons on an element.
 p,
 div {
-  &.fab,
-  &.fad,
-  &.fal,
-  &.far,
-  &.fas {
+  &.fab {
     font-family: inherit;
     font-weight: inherit;
 
     &:before {
       font-family: "Font Awesome 5 Brands";
+      font-weight: 400;
+    }
+  }
+
+  &.fas,
+  &.far {
+    font-family: inherit;
+    font-weight: inherit;
+
+    &:before {
+      font-family: "Font Awesome 5 Free";
+    }
+  }
+
+
+  &.fas {
+    &:before {
+      font-weight: 900;
+    }
+  }
+
+  &.fas {
+    &:before {
+
     }
   }
 }
