@@ -6,8 +6,17 @@
  */
 
 // Restore font style when using font awesome icons on an element.
+a,
+aside,
+dd,
+div,
+h2,
+h3,
+h4,
+h5,
+li,
 p,
-div {
+td {
   &.fab {
     font-family: inherit;
     font-weight: inherit;
@@ -37,7 +46,7 @@ div {
 
   &.fas {
     &:before {
-
+ 
     }
   }
 }
