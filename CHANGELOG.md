@@ -1,6 +1,14 @@
 # Stanford Basic Theme
 
 
+8.x-5.15
+--------------------------------------------------------------------------------
+_Release Date: 2022-03-17_
+
+- D8CORE-5522 Adjust unpublished message on nodes that are scheduled (#263)
+- D8CORE-5246: fixing the separator overhang on menus (#262)
+
+
 8.x-5.14
 --------------------------------------------------------------------------------
 _Release Date: 2022-01-27_
