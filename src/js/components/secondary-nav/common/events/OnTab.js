@@ -13,7 +13,12 @@ export default class OnTab extends EventAbstract {
   exec() {
     const shifted = event.shiftKey;
     let firstItem = false;
-    let lastItem = false;
+    let lastItem = false; 
+
+    // check for focus
+    let focusedmasterNav = 'scope: ul > li > a:active';
+    // check for open menu
+    let openmenu = '.su-nav-toggle[aria-expanded=true]';
 
     try {
       firstItem = this.masterNav.elem.querySelector('a');
@@ -23,11 +28,17 @@ export default class OnTab extends EventAbstract {
     }
 
     try {
-      lastItem = this.masterNav.elem.querySelector(':scope > ul > li:last-child');
+      lastItem = this.masterNav.elem.querySelector(':scope > ul > li:last-of-type');
     }
     catch (err) {
       lastItem = this.masterNav.elem.lastElementChild.lastElementChild;
     }
+
+    console.log(firstItem + ' first item');
+    console.log(lastItem + ' last item');
+    console.log(focusedmasterNav + ' focused Item');
+    console.log(openmenu + ' menu');
+    
 
     // If shift key is held.
     if (shifted) {
@@ -37,11 +48,9 @@ export default class OnTab extends EventAbstract {
       }
     }
     // No shift key, just regular ol tab.
-    else {
-      if (this.target.parentNode === lastItem) {
-        this.masterNav.closeAllSubNavs();
-        return;
-      }
+    if (this.target === lastItem) {
+      this.masterNav.closeAllSubNavs();
+      return;
     }
   }
 }
