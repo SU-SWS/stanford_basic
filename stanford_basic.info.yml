@@ -2,7 +2,7 @@ name: 'Stanford Basic'
 type: theme
 description: 'Stanford Basic Branding Theme.'
 package: Stanford
-version: 8.x-5.16-dev
+version: 8.x-5.16
 core_version_requirement: ^9
 dependencies:
   - components:components
