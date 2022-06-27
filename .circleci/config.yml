@@ -23,7 +23,7 @@ back_to_dev: &back_to_dev
     - run:
         name: Back to dev
         command: |
-          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
+          composer global require su-sws/stanford-caravan:dev-8.x-1.x
           ~/.composer/vendor/bin/sws-caravan back-to-dev ${CIRCLE_TAG} ${CIRCLE_WORKING_DIRECTORY}
 
 # Declare all of the jobs we should run.
