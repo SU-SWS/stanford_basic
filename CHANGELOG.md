@@ -1,5 +1,14 @@
 # Stanford Basic Theme
 
+
+8.5.18
+--------------------------------------------------------------------------------
+_Release Date: 2022-07-08_
+
+- fixed composer namespace to lowercase
+- D8CORE-5948: removing the char limit for the li (#267)
+- Merge branch 'master' into 8.x
+
 8.x-5.17
 --------------------------------------------------------------------------------
 _Release Date: 2022-06-15_
