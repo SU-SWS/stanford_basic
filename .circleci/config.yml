@@ -4,7 +4,7 @@ version: 2
 ## Defines images and working directory.
 defaults: &defaults
   docker:
-    - image: pookmish/drupal8ci:latest
+    - image: pookmish/drupal8ci:php8
     - image: selenium/standalone-chrome:latest
     - image: circleci/mysql:5.7
       environment:
