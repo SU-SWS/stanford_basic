@@ -139,7 +139,7 @@ function stanford_basic_preprocess_views_view(&$variables) {
  *   Cleaned string.
  */
 function _stanford_basic_change_characters($string) {
-  return preg_replace("/[^a-zA-Z\d\s]/", '-', $string);
+  return isset($string) ? preg_replace("/[^a-zA-Z\d\s]/", '-', $string) : '';
 }
 
 /**
