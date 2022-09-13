@@ -4,6 +4,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 
+// @codeCoverageIgnoreStart
+
+
 // Set theme name to use in the key values.
 $theme_name = \Drupal::theme()->getActiveTheme()->getName();
 
@@ -15,19 +18,6 @@ function stanford_basic_form_system_theme_settings_alter(array &$form, FormState
   $form['options_settings'] = [
     '#type' => 'fieldset',
     '#title' => t('Theme Specific Settings'),
-  ];
-
-  // Dropdown navigation menu support.
-  $form['options_settings']['stanford_basic_navigation'] = [
-    '#type' => 'fieldset',
-    '#title' => t('Navigation Menu Settings'),
-  ];
-
-  $form['options_settings']['stanford_basic_navigation']['nav_dropdown_enabled'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Enable dropdowns for navigation menu'),
-    '#default_value' => theme_get_setting('nav_dropdown_enabled'),
-    '#description' => t("Checking this box will enable dropdowns for your navigation menu."),
   ];
 
   // Brand bar support.

@@ -17,6 +17,21 @@
 {% if page %}
 {# Node as a page should be a section. #}
 <section{{ attributes }}>
+  {# Unpublished Warning. #}
+  {%- if not node.published -%}
+
+    {% set message = "This page is currently unpublished and not visible to the public." %}
+    {% if node.publish_on and not node.publish_on.isEmpty %}
+      {% set message =message ~ " The page is also scheduled to publish in the future." %}
+    {% endif %}
+
+    {%- set data = {
+      'attributes': create_attribute({'class': 'su-alert su-alert--warning'}),
+      'alert_text': message|t,
+    } -%}
+    {%- include template_alert with data only -%}
+  {%- endif -%}
+
 {# Node in a list should be it's own article. #}
 {% else %}
 <article{{ attributes }}>
@@ -44,22 +59,6 @@
           {{ metadata }}
         </div>
       {%- endif -%}
-
-      {# Unpublished Warning. #}
-      {%- if not node.published -%}
-
-        {% set message = "This page is currently unpublished and not visible to the public." %}
-        {% if node.publish_on and not node.publish_on.isEmpty %}
-          {% set message =message ~ " The page is also scheduled to publish in the future." %}
-        {% endif %}
-
-        {%- set data = {
-          'attributes': create_attribute({'class': 'su-alert su-alert--warning'}),
-          'alert_text': message|t,
-        } -%}
-        {%- include template_alert with data only -%}
-      {%- endif -%}
-
     </header>
   {%- endif -%}
 

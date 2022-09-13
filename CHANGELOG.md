@@ -1,5 +1,12 @@
 # Stanford Basic Theme
 
+8.5.19
+--------------------------------------------------------------------------------
+_Release Date: 2022-09-13_
+
+- Updated readme with consolidation info. (#270)
+- Updated stanford_basic with latest from stanford_profile (#269)
+
 
 8.5.18
 --------------------------------------------------------------------------------
@@ -9,11 +16,13 @@ _Release Date: 2022-07-08_
 - D8CORE-5948: removing the char limit for the li (#267)
 - Merge branch 'master' into 8.x
 
+
 8.x-5.17
 --------------------------------------------------------------------------------
 _Release Date: 2022-06-15_
 
 - Removed drupal/core patch since it's fixed in 9.4.0.
+
 
 8.x-5.16
 --------------------------------------------------------------------------------
