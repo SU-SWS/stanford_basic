@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific type.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ *
+ * @see template_preprocess_status_messages()
+ */
+#}
+
+{# Template Paths #}
+{%- if template_alert is empty -%}
+  {% set template_alert = "@basic-dist/decanter/components/alert/alert.twig" %}
+{%- endif -%}
+{# End Template Paths. #}
+
+
+{% set attributes = create_attribute() %}
+{% set attributes = attributes.setAttribute('role', 'alert') %}
+
+{% set attributes = attributes.addClass('su-alert--warning' ~ type) %}
+
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
+{# Default Icon for Alerts. #}
+{%- set fa_class = "su-fas fa-bell" -%}
+
+{# Icon for warning style. #}
+{%- if 'su-alert--warning' in modifier_class -%}
+  {%- set fa_class = "su-fas fa-exclamation-circle" -%}
+{%- endif -%}
+
+{# Create the HTML for the Alert Icon #}
+{% if alert_icon|render|striptags("<drupal-placeholder>") is empty %}
+  {%- set alert_icon -%}
+    <i class="{{ fa_class }}"></i>
+  {%- endset -%}
+{% endif %}
+
+{# Good for everyone. #}
+{% if status_headings[type] %}
+  <h2 class="visually-hidden">{{ 'Warning'|t }}</h2>
+{% endif %}
+
+{% set message = {'#markup': 'You are seeing this page because you are logged in with appropriate permissions. For anonymous users, this page will redirect to ' ~ (link(destination, destination)|render)} %}
+
+{% set data = {
+  'modifier_class': modifier_class,
+  'attributes': attributes,
+  'alert_label': type,
+  'alert_text': message,
+  'alert_icon': alert_icon,
+  'alert_dismiss': true
+} %}
+{% include template_alert with data only %}

@@ -11,7 +11,7 @@ export default {
 
   // Attach Drupal Behavior.
   attach(context, settings) {
-    (function ($) {
+    (function ($, once) {
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
       var $mc = $('#main-content', context).length;
@@ -60,15 +60,15 @@ export default {
       backToTop();
       $(window).scroll(backToTop)
 
-      $('#back-to-top', context).once('back-to-top').click((e) => {
+      $(once('back-to-top', '#back-to-top', context)).click((e) => {
         e.preventDefault();
         $("html, body").animate({ scrollTop: 0 }, "slow");
         $('#page-content').attr('tabIndex', '-1').focus();
       })
 
       /**
-      * Hide show back to top links.
-      */
+       * Hide show back to top links.
+       */
       function backToTop() {
         if ($(window).scrollTop() >= ($(window).height() * 3)) {
           $('#back-to-top').fadeIn();
@@ -90,7 +90,7 @@ export default {
         }
       });
 
-    })(jQuery);
+    })(jQuery, once);
   },
 
   // Detach Example.
