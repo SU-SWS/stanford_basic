@@ -6,7 +6,9 @@ Changelog: [Changelog.txt](CHANGELOG.txt)
 Description
 ---
 
-Stanford Basic is a Stanford Branded Drupal 8 base theme that integrates with the [Decanter Project](https://github.com/SU-SWS/decanter).
+**Primary development for the Stanford Basic theme has been consolidated and moved to the [Stanford Profile](https://github.com/SU-SWS/stanford_profile/tree/9.x/themes/stanford_basic)**.
+
+Stanford Basic is a Stanford Branded Drupal 9 base theme that integrates with the [Decanter Project](https://github.com/SU-SWS/decanter).
 
 Accessibility
 ---
