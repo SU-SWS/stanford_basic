@@ -114,6 +114,7 @@ basic:
     - classy/progress
     - core/drupal
     - core/jquery
+    - core/once
     - core/modernizr
     - stanford_basic/fontawesome
 
